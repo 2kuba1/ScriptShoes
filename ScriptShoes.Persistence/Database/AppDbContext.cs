@@ -6,9 +6,10 @@ namespace ScriptShoes.Persistence.Database;
 
 public class AppDbContext : DbContext
 {
-    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+    private readonly bool _isInMemory;
+    public AppDbContext(DbContextOptions<AppDbContext> options, bool isInMemory) : base(options)
     {
-        
+        _isInMemory = isInMemory;
     }
 
     public DbSet<User> Users { get; set; }
@@ -21,8 +22,31 @@ public class AppDbContext : DbContext
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        if (_isInMemory)
+        {
+            modelBuilder
+                .Entity<Shoe>().Property(e => e.ShoeSizes)
+                .HasConversion(
+                    v => new ArrayWrapper<List<float>>(v),
+                    v => v.Values);
+            
+            modelBuilder
+                .Entity<Shoe>().Property(e => e.Images)
+                .HasConversion(
+                    v => new ArrayWrapper<List<string>>(v),
+                    v => v.Values);
+        }
+        
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
         base.OnModelCreating(modelBuilder);
+    }
+    
+    private struct ArrayWrapper<T>
+    {
+        public ArrayWrapper(T values)
+            => Values = values;
+
+        public T Values { get; }
     }
     
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

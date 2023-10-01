@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{6136CEB2-8CFD-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoes.ApplicationTests", "ScriptShoes.ApplicationTests\ScriptShoes.ApplicationTests.csproj", "{49955064-C45B-466A-BBE2-EC59EB5EDE09}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoes.PersistenceTests", "ScriptShoes.PersistenceTests\ScriptShoes.PersistenceTests.csproj", "{AD07F93E-036E-4360-BD89-C207A414C974}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,7 @@ Global
 		{B7FFEEA5-D0AB-49D5-891A-36E81B44D10A} = {4DC55EC8-49B9-4328-AC27-2CD31BE8AE4F}
 		{6136CEB2-8CFD-4F18-A0F4-3AB91AF5D15C} = {3601C6F6-6DDB-4B3C-93D6-F9B25AA62A88}
 		{49955064-C45B-466A-BBE2-EC59EB5EDE09} = {B113769B-5AB9-4080-B277-683F5974D565}
+		{AD07F93E-036E-4360-BD89-C207A414C974} = {B113769B-5AB9-4080-B277-683F5974D565}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{7512D016-C1EA-4288-8C8F-55D2ECFBC144}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -66,5 +69,9 @@ Global
 		{49955064-C45B-466A-BBE2-EC59EB5EDE09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49955064-C45B-466A-BBE2-EC59EB5EDE09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49955064-C45B-466A-BBE2-EC59EB5EDE09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD07F93E-036E-4360-BD89-C207A414C974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD07F93E-036E-4360-BD89-C207A414C974}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD07F93E-036E-4360-BD89-C207A414C974}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD07F93E-036E-4360-BD89-C207A414C974}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

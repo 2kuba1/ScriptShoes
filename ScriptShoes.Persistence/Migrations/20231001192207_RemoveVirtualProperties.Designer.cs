@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ScriptShoes.Persistence.Database;
@@ -12,9 +13,11 @@ using ScriptShoes.Persistence.Database;
 namespace ScriptShoes.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231001192207_RemoveVirtualProperties")]
+    partial class RemoveVirtualProperties
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -155,21 +158,25 @@ namespace ScriptShoes.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2023, 10, 1, 19, 25, 13, 248, DateTimeKind.Utc).AddTicks(3816),
-                            LastModified = new DateTime(2023, 10, 1, 19, 25, 13, 248, DateTimeKind.Utc).AddTicks(3818),
+                            Created = new DateTime(2023, 10, 1, 19, 22, 7, 631, DateTimeKind.Utc).AddTicks(5379),
+                            LastModified = new DateTime(2023, 10, 1, 19, 22, 7, 631, DateTimeKind.Utc).AddTicks(5380),
                             Name = "User"
                         },
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2023, 10, 1, 19, 25, 13, 248, DateTimeKind.Utc).AddTicks(3819),
-                            LastModified = new DateTime(2023, 10, 1, 19, 25, 13, 248, DateTimeKind.Utc).AddTicks(3819),
+                            Created = new DateTime(2023, 10, 1, 19, 22, 7, 631, DateTimeKind.Utc).AddTicks(5381),
+                            LastModified = new DateTime(2023, 10, 1, 19, 22, 7, 631, DateTimeKind.Utc).AddTicks(5382),
                             Name = "Admin"
                         });
                 });
 
             modelBuilder.Entity("ScriptShoes.Domain.Shoe", b =>
                 {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
                     b.Property<float?>("AverageRating")
                         .HasColumnType("real");
 
@@ -182,9 +189,6 @@ namespace ScriptShoes.Persistence.Migrations
 
                     b.Property<float>("CurrentPrice")
                         .HasColumnType("real");
-
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uuid");
 
                     b.Property<List<string>>("Images")
                         .HasColumnType("text[]");
@@ -214,6 +218,8 @@ namespace ScriptShoes.Persistence.Migrations
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Shoes");
                 });
