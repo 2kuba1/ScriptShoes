@@ -10,16 +10,16 @@ public class RoleConfiguration : IEntityTypeConfiguration<Role>
     {
         builder.HasData(new Role()
         {
-            Created = DateTime.Now,
-            LastModified = DateTime.Now,
             Id = 1,
-            Name = "User"
+            Name = "User",
+            Created = DateTime.UtcNow,
+            LastModified = DateTime.UtcNow,
         }, new Role()
         {
-            Created = DateTime.Now,
-            LastModified = DateTime.Now,
-            Id = 1,
-            Name = "Admin"
+            Id = 2,
+            Name = "Admin",
+            Created = DateTime.UtcNow,
+            LastModified = DateTime.UtcNow,
         });
     }
 }
