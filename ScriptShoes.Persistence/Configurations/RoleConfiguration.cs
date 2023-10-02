@@ -10,13 +10,13 @@ public class RoleConfiguration : IEntityTypeConfiguration<Role>
     {
         builder.HasData(new Role()
         {
-            Id = 1,
+            Id = Guid.Parse("212410d0-1181-40f7-8a7c-f9a946bcddd6"),
             Name = "User",
             Created = DateTime.UtcNow,
             LastModified = DateTime.UtcNow,
         }, new Role()
         {
-            Id = 2,
+            Id =  Guid.Parse("50d3b559-99c1-4c51-b94d-01b37d1a1333"),
             Name = "Admin",
             Created = DateTime.UtcNow,
             LastModified = DateTime.UtcNow,

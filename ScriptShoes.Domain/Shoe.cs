@@ -4,7 +4,6 @@ namespace ScriptShoes.Domain;
 
 public class Shoe : BaseEntity
 {
-    public Guid Id { get; set; }
     public string ShoeName { get; set; } = string.Empty;
     public string Brand { get; set; } = string.Empty;
     public string ShoeType { get; set; } = string.Empty;

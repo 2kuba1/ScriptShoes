@@ -131,11 +131,9 @@ namespace ScriptShoes.Persistence.Migrations
 
             modelBuilder.Entity("ScriptShoes.Domain.Role", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                        .HasColumnType("uuid");
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
@@ -154,16 +152,16 @@ namespace ScriptShoes.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
-                            Created = new DateTime(2023, 10, 1, 19, 25, 13, 248, DateTimeKind.Utc).AddTicks(3816),
-                            LastModified = new DateTime(2023, 10, 1, 19, 25, 13, 248, DateTimeKind.Utc).AddTicks(3818),
+                            Id = new Guid("212410d0-1181-40f7-8a7c-f9a946bcddd6"),
+                            Created = new DateTime(2023, 10, 2, 17, 51, 36, 193, DateTimeKind.Utc).AddTicks(5828),
+                            LastModified = new DateTime(2023, 10, 2, 17, 51, 36, 193, DateTimeKind.Utc).AddTicks(5829),
                             Name = "User"
                         },
                         new
                         {
-                            Id = 2,
-                            Created = new DateTime(2023, 10, 1, 19, 25, 13, 248, DateTimeKind.Utc).AddTicks(3819),
-                            LastModified = new DateTime(2023, 10, 1, 19, 25, 13, 248, DateTimeKind.Utc).AddTicks(3819),
+                            Id = new Guid("50d3b559-99c1-4c51-b94d-01b37d1a1333"),
+                            Created = new DateTime(2023, 10, 2, 17, 51, 36, 193, DateTimeKind.Utc).AddTicks(5832),
+                            LastModified = new DateTime(2023, 10, 2, 17, 51, 36, 193, DateTimeKind.Utc).AddTicks(5832),
                             Name = "Admin"
                         });
                 });
@@ -259,13 +257,16 @@ namespace ScriptShoes.Persistence.Migrations
                     b.Property<int>("RoleId")
                         .HasColumnType("integer");
 
+                    b.Property<Guid>("RoleId1")
+                        .HasColumnType("uuid");
+
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RoleId");
+                    b.HasIndex("RoleId1");
 
                     b.ToTable("Users");
                 });
@@ -285,7 +286,7 @@ namespace ScriptShoes.Persistence.Migrations
                 {
                     b.HasOne("ScriptShoes.Domain.Role", "Role")
                         .WithMany()
-                        .HasForeignKey("RoleId")
+                        .HasForeignKey("RoleId1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

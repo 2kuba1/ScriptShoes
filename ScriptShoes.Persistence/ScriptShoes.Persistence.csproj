@@ -23,8 +23,11 @@
 
 
     <ItemGroup>
+      <ProjectReference Include="..\ScriptShoes.Application\ScriptShoes.Application.csproj" />
       <ProjectReference Include="..\ScriptShoes.Domain\ScriptShoes.Domain.csproj" />
     </ItemGroup>
+
+
 
 
 
