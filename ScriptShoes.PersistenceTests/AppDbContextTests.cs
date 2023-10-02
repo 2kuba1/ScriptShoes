@@ -22,16 +22,16 @@ public class AppDbContextTests
     {
         var favorite = new Favorite()
         {
-            Id = Guid.NewGuid(),
-            ShoeId = Guid.NewGuid(),
-            UserId = Guid.NewGuid(),
+            Id = 1,
+            ShoeId = 1,
+            UserId = 1,
         };
 
         await _dbContext.Favorites.AddAsync(favorite);
         await _dbContext.SaveChangesAsync();
         
         favorite.Created.ShouldBeOfType<DateTime>();
-        favorite.Created.ShouldBeLessThan(DateTime.Now);
+        favorite.Created.ShouldBeLessThan(DateTime.UtcNow);
     }
 
     [Fact]
@@ -39,15 +39,15 @@ public class AppDbContextTests
     {
         var favorite = new Favorite()
         {
-            Id = Guid.NewGuid(),
-            ShoeId = Guid.NewGuid(),
-            UserId = Guid.NewGuid(),
+            Id = 1,
+            ShoeId = 1,
+            UserId = 1,
         };
 
         await _dbContext.Favorites.AddAsync(favorite);
         await _dbContext.SaveChangesAsync();
         
         favorite.LastModified.ShouldBeOfType<DateTime>();
-        favorite.LastModified.ShouldBeLessThan(DateTime.Now);
+        favorite.LastModified.ShouldBeLessThan(DateTime.UtcNow);
     }
 }

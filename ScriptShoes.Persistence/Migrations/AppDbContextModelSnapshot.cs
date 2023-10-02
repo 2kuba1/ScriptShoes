@@ -25,9 +25,11 @@ namespace ScriptShoes.Persistence.Migrations
 
             modelBuilder.Entity("ScriptShoes.Domain.Cart", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
@@ -35,11 +37,11 @@ namespace ScriptShoes.Persistence.Migrations
                     b.Property<DateTime>("LastModified")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("ShoeId")
-                        .HasColumnType("uuid");
+                    b.Property<int>("ShoeId")
+                        .HasColumnType("integer");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -48,9 +50,11 @@ namespace ScriptShoes.Persistence.Migrations
 
             modelBuilder.Entity("ScriptShoes.Domain.EmailCode", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -65,8 +69,8 @@ namespace ScriptShoes.Persistence.Migrations
                     b.Property<DateTime>("LastModified")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -75,9 +79,11 @@ namespace ScriptShoes.Persistence.Migrations
 
             modelBuilder.Entity("ScriptShoes.Domain.Favorite", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
@@ -85,11 +91,11 @@ namespace ScriptShoes.Persistence.Migrations
                     b.Property<DateTime>("LastModified")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("ShoeId")
-                        .HasColumnType("uuid");
+                    b.Property<int>("ShoeId")
+                        .HasColumnType("integer");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -98,9 +104,11 @@ namespace ScriptShoes.Persistence.Migrations
 
             modelBuilder.Entity("ScriptShoes.Domain.Review", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
@@ -119,8 +127,8 @@ namespace ScriptShoes.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -131,9 +139,11 @@ namespace ScriptShoes.Persistence.Migrations
 
             modelBuilder.Entity("ScriptShoes.Domain.Role", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
@@ -152,22 +162,28 @@ namespace ScriptShoes.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("212410d0-1181-40f7-8a7c-f9a946bcddd6"),
-                            Created = new DateTime(2023, 10, 2, 17, 51, 36, 193, DateTimeKind.Utc).AddTicks(5828),
-                            LastModified = new DateTime(2023, 10, 2, 17, 51, 36, 193, DateTimeKind.Utc).AddTicks(5829),
+                            Id = 1,
+                            Created = new DateTime(2023, 10, 2, 20, 48, 40, 187, DateTimeKind.Utc).AddTicks(3490),
+                            LastModified = new DateTime(2023, 10, 2, 20, 48, 40, 187, DateTimeKind.Utc).AddTicks(3491),
                             Name = "User"
                         },
                         new
                         {
-                            Id = new Guid("50d3b559-99c1-4c51-b94d-01b37d1a1333"),
-                            Created = new DateTime(2023, 10, 2, 17, 51, 36, 193, DateTimeKind.Utc).AddTicks(5832),
-                            LastModified = new DateTime(2023, 10, 2, 17, 51, 36, 193, DateTimeKind.Utc).AddTicks(5832),
+                            Id = 2,
+                            Created = new DateTime(2023, 10, 2, 20, 48, 40, 187, DateTimeKind.Utc).AddTicks(3492),
+                            LastModified = new DateTime(2023, 10, 2, 20, 48, 40, 187, DateTimeKind.Utc).AddTicks(3493),
                             Name = "Admin"
                         });
                 });
 
             modelBuilder.Entity("ScriptShoes.Domain.Shoe", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
                     b.Property<float?>("AverageRating")
                         .HasColumnType("real");
 
@@ -180,9 +196,6 @@ namespace ScriptShoes.Persistence.Migrations
 
                     b.Property<float>("CurrentPrice")
                         .HasColumnType("real");
-
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uuid");
 
                     b.Property<List<string>>("Images")
                         .HasColumnType("text[]");
@@ -210,17 +223,21 @@ namespace ScriptShoes.Persistence.Migrations
                     b.Property<string>("ThumbnailImage")
                         .HasColumnType("text");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Shoes");
                 });
 
             modelBuilder.Entity("ScriptShoes.Domain.User", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<float>("AvailableFounds")
                         .HasColumnType("real");
@@ -257,16 +274,13 @@ namespace ScriptShoes.Persistence.Migrations
                     b.Property<int>("RoleId")
                         .HasColumnType("integer");
 
-                    b.Property<Guid>("RoleId1")
-                        .HasColumnType("uuid");
-
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RoleId1");
+                    b.HasIndex("RoleId");
 
                     b.ToTable("Users");
                 });
@@ -286,7 +300,7 @@ namespace ScriptShoes.Persistence.Migrations
                 {
                     b.HasOne("ScriptShoes.Domain.Role", "Role")
                         .WithMany()
-                        .HasForeignKey("RoleId1")
+                        .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

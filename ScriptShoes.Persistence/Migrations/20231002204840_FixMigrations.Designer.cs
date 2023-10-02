@@ -13,8 +13,8 @@ using ScriptShoes.Persistence.Database;
 namespace ScriptShoes.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231001144417_AddRemainingDbSets")]
-    partial class AddRemainingDbSets
+    [Migration("20231002204840_FixMigrations")]
+    partial class FixMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,9 +28,11 @@ namespace ScriptShoes.Persistence.Migrations
 
             modelBuilder.Entity("ScriptShoes.Domain.Cart", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
@@ -38,26 +40,24 @@ namespace ScriptShoes.Persistence.Migrations
                     b.Property<DateTime>("LastModified")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("ShoeId")
-                        .HasColumnType("uuid");
+                    b.Property<int>("ShoeId")
+                        .HasColumnType("integer");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ShoeId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Carts");
                 });
 
             modelBuilder.Entity("ScriptShoes.Domain.EmailCode", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -72,21 +72,21 @@ namespace ScriptShoes.Persistence.Migrations
                     b.Property<DateTime>("LastModified")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("EmailCodes");
                 });
 
             modelBuilder.Entity("ScriptShoes.Domain.Favorite", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
@@ -94,26 +94,24 @@ namespace ScriptShoes.Persistence.Migrations
                     b.Property<DateTime>("LastModified")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("ShoeId")
-                        .HasColumnType("uuid");
+                    b.Property<int>("ShoeId")
+                        .HasColumnType("integer");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ShoeId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Favorites");
                 });
 
             modelBuilder.Entity("ScriptShoes.Domain.Review", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
@@ -132,8 +130,8 @@ namespace ScriptShoes.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -168,24 +166,26 @@ namespace ScriptShoes.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2023, 10, 1, 14, 44, 17, 369, DateTimeKind.Utc).AddTicks(5970),
-                            LastModified = new DateTime(2023, 10, 1, 14, 44, 17, 369, DateTimeKind.Utc).AddTicks(5973),
+                            Created = new DateTime(2023, 10, 2, 20, 48, 40, 187, DateTimeKind.Utc).AddTicks(3490),
+                            LastModified = new DateTime(2023, 10, 2, 20, 48, 40, 187, DateTimeKind.Utc).AddTicks(3491),
                             Name = "User"
                         },
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2023, 10, 1, 14, 44, 17, 369, DateTimeKind.Utc).AddTicks(5974),
-                            LastModified = new DateTime(2023, 10, 1, 14, 44, 17, 369, DateTimeKind.Utc).AddTicks(5974),
+                            Created = new DateTime(2023, 10, 2, 20, 48, 40, 187, DateTimeKind.Utc).AddTicks(3492),
+                            LastModified = new DateTime(2023, 10, 2, 20, 48, 40, 187, DateTimeKind.Utc).AddTicks(3493),
                             Name = "Admin"
                         });
                 });
 
             modelBuilder.Entity("ScriptShoes.Domain.Shoe", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<float?>("AverageRating")
                         .HasColumnType("real");
@@ -226,21 +226,21 @@ namespace ScriptShoes.Persistence.Migrations
                     b.Property<string>("ThumbnailImage")
                         .HasColumnType("text");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Shoes");
                 });
 
             modelBuilder.Entity("ScriptShoes.Domain.User", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<float>("AvailableFounds")
                         .HasColumnType("real");
@@ -288,67 +288,7 @@ namespace ScriptShoes.Persistence.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("ScriptShoes.Domain.Cart", b =>
-                {
-                    b.HasOne("ScriptShoes.Domain.Shoe", "Shoe")
-                        .WithMany()
-                        .HasForeignKey("ShoeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ScriptShoes.Domain.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Shoe");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("ScriptShoes.Domain.EmailCode", b =>
-                {
-                    b.HasOne("ScriptShoes.Domain.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("ScriptShoes.Domain.Favorite", b =>
-                {
-                    b.HasOne("ScriptShoes.Domain.Shoe", "Shoe")
-                        .WithMany()
-                        .HasForeignKey("ShoeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ScriptShoes.Domain.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Shoe");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("ScriptShoes.Domain.Review", b =>
-                {
-                    b.HasOne("ScriptShoes.Domain.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("ScriptShoes.Domain.Shoe", b =>
                 {
                     b.HasOne("ScriptShoes.Domain.User", "User")
                         .WithMany()

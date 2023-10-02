@@ -16,5 +16,5 @@ public class Shoe : BaseEntity
     public string? ThumbnailImage { get; set; }
     public List<string>? Images { get; set; }
     
-    public Guid UserId { get; set; }
+    public int UserId { get; set; }
 }

@@ -7,7 +7,7 @@ namespace ScriptShoes.Persistence.Database;
 public class AppDbContext : DbContext
 {
     private readonly bool _isInMemory;
-    public AppDbContext(DbContextOptions<AppDbContext> options, bool isInMemory) : base(options)
+    public AppDbContext(DbContextOptions<AppDbContext> options, bool isInMemory = false) : base(options)
     {
         _isInMemory = isInMemory;
     }
@@ -54,10 +54,10 @@ public class AppDbContext : DbContext
         foreach (var entry in base.ChangeTracker.Entries<BaseEntity>()
                      .Where(q => q.State is EntityState.Added or EntityState.Modified))
         {
-            entry.Entity.LastModified = DateTime.Now;
+            entry.Entity.LastModified = DateTime.UtcNow;
 
             if (entry.State == EntityState.Added)
-                entry.Entity.Created = DateTime.Now;
+                entry.Entity.Created = DateTime.UtcNow;
         }
 
         return base.SaveChangesAsync(cancellationToken);

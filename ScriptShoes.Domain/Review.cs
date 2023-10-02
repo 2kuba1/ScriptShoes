@@ -8,6 +8,6 @@ public class Review : BaseEntity
     public string ReviewDescription { get; set; } = string.Empty;
     public int Likes { get; set; }
 
-    public Guid UserId { get; set; }
+    public int UserId { get; set; }
     public virtual User User { get; set; }
 }
