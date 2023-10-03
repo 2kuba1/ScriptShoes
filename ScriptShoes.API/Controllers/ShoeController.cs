@@ -1,6 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoes.Application.Features.Shoe.Commands;
+using ScriptShoes.Application.Features.Shoe.Commands.CreateShoe;
+using ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes;
 using ScriptShoes.Application.Models.Shoe;
 
 namespace ScriptShoes.API.Controllers;
@@ -22,5 +24,14 @@ public class ShoeController : ControllerBase
     {
         var shoeId = await _mediator.Send(new CreateShoeCommand(dto));
         return Created($"/api/shoe/{shoeId}", null);
+    }
+
+    [HttpGet]
+    [Route("getAll")]
+    public async Task<ActionResult<List<GetShoeDto>>> GetAllShoes()
+    {
+        var shoes = await _mediator.Send(new GetAllShoesQuery());
+
+        return Ok(shoes);
     }
 }

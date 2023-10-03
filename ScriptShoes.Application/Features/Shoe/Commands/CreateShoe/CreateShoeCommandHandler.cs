@@ -2,7 +2,7 @@
 using MediatR;
 using ScriptShoes.Application.Contracts.Persistence;
 
-namespace ScriptShoes.Application.Features.Shoe.Commands;
+namespace ScriptShoes.Application.Features.Shoe.Commands.CreateShoe;
 
 public class CreateShoeCommandHandler : IRequestHandler<CreateShoeCommand, int>
 {
