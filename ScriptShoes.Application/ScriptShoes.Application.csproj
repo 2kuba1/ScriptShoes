@@ -19,7 +19,11 @@
 
     <ItemGroup>
       <ProjectReference Include="..\ScriptShoes.Domain\ScriptShoes.Domain.csproj" />
+
+
+
     </ItemGroup>
+
 
 
 
