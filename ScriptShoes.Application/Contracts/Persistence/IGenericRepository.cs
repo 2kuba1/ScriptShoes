@@ -1,4 +1,4 @@
-﻿using ScriptShoes.Domain.Common;
+﻿using ScriptShoes.Domain.Entities.Common;
 
 namespace ScriptShoes.Application.Contracts.Persistence;
 

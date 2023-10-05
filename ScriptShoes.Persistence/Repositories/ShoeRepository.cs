@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Domain;
+using ScriptShoes.Domain.Entities;
 using ScriptShoes.Domain.Exceptions;
 using ScriptShoes.Persistence.Database;
 

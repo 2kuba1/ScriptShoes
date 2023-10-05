@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ScriptShoes.Domain;
+using ScriptShoes.Domain.Entities;
 
 namespace ScriptShoes.Persistence.Configurations;
 

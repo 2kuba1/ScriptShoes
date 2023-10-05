@@ -15,7 +15,7 @@ public class CreateShoeCommandHandler : IRequestHandler<CreateShoeCommand, int>
     
     public async Task<int> Handle(CreateShoeCommand request, CancellationToken cancellationToken)
     {
-        var shoe = request.Dto.Adapt<Domain.Shoe>();
+        var shoe = request.Dto.Adapt<Domain.Entities.Shoe>();
         
         shoe.UserId = 1;
         

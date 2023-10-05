@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ScriptShoes.Domain;
+using ScriptShoes.Domain.Entities;
 using ScriptShoes.Persistence.Database;
 using Shouldly;
 

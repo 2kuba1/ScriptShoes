@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ScriptShoes.Application.Contracts.Persistence;
-using ScriptShoes.Domain.Common;
+using ScriptShoes.Domain.Entities.Common;
 using ScriptShoes.Persistence.Database;
 
 namespace ScriptShoes.Persistence.Repositories;
