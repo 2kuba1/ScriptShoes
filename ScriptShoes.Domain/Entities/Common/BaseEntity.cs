@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ScriptShoes.Domain.Common;
+﻿namespace ScriptShoes.Domain.Entities.Common;
 
 public abstract class BaseEntity
 {

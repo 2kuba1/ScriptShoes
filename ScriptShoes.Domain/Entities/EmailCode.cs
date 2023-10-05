@@ -1,6 +1,6 @@
-﻿using ScriptShoes.Domain.Common;
+﻿using ScriptShoes.Domain.Entities.Common;
 
-namespace ScriptShoes.Domain;
+namespace ScriptShoes.Domain.Entities;
 
 public class EmailCode : BaseEntity
 {
