@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ScriptShoes.Application.Features.Shoe.Commands;
 using ScriptShoes.Application.Features.Shoe.Commands.CreateShoe;
 using ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes;
+using ScriptShoes.Application.Features.Shoe.Queries.GetFiltersQuery;
 using ScriptShoes.Application.Features.Shoe.Queries.GetShoeById;
 using ScriptShoes.Application.Models.Shoe;
 
@@ -43,5 +44,14 @@ public class ShoeController : ControllerBase
         var shoe= await _mediator.Send(new GetShoeByIdQuery(id));
 
         return Ok(shoe);
+    }
+
+    [HttpGet]
+    [Route("getFilters")]
+    public async Task<ActionResult<GetFiltersDto>> GetFilters()
+    {
+        var filter = await _mediator.Send(new GetFiltersQuery());
+
+        return Ok(filter);
     }
 }
