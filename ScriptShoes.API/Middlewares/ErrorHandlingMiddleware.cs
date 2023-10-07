@@ -1,4 +1,6 @@
-﻿namespace ScriptShoes.API.Middlewares;
+﻿using ScriptShoes.Domain.Exceptions;
+
+namespace ScriptShoes.API.Middlewares;
 
 public class ErrorHandlingMiddleware : IMiddleware
 {
@@ -15,6 +17,12 @@ public class ErrorHandlingMiddleware : IMiddleware
         {
             _logger.LogInformation($"{context.Request.Path} has been invoked");
             await next(context);
+        }
+        catch (NotFoundException e)
+        {
+            context.Response.StatusCode = 404;
+            _logger.LogInformation(e.Message);
+            await context.Response.WriteAsJsonAsync(e.Message);
         }
         catch (Exception e)
         {
