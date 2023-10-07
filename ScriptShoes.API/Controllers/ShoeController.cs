@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoes.Application.Features.Shoe.Commands.CreateShoe;
 using ScriptShoes.Application.Features.Shoe.Commands.DeleteShoe;
+using ScriptShoes.Application.Features.Shoe.Commands.DeleteShoeImages;
 using ScriptShoes.Application.Features.Shoe.Commands.UpdateShoe;
 using ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes;
 using ScriptShoes.Application.Features.Shoe.Queries.GetFilters;
@@ -57,6 +58,14 @@ public class ShoeController : ControllerBase
         return Ok(filter);
     }
 
+    [HttpPut]
+    [Route("update")]
+    public async Task<ActionResult> UpdateShoe([FromQuery] int id, [FromBody] UpdateShoeDto dto)
+    {
+        await _mediator.Send(new UpdateShoeCommand(id, dto));
+        return NoContent();
+    }
+
     [HttpDelete]
     [Route("delete")]
     public async Task<ActionResult> DeleteShoe([FromQuery] int id)
@@ -65,11 +74,11 @@ public class ShoeController : ControllerBase
         return Ok();
     }
 
-    [HttpPut]
-    [Route("update")]
-    public async Task<ActionResult> UpdateShoe([FromQuery] int id, [FromBody] UpdateShoeDto dto)
+    [HttpDelete]
+    [Route("deleteImages")]
+    public async Task<ActionResult> DeleteShoeImages([FromQuery] int id, [FromBody] List<int> imageIndexes)
     {
-        await _mediator.Send(new UpdateShoeCommand(id, dto));
-        return NoContent();
+        await _mediator.Send(new DeleteShoeImagesCommand(id, imageIndexes));
+        return Ok();
     }
 }
