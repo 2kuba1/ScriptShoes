@@ -48,6 +48,7 @@ public class ShoeController : ControllerBase
 
     [HttpGet]
     [Route("getFilters")]
+    [ResponseCache(VaryByHeader = "User-Agent", Duration = 86400)]
     public async Task<ActionResult<GetFiltersDto>> GetFilters()
     {
         var filter = await _mediator.Send(new GetFiltersQuery());
