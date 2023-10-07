@@ -1,0 +1,42 @@
+2023-10-07 13:34:05.2680|0|DEBUG|Program|init main |url: |action: 
+2023-10-07 13:35:25.8765|0|DEBUG|Program|init main |url: |action: 
+2023-10-07 13:35:25.9715|0|ERROR|Program|Stopped program because of exception System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes.GetAllShoesQuery,System.Collections.Generic.List`1[ScriptShoes.Application.Models.Shoe.GetShoeDto]] Lifetime: Transient ImplementationType: ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes.GetAllShoesQueryHandler': Unable to resolve service for type 'NLog.ILogger' while attempting to activate 'ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes.GetAllShoesQueryHandler'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'NLog.ILogger' while attempting to activate 'ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes.GetAllShoesQueryHandler'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)|url: |action: 
+2023-10-07 13:35:56.0769|0|DEBUG|Program|init main |url: |action: 
+2023-10-07 13:35:56.1745|0|ERROR|Program|Stopped program because of exception System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes.GetAllShoesQuery,System.Collections.Generic.List`1[ScriptShoes.Application.Models.Shoe.GetShoeDto]] Lifetime: Transient ImplementationType: ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes.GetAllShoesQueryHandler': Unable to resolve service for type 'NLog.ILogger' while attempting to activate 'ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes.GetAllShoesQueryHandler'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'NLog.ILogger' while attempting to activate 'ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes.GetAllShoesQueryHandler'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)|url: |action: 
+2023-10-07 13:36:48.3755|0|DEBUG|Program|init main |url: |action: 
+2023-10-07 13:36:48.4637|0|ERROR|Program|Stopped program because of exception System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes.GetAllShoesQuery,System.Collections.Generic.List`1[ScriptShoes.Application.Models.Shoe.GetShoeDto]] Lifetime: Transient ImplementationType: ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes.GetAllShoesQueryHandler': Unable to resolve service for type 'NLog.ILogger' while attempting to activate 'ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes.GetAllShoesQueryHandler'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'NLog.ILogger' while attempting to activate 'ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes.GetAllShoesQueryHandler'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)|url: |action: 
+2023-10-07 13:38:29.7955|0|DEBUG|Program|init main |url: |action: 
+2023-10-07 13:38:29.9763|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-07 13:38:29.9763|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-07 13:38:29.9763|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-07 13:38:29.9763|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-07 13:38:34.8591|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-07 13:38:36.0197|0|DEBUG|ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes.GetAllShoesQueryHandler|HEllo! |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-07 13:39:40.5365|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
