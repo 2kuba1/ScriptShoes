@@ -726,3 +726,314 @@ FROM "Shoes" AS s
 2023-10-07 14:53:49.7692|7|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMU76HGIE5PM" sending FIN because: "The Socket transport's send loop completed gracefully." 
 2023-10-07 14:53:49.7692|7|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMU76HGIE5PL" sending FIN because: "The Socket transport's send loop completed gracefully." 
 2023-10-07 14:53:49.7794|4|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopped 
+2023-10-07 18:21:14.0939|0|DEBUG|Program|init main 
+2023-10-07 18:21:14.2591|12|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory|Registered model binder providers, in the following order: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider 
+2023-10-07 18:21:14.2953|1|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting starting 
+2023-10-07 18:21:14.3296|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 
+2023-10-07 18:21:14.3296|13|DEBUG|Microsoft.AspNetCore.Hosting.Diagnostics|Loaded hosting startup assembly ScriptShoes.API 
+2023-10-07 18:21:14.3296|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2023-10-07 18:21:14.3296|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2023-10-07 18:21:14.3296|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API 
+2023-10-07 18:21:14.3296|2|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting started 
+2023-10-07 18:21:14.4850|6|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMU7A5MMFDA2" received FIN. 
+2023-10-07 18:21:14.4850|39|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMU7A5MMFDA2" accepted. 
+2023-10-07 18:21:14.4850|1|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMU7A5MMFDA2" started. 
+2023-10-07 18:21:14.4968|7|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMU7A5MMFDA2" sending FIN because: "The Socket transport's send loop completed gracefully." 
+2023-10-07 18:21:14.4968|10|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMU7A5MMFDA2" disconnecting. 
+2023-10-07 18:21:14.4968|2|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMU7A5MMFDA2" stopped. 
+2023-10-07 18:21:14.5774|39|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMU7A5MMFDA3" accepted. 
+2023-10-07 18:21:14.5774|39|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMU7A5MMFDA4" accepted. 
+2023-10-07 18:21:14.5774|1|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMU7A5MMFDA4" started. 
+2023-10-07 18:21:14.5774|1|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMU7A5MMFDA3" started. 
+2023-10-07 18:21:14.6077|1|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5013/swagger/index.html - - 
+2023-10-07 18:21:14.6077|0|DEBUG|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|Wildcard detected, all requests with hosts will be allowed. 
+2023-10-07 18:21:14.6077|2|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed. 
+2023-10-07 18:21:14.6383|1000|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|No candidates found for the request path '/swagger/index.html' 
+2023-10-07 18:21:14.6383|2|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request did not match any endpoints 
+2023-10-07 18:21:14.7394|9|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMU7A5MMFDA3" completed keep alive response. 
+2023-10-07 18:21:14.7394|2|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5013/swagger/index.html - - - 200 - text/html;charset=utf-8 134.9002ms 
+2023-10-07 18:21:15.0755|1|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5013/swagger/v1/swagger.json - - 
+2023-10-07 18:21:15.0755|2|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed. 
+2023-10-07 18:21:15.0755|1000|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|No candidates found for the request path '/swagger/v1/swagger.json' 
+2023-10-07 18:21:15.0755|2|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request did not match any endpoints 
+2023-10-07 18:21:15.1860|9|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMU7A5MMFDA3" completed keep alive response. 
+2023-10-07 18:21:15.1860|2|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5013/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 110.6828ms 
+2023-10-07 18:21:18.2193|1|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5013/api/shoe/getAll - - 
+2023-10-07 18:21:18.2193|2|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed. 
+2023-10-07 18:21:18.2193|1001|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|1 candidate(s) found for the request path '/api/shoe/getAll' 
+2023-10-07 18:21:18.2193|1005|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|Endpoint 'ScriptShoes.API.Controllers.ShoeController.GetAllShoes (ScriptShoes.API)' with route pattern 'api/shoe/getAll' is valid for the request path '/api/shoe/getAll' 
+2023-10-07 18:21:18.2193|1|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request matched endpoint 'ScriptShoes.API.Controllers.ShoeController.GetAllShoes (ScriptShoes.API)' 
+2023-10-07 18:21:18.2316|15|DEBUG|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Static files was skipped as the request already matched an endpoint. 
+2023-10-07 18:21:18.2316|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. 
+2023-10-07 18:21:18.2316|24|INFO|Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware|No cached response available for this request. 
+2023-10-07 18:21:18.2456|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'ScriptShoes.API.Controllers.ShoeController.GetAllShoes (ScriptShoes.API)' 
+2023-10-07 18:21:18.2661|102|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "GetAllShoes", controller = "Shoe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[ScriptShoes.Application.Models.Shoe.GetShoeDto]]] GetAllShoes() on controller ScriptShoes.API.Controllers.ShoeController (ScriptShoes.API). 
+2023-10-07 18:21:18.2661|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of authorization filters (in the following order): None 
+2023-10-07 18:21:18.2661|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of resource filters (in the following order): None 
+2023-10-07 18:21:18.2661|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) 
+2023-10-07 18:21:18.2661|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of exception filters (in the following order): None 
+2023-10-07 18:21:18.2661|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) 
+2023-10-07 18:21:18.2661|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executing controller factory for controller ScriptShoes.API.Controllers.ShoeController (ScriptShoes.API) 
+2023-10-07 18:21:18.2661|2|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed controller factory for controller ScriptShoes.API.Controllers.ShoeController (ScriptShoes.API) 
+2023-10-07 18:21:18.2661|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-10-07 18:21:18.2661|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-10-07 18:21:18.2661|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-10-07 18:21:18.2661|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-10-07 18:21:18.2661|101|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executing action method ScriptShoes.API.Controllers.ShoeController.GetAllShoes (ScriptShoes.API) - Validation state: Valid 
+2023-10-07 18:21:18.4484|10401|DEBUG|Microsoft.EntityFrameworkCore.Infrastructure|An 'IServiceProvider' was created for internal use by Entity Framework. 
+2023-10-07 18:21:19.1562|10403|DEBUG|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 7.0.11 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:7.0.11+c25a0d7b68d66c6ab3849a3b4333964faea6adc9' with options: None 
+2023-10-07 18:21:19.1847|10111|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<Shoe>()
+    .AsNoTracking()' 
+2023-10-07 18:21:19.2961|10107|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Shoe>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Shoe.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Shoe.AverageRating (float?), 1], [Property: Shoe.Brand (string) Required, 2], [Property: Shoe.Created (DateTime) Required, 3], [Property: Shoe.CurrentPrice (float) Required, 4], [Property: Shoe.Images (List<string>), 5], [Property: Shoe.LastModified (DateTime) Required, 6], [Property: Shoe.NumberOfReviews (int?), 7], [Property: Shoe.PriceBeforeDiscount (float?), 8], [Property: Shoe.ShoeName (string) Required, 9], [Property: Shoe.ShoeSizes (List<float>), 10], [Property: Shoe.ShoeType (string) Required, 11], [Property: Shoe.ThumbnailImage (string), 12], [Property: Shoe.UserId (int) Required, 13] }
+        SELECT s.Id, s.AverageRating, s.Brand, s.Created, s.CurrentPrice, s.Images, s.LastModified, s.NumberOfReviews, s.PriceBeforeDiscount, s.ShoeName, s.ShoeSizes, s.ShoeType, s.ThumbnailImage, s.UserId
+        FROM Shoes AS s), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Shoe>, 
+    ScriptShoes.Persistence.Database.AppDbContext, 
+    False, 
+    False, 
+    True
+)' 
+2023-10-07 18:21:19.3201|20103|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'. 
+2023-10-07 18:21:19.3201|20005|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Creating DbConnection. 
+2023-10-07 18:21:19.3501|20006|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Created DbConnection. (26ms). 
+2023-10-07 18:21:19.3552|20104|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (34ms). 
+2023-10-07 18:21:19.3552|20106|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (38ms). 
+2023-10-07 18:21:19.3552|20000|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Opening connection to database 'ScriptShoesDb' on server ''. 
+2023-10-07 18:21:19.5385|20001|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Opened connection to database 'ScriptShoesDb' on server 'tcp://localhost:5432'. 
+2023-10-07 18:21:19.5514|20100|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT s."Id", s."AverageRating", s."Brand", s."Created", s."CurrentPrice", s."Images", s."LastModified", s."NumberOfReviews", s."PriceBeforeDiscount", s."ShoeName", s."ShoeSizes", s."ShoeType", s."ThumbnailImage", s."UserId"
+FROM "Shoes" AS s 
+2023-10-07 18:21:19.5825|20101|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (31ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT s."Id", s."AverageRating", s."Brand", s."Created", s."CurrentPrice", s."Images", s."LastModified", s."NumberOfReviews", s."PriceBeforeDiscount", s."ShoeName", s."ShoeSizes", s."ShoeType", s."ThumbnailImage", s."UserId"
+FROM "Shoes" AS s 
+2023-10-07 18:21:19.6157|20301|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'ScriptShoesDb' on server 'tcp://localhost:5432'. 
+2023-10-07 18:21:19.6238|20300|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'ScriptShoesDb' on server 'tcp://localhost:5432' is being disposed after spending 34ms reading results. 
+2023-10-07 18:21:19.6238|20002|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Closing connection to database 'ScriptShoesDb' on server 'tcp://localhost:5432'. 
+2023-10-07 18:21:19.6238|20003|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Closed connection to database 'ScriptShoesDb' on server '' (5ms). 
+2023-10-07 18:21:19.7307|103|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action method ScriptShoes.API.Controllers.ShoeController.GetAllShoes (ScriptShoes.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1454.3931ms. 
+2023-10-07 18:21:19.7307|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-10-07 18:21:19.7307|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-10-07 18:21:19.7307|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-10-07 18:21:19.7307|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-10-07 18:21:19.7307|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2023-10-07 18:21:19.7307|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2023-10-07 18:21:19.7307|5|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Before executing action result Microsoft.AspNetCore.Mvc.OkObjectResult. 
+2023-10-07 18:21:19.7307|11|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter 
+2023-10-07 18:21:19.7307|6|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|Attempting to select an output formatter based on Accept header 'text/plain'. 
+2023-10-07 18:21:19.7307|5|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|Could not find an output formatter based on content negotiation. Accepted types were (text/plain) 
+2023-10-07 18:21:19.7307|8|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|Attempting to select an output formatter without using a content type as no explicit content types were specified for the response. 
+2023-10-07 18:21:19.7307|10|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|Attempting to select the first formatter in the output formatters list which can write the result. 
+2023-10-07 18:21:19.7307|2|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response. 
+2023-10-07 18:21:19.7307|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ScriptShoes.Application.Models.Shoe.GetShoeDto, ScriptShoes.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2023-10-07 18:21:19.7672|11|DEBUG|Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware|Response is not cacheable because it does not contain the 'public' cache directive. 
+2023-10-07 18:21:19.7672|6|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|After executing action result Microsoft.AspNetCore.Mvc.OkObjectResult. 
+2023-10-07 18:21:19.7672|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2023-10-07 18:21:19.7672|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2023-10-07 18:21:19.7672|105|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action ScriptShoes.API.Controllers.ShoeController.GetAllShoes (ScriptShoes.API) in 1501.3827ms 
+2023-10-07 18:21:19.7672|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'ScriptShoes.API.Controllers.ShoeController.GetAllShoes (ScriptShoes.API)' 
+2023-10-07 18:21:19.7672|27|INFO|Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware|The response could not be cached for this request. 
+2023-10-07 18:21:19.7672|9|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMU7A5MMFDA3" completed keep alive response. 
+2023-10-07 18:21:19.7788|10407|DEBUG|Microsoft.EntityFrameworkCore.Infrastructure|'AppDbContext' disposed. 
+2023-10-07 18:21:19.7788|20007|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Disposing connection to database 'ScriptShoesDb' on server ''. 
+2023-10-07 18:21:19.7788|20008|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Disposed connection to database 'ScriptShoesDb' on server '' (2ms). 
+2023-10-07 18:21:19.7788|2|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5013/api/shoe/getAll - - - 200 - application/json;+charset=utf-8 1566.5415ms 
+2023-10-07 18:21:28.7401|1|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 DELETE http://localhost:5013/api/shoe/delete/2 - - 
+2023-10-07 18:21:28.7401|2|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed. 
+2023-10-07 18:21:28.7401|1001|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|1 candidate(s) found for the request path '/api/shoe/delete/2' 
+2023-10-07 18:21:28.7401|1005|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|Endpoint 'ScriptShoes.API.Controllers.ShoeController.DeleteShoe (ScriptShoes.API)' with route pattern 'api/shoe/delete/{id:int}' is valid for the request path '/api/shoe/delete/2' 
+2023-10-07 18:21:28.7401|1|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request matched endpoint 'ScriptShoes.API.Controllers.ShoeController.DeleteShoe (ScriptShoes.API)' 
+2023-10-07 18:21:28.7401|15|DEBUG|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Static files was skipped as the request already matched an endpoint. 
+2023-10-07 18:21:28.7401|2|DEBUG|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|The request has an origin header: 'http://localhost:5013'. 
+2023-10-07 18:21:28.7401|4|INFO|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CORS policy execution successful. 
+2023-10-07 18:21:28.7401|1|DEBUG|Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware|The request cannot be served from cache because it uses the HTTP method: DELETE. 
+2023-10-07 18:21:28.7401|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'ScriptShoes.API.Controllers.ShoeController.DeleteShoe (ScriptShoes.API)' 
+2023-10-07 18:21:28.7508|102|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "DeleteShoe", controller = "Shoe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] DeleteShoe(Int32) on controller ScriptShoes.API.Controllers.ShoeController (ScriptShoes.API). 
+2023-10-07 18:21:28.7508|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of authorization filters (in the following order): None 
+2023-10-07 18:21:28.7508|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of resource filters (in the following order): None 
+2023-10-07 18:21:28.7508|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) 
+2023-10-07 18:21:28.7508|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of exception filters (in the following order): None 
+2023-10-07 18:21:28.7508|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) 
+2023-10-07 18:21:28.7508|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executing controller factory for controller ScriptShoes.API.Controllers.ShoeController (ScriptShoes.API) 
+2023-10-07 18:21:28.7508|2|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed controller factory for controller ScriptShoes.API.Controllers.ShoeController (ScriptShoes.API) 
+2023-10-07 18:21:28.7508|22|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|Attempting to bind parameter 'id' of type 'System.Int32' ... 
+2023-10-07 18:21:28.7508|44|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder|Attempting to bind parameter 'id' of type 'System.Int32' using the name 'id' in request data ... 
+2023-10-07 18:21:28.7508|45|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder|Done attempting to bind parameter 'id' of type 'System.Int32'. 
+2023-10-07 18:21:28.7508|23|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|Done attempting to bind parameter 'id' of type 'System.Int32'. 
+2023-10-07 18:21:28.7508|26|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|Attempting to validate the bound parameter 'id' of type 'System.Int32' ... 
+2023-10-07 18:21:28.7508|27|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|Done attempting to validate the bound parameter 'id' of type 'System.Int32'. 
+2023-10-07 18:21:28.7508|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-10-07 18:21:28.7614|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-10-07 18:21:28.7614|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-10-07 18:21:28.7614|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-10-07 18:21:28.7614|101|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executing action method ScriptShoes.API.Controllers.ShoeController.DeleteShoe (ScriptShoes.API) - Validation state: Valid 
+2023-10-07 18:21:28.7614|102|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executing action method ScriptShoes.API.Controllers.ShoeController.DeleteShoe (ScriptShoes.API) with arguments (2) 
+2023-10-07 18:21:28.8055|10403|DEBUG|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 7.0.11 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:7.0.11+c25a0d7b68d66c6ab3849a3b4333964faea6adc9' with options: None 
+2023-10-07 18:21:28.8130|10111|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<Shoe>()
+    .AsNoTracking()
+    .FirstOrDefault(x => x.Id == __id_0)' 
+2023-10-07 18:21:28.8630|10107|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<Shoe>(
+    asyncEnumerable: new SingleQueryingEnumerable<Shoe>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Shoe.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Shoe.AverageRating (float?), 1], [Property: Shoe.Brand (string) Required, 2], [Property: Shoe.Created (DateTime) Required, 3], [Property: Shoe.CurrentPrice (float) Required, 4], [Property: Shoe.Images (List<string>), 5], [Property: Shoe.LastModified (DateTime) Required, 6], [Property: Shoe.NumberOfReviews (int?), 7], [Property: Shoe.PriceBeforeDiscount (float?), 8], [Property: Shoe.ShoeName (string) Required, 9], [Property: Shoe.ShoeSizes (List<float>), 10], [Property: Shoe.ShoeType (string) Required, 11], [Property: Shoe.ThumbnailImage (string), 12], [Property: Shoe.UserId (int) Required, 13] }
+            SELECT TOP(1) s.Id, s.AverageRating, s.Brand, s.Created, s.CurrentPrice, s.Images, s.LastModified, s.NumberOfReviews, s.PriceBeforeDiscount, s.ShoeName, s.ShoeSizes, s.ShoeType, s.ThumbnailImage, s.UserId
+            FROM Shoes AS s
+            WHERE s.Id == @__id_0), 
+        null, 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Shoe>, 
+        ScriptShoes.Persistence.Database.AppDbContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)' 
+2023-10-07 18:21:28.8630|20103|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'. 
+2023-10-07 18:21:28.8706|20005|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Creating DbConnection. 
+2023-10-07 18:21:28.8706|20006|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Created DbConnection. (0ms). 
+2023-10-07 18:21:28.8706|20104|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms). 
+2023-10-07 18:21:28.8706|20106|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (2ms). 
+2023-10-07 18:21:28.8706|20000|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Opening connection to database 'ScriptShoesDb' on server ''. 
+2023-10-07 18:21:28.8706|20001|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Opened connection to database 'ScriptShoesDb' on server 'tcp://localhost:5432'. 
+2023-10-07 18:21:28.8706|20100|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT s."Id", s."AverageRating", s."Brand", s."Created", s."CurrentPrice", s."Images", s."LastModified", s."NumberOfReviews", s."PriceBeforeDiscount", s."ShoeName", s."ShoeSizes", s."ShoeType", s."ThumbnailImage", s."UserId"
+FROM "Shoes" AS s
+WHERE s."Id" = @__id_0
+LIMIT 1 
+2023-10-07 18:21:28.8706|20101|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (11ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT s."Id", s."AverageRating", s."Brand", s."Created", s."CurrentPrice", s."Images", s."LastModified", s."NumberOfReviews", s."PriceBeforeDiscount", s."ShoeName", s."ShoeSizes", s."ShoeType", s."ThumbnailImage", s."UserId"
+FROM "Shoes" AS s
+WHERE s."Id" = @__id_0
+LIMIT 1 
+2023-10-07 18:21:28.8706|20301|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'ScriptShoesDb' on server 'tcp://localhost:5432'. 
+2023-10-07 18:21:28.8706|20300|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'ScriptShoesDb' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results. 
+2023-10-07 18:21:28.8706|20002|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Closing connection to database 'ScriptShoesDb' on server 'tcp://localhost:5432'. 
+2023-10-07 18:21:28.8866|20003|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Closed connection to database 'ScriptShoesDb' on server '' (0ms). 
+2023-10-07 18:21:28.9393|10806|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|Context 'AppDbContext' started tracking 'Shoe' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values. 
+2023-10-07 18:21:28.9393|10807|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|An entity of type 'Shoe' tracked by 'AppDbContext' changed state from 'Unchanged' to 'Deleted'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values. 
+2023-10-07 18:21:28.9393|10800|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|DetectChanges starting for 'AppDbContext'. 
+2023-10-07 18:21:28.9626|10801|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|DetectChanges completed for 'AppDbContext'. 
+2023-10-07 18:21:28.9657|10004|DEBUG|Microsoft.EntityFrameworkCore.Update|SaveChanges starting for 'AppDbContext'. 
+2023-10-07 18:21:28.9657|10800|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|DetectChanges starting for 'AppDbContext'. 
+2023-10-07 18:21:28.9657|10801|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|DetectChanges completed for 'AppDbContext'. 
+2023-10-07 18:21:29.0122|20000|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Opening connection to database 'ScriptShoesDb' on server ''. 
+2023-10-07 18:21:29.0122|20001|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Opened connection to database 'ScriptShoesDb' on server 'tcp://localhost:5432'. 
+2023-10-07 18:21:29.0122|20103|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'. 
+2023-10-07 18:21:29.0122|20104|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms). 
+2023-10-07 18:21:29.0122|20106|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms). 
+2023-10-07 18:21:29.0122|20100|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+DELETE FROM "Shoes"
+WHERE "Id" = @p0; 
+2023-10-07 18:21:29.0122|20101|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+DELETE FROM "Shoes"
+WHERE "Id" = @p0; 
+2023-10-07 18:21:29.0122|20301|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'ScriptShoesDb' on server 'tcp://localhost:5432'. 
+2023-10-07 18:21:29.0122|20300|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'ScriptShoesDb' on server 'tcp://localhost:5432' is being disposed after spending 2ms reading results. 
+2023-10-07 18:21:29.0122|20002|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Closing connection to database 'ScriptShoesDb' on server 'tcp://localhost:5432'. 
+2023-10-07 18:21:29.0122|20003|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Closed connection to database 'ScriptShoesDb' on server '' (0ms). 
+2023-10-07 18:21:29.0264|10807|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|An entity of type 'Shoe' tracked by 'AppDbContext' changed state from 'Deleted' to 'Detached'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values. 
+2023-10-07 18:21:29.0264|10005|DEBUG|Microsoft.EntityFrameworkCore.Update|SaveChanges completed for 'AppDbContext' with 1 entities written to the database. 
+2023-10-07 18:21:29.0264|103|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action method ScriptShoes.API.Controllers.ShoeController.DeleteShoe (ScriptShoes.API), returned result Microsoft.AspNetCore.Mvc.OkResult in 268.9023ms. 
+2023-10-07 18:21:29.0264|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-10-07 18:21:29.0264|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-10-07 18:21:29.0264|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-10-07 18:21:29.0264|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-10-07 18:21:29.0264|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2023-10-07 18:21:29.0264|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2023-10-07 18:21:29.0264|5|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Before executing action result Microsoft.AspNetCore.Mvc.OkResult. 
+2023-10-07 18:21:29.0264|1|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing StatusCodeResult, setting HTTP status code 200 
+2023-10-07 18:21:29.0264|6|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|After executing action result Microsoft.AspNetCore.Mvc.OkResult. 
+2023-10-07 18:21:29.0264|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2023-10-07 18:21:29.0264|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2023-10-07 18:21:29.0264|105|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action ScriptShoes.API.Controllers.ShoeController.DeleteShoe (ScriptShoes.API) in 280.4492ms 
+2023-10-07 18:21:29.0264|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'ScriptShoes.API.Controllers.ShoeController.DeleteShoe (ScriptShoes.API)' 
+2023-10-07 18:21:29.0264|9|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMU7A5MMFDA3" completed keep alive response. 
+2023-10-07 18:21:29.0264|10407|DEBUG|Microsoft.EntityFrameworkCore.Infrastructure|'AppDbContext' disposed. 
+2023-10-07 18:21:29.0264|20007|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Disposing connection to database 'ScriptShoesDb' on server ''. 
+2023-10-07 18:21:29.0264|20008|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Disposed connection to database 'ScriptShoesDb' on server '' (0ms). 
+2023-10-07 18:21:29.0264|2|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 DELETE http://localhost:5013/api/shoe/delete/2 - - - 200 0 - 292.4318ms 
+2023-10-07 18:21:32.3814|1|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5013/api/shoe/getAll - - 
+2023-10-07 18:21:32.3814|2|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed. 
+2023-10-07 18:21:32.3814|1001|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|1 candidate(s) found for the request path '/api/shoe/getAll' 
+2023-10-07 18:21:32.3814|1005|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|Endpoint 'ScriptShoes.API.Controllers.ShoeController.GetAllShoes (ScriptShoes.API)' with route pattern 'api/shoe/getAll' is valid for the request path '/api/shoe/getAll' 
+2023-10-07 18:21:32.3814|1|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request matched endpoint 'ScriptShoes.API.Controllers.ShoeController.GetAllShoes (ScriptShoes.API)' 
+2023-10-07 18:21:32.3814|15|DEBUG|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Static files was skipped as the request already matched an endpoint. 
+2023-10-07 18:21:32.3890|24|INFO|Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware|No cached response available for this request. 
+2023-10-07 18:21:32.3890|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'ScriptShoes.API.Controllers.ShoeController.GetAllShoes (ScriptShoes.API)' 
+2023-10-07 18:21:32.3890|102|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "GetAllShoes", controller = "Shoe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[ScriptShoes.Application.Models.Shoe.GetShoeDto]]] GetAllShoes() on controller ScriptShoes.API.Controllers.ShoeController (ScriptShoes.API). 
+2023-10-07 18:21:32.3890|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of authorization filters (in the following order): None 
+2023-10-07 18:21:32.3890|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of resource filters (in the following order): None 
+2023-10-07 18:21:32.3890|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) 
+2023-10-07 18:21:32.3890|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of exception filters (in the following order): None 
+2023-10-07 18:21:32.3890|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) 
+2023-10-07 18:21:32.3890|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executing controller factory for controller ScriptShoes.API.Controllers.ShoeController (ScriptShoes.API) 
+2023-10-07 18:21:32.3890|2|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed controller factory for controller ScriptShoes.API.Controllers.ShoeController (ScriptShoes.API) 
+2023-10-07 18:21:32.3890|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-10-07 18:21:32.3890|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-10-07 18:21:32.3890|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-10-07 18:21:32.3890|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-10-07 18:21:32.3890|101|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executing action method ScriptShoes.API.Controllers.ShoeController.GetAllShoes (ScriptShoes.API) - Validation state: Valid 
+2023-10-07 18:21:32.3890|10403|DEBUG|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 7.0.11 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:7.0.11+c25a0d7b68d66c6ab3849a3b4333964faea6adc9' with options: None 
+2023-10-07 18:21:32.3890|20103|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'. 
+2023-10-07 18:21:32.3890|20005|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Creating DbConnection. 
+2023-10-07 18:21:32.3890|20006|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Created DbConnection. (0ms). 
+2023-10-07 18:21:32.3890|20104|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms). 
+2023-10-07 18:21:32.3890|20106|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms). 
+2023-10-07 18:21:32.3890|20000|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Opening connection to database 'ScriptShoesDb' on server ''. 
+2023-10-07 18:21:32.3890|20001|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Opened connection to database 'ScriptShoesDb' on server 'tcp://localhost:5432'. 
+2023-10-07 18:21:32.3890|20100|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT s."Id", s."AverageRating", s."Brand", s."Created", s."CurrentPrice", s."Images", s."LastModified", s."NumberOfReviews", s."PriceBeforeDiscount", s."ShoeName", s."ShoeSizes", s."ShoeType", s."ThumbnailImage", s."UserId"
+FROM "Shoes" AS s 
+2023-10-07 18:21:32.3890|20101|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT s."Id", s."AverageRating", s."Brand", s."Created", s."CurrentPrice", s."Images", s."LastModified", s."NumberOfReviews", s."PriceBeforeDiscount", s."ShoeName", s."ShoeSizes", s."ShoeType", s."ThumbnailImage", s."UserId"
+FROM "Shoes" AS s 
+2023-10-07 18:21:32.3890|20301|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'ScriptShoesDb' on server 'tcp://localhost:5432'. 
+2023-10-07 18:21:32.3890|20300|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'ScriptShoesDb' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results. 
+2023-10-07 18:21:32.3890|20002|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Closing connection to database 'ScriptShoesDb' on server 'tcp://localhost:5432'. 
+2023-10-07 18:21:32.3890|20003|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Closed connection to database 'ScriptShoesDb' on server '' (0ms). 
+2023-10-07 18:21:32.3890|103|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action method ScriptShoes.API.Controllers.ShoeController.GetAllShoes (ScriptShoes.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 11.4613ms. 
+2023-10-07 18:21:32.3890|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-10-07 18:21:32.3890|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-10-07 18:21:32.3890|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-10-07 18:21:32.3890|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-10-07 18:21:32.3890|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2023-10-07 18:21:32.3890|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2023-10-07 18:21:32.3890|5|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Before executing action result Microsoft.AspNetCore.Mvc.OkObjectResult. 
+2023-10-07 18:21:32.3890|11|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter 
+2023-10-07 18:21:32.3890|6|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|Attempting to select an output formatter based on Accept header 'text/plain'. 
+2023-10-07 18:21:32.3890|5|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|Could not find an output formatter based on content negotiation. Accepted types were (text/plain) 
+2023-10-07 18:21:32.3890|8|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|Attempting to select an output formatter without using a content type as no explicit content types were specified for the response. 
+2023-10-07 18:21:32.3890|10|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|Attempting to select the first formatter in the output formatters list which can write the result. 
+2023-10-07 18:21:32.3890|2|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response. 
+2023-10-07 18:21:32.3890|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ScriptShoes.Application.Models.Shoe.GetShoeDto, ScriptShoes.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2023-10-07 18:21:32.3890|11|DEBUG|Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware|Response is not cacheable because it does not contain the 'public' cache directive. 
+2023-10-07 18:21:32.3890|6|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|After executing action result Microsoft.AspNetCore.Mvc.OkObjectResult. 
+2023-10-07 18:21:32.3890|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2023-10-07 18:21:32.3890|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2023-10-07 18:21:32.3890|105|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action ScriptShoes.API.Controllers.ShoeController.GetAllShoes (ScriptShoes.API) in 12.3641ms 
+2023-10-07 18:21:32.3890|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'ScriptShoes.API.Controllers.ShoeController.GetAllShoes (ScriptShoes.API)' 
+2023-10-07 18:21:32.3890|27|INFO|Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware|The response could not be cached for this request. 
+2023-10-07 18:21:32.3890|9|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMU7A5MMFDA3" completed keep alive response. 
+2023-10-07 18:21:32.3890|10407|DEBUG|Microsoft.EntityFrameworkCore.Infrastructure|'AppDbContext' disposed. 
+2023-10-07 18:21:32.3890|20007|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Disposing connection to database 'ScriptShoesDb' on server ''. 
+2023-10-07 18:21:32.3890|20008|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Disposed connection to database 'ScriptShoesDb' on server '' (0ms). 
+2023-10-07 18:21:32.3890|2|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5013/api/shoe/getAll - - - 200 - application/json;+charset=utf-8 20.2694ms 
+2023-10-07 18:23:18.1807|6|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMU7A5MMFDA4" received FIN. 
+2023-10-07 18:23:18.1807|7|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMU7A5MMFDA4" sending FIN because: "The Socket transport's send loop completed gracefully." 
+2023-10-07 18:23:18.1807|10|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMU7A5MMFDA4" disconnecting. 
+2023-10-07 18:23:18.1807|2|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMU7A5MMFDA4" stopped. 
+2023-10-07 18:23:42.6319|10|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMU7A5MMFDA3" disconnecting. 
+2023-10-07 18:23:42.6319|2|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMU7A5MMFDA3" stopped. 
+2023-10-07 18:23:42.6319|7|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMU7A5MMFDA3" sending FIN because: "The Socket transport's send loop completed gracefully." 
+2023-10-07 18:49:38.6462|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... 
+2023-10-07 18:49:38.6462|3|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopping 
+2023-10-07 18:49:38.6548|4|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopped 

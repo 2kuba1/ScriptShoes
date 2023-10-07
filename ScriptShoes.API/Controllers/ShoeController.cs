@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using ScriptShoes.Application.Features.Shoe.Commands;
 using ScriptShoes.Application.Features.Shoe.Commands.CreateShoe;
+using ScriptShoes.Application.Features.Shoe.Commands.DeleteShoe;
 using ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes;
 using ScriptShoes.Application.Features.Shoe.Queries.GetFiltersQuery;
 using ScriptShoes.Application.Features.Shoe.Queries.GetShoeById;
@@ -19,7 +19,7 @@ public class ShoeController : ControllerBase
     {
         _mediator = mediator;
     }
-    
+
     [HttpPost]
     [Route("create")]
     public async Task<ActionResult> CreateShoe([FromBody] CreateShoeDto dto)
@@ -41,7 +41,7 @@ public class ShoeController : ControllerBase
     [Route("getById/{id:int}")]
     public async Task<ActionResult<GetShoeDto>> GetById([FromRoute] int id)
     {
-        var shoe= await _mediator.Send(new GetShoeByIdQuery(id));
+        var shoe = await _mediator.Send(new GetShoeByIdQuery(id));
 
         return Ok(shoe);
     }
@@ -54,5 +54,13 @@ public class ShoeController : ControllerBase
         var filter = await _mediator.Send(new GetFiltersQuery());
 
         return Ok(filter);
+    }
+
+    [HttpDelete]
+    [Route("delete/{id:int}")]
+    public async Task<ActionResult> DeleteShoe([FromRoute] int id)
+    {
+        await _mediator.Send(new DeleteShoeCommand(id));
+        return Ok();
     }
 }
