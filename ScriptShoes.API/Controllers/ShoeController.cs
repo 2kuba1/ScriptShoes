@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using ScriptShoes.Application.Features.Shoe.Commands.CreateShoe;
 using ScriptShoes.Application.Features.Shoe.Commands.DeleteShoe;
 using ScriptShoes.Application.Features.Shoe.Commands.UpdateShoe;
-using ScriptShoes.Application.Features.Shoe.Commands.UpdateShoeThumbnail;
 using ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes;
 using ScriptShoes.Application.Features.Shoe.Queries.GetFilters;
 using ScriptShoes.Application.Features.Shoe.Queries.GetShoeById;
@@ -71,14 +70,6 @@ public class ShoeController : ControllerBase
     public async Task<ActionResult> UpdateShoe([FromQuery] int id, [FromBody] UpdateShoeDto dto)
     {
         await _mediator.Send(new UpdateShoeCommand(id, dto));
-        return NoContent();
-    }
-
-    [HttpPut]
-    [Route("updateThumbnailImage")]
-    public async Task<ActionResult> UpdateThumbnail([FromQuery] int id, [FromQuery] string url)
-    {
-        await _mediator.Send(new UpdateShoeThumbnailCommand(id, url));
         return NoContent();
     }
 }

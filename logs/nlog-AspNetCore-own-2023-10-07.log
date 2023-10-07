@@ -179,3 +179,15 @@
 2023-10-07 21:09:45.5631|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/updateThumbnailImage has been invoked |url: http://localhost/api/shoe/updateThumbnailImage|action: UpdateThumbnail
 2023-10-07 21:09:59.6207|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
 2023-10-07 21:10:34.4574|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
+2023-10-07 21:18:13.0657|0|DEBUG|Program|init main |url: |action: 
+2023-10-07 21:18:13.2911|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-07 21:18:13.2911|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-07 21:18:13.2911|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-07 21:18:13.2911|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-07 21:19:07.0179|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/shoe/update|action: UpdateShoe
+2023-10-07 21:19:07.0288|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/update has been invoked |url: http://localhost/api/shoe/update|action: UpdateShoe
+2023-10-07 21:19:15.7973|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/update has been invoked |url: http://localhost/api/shoe/update|action: UpdateShoe
+2023-10-07 21:19:16.9958|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|Shoe not found |url: http://localhost/api/shoe/update|action: UpdateShoe
+2023-10-07 21:19:21.2388|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/update has been invoked |url: http://localhost/api/shoe/update|action: UpdateShoe
+2023-10-07 21:19:24.9655|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-07 21:19:45.8206|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 

@@ -35,6 +35,12 @@ public class UpdateShoeCommandHandler : IRequestHandler<UpdateShoeCommand, Unit>
         if (request.Dto.SizesList is not null)
             shoe.ShoeSizes = request.Dto.SizesList;
 
+        if (request.Dto.Images is not null)
+            shoe.Images?.AddRange(request.Dto.Images);
+
+        if (request.Dto.ThumbnailImage is not null)
+            shoe.ThumbnailImage = request.Dto.ThumbnailImage;
+
         await _repository.UpdateAsync(shoe);
 
         return Unit.Value;
