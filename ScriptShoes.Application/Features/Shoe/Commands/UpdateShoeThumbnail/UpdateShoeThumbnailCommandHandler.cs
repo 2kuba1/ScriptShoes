@@ -2,7 +2,7 @@
 using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Domain.Exceptions;
 
-namespace ScriptShoes.Application.Features.Shoe.Commands.AddShoeThumbnail;
+namespace ScriptShoes.Application.Features.Shoe.Commands.UpdateShoeThumbnail;
 
 public class UpdateShoeThumbnailCommandHandler : IRequestHandler<UpdateShoeThumbnailCommand, Unit>
 {

@@ -1,9 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using ScriptShoes.Application.Features.Shoe.Commands.AddShoeThumbnail;
 using ScriptShoes.Application.Features.Shoe.Commands.CreateShoe;
 using ScriptShoes.Application.Features.Shoe.Commands.DeleteShoe;
 using ScriptShoes.Application.Features.Shoe.Commands.UpdateShoe;
+using ScriptShoes.Application.Features.Shoe.Commands.UpdateShoeThumbnail;
 using ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes;
 using ScriptShoes.Application.Features.Shoe.Queries.GetFilters;
 using ScriptShoes.Application.Features.Shoe.Queries.GetShoeById;
