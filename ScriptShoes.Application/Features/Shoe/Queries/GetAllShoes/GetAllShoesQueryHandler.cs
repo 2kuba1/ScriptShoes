@@ -13,7 +13,7 @@ public class GetAllShoesQueryHandler : IRequestHandler<GetAllShoesQuery, List<Ge
     {
         _repository = repository;
     }
-    
+
     public async Task<List<GetShoeDto>> Handle(GetAllShoesQuery request, CancellationToken cancellationToken)
     {
         var shoes = await _repository.GetAsync();

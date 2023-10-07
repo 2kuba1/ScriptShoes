@@ -40,3 +40,65 @@
 2023-10-07 13:38:34.8591|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/shoe/getAll|action: GetAllShoes
 2023-10-07 13:38:36.0197|0|DEBUG|ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes.GetAllShoesQueryHandler|HEllo! |url: http://localhost/api/shoe/getAll|action: GetAllShoes
 2023-10-07 13:39:40.5365|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
+2023-10-07 14:40:36.8035|0|DEBUG|Program|init main |url: |action: 
+2023-10-07 14:40:37.0395|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-07 14:40:37.0395|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-07 14:40:37.0395|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-07 14:40:37.0395|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-07 14:40:41.5610|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-07 14:40:41.5610|1|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.InvalidOperationException: No service for type 'ScriptShoes.API.Middlewares.ErrorHandlingMiddleware' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Http.MiddlewareFactory.Create(Type middlewareType)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-07 14:40:46.8915|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
+2023-10-07 14:41:28.8064|0|DEBUG|Program|init main |url: |action: 
+2023-10-07 14:41:29.0041|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-07 14:41:29.0041|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-07 14:41:29.0041|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-07 14:41:29.0041|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-07 14:41:34.3392|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-07 14:41:34.3392|1|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.InvalidOperationException: No service for type 'ScriptShoes.API.Middlewares.ErrorHandlingMiddleware' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Http.MiddlewareFactory.Create(Type middlewareType)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-07 14:43:45.8323|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
+2023-10-07 14:43:51.2051|0|DEBUG|Program|init main |url: |action: 
+2023-10-07 14:43:51.4054|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-07 14:43:51.4054|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-07 14:43:51.4054|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-07 14:43:51.4054|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-07 14:43:55.6091|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-07 14:44:15.7018|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
+2023-10-07 14:45:04.0659|0|DEBUG|Program|init main |url: |action: 
+2023-10-07 14:45:04.2507|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-07 14:45:04.2507|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-07 14:45:04.2507|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-07 14:45:04.2507|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-07 14:45:07.6295|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-07 14:45:17.7216|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
+2023-10-07 14:50:50.1587|0|DEBUG|Program|init main |url: |action: 
+2023-10-07 14:50:50.3509|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-07 14:50:50.3509|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-07 14:50:50.3509|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-07 14:50:50.3509|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-07 14:50:54.0456|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-07 14:50:55.1866|0|FATAL|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|HEllo! |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-07 14:53:12.8275|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
+2023-10-07 14:53:18.0358|0|DEBUG|Program|init main |url: |action: 
+2023-10-07 14:53:18.2301|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-07 14:53:18.2301|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-07 14:53:18.2301|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-07 14:53:18.2301|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-07 14:53:22.1851|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-07 14:53:23.3417|0|FATAL|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|HEllo! |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-07 14:53:49.7692|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 

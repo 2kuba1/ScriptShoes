@@ -1,0 +1,1 @@
+2023-10-07 14:53:23.3417|0|FATAL|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|HEllo! |url: http://localhost/api/shoe/getAll|action: GetAllShoes

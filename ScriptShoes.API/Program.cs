@@ -1,5 +1,6 @@
 using NLog;
 using NLog.Web;
+using ScriptShoes.API.Middlewares;
 using ScriptShoes.Application;
 using ScriptShoes.Persistence;
 
@@ -15,11 +16,13 @@ try
     builder.Services.AddApplicationServices();
     builder.Services.AddPersistenceServices(builder.Configuration);
 
+    builder.Services.AddScoped<ErrorHandlingMiddleware>();
+
     builder.Services.AddControllers();
-    
+
     builder.Logging.ClearProviders();
     builder.Host.UseNLog();
-    
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
@@ -47,6 +50,7 @@ try
 
     app.UseHttpsRedirection();
 
+    app.UseMiddleware<ErrorHandlingMiddleware>();
     app.UseCors("ui");
 
     app.UseResponseCaching();
