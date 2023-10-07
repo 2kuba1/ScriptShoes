@@ -2,8 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoes.Application.Features.Shoe.Commands.CreateShoe;
 using ScriptShoes.Application.Features.Shoe.Commands.DeleteShoe;
+using ScriptShoes.Application.Features.Shoe.Commands.UpdateShoe;
 using ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes;
-using ScriptShoes.Application.Features.Shoe.Queries.GetFiltersQuery;
+using ScriptShoes.Application.Features.Shoe.Queries.GetFilters;
 using ScriptShoes.Application.Features.Shoe.Queries.GetShoeById;
 using ScriptShoes.Application.Models.Shoe;
 
@@ -57,10 +58,18 @@ public class ShoeController : ControllerBase
     }
 
     [HttpDelete]
-    [Route("delete/{id:int}")]
-    public async Task<ActionResult> DeleteShoe([FromRoute] int id)
+    [Route("delete")]
+    public async Task<ActionResult> DeleteShoe([FromQuery] int id)
     {
         await _mediator.Send(new DeleteShoeCommand(id));
         return Ok();
+    }
+
+    [HttpPut]
+    [Route("update")]
+    public async Task<ActionResult> UpdateShoe([FromQuery] int id, [FromBody] UpdateShoeDto dto)
+    {
+        await _mediator.Send(new UpdateShoeCommand(id, dto));
+        return NoContent();
     }
 }

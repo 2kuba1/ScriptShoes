@@ -2,9 +2,9 @@
 using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Application.Models.Shoe;
 
-namespace ScriptShoes.Application.Features.Shoe.Queries.GetFiltersQuery;
+namespace ScriptShoes.Application.Features.Shoe.Queries.GetFilters;
 
-public class GetFiltersQueryHandler : IRequestHandler<GetFiltersQuery, GetFiltersDto>
+public class GetFiltersQueryHandler : IRequestHandler<GetFilters.GetFiltersQuery, GetFiltersDto>
 {
     private readonly IShoeRepository _shoeRepository;
 
@@ -13,7 +13,7 @@ public class GetFiltersQueryHandler : IRequestHandler<GetFiltersQuery, GetFilter
         _shoeRepository = shoeRepository;
     }
     
-    public async Task<GetFiltersDto> Handle(GetFiltersQuery request, CancellationToken cancellationToken)
+    public async Task<GetFiltersDto> Handle(GetFilters.GetFiltersQuery request, CancellationToken cancellationToken)
     {
         var filters = await _shoeRepository.GetAsync();
         
