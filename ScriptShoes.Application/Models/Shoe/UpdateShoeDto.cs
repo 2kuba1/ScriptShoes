@@ -2,7 +2,6 @@
 
 public class UpdateShoeDto
 {
-    public int Id { get; set; }
     public string? NewName { get; set; }
     public float? CurrentPrice { get; set; }
     public string? Brand { get; set; }
