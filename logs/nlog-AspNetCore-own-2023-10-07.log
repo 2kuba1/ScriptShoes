@@ -109,3 +109,26 @@
 2023-10-07 18:21:14.3296|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
 2023-10-07 18:21:18.2316|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/shoe/getAll|action: GetAllShoes
 2023-10-07 18:49:38.6462|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
+2023-10-07 19:37:58.9338|0|DEBUG|Program|init main |url: |action: 
+2023-10-07 19:37:59.1447|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-07 19:37:59.1447|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-07 19:37:59.1447|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-07 19:37:59.1447|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-07 19:38:09.9642|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/shoe/update|action: UpdateShoe
+2023-10-07 19:38:28.7196|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
+2023-10-07 19:45:38.6701|0|DEBUG|Program|init main |url: |action: 
+2023-10-07 19:45:38.8689|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-07 19:45:38.8719|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-07 19:45:38.8719|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-07 19:45:38.8719|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-07 19:45:47.1388|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-07 19:45:47.1388|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-07 19:46:01.5670|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
+2023-10-07 19:46:06.7637|0|DEBUG|Program|init main |url: |action: 
+2023-10-07 19:46:07.0051|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-07 19:46:07.0051|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-07 19:46:07.0051|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-07 19:46:07.0051|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-07 19:46:11.2636|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-07 19:46:11.2636|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-07 19:47:02.3880|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 

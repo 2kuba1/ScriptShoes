@@ -1,0 +1,1 @@
+2023-10-07 19:46:11.2636|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes

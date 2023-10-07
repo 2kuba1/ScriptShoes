@@ -13,6 +13,7 @@ public class ErrorHandlingMiddleware : IMiddleware
     {
         try
         {
+            _logger.LogInformation($"{context.Request.Path} has been invoked");
             await next(context);
         }
         catch (Exception e)
