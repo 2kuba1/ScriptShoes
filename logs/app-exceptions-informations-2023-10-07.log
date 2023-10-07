@@ -15,3 +15,6 @@
 2023-10-07 20:04:34.2495|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|Shoe not found |url: http://localhost/api/shoe/getById/4|action: GetById
 2023-10-07 20:04:39.0265|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/update has been invoked |url: http://localhost/api/shoe/update|action: UpdateShoe
 2023-10-07 20:04:39.1387|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|Shoe not found |url: http://localhost/api/shoe/update|action: UpdateShoe
+2023-10-07 21:09:38.7464|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-07 21:09:45.5631|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/updateThumbnailImage has been invoked |url: http://localhost/api/shoe/updateThumbnailImage|action: UpdateThumbnail
+2023-10-07 21:09:59.6207|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
