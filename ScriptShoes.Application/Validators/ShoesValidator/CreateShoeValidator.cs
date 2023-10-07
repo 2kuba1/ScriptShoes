@@ -28,7 +28,7 @@ public class CreateShoeValidator : AbstractValidator<CreateShoeCommand>
                 var shoe = await repository.GetByNameAsync(value);
                 
                 if(shoe.ShoeName == value)
-                    context.AddFailure("Shoe with this name already exists");
+                    context.AddFailure("Shoe with this name already exist");
             });
     }
 }
