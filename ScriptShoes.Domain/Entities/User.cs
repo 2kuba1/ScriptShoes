@@ -12,7 +12,10 @@ public class User : BaseEntity
     public string LastName { get; set; } = string.Empty;
     public string ProfilePictureUrl { get; set; } = string.Empty;
     public bool IsVerified { get; set; }
-
+    public string RefreshToken { get; set; } = string.Empty;
+    
+    public DateTime TokenCreated { get; set; }
+    public DateTime TokenExpires { get; set; }
     public int RoleId { get; set; }
     public virtual Role Role { get; set; }
 }
