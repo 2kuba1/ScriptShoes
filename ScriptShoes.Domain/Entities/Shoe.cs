@@ -15,6 +15,9 @@ public class Shoe : BaseEntity
 
     public string? ThumbnailImage { get; set; }
     public List<string>? Images { get; set; }
-    
+
     public int UserId { get; set; }
+    public virtual User User { get; set; }
+
+    public virtual List<Review> Reviews { get; set; }
 }
