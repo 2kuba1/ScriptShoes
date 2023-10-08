@@ -50,6 +50,9 @@ try
 
     app.UseHttpsRedirection();
 
+    app.UseAuthentication();
+    app.UseAuthorization();
+
     app.UseMiddleware<ErrorHandlingMiddleware>();
     app.UseCors("ui");
 
