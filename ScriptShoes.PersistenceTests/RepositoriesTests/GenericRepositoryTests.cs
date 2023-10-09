@@ -36,6 +36,10 @@ public class GenericRepositoryTests
     [Fact]
     public async Task Get_By_Id()
     {
+        var shoe = await _genericRepository.GetByIdAsync(1);
+
+        shoe.ShouldNotBeNull();
+        shoe.ShouldBeOfType<Shoe>();
     }
 
     private void SeedDatabase()
