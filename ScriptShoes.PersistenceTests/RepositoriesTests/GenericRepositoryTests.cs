@@ -18,11 +18,27 @@ public class GenericRepositoryTests
 
         _context = new AppDbContext(dbOptions, true);
 
+        SeedDatabase();
+
         _genericRepository = new GenericRepository<Shoe>(new AppDbContext(dbOptions, true));
     }
 
     [Fact]
     public async Task Get_Async()
+    {
+        var allShoes = await _genericRepository.GetAsync();
+
+        allShoes.ShouldBeOfType<List<Shoe>>();
+        allShoes.Count().ShouldBeEquivalentTo(2);
+        allShoes.ShouldNotBeNull();
+    }
+
+    [Fact]
+    public async Task Get_By_Id()
+    {
+    }
+
+    private void SeedDatabase()
     {
         var shoe = new List<Shoe>()
         {
@@ -52,13 +68,7 @@ public class GenericRepositoryTests
             }
         };
 
-        await _context.Shoes.AddRangeAsync(shoe);
-        await _context.SaveChangesAsync();
-
-        var allShoes = await _genericRepository.GetAsync();
-
-        allShoes.ShouldBeOfType<List<Shoe>>();
-        allShoes.Count().ShouldBeEquivalentTo(2);
-        allShoes.ShouldNotBeNull();
+        _context.Shoes.AddRange(shoe);
+        _context.SaveChanges();
     }
 }
