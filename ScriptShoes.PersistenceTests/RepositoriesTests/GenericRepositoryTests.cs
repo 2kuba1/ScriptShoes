@@ -18,7 +18,7 @@ public class GenericRepositoryTests
 
         _context = new AppDbContext(dbOptions, true);
 
-        SeedDatabase();
+        DatabaseSeeder.SeedDatabase(_context);
 
         _genericRepository = new GenericRepository<Shoe>(new AppDbContext(dbOptions, true));
     }
