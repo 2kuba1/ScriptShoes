@@ -40,5 +40,33 @@ public static class DatabaseSeeder
             context.Shoes.AddRange(shoe);
             context.SaveChanges();
         }
+
+        if (!context.Users.Any())
+        {
+            var users = new List<User>()
+            {
+                new User()
+                {
+                    Email = "kuba@gmail.com",
+                    RoleId = 1,
+                    FirsName = "Jakub",
+                    LastName = "Wojtyna",
+                    Username = "2kuba1",
+                    ProfilePictureUrl = "#"
+                },
+                new User()
+                {
+                    Email = "kub2a@gmail.com",
+                    RoleId = 2,
+                    FirsName = "Kuba",
+                    LastName = "Fojtyna",
+                    Username = "3kuba4",
+                    ProfilePictureUrl = "##"
+                }
+            };
+
+            context.Users.AddRange(users);
+            context.SaveChanges();
+        }
     }
 }
