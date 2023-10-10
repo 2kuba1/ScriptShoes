@@ -42,6 +42,75 @@ public class GenericRepositoryTests
         shoe.ShouldBeOfType<Shoe>();
     }
 
+    [Fact]
+    public async Task Create()
+    {
+        var shoe = new Shoe()
+        {
+            Id = 3,
+            UserId = 1,
+            Brand = "Nike",
+            Images = new List<string>() { "#", "#", "#", "#" },
+            ThumbnailImage = "#",
+            ShoeName = "Chron",
+            ShoeSizes = new List<float>() { 3.5f, 15.2f, 20f },
+            ShoeType = "Normal",
+            CurrentPrice = 90f,
+        };
+
+        await _genericRepository.CreateAsync(shoe);
+
+        _context.Shoes.Count().ShouldBeEquivalentTo(3);
+    }
+
+    [Fact]
+    public async Task Delete()
+    {
+        var shoe = new Shoe()
+        {
+            Id = 1,
+            UserId = 1,
+            Brand = "Nike",
+            Images = new List<string>() { "#", "#", "#", "#" },
+            ThumbnailImage = "#",
+            ShoeName = "Chron",
+            ShoeSizes = new List<float>() { 3.5f, 15.2f, 20f },
+            ShoeType = "Normal",
+            CurrentPrice = 90f,
+        };
+
+        await _genericRepository.DeleteAsync(shoe);
+
+        _context.Shoes.Count().ShouldBeEquivalentTo(1);
+    }
+
+    [Fact]
+    public async Task Update()
+    {
+        var shoe = _context.Shoes.FirstOrDefault(x => x.Id == 1);
+
+        shoe!.ShoeName = "Jordan 1";
+        shoe.ShoeType = "Sport";
+        shoe.ShoeSizes = new List<float>() { 10.3f, 20.9f, 3 };
+        shoe.CurrentPrice = 30f;
+        shoe.Brand = "Nike Jordan";
+        shoe.Images = new List<string>() { "##", "##" };
+        shoe.ThumbnailImage = "##";
+
+        await _genericRepository.UpdateAsync(shoe!);
+
+
+        var shoeAfterUpdate = await _context.Shoes.FirstOrDefaultAsync(x => x.Id == 1);
+
+        shoeAfterUpdate?.ShoeName.ShouldBeEquivalentTo("Jordan 1");
+        shoeAfterUpdate?.ShoeType.ShouldBeEquivalentTo("Sport");
+        shoeAfterUpdate?.ShoeSizes.ShouldBeEquivalentTo(new List<float>() { 10.3f, 20.9f, 3 });
+        shoeAfterUpdate?.CurrentPrice.ShouldBeEquivalentTo(30f);
+        shoeAfterUpdate?.Brand.ShouldBeEquivalentTo("Nike Jordan");
+        shoeAfterUpdate?.Images.ShouldBeEquivalentTo(new List<string>() { "##", "##" });
+        shoeAfterUpdate?.ThumbnailImage.ShouldBeEquivalentTo("##");
+    }
+
     private void SeedDatabase()
     {
         var shoe = new List<Shoe>()
