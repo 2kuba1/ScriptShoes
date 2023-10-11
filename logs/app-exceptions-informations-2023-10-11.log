@@ -1,0 +1,11 @@
+2023-10-11 21:03:12.4437|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/register has been invoked |url: http://localhost/api/user/register|action: Register
+2023-10-11 21:03:14.5540|0|FATAL|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|Validation failed: 
+ -- Dto.Email: 'Dto Email' is not a valid email address. Severity: Error |url: http://localhost/api/user/register|action: Register
+2023-10-11 21:07:42.1642|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/create has been invoked |url: http://localhost/api/shoe/create|action: CreateShoe
+2023-10-11 21:07:43.4858|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|Shoe not found |url: http://localhost/api/shoe/create|action: CreateShoe
+2023-10-11 21:08:23.8925|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/create has been invoked |url: http://localhost/api/shoe/create|action: CreateShoe
+2023-10-11 21:08:23.9086|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|Shoe not found |url: http://localhost/api/shoe/create|action: CreateShoe
+2023-10-11 21:09:08.0795|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/create has been invoked |url: http://localhost/api/shoe/create|action: CreateShoe
+2023-10-11 21:09:09.3978|0|FATAL|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|Object reference not set to an instance of an object. |url: http://localhost/api/shoe/create|action: CreateShoe
+2023-10-11 21:09:54.2920|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/create has been invoked |url: http://localhost/api/shoe/create|action: CreateShoe
+2023-10-11 21:09:55.5952|0|FATAL|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|Object reference not set to an instance of an object. |url: http://localhost/api/shoe/create|action: CreateShoe
