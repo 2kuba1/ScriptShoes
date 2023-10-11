@@ -13,12 +13,9 @@ public class ShoeRepository : GenericRepository<Shoe>, IShoeRepository
     {
     }
 
-    public async Task<Shoe> GetByNameAsync(string shoeName)
+    public async Task<Shoe?> GetByNameAsync(string shoeName)
     {
         var shoe = await _context.Shoes.FirstOrDefaultAsync(s => s.ShoeName == shoeName);
-
-        if (shoe is null)
-            throw new NotFoundException("Shoe not found");
 
         return shoe;
     }

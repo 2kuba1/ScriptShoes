@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Application.Features.Shoe.Commands.CreateShoe;
+using ScriptShoes.Domain.Entities;
 
 namespace ScriptShoes.Application.Validators.ShoesValidator;
 
@@ -27,8 +28,9 @@ public class CreateShoeValidator : AbstractValidator<CreateShoeCommand>
             {
                 var shoe = await repository.GetByNameAsync(value);
                 
-                if(shoe.ShoeName == value)
-                    context.AddFailure("Shoe with this name already exist");
+                if(shoe is not null)
+                    if(shoe.ShoeName == value)
+                        context.AddFailure("Shoe with this name already exist");
             });
     }
 }

@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Application.Features.Shoe.Commands.UpdateShoe;
+using ScriptShoes.Domain.Entities;
 
 namespace ScriptShoes.Application.Validators.ShoesValidator;
 
