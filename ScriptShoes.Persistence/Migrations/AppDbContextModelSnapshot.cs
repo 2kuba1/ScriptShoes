@@ -168,15 +168,15 @@ namespace ScriptShoes.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2023, 10, 8, 15, 27, 30, 693, DateTimeKind.Utc).AddTicks(7926),
-                            LastModified = new DateTime(2023, 10, 8, 15, 27, 30, 693, DateTimeKind.Utc).AddTicks(7928),
+                            Created = new DateTime(2023, 10, 12, 18, 32, 13, 960, DateTimeKind.Utc).AddTicks(9008),
+                            LastModified = new DateTime(2023, 10, 12, 18, 32, 13, 960, DateTimeKind.Utc).AddTicks(9010),
                             Name = "User"
                         },
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2023, 10, 8, 15, 27, 30, 693, DateTimeKind.Utc).AddTicks(7929),
-                            LastModified = new DateTime(2023, 10, 8, 15, 27, 30, 693, DateTimeKind.Utc).AddTicks(7930),
+                            Created = new DateTime(2023, 10, 12, 18, 32, 13, 960, DateTimeKind.Utc).AddTicks(9011),
+                            LastModified = new DateTime(2023, 10, 12, 18, 32, 13, 960, DateTimeKind.Utc).AddTicks(9012),
                             Name = "Admin"
                         });
                 });
@@ -246,6 +246,13 @@ namespace ScriptShoes.Persistence.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("AccessToken")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("AccessTokenExpirationTime")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<float>("AvailableFounds")
                         .HasColumnType("real");
 
@@ -282,14 +289,11 @@ namespace ScriptShoes.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<DateTime>("RefreshTokenExpirationTime")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<int>("RoleId")
                         .HasColumnType("integer");
-
-                    b.Property<DateTime>("TokenCreated")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<DateTime>("TokenExpires")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Username")
                         .IsRequired()
