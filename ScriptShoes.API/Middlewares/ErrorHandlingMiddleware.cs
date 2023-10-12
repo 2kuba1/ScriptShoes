@@ -1,4 +1,5 @@
-﻿using ScriptShoes.Domain.Exceptions;
+﻿using FluentValidation;
+using ScriptShoes.Domain.Exceptions;
 
 namespace ScriptShoes.API.Middlewares;
 
@@ -17,6 +18,11 @@ public class ErrorHandlingMiddleware : IMiddleware
         {
             _logger.LogInformation($"{context.Request.Path} has been invoked");
             await next(context);
+        }
+        catch (ValidationException e)
+        {
+            context.Response.StatusCode = 403;
+            await context.Response.WriteAsJsonAsync(e.Errors);
         }
         catch (NotFoundException e)
         {
