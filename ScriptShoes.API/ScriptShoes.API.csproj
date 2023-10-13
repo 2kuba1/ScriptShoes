@@ -19,6 +19,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\ScriptShoes.Application\ScriptShoes.Application.csproj" />
+      <ProjectReference Include="..\ScriptShoes.Infrastructure\ScriptShoes.Infrastructure.csproj" />
       <ProjectReference Include="..\ScriptShoes.Persistence\ScriptShoes.Persistence.csproj" />
     </ItemGroup>
 

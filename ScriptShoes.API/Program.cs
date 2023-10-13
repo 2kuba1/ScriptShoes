@@ -2,6 +2,7 @@ using NLog;
 using NLog.Web;
 using ScriptShoes.API.Middlewares;
 using ScriptShoes.Application;
+using ScriptShoes.Infrastructure;
 using ScriptShoes.Persistence;
 
 var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
@@ -15,6 +16,7 @@ try
 
     builder.Services.AddApplicationServices();
     builder.Services.AddPersistenceServices(builder.Configuration);
+    builder.Services.AddInfrastructureServices(builder.Configuration);
 
     builder.Services.AddScoped<ErrorHandlingMiddleware>();
 
