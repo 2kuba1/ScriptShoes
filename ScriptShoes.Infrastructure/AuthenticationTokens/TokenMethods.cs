@@ -2,11 +2,13 @@
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using ScriptShoes.Application.Contracts.Infrastructure;
 using ScriptShoes.Application.Models.Token;
 using ScriptShoes.Domain.Entities;
+using ScriptShoes.Domain.Exceptions;
 using ScriptShoes.Persistence.Database;
 
 namespace ScriptShoes.Infrastructure.AuthenticationTokens;
@@ -22,7 +24,7 @@ public class TokenMethods : IAuthenticationTokenMethods
         _configuration = configuration;
     }
 
-    public async Task<AccessToken> CreateAccessToken(User user)
+    public AccessToken CreateAccessToken(User user)
     {
         var claims = new List<Claim>
         {
@@ -35,6 +37,8 @@ public class TokenMethods : IAuthenticationTokenMethods
             new Claim("IsVerified", user.IsVerified.ToString()),
             new Claim("Role", $"{user.Role.Name}"),
         };
+
+        Console.WriteLine(user);
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration.GetValue<string>("Jwt:Key") ??
                                                                   string.Empty));
@@ -50,12 +54,6 @@ public class TokenMethods : IAuthenticationTokenMethods
             credentials);
 
         var accessToken = new JwtSecurityTokenHandler().WriteToken(token);
-
-        user.AccessToken = accessToken;
-        user.AccessTokenExpirationTime = expires;
-
-        _dbContext.Users.Update(user);
-        await _dbContext.SaveChangesAsync();
 
         return new AccessToken()
         {
@@ -79,5 +77,18 @@ public class TokenMethods : IAuthenticationTokenMethods
         await _dbContext.SaveChangesAsync();
 
         return refreshToken;
+    }
+
+    public async Task<AccessToken> RefreshAccessToken(string refreshToken)
+    {
+        var user = await _dbContext.Users.Include(x => x.Role).FirstOrDefaultAsync(x => x.RefreshToken == refreshToken);
+
+        if (user is null)
+            throw new BadRequestException("Invalid refresh token");
+
+        if (refreshToken != user.RefreshToken && user.RefreshTokenExpirationTime < DateTime.UtcNow)
+            throw new BadRequestException("Invalid refresh token");
+
+        return CreateAccessToken(user);
     }
 }

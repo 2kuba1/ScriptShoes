@@ -1,7 +1,10 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoes.Application.Features.User.Commands.Register;
 using ScriptShoes.Application.Features.User.Queries.Login;
+using ScriptShoes.Application.Features.User.Queries.RefreshToken;
+using ScriptShoes.Application.Models.Token;
 using ScriptShoes.Application.Models.User;
 
 namespace ScriptShoes.API.Controllers;
@@ -36,5 +39,13 @@ public class UserController : ControllerBase
         }));
 
         return Ok(response);
+    }
+
+    [HttpGet]
+    [Route("refreshToken")]
+    public async Task<ActionResult<AccessToken>> RefreshToken([FromQuery] string refreshToken)
+    {
+        var accessToken = await _mediator.Send(new RefreshTokenQuery(refreshToken));
+        return Ok(accessToken);
     }
 }

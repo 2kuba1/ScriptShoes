@@ -7,5 +7,6 @@
     &lt;TestId&gt;xUnit::AD07F93E-036E-4360-BD89-C207A414C974::net7.0::ScriptShoes.PersistenceTests.RepositoriesTests.ShoeRepositoryTests.Get_By_Name&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::AD07F93E-036E-4360-BD89-C207A414C974::net7.0::ScriptShoes.PersistenceTests.RepositoriesTests.UserRepositoryTests.Is_User_Name_Equal&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::AD07F93E-036E-4360-BD89-C207A414C974::net7.0::ScriptShoes.PersistenceTests.RepositoriesTests.UserRepositoryTests.Is_Email_Equal&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::AD07F93E-036E-4360-BD89-C207A414C974::net7.0::ScriptShoes.PersistenceTests.RepositoriesTests.UserRepositoryTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

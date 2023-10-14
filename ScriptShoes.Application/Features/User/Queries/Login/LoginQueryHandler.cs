@@ -24,7 +24,7 @@ public class LoginQueryHandler : IRequestHandler<LoginQuery, LoginResponseDto>
         if (user is null)
             throw new BadRequestException("Email or password is incorrect");
 
-        var accessToken = await _tokenMethods.CreateAccessToken(user);
+        var accessToken = _tokenMethods.CreateAccessToken(user);
         var refreshToken = await _tokenMethods.CreateRefreshToken(user);
 
         return new LoginResponseDto()

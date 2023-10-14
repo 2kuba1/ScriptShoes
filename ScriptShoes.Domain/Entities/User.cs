@@ -13,10 +13,7 @@ public class User : BaseEntity
     public string ProfilePictureUrl { get; set; } = string.Empty;
     public bool IsVerified { get; set; }
 
-    public string? AccessToken { get; set; }
     public string? RefreshToken { get; set; }
-
-    public DateTime AccessTokenExpirationTime { get; set; }
     public DateTime RefreshTokenExpirationTime { get; set; }
     public int RoleId { get; set; }
     public virtual Role Role { get; set; }

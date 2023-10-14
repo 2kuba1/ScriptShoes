@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using ScriptShoes.Domain.Entities;
 using ScriptShoes.Persistence.Database;
 using ScriptShoes.Persistence.Repositories;
@@ -21,7 +22,7 @@ public class UserRepositoryTests
 
         DatabaseSeeder.SeedDatabase(_context);
 
-        _userRepository = new UserRepository(new AppDbContext(dbOptions, true));
+        _userRepository = new UserRepository(new AppDbContext(dbOptions, true), new HttpContextAccessor());
     }
 
     [Fact]

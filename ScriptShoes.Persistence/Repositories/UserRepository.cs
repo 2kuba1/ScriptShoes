@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Domain.Entities;
 using ScriptShoes.Persistence.Database;
@@ -8,8 +10,11 @@ namespace ScriptShoes.Persistence.Repositories;
 
 public class UserRepository : GenericRepository<User>, IUserRepository
 {
-    public UserRepository(AppDbContext context) : base(context)
+    private readonly IHttpContextAccessor _httpContextAccessor;
+
+    public UserRepository(AppDbContext context, IHttpContextAccessor httpContextAccessor) : base(context)
     {
+        _httpContextAccessor = httpContextAccessor;
     }
 
     public async Task<bool> IsUserNameEqual(string name)
@@ -33,8 +38,11 @@ public class UserRepository : GenericRepository<User>, IUserRepository
 
         var isPasswordCorrect = BC.Verify(password, user.HashedPassword);
 
-        Console.WriteLine(isPasswordCorrect);
-
         return isPasswordCorrect ? user : null;
     }
+
+    public ClaimsPrincipal User => _httpContextAccessor.HttpContext?.User;
+
+    public int? GetUserId =>
+        User is null ? null : (int?)int.Parse(User.FindFirst(c => c.Type == "Id").Value);
 }
