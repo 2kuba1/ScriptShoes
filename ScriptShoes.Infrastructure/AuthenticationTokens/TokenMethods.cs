@@ -1,6 +1,83 @@
-﻿namespace ScriptShoes.Infrastructure.AuthenticationTokens;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Security.Cryptography;
+using System.Text;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using ScriptShoes.Application.Contracts.Infrastructure;
+using ScriptShoes.Application.Models.Token;
+using ScriptShoes.Domain.Entities;
+using ScriptShoes.Persistence.Database;
 
-public class TokenMethods
+namespace ScriptShoes.Infrastructure.AuthenticationTokens;
+
+public class TokenMethods : IAuthenticationTokenMethods
 {
-    
+    private readonly AppDbContext _dbContext;
+    private readonly IConfiguration _configuration;
+
+    public TokenMethods(AppDbContext dbContext, IConfiguration configuration)
+    {
+        _dbContext = dbContext;
+        _configuration = configuration;
+    }
+
+    public async Task<AccessToken> CreateAccessToken(User user)
+    {
+        var claims = new List<Claim>
+        {
+            new Claim("Id", user.Id.ToString()),
+            new Claim("Username", user.Username),
+            new Claim("FirstName", $"{user.FirsName}"),
+            new Claim("LastName", $"{user.LastName}"),
+            new Claim("Email", $"{user.Email}"),
+            new Claim("ProfilePicture", user.ProfilePictureUrl),
+            new Claim("IsVerified", user.IsVerified.ToString()),
+            new Claim("Role", $"{user.Role.Name}"),
+        };
+
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration.GetValue<string>("Jwt:Key") ??
+                                                                  string.Empty));
+        var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+        var expires = DateTime.UtcNow.AddMinutes(_configuration.GetValue<int>("Jwt:ExpireMinutes"));
+
+        var token = new JwtSecurityToken(_configuration.GetValue<string>("Jwt:Issuer"),
+            _configuration.GetValue<string>("Jwt:Audience"),
+            claims: claims,
+            DateTime.UtcNow,
+            expires,
+            credentials);
+
+        var accessToken = new JwtSecurityTokenHandler().WriteToken(token);
+
+        user.AccessToken = accessToken;
+        user.AccessTokenExpirationTime = expires;
+
+        _dbContext.Users.Update(user);
+        await _dbContext.SaveChangesAsync();
+
+        return new AccessToken()
+        {
+            Token = accessToken,
+            Expires = expires
+        };
+    }
+
+    public async Task<RefreshToken> CreateRefreshToken(User user)
+    {
+        var refreshToken = new RefreshToken()
+        {
+            Token = Convert.ToBase64String(RandomNumberGenerator.GetBytes(64)),
+            Expires = DateTime.UtcNow.AddHours(_configuration.GetValue<int>("Jwt:RefreshKeyExpireHours")),
+        };
+
+        user.RefreshToken = refreshToken.Token;
+        user.RefreshTokenExpirationTime = refreshToken.Expires;
+
+        _dbContext.Update(user);
+        await _dbContext.SaveChangesAsync();
+
+        return refreshToken;
+    }
 }
