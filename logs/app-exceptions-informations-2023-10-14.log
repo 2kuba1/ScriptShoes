@@ -1,0 +1,12 @@
+2023-10-14 16:01:57.0335|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/create has been invoked |url: http://localhost/api/shoe/create|action: 
+2023-10-14 16:02:38.8179|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/register has been invoked |url: http://localhost/api/user/register|action: Register
+2023-10-14 16:03:10.2821|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/register has been invoked |url: http://localhost/api/user/register|action: Register
+2023-10-14 16:03:47.9754|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/register has been invoked |url: http://localhost/api/user/register|action: Register
+2023-10-14 16:06:45.9412|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/login has been invoked |url: http://localhost/api/user/login|action: Login
+2023-10-14 16:06:47.2703|0|FATAL|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|Email or password is incorrect |url: http://localhost/api/user/login|action: Login
+2023-10-14 16:09:57.9274|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/login has been invoked |url: http://localhost/api/user/login|action: Login
+2023-10-14 16:09:59.2676|0|FATAL|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|Email or password is incorrect |url: http://localhost/api/user/login|action: Login
+2023-10-14 16:11:37.5174|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/register has been invoked |url: http://localhost/api/user/register|action: Register
+2023-10-14 16:16:41.2681|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/register has been invoked |url: http://localhost/api/user/register|action: Register
+2023-10-14 16:17:04.5059|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/login has been invoked |url: http://localhost/api/user/login|action: Login
+2023-10-14 16:17:04.7139|0|FATAL|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|Object reference not set to an instance of an object. |url: http://localhost/api/user/login|action: Login

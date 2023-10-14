@@ -41,6 +41,15 @@ try
         });
     });
 
+    builder.Services.AddAuthorization(options =>
+    {
+        options.AddPolicy("AuthUser", b => b.RequireClaim("Role", "User", "Admin"));
+    });
+    builder.Services.AddAuthorization(options =>
+    {
+        options.AddPolicy("AuthAdmin", b => b.RequireClaim("Role", "Admin"));
+    });
+
     var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -55,7 +64,7 @@ try
     app.UseAuthentication();
     app.UseAuthorization();
 
-    app.UseMiddleware<ErrorHandlingMiddleware>();
+    //app.UseMiddleware<ErrorHandlingMiddleware>();
     app.UseCors("ui");
 
     app.UseResponseCaching();

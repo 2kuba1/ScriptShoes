@@ -34,6 +34,8 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, Unit>
         user.HashedPassword = hashedPassword;
         user.RoleId = 1;
 
+        await _repository.CreateAsync(user);
+        
         return Unit.Value;
     }
 }

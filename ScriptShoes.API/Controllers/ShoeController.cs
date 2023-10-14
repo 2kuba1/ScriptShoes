@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoes.Application.Features.Shoe.Commands.CreateShoe;
 using ScriptShoes.Application.Features.Shoe.Commands.DeleteShoe;
@@ -24,6 +25,7 @@ public class ShoeController : ControllerBase
 
     [HttpPost]
     [Route("create")]
+    [Authorize(Policy = "AuthUser")]
     public async Task<ActionResult> CreateShoe([FromBody] CreateShoeDto dto)
     {
         var shoeId = await _mediator.Send(new CreateShoeCommand(dto));

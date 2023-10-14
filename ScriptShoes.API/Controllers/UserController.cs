@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoes.Application.Features.User.Commands.Register;
+using ScriptShoes.Application.Features.User.Queries.Login;
 using ScriptShoes.Application.Models.User;
 
 namespace ScriptShoes.API.Controllers;
@@ -22,5 +23,18 @@ public class UserController : ControllerBase
     {
         await _mediator.Send(new RegisterCommand(dto));
         return NoContent();
+    }
+
+    [HttpGet]
+    [Route("login")]
+    public async Task<ActionResult<LoginResponseDto>> Login([FromQuery] string email, [FromQuery] string password)
+    {
+        var response = await _mediator.Send(new LoginQuery(new LoginDto()
+        {
+            Email = email,
+            Password = password
+        }));
+
+        return Ok(response);
     }
 }
