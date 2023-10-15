@@ -1,8 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ScriptShoes.Application.Features.User.Commands.AddProfilePicture;
 using ScriptShoes.Application.Features.User.Commands.Register;
+using ScriptShoes.Application.Features.User.Commands.UpdateProfilePicture;
 using ScriptShoes.Application.Features.User.Queries.Login;
 using ScriptShoes.Application.Features.User.Queries.RefreshToken;
 using ScriptShoes.Application.Models.Token;

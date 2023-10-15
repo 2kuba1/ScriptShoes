@@ -1,8 +1,9 @@
 ﻿using MediatR;
+using ScriptShoes.Application.Common;
 using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Domain.Exceptions;
 
-namespace ScriptShoes.Application.Features.User.Commands.AddProfilePicture;
+namespace ScriptShoes.Application.Features.User.Commands.UpdateProfilePicture;
 
 public class UpdateProfilePictureCommandHandler : IRequestHandler<UpdateProfilePictureCommand, Unit>
 {
@@ -15,13 +16,7 @@ public class UpdateProfilePictureCommandHandler : IRequestHandler<UpdateProfileP
 
     public async Task<Unit> Handle(UpdateProfilePictureCommand request, CancellationToken cancellationToken)
     {
-        if (_repository.GetUserId is null)
-            throw new NotFoundException("User not found");
-
-        var user = await _repository.GetByIdAsync(_repository.GetUserId.Value);
-
-        if (user is null)
-            throw new NotFoundException("User not found");
+        var user = await GetUserByHttpContextId.Get(_repository);
 
         user.ProfilePictureUrl = request.ImageUrl;
 
