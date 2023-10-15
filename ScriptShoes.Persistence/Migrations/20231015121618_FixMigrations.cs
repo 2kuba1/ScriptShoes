@@ -22,7 +22,7 @@ namespace ScriptShoes.Persistence.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     UserId = table.Column<int>(type: "integer", nullable: false),
-                    ShoeId = table.Column<int>(type: "integer", nullable: false),
+                    ShoeId = table.Column<List<int>>(type: "integer[]", nullable: false),
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     LastModified = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
@@ -80,6 +80,37 @@ namespace ScriptShoes.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Username = table.Column<string>(type: "text", nullable: false),
+                    HashedPassword = table.Column<string>(type: "text", nullable: false),
+                    Email = table.Column<string>(type: "text", nullable: false),
+                    AvailableFounds = table.Column<float>(type: "real", nullable: false),
+                    FirsName = table.Column<string>(type: "text", nullable: false),
+                    LastName = table.Column<string>(type: "text", nullable: false),
+                    ProfilePictureUrl = table.Column<string>(type: "text", nullable: false),
+                    IsVerified = table.Column<bool>(type: "boolean", nullable: false),
+                    RefreshToken = table.Column<string>(type: "text", nullable: true),
+                    RefreshTokenExpirationTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    RoleId = table.Column<int>(type: "integer", nullable: false),
+                    Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    LastModified = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Users_Roles_RoleId",
+                        column: x => x.RoleId,
+                        principalTable: "Roles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Shoes",
                 columns: table => new
                 {
@@ -102,33 +133,10 @@ namespace ScriptShoes.Persistence.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Shoes", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Users",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Username = table.Column<string>(type: "text", nullable: false),
-                    HashedPassword = table.Column<string>(type: "text", nullable: false),
-                    Email = table.Column<string>(type: "text", nullable: false),
-                    AvailableFounds = table.Column<float>(type: "real", nullable: false),
-                    FirsName = table.Column<string>(type: "text", nullable: false),
-                    LastName = table.Column<string>(type: "text", nullable: false),
-                    ProfilePictureUrl = table.Column<string>(type: "text", nullable: false),
-                    IsVerified = table.Column<bool>(type: "boolean", nullable: false),
-                    RoleId = table.Column<int>(type: "integer", nullable: false),
-                    Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    LastModified = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Users", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Users_Roles_RoleId",
-                        column: x => x.RoleId,
-                        principalTable: "Roles",
+                        name: "FK_Shoes_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -142,6 +150,7 @@ namespace ScriptShoes.Persistence.Migrations
                     Title = table.Column<string>(type: "text", nullable: false),
                     ReviewDescription = table.Column<string>(type: "text", nullable: false),
                     Likes = table.Column<int>(type: "integer", nullable: false),
+                    ShoeId = table.Column<int>(type: "integer", nullable: false),
                     UserId = table.Column<int>(type: "integer", nullable: false),
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     LastModified = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
@@ -149,6 +158,12 @@ namespace ScriptShoes.Persistence.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Reviews", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Reviews_Shoes_ShoeId",
+                        column: x => x.ShoeId,
+                        principalTable: "Shoes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Reviews_Users_UserId",
                         column: x => x.UserId,
@@ -162,13 +177,23 @@ namespace ScriptShoes.Persistence.Migrations
                 columns: new[] { "Id", "Created", "LastModified", "Name" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 10, 2, 20, 48, 40, 187, DateTimeKind.Utc).AddTicks(3490), new DateTime(2023, 10, 2, 20, 48, 40, 187, DateTimeKind.Utc).AddTicks(3491), "User" },
-                    { 2, new DateTime(2023, 10, 2, 20, 48, 40, 187, DateTimeKind.Utc).AddTicks(3492), new DateTime(2023, 10, 2, 20, 48, 40, 187, DateTimeKind.Utc).AddTicks(3493), "Admin" }
+                    { 1, new DateTime(2023, 10, 15, 12, 16, 18, 117, DateTimeKind.Utc).AddTicks(1975), new DateTime(2023, 10, 15, 12, 16, 18, 117, DateTimeKind.Utc).AddTicks(1977), "User" },
+                    { 2, new DateTime(2023, 10, 15, 12, 16, 18, 117, DateTimeKind.Utc).AddTicks(1979), new DateTime(2023, 10, 15, 12, 16, 18, 117, DateTimeKind.Utc).AddTicks(1979), "Admin" }
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Reviews_ShoeId",
+                table: "Reviews",
+                column: "ShoeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Reviews_UserId",
                 table: "Reviews",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Shoes_UserId",
+                table: "Shoes",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(

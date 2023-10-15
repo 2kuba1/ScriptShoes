@@ -36,6 +36,12 @@ public class AppDbContext : DbContext
                 .HasConversion(
                     v => new ArrayWrapper<List<string>>(v),
                     v => v.Values);
+            
+            modelBuilder
+                .Entity<Cart>().Property(e => e.ShoeId)
+                .HasConversion(
+                    v => new ArrayWrapper<List<int>>(v),
+                    v => v.Values);
         }
         
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);

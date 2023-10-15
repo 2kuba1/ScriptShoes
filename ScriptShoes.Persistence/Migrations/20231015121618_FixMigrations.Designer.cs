@@ -13,8 +13,8 @@ using ScriptShoes.Persistence.Database;
 namespace ScriptShoes.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231008152730_AddRefreshToken")]
-    partial class AddRefreshToken
+    [Migration("20231015121618_FixMigrations")]
+    partial class FixMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,8 +40,9 @@ namespace ScriptShoes.Persistence.Migrations
                     b.Property<DateTime>("LastModified")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("ShoeId")
-                        .HasColumnType("integer");
+                    b.Property<List<int>>("ShoeId")
+                        .IsRequired()
+                        .HasColumnType("integer[]");
 
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
@@ -171,15 +172,15 @@ namespace ScriptShoes.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2023, 10, 8, 15, 27, 30, 693, DateTimeKind.Utc).AddTicks(7926),
-                            LastModified = new DateTime(2023, 10, 8, 15, 27, 30, 693, DateTimeKind.Utc).AddTicks(7928),
+                            Created = new DateTime(2023, 10, 15, 12, 16, 18, 117, DateTimeKind.Utc).AddTicks(1975),
+                            LastModified = new DateTime(2023, 10, 15, 12, 16, 18, 117, DateTimeKind.Utc).AddTicks(1977),
                             Name = "User"
                         },
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2023, 10, 8, 15, 27, 30, 693, DateTimeKind.Utc).AddTicks(7929),
-                            LastModified = new DateTime(2023, 10, 8, 15, 27, 30, 693, DateTimeKind.Utc).AddTicks(7930),
+                            Created = new DateTime(2023, 10, 15, 12, 16, 18, 117, DateTimeKind.Utc).AddTicks(1979),
+                            LastModified = new DateTime(2023, 10, 15, 12, 16, 18, 117, DateTimeKind.Utc).AddTicks(1979),
                             Name = "Admin"
                         });
                 });
@@ -282,17 +283,13 @@ namespace ScriptShoes.Persistence.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("RefreshToken")
-                        .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<DateTime>("RefreshTokenExpirationTime")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("RoleId")
                         .HasColumnType("integer");
-
-                    b.Property<DateTime>("TokenCreated")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<DateTime>("TokenExpires")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Username")
                         .IsRequired()
