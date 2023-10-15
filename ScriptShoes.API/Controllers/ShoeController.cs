@@ -25,7 +25,7 @@ public class ShoeController : ControllerBase
 
     [HttpPost]
     [Route("create")]
-    [Authorize(Policy = "AuthUser")]
+    [Authorize(Policy = "AuthAdmin")]
     public async Task<ActionResult> CreateShoe([FromBody] CreateShoeDto dto)
     {
         var shoeId = await _mediator.Send(new CreateShoeCommand(dto));
@@ -62,6 +62,7 @@ public class ShoeController : ControllerBase
 
     [HttpPut]
     [Route("update")]
+    [Authorize(Policy = "AuthAdmin")]
     public async Task<ActionResult> UpdateShoe([FromQuery] int id, [FromBody] UpdateShoeDto dto)
     {
         await _mediator.Send(new UpdateShoeCommand(id, dto));
@@ -70,6 +71,7 @@ public class ShoeController : ControllerBase
 
     [HttpDelete]
     [Route("delete")]
+    [Authorize(Policy = "AuthAdmin")]
     public async Task<ActionResult> DeleteShoe([FromQuery] int id)
     {
         await _mediator.Send(new DeleteShoeCommand(id));
@@ -78,6 +80,7 @@ public class ShoeController : ControllerBase
 
     [HttpDelete]
     [Route("deleteImages")]
+    [Authorize(Policy = "AuthAdmin")]
     public async Task<ActionResult> DeleteShoeImages([FromQuery] int id, [FromBody] List<int> imageIndexes)
     {
         await _mediator.Send(new DeleteShoeImagesCommand(id, imageIndexes));
