@@ -1,5 +1,7 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ScriptShoes.Application.Features.User.Commands.AddProfilePicture;
 using ScriptShoes.Application.Features.User.Commands.Register;
 using ScriptShoes.Application.Features.User.Queries.Login;
 using ScriptShoes.Application.Features.User.Queries.RefreshToken;
@@ -46,5 +48,14 @@ public class UserController : ControllerBase
     {
         var accessToken = await _mediator.Send(new RefreshTokenQuery(refreshToken));
         return Ok(accessToken);
+    }
+
+    [HttpPost]
+    [Route("updateProfilePicture")]
+    [Authorize(Policy = "AuthUser")]
+    public async Task<ActionResult> UpdateProfilePicture([FromBody] string imageUrl)
+    {
+        await _mediator.Send(new UpdateProfilePictureCommand(imageUrl));
+        return NoContent();
     }
 }

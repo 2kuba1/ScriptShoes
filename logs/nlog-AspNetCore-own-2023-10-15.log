@@ -1,0 +1,20 @@
+2023-10-15 09:55:33.4437|0|DEBUG|Program|init main |url: |action: 
+2023-10-15 09:55:35.6933|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-15 09:55:35.6933|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-15 09:55:35.6933|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-15 09:55:35.6933|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-15 09:55:46.1597|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
+2023-10-15 10:00:54.8917|0|DEBUG|Program|init main |url: |action: 
+2023-10-15 10:00:55.1747|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-15 10:00:55.1747|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-15 10:00:55.1747|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-15 10:00:55.1747|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-15 10:01:12.0053|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/user/login|action: Login
+2023-10-15 10:04:54.9809|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
+2023-10-15 10:05:10.1735|0|DEBUG|Program|init main |url: |action: 
+2023-10-15 10:05:10.4101|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-15 10:05:10.4101|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-15 10:05:10.4101|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-15 10:05:10.4101|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-15 10:05:13.8327|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/user/updateProfilePicture|action: UpdateProfilePicture
+2023-10-15 10:10:01.5892|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
