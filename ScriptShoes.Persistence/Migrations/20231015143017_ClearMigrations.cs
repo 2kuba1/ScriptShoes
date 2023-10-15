@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ScriptShoes.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class FixMigrations : Migration
+    public partial class ClearMigrations : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -22,7 +22,8 @@ namespace ScriptShoes.Persistence.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     UserId = table.Column<int>(type: "integer", nullable: false),
-                    ShoeId = table.Column<List<int>>(type: "integer[]", nullable: false),
+                    ShoeId = table.Column<int>(type: "integer", nullable: false),
+                    ItemCount = table.Column<int>(type: "integer", nullable: false),
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     LastModified = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
@@ -177,8 +178,8 @@ namespace ScriptShoes.Persistence.Migrations
                 columns: new[] { "Id", "Created", "LastModified", "Name" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 10, 15, 12, 16, 18, 117, DateTimeKind.Utc).AddTicks(1975), new DateTime(2023, 10, 15, 12, 16, 18, 117, DateTimeKind.Utc).AddTicks(1977), "User" },
-                    { 2, new DateTime(2023, 10, 15, 12, 16, 18, 117, DateTimeKind.Utc).AddTicks(1979), new DateTime(2023, 10, 15, 12, 16, 18, 117, DateTimeKind.Utc).AddTicks(1979), "Admin" }
+                    { 1, new DateTime(2023, 10, 15, 14, 30, 17, 486, DateTimeKind.Utc).AddTicks(8512), new DateTime(2023, 10, 15, 14, 30, 17, 486, DateTimeKind.Utc).AddTicks(8517), "User" },
+                    { 2, new DateTime(2023, 10, 15, 14, 30, 17, 486, DateTimeKind.Utc).AddTicks(8518), new DateTime(2023, 10, 15, 14, 30, 17, 486, DateTimeKind.Utc).AddTicks(8519), "Admin" }
                 });
 
             migrationBuilder.CreateIndex(

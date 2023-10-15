@@ -13,8 +13,8 @@ using ScriptShoes.Persistence.Database;
 namespace ScriptShoes.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231015121618_FixMigrations")]
-    partial class FixMigrations
+    [Migration("20231015143017_ClearMigrations")]
+    partial class ClearMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -37,12 +37,14 @@ namespace ScriptShoes.Persistence.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<int>("ItemCount")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime>("LastModified")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<List<int>>("ShoeId")
-                        .IsRequired()
-                        .HasColumnType("integer[]");
+                    b.Property<int>("ShoeId")
+                        .HasColumnType("integer");
 
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
@@ -172,15 +174,15 @@ namespace ScriptShoes.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2023, 10, 15, 12, 16, 18, 117, DateTimeKind.Utc).AddTicks(1975),
-                            LastModified = new DateTime(2023, 10, 15, 12, 16, 18, 117, DateTimeKind.Utc).AddTicks(1977),
+                            Created = new DateTime(2023, 10, 15, 14, 30, 17, 486, DateTimeKind.Utc).AddTicks(8512),
+                            LastModified = new DateTime(2023, 10, 15, 14, 30, 17, 486, DateTimeKind.Utc).AddTicks(8517),
                             Name = "User"
                         },
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2023, 10, 15, 12, 16, 18, 117, DateTimeKind.Utc).AddTicks(1979),
-                            LastModified = new DateTime(2023, 10, 15, 12, 16, 18, 117, DateTimeKind.Utc).AddTicks(1979),
+                            Created = new DateTime(2023, 10, 15, 14, 30, 17, 486, DateTimeKind.Utc).AddTicks(8518),
+                            LastModified = new DateTime(2023, 10, 15, 14, 30, 17, 486, DateTimeKind.Utc).AddTicks(8519),
                             Name = "Admin"
                         });
                 });

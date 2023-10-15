@@ -1,14 +1,19 @@
-﻿using ScriptShoes.Application.Contracts.Persistence;
-using ScriptShoes.Domain;
+﻿using Microsoft.EntityFrameworkCore;
+using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Domain.Entities;
 using ScriptShoes.Persistence.Database;
-using ScriptShoes.Persistence.Repositories;
 
-namespace ScriptShoes.Persistence;
+namespace ScriptShoes.Persistence.Repositories;
 
 public class CartRepository : GenericRepository<Cart>, ICartRepository
 {
     public CartRepository(AppDbContext context) : base(context)
     {
+    }
+
+    public async Task<Cart?> GetByUserIdAndItemID(int userId, int shoeId)
+    {
+        var cart = await _context.Carts.FirstOrDefaultAsync(x => x.UserId == userId && x.ShoeId == shoeId);
+        return cart;
     }
 }
