@@ -15,8 +15,6 @@ public class UpdateProfilePictureCommandHandler : IRequestHandler<UpdateProfileP
 
     public async Task<Unit> Handle(UpdateProfilePictureCommand request, CancellationToken cancellationToken)
     {
-        Console.WriteLine(_repository.GetUserId.Value);
-
         if (_repository.GetUserId is null)
             throw new NotFoundException("User not found");
 

@@ -37,9 +37,7 @@ public class TokenMethods : IAuthenticationTokenMethods
             new Claim("IsVerified", user.IsVerified.ToString()),
             new Claim("Role", $"{user.Role.Name}"),
         };
-
-        Console.WriteLine(user);
-
+        
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration.GetValue<string>("Jwt:Key") ??
                                                                   string.Empty));
         var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
