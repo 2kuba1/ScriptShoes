@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using ScriptShoes.Application.Contracts.Persistence;
 
-namespace ScriptShoes.Application.Features.Cart;
+namespace ScriptShoes.Application.Features.Cart.Commands.AddToCart;
 
 public class AddToCartCommandHandler : IRequestHandler<AddToCartCommand, Unit>
 {
@@ -14,7 +14,7 @@ public class AddToCartCommandHandler : IRequestHandler<AddToCartCommand, Unit>
 
     public async Task<Unit> Handle(AddToCartCommand request, CancellationToken cancellationToken)
     {
-        var userCart = await _repository.GetByUserIdAndItemID(request.UserId, request.ShoeId);
+        var userCart = await _repository.GetByUserIdAndItemId(request.UserId, request.ShoeId);
 
         if (userCart is null)
         {

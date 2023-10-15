@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoes.Application.Features.Cart;
+using ScriptShoes.Application.Features.Cart.Commands.AddToCart;
 
 namespace ScriptShoes.API.Controllers;
 
