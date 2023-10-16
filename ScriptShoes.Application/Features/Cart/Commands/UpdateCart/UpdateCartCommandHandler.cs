@@ -1,26 +1,39 @@
 ﻿using MediatR;
+using ScriptShoes.Application.Common;
 using ScriptShoes.Application.Contracts.Persistence;
+using ScriptShoes.Domain.Exceptions;
 
 namespace ScriptShoes.Application.Features.Cart.Commands.UpdateCart;
 
 public class UpdateCartCommandHandler : IRequestHandler<UpdateCartCommand, Unit>
 {
-    private readonly ICartRepository _repository;
+    private readonly ICartRepository _cartRepository;
+    private readonly IUserRepository _userRepository;
+    private readonly IShoeRepository _shoeRepository;
 
-    public UpdateCartCommandHandler(ICartRepository repository)
+    public UpdateCartCommandHandler(ICartRepository cartRepository, IUserRepository userRepository,
+        IShoeRepository shoeRepository)
     {
-        _repository = repository;
+        _cartRepository = cartRepository;
+        _userRepository = userRepository;
+        _shoeRepository = shoeRepository;
     }
 
     public async Task<Unit> Handle(UpdateCartCommand request, CancellationToken cancellationToken)
     {
-        var userCart = await _repository.GetByUserIdAndItemId(request.UserId, request.ShoeId);
+        var shoe = await _shoeRepository.GetByIdAsync(request.ShoeId);
+
+        if (shoe is null)
+            throw new NotFoundException("Shoe not found");
+
+        var user = await GetUserByHttpContextId.Get(_userRepository);
+        var userCart = await _cartRepository.GetByUserIdAndItemId(user.Id, request.ShoeId);
 
         if (userCart is null)
         {
-            await _repository.CreateAsync(new Domain.Entities.Cart()
+            await _cartRepository.CreateAsync(new Domain.Entities.Cart()
             {
-                UserId = request.UserId,
+                UserId = user.Id,
                 ShoeId = request.ShoeId,
                 ItemCount = request.ItemsCount
             });
@@ -30,7 +43,7 @@ public class UpdateCartCommandHandler : IRequestHandler<UpdateCartCommand, Unit>
 
         userCart.ItemCount += request.ItemsCount;
 
-        await _repository.UpdateAsync(userCart);
+        await _cartRepository.UpdateAsync(userCart);
 
         return Unit.Value;
     }
