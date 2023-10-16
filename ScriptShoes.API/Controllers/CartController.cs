@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using ScriptShoes.Application.Features.Cart;
 using ScriptShoes.Application.Features.Cart.Commands.UpdateCart;
 using ScriptShoes.Application.Features.Cart.Queries;
+using ScriptShoes.Application.Features.Cart.Queries.GetItemsFromCart;
 using ScriptShoes.Application.Models.Cart;
 
 namespace ScriptShoes.API.Controllers;

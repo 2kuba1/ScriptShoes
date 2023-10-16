@@ -3,7 +3,7 @@ using ScriptShoes.Application.Common;
 using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Application.Models.Cart;
 
-namespace ScriptShoes.Application.Features.Cart.Queries;
+namespace ScriptShoes.Application.Features.Cart.Queries.GetItemsFromCart;
 
 public class GetItemsFromCartQueryHandler : IRequestHandler<GetItemsFromCartQuery, List<GetCartDto>>
 {
