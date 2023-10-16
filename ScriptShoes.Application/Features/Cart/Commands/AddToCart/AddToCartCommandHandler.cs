@@ -3,15 +3,15 @@ using ScriptShoes.Application.Common;
 using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Domain.Exceptions;
 
-namespace ScriptShoes.Application.Features.Cart.Commands.UpdateCart;
+namespace ScriptShoes.Application.Features.Cart.Commands.AddToCart;
 
-public class UpdateCartCommandHandler : IRequestHandler<UpdateCartCommand, Unit>
+public class AddToCartCommandHandler : IRequestHandler<AddToCartCommand, Unit>
 {
     private readonly ICartRepository _cartRepository;
     private readonly IUserRepository _userRepository;
     private readonly IShoeRepository _shoeRepository;
 
-    public UpdateCartCommandHandler(ICartRepository cartRepository, IUserRepository userRepository,
+    public AddToCartCommandHandler(ICartRepository cartRepository, IUserRepository userRepository,
         IShoeRepository shoeRepository)
     {
         _cartRepository = cartRepository;
@@ -19,7 +19,7 @@ public class UpdateCartCommandHandler : IRequestHandler<UpdateCartCommand, Unit>
         _shoeRepository = shoeRepository;
     }
 
-    public async Task<Unit> Handle(UpdateCartCommand request, CancellationToken cancellationToken)
+    public async Task<Unit> Handle(AddToCartCommand request, CancellationToken cancellationToken)
     {
         var shoe = await _shoeRepository.GetByIdAsync(request.ShoeId);
 

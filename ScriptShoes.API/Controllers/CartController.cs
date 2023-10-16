@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoes.Application.Features.Cart;
-using ScriptShoes.Application.Features.Cart.Commands.UpdateCart;
+using ScriptShoes.Application.Features.Cart.Commands.AddToCart;
 using ScriptShoes.Application.Features.Cart.Queries;
 using ScriptShoes.Application.Features.Cart.Queries.GetItemsFromCart;
 using ScriptShoes.Application.Models.Cart;
@@ -22,11 +22,11 @@ public class CartController : ControllerBase
     }
 
     [HttpPost]
-    [Route("updateCart/shoe/{shoeId:int}/count/{itemsCount:int}")]
-    public async Task<ActionResult> UpdateCart([FromRoute] int shoeId,
+    [Route("add/shoe/{shoeId:int}/count/{itemsCount:int}")]
+    public async Task<ActionResult> AddItemToCart([FromRoute] int shoeId,
         [FromRoute] int itemsCount)
     {
-        await _mediator.Send(new UpdateCartCommand(shoeId, itemsCount));
+        await _mediator.Send(new AddToCartCommand(shoeId, itemsCount));
         return NoContent();
     }
 
