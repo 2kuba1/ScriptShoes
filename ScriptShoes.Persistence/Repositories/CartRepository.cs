@@ -1,8 +1,6 @@
-﻿using Mapster;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Application.Models.Cart;
-using ScriptShoes.Application.Models.Shoe;
 using ScriptShoes.Domain.Entities;
 using ScriptShoes.Persistence.Database;
 
@@ -22,14 +20,25 @@ public class CartRepository : GenericRepository<Cart>, ICartRepository
 
     public List<GetCartDto> GetShoesFromCart(int userId)
     {
-        var itemsFromCart = _context.Carts.Where(x => x.UserId == userId)
-            .Select(s => s.ShoeId).ToList();
+        var itemsFromCart = _context.Carts.Where(x => x.UserId == userId).ToList();
 
-        var items = new List<Shoe>();
+        var items = new List<GetCartDto>();
 
-        itemsFromCart.ForEach(x => items.Add(_context.Shoes.FirstOrDefault(s => s.Id == x)!));
+        itemsFromCart.ForEach(x =>
+        {
+            var shoe = _context.Shoes.FirstOrDefault(s => s.Id == x.ShoeId)!;
 
-        var dto = items.Adapt<List<GetCartDto>>();
-        return dto;
+            items.Add(new GetCartDto()
+            {
+                Brand = shoe.Brand,
+                ShoeName = shoe.ShoeName,
+                CurrentPrice = shoe.CurrentPrice,
+                ThumbnailImage = shoe.ThumbnailImage,
+                Id = shoe.Id,
+                ItemCount = x.ItemCount
+            });
+        });
+
+        return items;
     }
 }
