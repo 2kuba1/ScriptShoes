@@ -7,4 +7,5 @@ public class GetCartDto
     public string Brand { get; set; } = string.Empty;
     public float CurrentPrice { get; set; }
     public string? ThumbnailImage { get; set; }
+    public int ItemCount { get; set; }
 }

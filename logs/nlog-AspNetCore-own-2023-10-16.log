@@ -316,3 +316,18 @@ DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: http://localhost/api/cart/updateCart/shoe/1/count/1|action: UpdateCart
 2023-10-16 16:50:06.1275|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
+2023-10-16 20:34:11.8921|0|DEBUG|Program|init main |url: |action: 
+2023-10-16 20:34:13.3457|0|ERROR|Program|Stopped program because of exception System.InvalidOperationException: The service collection cannot be modified because it is read-only.
+   at Microsoft.Extensions.DependencyInjection.ServiceCollection.ThrowReadOnlyException()
+   at Microsoft.Extensions.DependencyInjection.ServiceCollection.System.Collections.Generic.ICollection<Microsoft.Extensions.DependencyInjection.ServiceDescriptor>.Add(ServiceDescriptor item)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(IServiceCollection services, Type serviceType, Object implementationInstance)
+   at Microsoft.Extensions.DependencyInjection.OptionsServiceCollectionExtensions.Configure[TOptions](IServiceCollection services, String name, Action`1 configureOptions)
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenServiceCollectionExtensions.AddSwaggerGen(IServiceCollection services, Action`1 setupAction)
+   at Program.<Main>$(String[] args) in D:\rider-projects\ScriptShoes\ScriptShoes.API\Program.cs:line 59|url: |action: 
+2023-10-16 20:34:36.6164|0|DEBUG|Program|init main |url: |action: 
+2023-10-16 20:34:37.2780|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-16 20:34:37.2780|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-16 20:34:37.2780|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-16 20:34:37.2780|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-16 20:34:51.5823|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/user/login|action: Login
+2023-10-16 20:35:12.0668|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 

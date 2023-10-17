@@ -1,9 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ScriptShoes.Application.Features.Cart;
 using ScriptShoes.Application.Features.Cart.Commands.AddToCart;
-using ScriptShoes.Application.Features.Cart.Queries;
+using ScriptShoes.Application.Features.Cart.Commands.RemoveFromCart;
 using ScriptShoes.Application.Features.Cart.Queries.GetItemsFromCart;
 using ScriptShoes.Application.Models.Cart;
 
@@ -36,5 +35,14 @@ public class CartController : ControllerBase
     {
         var cart = await _mediator.Send(new GetItemsFromCartQuery());
         return Ok(cart);
+    }
+
+    [HttpDelete]
+    [Route("remove/shoe/{shoeId:int}/count/{itemsCount:int}")]
+    public async Task<ActionResult> RemoveFromCart([FromRoute] int shoeId,
+        [FromRoute] int itemsCount)
+    {
+        await _mediator.Send(new RemoveFromCartCommand(shoeId, itemsCount));
+        return NoContent();
     }
 }
