@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using ScriptShoes.Application.Common;
 using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Domain.Exceptions;
 
@@ -25,9 +26,9 @@ public class CreateReviewCommandHandler : IRequestHandler<CreateReviewCommand, U
         if (shoe is null)
             throw new NotFoundException("Shoe not found");
 
-        var userId = _userRepository.GetUserId!.Value;
-
-        var doesUserHaveReviewForShoe = await _reviewRepository.DoesUserHaveReviewForShoe(userId, request.Dto.ShoeId);
+        var user = await GetUserByHttpContextId.Get(_userRepository);
+        
+        var doesUserHaveReviewForShoe = await _reviewRepository.DoesUserHaveReviewForShoe(user.Id, request.Dto.ShoeId);
 
         if (doesUserHaveReviewForShoe)
             throw new BadRequestException("This user already has review for this shoe");
@@ -41,10 +42,11 @@ public class CreateReviewCommandHandler : IRequestHandler<CreateReviewCommand, U
         await _reviewRepository.CreateAsync(new Domain.Entities.Review()
         {
             ShoeId = request.Dto.ShoeId,
-            UserId = userId,
+            UserId = user.Id,
             Title = request.Dto.Title,
             ReviewDescription = request.Dto.ReviewDescription,
-            ShoeRate = request.Dto.ShoeRate
+            ShoeRate = request.Dto.ShoeRate,
+            Username = user.Username
         });
 
         return Unit.Value;
