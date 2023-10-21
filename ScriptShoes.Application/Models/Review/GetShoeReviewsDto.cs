@@ -2,6 +2,7 @@
 
 public class GetShoeReviewsDto
 {
+    public int Id { get; set; }
     public string Title { get; set; } = string.Empty;
     public string ReviewDescription { get; set; } = string.Empty;
     public int Likes { get; set; }

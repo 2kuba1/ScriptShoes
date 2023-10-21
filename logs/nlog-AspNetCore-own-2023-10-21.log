@@ -1,0 +1,21 @@
+2023-10-21 12:55:11.0669|0|DEBUG|Program|init main |url: |action: 
+2023-10-21 12:55:13.2568|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-21 12:55:13.2568|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-21 12:55:13.2568|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-21 12:55:13.2568|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-21 13:00:30.4667|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/review/getShoeReviews/2|action: GetShoeReviews
+2023-10-21 13:00:59.6307|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
+2023-10-21 13:01:05.9202|0|DEBUG|Program|init main |url: |action: 
+2023-10-21 13:01:06.1557|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-21 13:01:06.1557|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-21 13:01:06.1557|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-21 13:01:06.1557|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-21 13:01:20.7449|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/review/getShoeReviews/2|action: GetShoeReviews
+2023-10-21 13:01:36.7705|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
+2023-10-21 13:02:04.4198|0|DEBUG|Program|init main |url: |action: 
+2023-10-21 13:02:04.6605|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-21 13:02:04.6605|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-21 13:02:04.6605|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-21 13:02:04.6605|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-21 13:02:10.9354|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/review/deleteReview/2|action: DeleteReview
+2023-10-21 13:02:17.7011|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 

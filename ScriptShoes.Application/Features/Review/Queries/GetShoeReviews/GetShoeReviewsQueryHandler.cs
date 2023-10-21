@@ -10,14 +10,11 @@ public class GetShoeReviewsQueryHandler : IRequestHandler<GetShoeReviewsQuery, L
 {
     private readonly IReviewRepository _reviewRepository;
     private readonly IShoeRepository _shoeRepository;
-    private readonly IUserRepository _userRepository;
 
-    public GetShoeReviewsQueryHandler(IReviewRepository reviewRepository, IShoeRepository shoeRepository,
-        IUserRepository userRepository)
+    public GetShoeReviewsQueryHandler(IReviewRepository reviewRepository, IShoeRepository shoeRepository)
     {
         _reviewRepository = reviewRepository;
         _shoeRepository = shoeRepository;
-        _userRepository = userRepository;
     }
 
     public async Task<List<GetShoeReviewsDto>> Handle(GetShoeReviewsQuery request, CancellationToken cancellationToken)
