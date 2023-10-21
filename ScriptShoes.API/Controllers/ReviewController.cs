@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoes.Application.Features.Review.Commands;
 using ScriptShoes.Application.Features.Review.Commands.DeleteReview;
+using ScriptShoes.Application.Features.Review.Commands.UpdateReviewLike;
 using ScriptShoes.Application.Features.Review.Queries.GetShoeReviews;
 using ScriptShoes.Application.Models.Review;
 
@@ -43,6 +44,14 @@ public class ReviewController : ControllerBase
     public async Task<ActionResult> DeleteReview([FromRoute] int reviewId)
     {
         await _mediator.Send(new DeleteReviewCommand(reviewId));
+        return NoContent();
+    }
+
+    [HttpPost]
+    [Route("addLike")]
+    public async Task<ActionResult> AddLike([FromBody] AddReviewLikeDto dto)
+    {
+        await _mediator.Send(new AddReviewLikeCommand(dto));
         return NoContent();
     }
 }
