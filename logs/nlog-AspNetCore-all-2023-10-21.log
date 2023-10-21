@@ -664,3 +664,293 @@ ClaimsAuthorizationRequirement:Claim.Type=Role and Claim.Value is one of the fol
 2023-10-21 13:02:17.7011|7|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMUI4KKJ2ODB" sending FIN because: "The Socket transport's send loop completed gracefully." 
 2023-10-21 13:02:17.7011|7|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMUI4KKJ2ODC" sending FIN because: "The Socket transport's send loop completed gracefully." 
 2023-10-21 13:02:17.7011|4|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopped 
+2023-10-21 13:15:59.3765|0|DEBUG|Program|init main 
+2023-10-21 13:15:59.5355|12|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory|Registered model binder providers, in the following order: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider 
+2023-10-21 13:15:59.5698|1|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting starting 
+2023-10-21 13:15:59.5784|63|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2023-10-21 13:15:59.5784|37|DEBUG|Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository|Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-fa06f452-293b-47bb-911f-d5ac0d2ec068.xml'. 
+2023-10-21 13:15:59.5784|18|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|Found key {fa06f452-293b-47bb-911f-d5ac0d2ec068}. 
+2023-10-21 13:15:59.5914|13|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver|Considering key {fa06f452-293b-47bb-911f-d5ac0d2ec068} with expiration date 2023-12-25 14:50:04Z as default key. 
+2023-10-21 13:15:59.5914|0|DEBUG|Microsoft.AspNetCore.DataProtection.TypeForwardingActivator|Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60 
+2023-10-21 13:15:59.5914|51|DEBUG|Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor|Decrypting secret element using Windows DPAPI. 
+2023-10-21 13:15:59.5914|0|DEBUG|Microsoft.AspNetCore.DataProtection.TypeForwardingActivator|Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60 
+2023-10-21 13:15:59.5914|4|DEBUG|Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory|Opening CNG algorithm 'AES' from provider '(null)' with chaining mode CBC. 
+2023-10-21 13:15:59.5914|3|DEBUG|Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory|Opening CNG algorithm 'SHA256' from provider '(null)' with HMAC. 
+2023-10-21 13:15:59.5914|2|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider|Using key {fa06f452-293b-47bb-911f-d5ac0d2ec068} as the default key. 
+2023-10-21 13:15:59.5914|65|DEBUG|Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService|Key ring with default key {fa06f452-293b-47bb-911f-d5ac0d2ec068} was loaded during application startup. 
+2023-10-21 13:15:59.6360|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 
+2023-10-21 13:15:59.6392|13|DEBUG|Microsoft.AspNetCore.Hosting.Diagnostics|Loaded hosting startup assembly ScriptShoes.API 
+2023-10-21 13:15:59.6392|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2023-10-21 13:15:59.6392|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2023-10-21 13:15:59.6392|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API 
+2023-10-21 13:15:59.6392|2|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting started 
+2023-10-21 13:15:59.7000|6|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMUI4SDBJJKQ" received FIN. 
+2023-10-21 13:15:59.7000|39|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKQ" accepted. 
+2023-10-21 13:15:59.7000|1|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKQ" started. 
+2023-10-21 13:15:59.7000|7|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMUI4SDBJJKQ" sending FIN because: "The Socket transport's send loop completed gracefully." 
+2023-10-21 13:15:59.7000|10|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKQ" disconnecting. 
+2023-10-21 13:15:59.7146|2|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKQ" stopped. 
+2023-10-21 13:15:59.7712|39|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKR" accepted. 
+2023-10-21 13:15:59.7712|1|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKR" started. 
+2023-10-21 13:15:59.7712|39|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKS" accepted. 
+2023-10-21 13:15:59.7712|1|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKS" started. 
+2023-10-21 13:15:59.7978|1|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5013/swagger/index.html - - 
+2023-10-21 13:15:59.7978|0|DEBUG|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|Wildcard detected, all requests with hosts will be allowed. 
+2023-10-21 13:15:59.7978|2|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed. 
+2023-10-21 13:15:59.8201|1000|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|No candidates found for the request path '/swagger/index.html' 
+2023-10-21 13:15:59.8201|2|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request did not match any endpoints 
+2023-10-21 13:15:59.9124|9|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKR" completed keep alive response. 
+2023-10-21 13:15:59.9124|2|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5013/swagger/index.html - - - 200 - text/html;charset=utf-8 117.0607ms 
+2023-10-21 13:16:00.2945|1|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5013/swagger/v1/swagger.json - - 
+2023-10-21 13:16:00.2945|2|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed. 
+2023-10-21 13:16:00.2945|1000|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|No candidates found for the request path '/swagger/v1/swagger.json' 
+2023-10-21 13:16:00.2945|2|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request did not match any endpoints 
+2023-10-21 13:16:00.3895|9|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKR" completed keep alive response. 
+2023-10-21 13:16:00.3895|2|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5013/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 95.1963ms 
+2023-10-21 13:16:35.9388|1|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5013/api/user/login?email=kuba%40gmail.com&password=Kuba123%21 - - 
+2023-10-21 13:16:35.9388|2|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed. 
+2023-10-21 13:16:35.9388|1001|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|1 candidate(s) found for the request path '/api/user/login' 
+2023-10-21 13:16:35.9388|1005|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|Endpoint 'ScriptShoes.API.Controllers.UserController.Login (ScriptShoes.API)' with route pattern 'api/user/login' is valid for the request path '/api/user/login' 
+2023-10-21 13:16:35.9388|1|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request matched endpoint 'ScriptShoes.API.Controllers.UserController.Login (ScriptShoes.API)' 
+2023-10-21 13:16:35.9488|15|DEBUG|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Static files was skipped as the request already matched an endpoint. 
+2023-10-21 13:16:35.9488|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. 
+2023-10-21 13:16:35.9720|9|DEBUG|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was not authenticated. 
+2023-10-21 13:16:35.9720|24|INFO|Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware|No cached response available for this request. 
+2023-10-21 13:16:35.9720|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'ScriptShoes.API.Controllers.UserController.Login (ScriptShoes.API)' 
+2023-10-21 13:16:35.9934|102|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ScriptShoes.Application.Models.User.LoginResponseDto]] Login(System.String, System.String) on controller ScriptShoes.API.Controllers.UserController (ScriptShoes.API). 
+2023-10-21 13:16:35.9934|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of authorization filters (in the following order): None 
+2023-10-21 13:16:35.9934|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of resource filters (in the following order): None 
+2023-10-21 13:16:35.9934|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) 
+2023-10-21 13:16:35.9934|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of exception filters (in the following order): None 
+2023-10-21 13:16:35.9934|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) 
+2023-10-21 13:16:35.9954|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executing controller factory for controller ScriptShoes.API.Controllers.UserController (ScriptShoes.API) 
+2023-10-21 13:16:35.9954|2|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed controller factory for controller ScriptShoes.API.Controllers.UserController (ScriptShoes.API) 
+2023-10-21 13:16:35.9954|22|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|Attempting to bind parameter 'email' of type 'System.String' ... 
+2023-10-21 13:16:35.9954|44|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder|Attempting to bind parameter 'email' of type 'System.String' using the name 'email' in request data ... 
+2023-10-21 13:16:36.0111|45|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder|Done attempting to bind parameter 'email' of type 'System.String'. 
+2023-10-21 13:16:36.0111|23|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|Done attempting to bind parameter 'email' of type 'System.String'. 
+2023-10-21 13:16:36.0111|26|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|Attempting to validate the bound parameter 'email' of type 'System.String' ... 
+2023-10-21 13:16:36.0111|27|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|Done attempting to validate the bound parameter 'email' of type 'System.String'. 
+2023-10-21 13:16:36.0111|22|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|Attempting to bind parameter 'password' of type 'System.String' ... 
+2023-10-21 13:16:36.0111|44|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder|Attempting to bind parameter 'password' of type 'System.String' using the name 'password' in request data ... 
+2023-10-21 13:16:36.0111|45|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder|Done attempting to bind parameter 'password' of type 'System.String'. 
+2023-10-21 13:16:36.0111|23|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|Done attempting to bind parameter 'password' of type 'System.String'. 
+2023-10-21 13:16:36.0111|26|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|Attempting to validate the bound parameter 'password' of type 'System.String' ... 
+2023-10-21 13:16:36.0111|27|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|Done attempting to validate the bound parameter 'password' of type 'System.String'. 
+2023-10-21 13:16:36.0111|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-10-21 13:16:36.0111|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-10-21 13:16:36.0111|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-10-21 13:16:36.0111|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-10-21 13:16:36.0111|101|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executing action method ScriptShoes.API.Controllers.UserController.Login (ScriptShoes.API) - Validation state: Valid 
+2023-10-21 13:16:36.0111|102|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executing action method ScriptShoes.API.Controllers.UserController.Login (ScriptShoes.API) with arguments (kuba@gmail.com, Kuba123!) 
+2023-10-21 13:16:36.1348|10401|DEBUG|Microsoft.EntityFrameworkCore.Infrastructure|An 'IServiceProvider' was created for internal use by Entity Framework. 
+2023-10-21 13:16:36.8575|10403|DEBUG|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 7.0.11 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:7.0.11+c25a0d7b68d66c6ab3849a3b4333964faea6adc9' with options: None 
+2023-10-21 13:16:36.9051|10111|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<User>()
+    .Include(x => x.Role)
+    .FirstOrDefault(x => x.Email == __email_0)' 
+2023-10-21 13:16:36.9551|10112|DEBUG|Microsoft.EntityFrameworkCore.Query|Including navigation: 'User.Role'. 
+2023-10-21 13:16:37.0825|10107|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<User>(
+    asyncEnumerable: new SingleQueryingEnumerable<User>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.QueryExpression(
+            Client Projections:
+                0 -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.AvailableFounds (float) Required, 1], [Property: User.Created (DateTime) Required, 2], [Property: User.Email (string) Required, 3], [Property: User.FirsName (string) Required, 4], [Property: User.HashedPassword (string) Required, 5], [Property: User.IsVerified (bool) Required, 6], [Property: User.LastModified (DateTime) Required, 7], [Property: User.LastName (string) Required, 8], [Property: User.ProfilePictureUrl (string) Required, 9], [Property: User.RefreshToken (string), 10], [Property: User.RefreshTokenExpirationTime (DateTime) Required, 11], [Property: User.RoleId (int) Required FK Index, 12], [Property: User.Username (string) Required, 13] }
+                1 -> Dictionary<IProperty, int> { [Property: Role.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 14], [Property: Role.Created (DateTime) Required, 15], [Property: Role.LastModified (DateTime) Required, 16], [Property: Role.Name (string) Required, 17] }
+            SELECT TOP(1) u.Id, u.AvailableFounds, u.Created, u.Email, u.FirsName, u.HashedPassword, u.IsVerified, u.LastModified, u.LastName, u.ProfilePictureUrl, u.RefreshToken, u.RefreshTokenExpirationTime, u.RoleId, u.Username, r.Id, r.Created, r.LastModified, r.Name
+            FROM Users AS u
+            INNER JOIN Roles AS r ON u.RoleId == r.Id
+            WHERE u.Email == @__email_0), 
+        null, 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, User>, 
+        ScriptShoes.Persistence.Database.AppDbContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)' 
+2023-10-21 13:16:37.1126|20103|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'. 
+2023-10-21 13:16:37.1126|20005|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Creating DbConnection. 
+2023-10-21 13:16:37.1385|20006|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Created DbConnection. (21ms). 
+2023-10-21 13:16:37.1385|20104|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (29ms). 
+2023-10-21 13:16:37.1385|20106|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (35ms). 
+2023-10-21 13:16:37.1512|20000|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Opening connection to database 'ScriptShoesDb' on server ''. 
+2023-10-21 13:16:37.2694|20001|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Opened connection to database 'ScriptShoesDb' on server 'tcp://localhost:5432'. 
+2023-10-21 13:16:37.2826|20100|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__email_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."AvailableFounds", u."Created", u."Email", u."FirsName", u."HashedPassword", u."IsVerified", u."LastModified", u."LastName", u."ProfilePictureUrl", u."RefreshToken", u."RefreshTokenExpirationTime", u."RoleId", u."Username", r."Id", r."Created", r."LastModified", r."Name"
+FROM "Users" AS u
+INNER JOIN "Roles" AS r ON u."RoleId" = r."Id"
+WHERE u."Email" = @__email_0
+LIMIT 1 
+2023-10-21 13:16:37.3268|20101|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (44ms) [Parameters=[@__email_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."AvailableFounds", u."Created", u."Email", u."FirsName", u."HashedPassword", u."IsVerified", u."LastModified", u."LastName", u."ProfilePictureUrl", u."RefreshToken", u."RefreshTokenExpirationTime", u."RoleId", u."Username", r."Id", r."Created", r."LastModified", r."Name"
+FROM "Users" AS u
+INNER JOIN "Roles" AS r ON u."RoleId" = r."Id"
+WHERE u."Email" = @__email_0
+LIMIT 1 
+2023-10-21 13:16:37.3726|10806|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|Context 'AppDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values. 
+2023-10-21 13:16:37.4159|10805|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|The navigation 'User.Role' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values. 
+2023-10-21 13:16:37.4175|10806|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|Context 'AppDbContext' started tracking 'Role' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values. 
+2023-10-21 13:16:37.4175|20301|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'ScriptShoesDb' on server 'tcp://localhost:5432'. 
+2023-10-21 13:16:37.4385|20300|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'ScriptShoesDb' on server 'tcp://localhost:5432' is being disposed after spending 104ms reading results. 
+2023-10-21 13:16:37.4385|20002|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Closing connection to database 'ScriptShoesDb' on server 'tcp://localhost:5432'. 
+2023-10-21 13:16:37.4487|20003|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Closed connection to database 'ScriptShoesDb' on server '' (5ms). 
+2023-10-21 13:16:37.9010|10807|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|An entity of type 'User' tracked by 'AppDbContext' changed state from 'Unchanged' to 'Modified'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values. 
+2023-10-21 13:16:37.9041|10800|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|DetectChanges starting for 'AppDbContext'. 
+2023-10-21 13:16:37.9178|10801|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|DetectChanges completed for 'AppDbContext'. 
+2023-10-21 13:16:37.9178|10004|DEBUG|Microsoft.EntityFrameworkCore.Update|SaveChanges starting for 'AppDbContext'. 
+2023-10-21 13:16:37.9178|10800|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|DetectChanges starting for 'AppDbContext'. 
+2023-10-21 13:16:37.9178|10801|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|DetectChanges completed for 'AppDbContext'. 
+2023-10-21 13:16:38.0009|20000|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Opening connection to database 'ScriptShoesDb' on server ''. 
+2023-10-21 13:16:38.0009|20001|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Opened connection to database 'ScriptShoesDb' on server 'tcp://localhost:5432'. 
+2023-10-21 13:16:38.0009|20103|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'. 
+2023-10-21 13:16:38.0009|20104|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms). 
+2023-10-21 13:16:38.0009|20106|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms). 
+2023-10-21 13:16:38.0009|20100|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@p13='?' (DbType = Int32), @p0='?' (DbType = Single), @p1='?' (DbType = DateTime), @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?', @p9='?', @p10='?' (DbType = DateTime), @p11='?' (DbType = Int32), @p12='?'], CommandType='Text', CommandTimeout='30']
+UPDATE "Users" SET "AvailableFounds" = @p0, "Created" = @p1, "Email" = @p2, "FirsName" = @p3, "HashedPassword" = @p4, "IsVerified" = @p5, "LastModified" = @p6, "LastName" = @p7, "ProfilePictureUrl" = @p8, "RefreshToken" = @p9, "RefreshTokenExpirationTime" = @p10, "RoleId" = @p11, "Username" = @p12
+WHERE "Id" = @p13; 
+2023-10-21 13:16:38.0495|20101|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (44ms) [Parameters=[@p13='?' (DbType = Int32), @p0='?' (DbType = Single), @p1='?' (DbType = DateTime), @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?', @p9='?', @p10='?' (DbType = DateTime), @p11='?' (DbType = Int32), @p12='?'], CommandType='Text', CommandTimeout='30']
+UPDATE "Users" SET "AvailableFounds" = @p0, "Created" = @p1, "Email" = @p2, "FirsName" = @p3, "HashedPassword" = @p4, "IsVerified" = @p5, "LastModified" = @p6, "LastName" = @p7, "ProfilePictureUrl" = @p8, "RefreshToken" = @p9, "RefreshTokenExpirationTime" = @p10, "RoleId" = @p11, "Username" = @p12
+WHERE "Id" = @p13; 
+2023-10-21 13:16:38.0495|20301|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'ScriptShoesDb' on server 'tcp://localhost:5432'. 
+2023-10-21 13:16:38.0495|20300|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'ScriptShoesDb' on server 'tcp://localhost:5432' is being disposed after spending 2ms reading results. 
+2023-10-21 13:16:38.0495|20002|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Closing connection to database 'ScriptShoesDb' on server 'tcp://localhost:5432'. 
+2023-10-21 13:16:38.0495|20003|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Closed connection to database 'ScriptShoesDb' on server '' (0ms). 
+2023-10-21 13:16:38.0495|10807|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|An entity of type 'User' tracked by 'AppDbContext' changed state from 'Modified' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values. 
+2023-10-21 13:16:38.0495|10005|DEBUG|Microsoft.EntityFrameworkCore.Update|SaveChanges completed for 'AppDbContext' with 1 entities written to the database. 
+2023-10-21 13:16:38.0622|103|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action method ScriptShoes.API.Controllers.UserController.Login (ScriptShoes.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2036.8028ms. 
+2023-10-21 13:16:38.0622|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-10-21 13:16:38.0622|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-10-21 13:16:38.0622|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-10-21 13:16:38.0622|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-10-21 13:16:38.0622|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2023-10-21 13:16:38.0622|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2023-10-21 13:16:38.0622|5|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Before executing action result Microsoft.AspNetCore.Mvc.OkObjectResult. 
+2023-10-21 13:16:38.0622|11|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter 
+2023-10-21 13:16:38.0622|6|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|Attempting to select an output formatter based on Accept header 'text/plain'. 
+2023-10-21 13:16:38.0622|5|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|Could not find an output formatter based on content negotiation. Accepted types were (text/plain) 
+2023-10-21 13:16:38.0622|8|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|Attempting to select an output formatter without using a content type as no explicit content types were specified for the response. 
+2023-10-21 13:16:38.0622|10|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|Attempting to select the first formatter in the output formatters list which can write the result. 
+2023-10-21 13:16:38.0622|2|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response. 
+2023-10-21 13:16:38.0622|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'ScriptShoes.Application.Models.User.LoginResponseDto'. 
+2023-10-21 13:16:38.0837|11|DEBUG|Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware|Response is not cacheable because it does not contain the 'public' cache directive. 
+2023-10-21 13:16:38.0837|6|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|After executing action result Microsoft.AspNetCore.Mvc.OkObjectResult. 
+2023-10-21 13:16:38.0837|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2023-10-21 13:16:38.0837|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2023-10-21 13:16:38.0837|105|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action ScriptShoes.API.Controllers.UserController.Login (ScriptShoes.API) in 2090.6703ms 
+2023-10-21 13:16:38.0893|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'ScriptShoes.API.Controllers.UserController.Login (ScriptShoes.API)' 
+2023-10-21 13:16:38.0893|27|INFO|Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware|The response could not be cached for this request. 
+2023-10-21 13:16:38.0893|9|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKR" completed keep alive response. 
+2023-10-21 13:16:38.0893|10407|DEBUG|Microsoft.EntityFrameworkCore.Infrastructure|'AppDbContext' disposed. 
+2023-10-21 13:16:38.0893|20007|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Disposing connection to database 'ScriptShoesDb' on server ''. 
+2023-10-21 13:16:38.0893|20008|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Disposed connection to database 'ScriptShoesDb' on server '' (1ms). 
+2023-10-21 13:16:38.0893|2|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5013/api/user/login?email=kuba%40gmail.com&password=Kuba123%21 - - - 200 - application/json;+charset=utf-8 2162.1506ms 
+2023-10-21 13:16:57.5055|39|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKT" accepted. 
+2023-10-21 13:16:57.5055|1|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKT" started. 
+2023-10-21 13:16:57.5055|39|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKU" accepted. 
+2023-10-21 13:16:57.5055|6|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMUI4SDBJJKT" received FIN. 
+2023-10-21 13:16:57.5055|1|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKU" started. 
+2023-10-21 13:16:57.5055|7|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMUI4SDBJJKT" sending FIN because: "The Socket transport's send loop completed gracefully." 
+2023-10-21 13:16:57.5055|10|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKT" disconnecting. 
+2023-10-21 13:16:57.5055|1|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 POST http://localhost:5013/api/review/create application/json 81 
+2023-10-21 13:16:57.5055|2|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed. 
+2023-10-21 13:16:57.5055|1001|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|1 candidate(s) found for the request path '/api/review/create' 
+2023-10-21 13:16:57.5055|1005|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|Endpoint 'ScriptShoes.API.Controllers.ReviewController.CreateReview (ScriptShoes.API)' with route pattern 'api/review/create' is valid for the request path '/api/review/create' 
+2023-10-21 13:16:57.5055|1|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request matched endpoint 'ScriptShoes.API.Controllers.ReviewController.CreateReview (ScriptShoes.API)' 
+2023-10-21 13:16:57.5055|15|DEBUG|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Static files was skipped as the request already matched an endpoint. 
+2023-10-21 13:16:57.5055|2|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKT" stopped. 
+2023-10-21 13:16:57.5463|2|DEBUG|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2023-10-21 13:16:57.5463|8|DEBUG|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was successfully authenticated. 
+2023-10-21 13:16:57.5463|1|DEBUG|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization was successful. 
+2023-10-21 13:16:57.5463|1|DEBUG|Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware|The request cannot be served from cache because it uses the HTTP method: POST. 
+2023-10-21 13:16:57.5463|1|DEBUG|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization was successful. 
+2023-10-21 13:16:57.5463|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'ScriptShoes.API.Controllers.ReviewController.CreateReview (ScriptShoes.API)' 
+2023-10-21 13:16:57.5463|102|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "CreateReview", controller = "Review"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] CreateReview(ScriptShoes.Application.Models.Review.CreateReviewDto) on controller ScriptShoes.API.Controllers.ReviewController (ScriptShoes.API). 
+2023-10-21 13:16:57.5463|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of authorization filters (in the following order): None 
+2023-10-21 13:16:57.5463|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of resource filters (in the following order): None 
+2023-10-21 13:16:57.5463|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) 
+2023-10-21 13:16:57.5463|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of exception filters (in the following order): None 
+2023-10-21 13:16:57.5463|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) 
+2023-10-21 13:16:57.5463|1|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executing controller factory for controller ScriptShoes.API.Controllers.ReviewController (ScriptShoes.API) 
+2023-10-21 13:16:57.5463|2|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed controller factory for controller ScriptShoes.API.Controllers.ReviewController (ScriptShoes.API) 
+2023-10-21 13:16:57.5584|22|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|Attempting to bind parameter 'dto' of type 'ScriptShoes.Application.Models.Review.CreateReviewDto' ... 
+2023-10-21 13:16:57.5584|44|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinder|Attempting to bind parameter 'dto' of type 'ScriptShoes.Application.Models.Review.CreateReviewDto' using the name '' in request data ... 
+2023-10-21 13:16:57.5584|1|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinder|Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'. 
+2023-10-21 13:16:57.5584|25|DEBUG|Microsoft.AspNetCore.Server.Kestrel|Connection id "0HMUI4SDBJJKU", Request id "0HMUI4SDBJJKU:00000001": started reading request body. 
+2023-10-21 13:16:57.5584|26|DEBUG|Microsoft.AspNetCore.Server.Kestrel|Connection id "0HMUI4SDBJJKU", Request id "0HMUI4SDBJJKU:00000001": done reading request body. 
+2023-10-21 13:16:57.5584|2|DEBUG|Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter|JSON input formatter succeeded, deserializing to type 'ScriptShoes.Application.Models.Review.CreateReviewDto' 
+2023-10-21 13:16:57.5733|45|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinder|Done attempting to bind parameter 'dto' of type 'ScriptShoes.Application.Models.Review.CreateReviewDto'. 
+2023-10-21 13:16:57.5733|23|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|Done attempting to bind parameter 'dto' of type 'ScriptShoes.Application.Models.Review.CreateReviewDto'. 
+2023-10-21 13:16:57.5733|26|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|Attempting to validate the bound parameter 'dto' of type 'ScriptShoes.Application.Models.Review.CreateReviewDto' ... 
+2023-10-21 13:16:57.5733|27|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|Done attempting to validate the bound parameter 'dto' of type 'ScriptShoes.Application.Models.Review.CreateReviewDto'. 
+2023-10-21 13:16:57.5733|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-10-21 13:16:57.5733|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-10-21 13:16:57.5733|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-10-21 13:16:57.5733|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-10-21 13:16:57.5733|101|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executing action method ScriptShoes.API.Controllers.ReviewController.CreateReview (ScriptShoes.API) - Validation state: Valid 
+2023-10-21 13:16:57.5733|102|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executing action method ScriptShoes.API.Controllers.ReviewController.CreateReview (ScriptShoes.API) with arguments (ScriptShoes.Application.Models.Review.CreateReviewDto) 
+2023-10-21 13:16:57.6330|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-10-21 13:16:57.6330|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-10-21 13:16:57.6330|52|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-10-21 13:16:57.6330|53|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-10-21 13:16:57.6330|105|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action ScriptShoes.API.Controllers.ReviewController.CreateReview (ScriptShoes.API) in 75.728ms 
+2023-10-21 13:16:57.6330|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'ScriptShoes.API.Controllers.ReviewController.CreateReview (ScriptShoes.API)' 
+2023-10-21 13:16:57.6330|1|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. FluentValidation.ValidationException: Validation failed: 
+ -- Dto.Title: The length of 'Dto Title' must be at least 3 characters. You entered 0 characters. Severity: Error
+ -- Dto.ReviewDescription: The length of 'Dto Review Description' must be at least 5 characters. You entered 0 characters. Severity: Error
+ -- Dto.ShoeRate: 'Dto Shoe Rate' must be greater than or equal to '1'. Severity: Error
+   at ScriptShoes.Application.PipelineBehaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\rider-projects\ScriptShoes\ScriptShoes.Application\PipelineBehaviors\ValidationBehavior.cs:line 26
+   at ScriptShoes.API.Controllers.ReviewController.CreateReview(CreateReviewDto dto) in D:\rider-projects\ScriptShoes\ScriptShoes.API\Controllers\ReviewController.cs:line 27
+   at lambda_method194(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-21 13:16:57.7189|9|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKU" completed keep alive response. 
+2023-10-21 13:16:57.7189|2|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 POST http://localhost:5013/api/review/create application/json 81 - 500 - text/plain;+charset=utf-8 211.8184ms 
+2023-10-21 13:17:24.5286|6|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMUI4SDBJJKS" received FIN. 
+2023-10-21 13:17:24.5286|10|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKS" disconnecting. 
+2023-10-21 13:17:24.5286|2|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKS" stopped. 
+2023-10-21 13:17:24.5286|7|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMUI4SDBJJKS" sending FIN because: "The Socket transport's send loop completed gracefully." 
+2023-10-21 13:17:45.6587|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... 
+2023-10-21 13:17:45.6587|3|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopping 
+2023-10-21 13:17:45.6587|10|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKR" disconnecting. 
+2023-10-21 13:17:45.6587|10|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKU" disconnecting. 
+2023-10-21 13:17:45.6587|2|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKR" stopped. 
+2023-10-21 13:17:45.6587|2|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUI4SDBJJKU" stopped. 
+2023-10-21 13:17:45.6587|7|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMUI4SDBJJKR" sending FIN because: "The Socket transport's send loop completed gracefully." 
+2023-10-21 13:17:45.6587|7|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMUI4SDBJJKU" sending FIN because: "The Socket transport's send loop completed gracefully." 
+2023-10-21 13:17:45.6668|4|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopped 
+2023-10-21 18:58:30.9736|0|DEBUG|Program|init main 
+2023-10-21 18:58:31.4810|0|ERROR|Program|Stopped program because of exception Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in D:\rider-projects\ScriptShoes\ScriptShoes.API\Program.cs:line 53
+2023-10-21 18:58:45.0439|0|DEBUG|Program|init main 
+2023-10-21 18:58:45.1370|0|ERROR|Program|Stopped program because of exception Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in D:\rider-projects\ScriptShoes\ScriptShoes.API\Program.cs:line 53
