@@ -1,8 +1,10 @@
-﻿namespace ScriptShoes.Domain.Entities;
+﻿using ScriptShoes.Domain.Entities.Common;
 
-public class ReviewLike
+namespace ScriptShoes.Domain.Entities;
+
+public class ReviewLike : BaseEntity
 {
-    public int Id { get; set; }
-    public int UserId { get; set; }
+    public int? UserId { get; set; }
+    public string? LocalId { get; set; }
     public int ReviewId { get; set; }
 }
