@@ -2,8 +2,9 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoes.Application.Features.Review.Commands;
+using ScriptShoes.Application.Features.Review.Commands.AddReviewLike;
 using ScriptShoes.Application.Features.Review.Commands.DeleteReview;
-using ScriptShoes.Application.Features.Review.Commands.UpdateReviewLike;
+using ScriptShoes.Application.Features.Review.Commands.RemoveReviewLike;
 using ScriptShoes.Application.Features.Review.Queries.GetShoeReviews;
 using ScriptShoes.Application.Models.Review;
 
@@ -52,6 +53,14 @@ public class ReviewController : ControllerBase
     public async Task<ActionResult> AddLike([FromBody] AddReviewLikeDto dto)
     {
         await _mediator.Send(new AddReviewLikeCommand(dto));
+        return NoContent();
+    }
+
+    [HttpDelete]
+    [Route("removeLike")]
+    public async Task<ActionResult> RemoveLike([FromBody] RemoveReviewLikeDto dto)
+    {
+        await _mediator.Send(new RemoveReviewLikeCommand(dto));
         return NoContent();
     }
 }

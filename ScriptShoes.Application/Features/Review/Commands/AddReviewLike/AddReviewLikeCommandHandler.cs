@@ -3,7 +3,7 @@ using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Domain.Entities;
 using ScriptShoes.Domain.Exceptions;
 
-namespace ScriptShoes.Application.Features.Review.Commands.UpdateReviewLike;
+namespace ScriptShoes.Application.Features.Review.Commands.AddReviewLike;
 
 public class AddReviewLikeCommandHandler : IRequestHandler<AddReviewLikeCommand, Unit>
 {
@@ -21,20 +21,24 @@ public class AddReviewLikeCommandHandler : IRequestHandler<AddReviewLikeCommand,
 
     public async Task<Unit> Handle(AddReviewLikeCommand request, CancellationToken cancellationToken)
     {
-        if (request.dto.UserId is null && request.dto.LocalUserId is null ||
-            request.dto.UserId is not null && request.dto.LocalUserId is not null)
+        if (request.Dto.UserId is null && request.Dto.LocalUserId is null ||
+            request.Dto.UserId is not null && request.Dto.LocalUserId is not null)
             throw new BadRequestException("UserId and LocalUserId can't be the same type");
 
-        var review = await _reviewRepository.GetByIdAsync(request.dto.ReviewId);
+        var review = await _reviewRepository.GetByIdAsync(request.Dto.ReviewId);
 
         if (review is null)
             throw new NotFoundException("Review not found");
 
-        if (request.dto.UserId is not null)
+        if (request.Dto.UserId is not null)
         {
-            var user = await _userRepository.GetByIdAsync((int)request.dto.UserId);
+            var user = await _userRepository.GetByIdAsync((int)request.Dto.UserId);
 
             if (user is null) throw new NotFoundException("User not found");
+
+            var reviewLike = await _reviewLikeRepository.GetByReviewIdAndUserId(review.Id, user.Id);
+            if (reviewLike is not null)
+                throw new NotFoundException("Review like is already added");
 
             review.Likes++;
             await _reviewRepository.UpdateAsync(review);
@@ -48,15 +52,20 @@ public class AddReviewLikeCommandHandler : IRequestHandler<AddReviewLikeCommand,
             return Unit.Value;
         }
 
-        if (request.dto.LocalUserId != null && !request.dto.LocalUserId.Contains("Local"))
+        if (request.Dto.LocalUserId == null || !request.Dto.LocalUserId.Contains("Local"))
             throw new BadRequestException("Incorrect UserLocalId");
+
+        var localUserReviewLike =
+            await _reviewLikeRepository.GetByReviewIdAndUserId(review.Id, request.Dto.LocalUserId);
+        if (localUserReviewLike is not null)
+            throw new NotFoundException("Review like is already added");
 
         review.Likes++;
         await _reviewRepository.UpdateAsync(review);
 
         await _reviewLikeRepository.CreateAsync(new ReviewLike()
         {
-            LocalId = request.dto.LocalUserId,
+            LocalId = request.Dto.LocalUserId,
             ReviewId = review.Id,
             ShoeId = review.ShoeId
         });
