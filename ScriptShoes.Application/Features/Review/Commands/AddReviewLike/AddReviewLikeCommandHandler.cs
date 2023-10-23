@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using ScriptShoes.Application.Common;
 using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Domain.Entities;
 using ScriptShoes.Domain.Exceptions;
@@ -32,9 +33,10 @@ public class AddReviewLikeCommandHandler : IRequestHandler<AddReviewLikeCommand,
 
         if (request.Dto.UserId is not null)
         {
-            var user = await _userRepository.GetByIdAsync((int)request.Dto.UserId);
+            var user = await GetUserByHttpContextId.Get(_userRepository);
 
-            if (user is null) throw new NotFoundException("User not found");
+            if (user.Id != request.Dto.UserId)
+                throw new NotFoundException("User not found");
 
             var reviewLike = await _reviewLikeRepository.GetByReviewIdAndUserId(review.Id, user.Id);
             if (reviewLike is not null)

@@ -5907,3 +5907,57 @@ RETURNING "Id";
 2023-10-22 20:55:23.2222|2|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUJ60PDH7T3" stopped. 
 2023-10-22 20:55:23.2222|7|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMUJ60PDH7T3" sending FIN because: "The Socket transport's send loop completed gracefully." 
 2023-10-22 20:55:23.2319|4|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopped 
+2023-10-22 22:09:20.9262|0|DEBUG|Program|init main 
+2023-10-22 22:09:21.4559|12|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory|Registered model binder providers, in the following order: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider 
+2023-10-22 22:09:21.5256|1|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting starting 
+2023-10-22 22:09:21.5434|63|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2023-10-22 22:09:21.5434|37|DEBUG|Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository|Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-fa06f452-293b-47bb-911f-d5ac0d2ec068.xml'. 
+2023-10-22 22:09:21.5667|18|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|Found key {fa06f452-293b-47bb-911f-d5ac0d2ec068}. 
+2023-10-22 22:09:21.5869|13|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver|Considering key {fa06f452-293b-47bb-911f-d5ac0d2ec068} with expiration date 2023-12-25 14:50:04Z as default key. 
+2023-10-22 22:09:21.5869|0|DEBUG|Microsoft.AspNetCore.DataProtection.TypeForwardingActivator|Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60 
+2023-10-22 22:09:21.5896|51|DEBUG|Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor|Decrypting secret element using Windows DPAPI. 
+2023-10-22 22:09:21.5896|0|DEBUG|Microsoft.AspNetCore.DataProtection.TypeForwardingActivator|Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60 
+2023-10-22 22:09:21.5896|4|DEBUG|Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory|Opening CNG algorithm 'AES' from provider '(null)' with chaining mode CBC. 
+2023-10-22 22:09:21.5896|3|DEBUG|Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory|Opening CNG algorithm 'SHA256' from provider '(null)' with HMAC. 
+2023-10-22 22:09:21.5896|2|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider|Using key {fa06f452-293b-47bb-911f-d5ac0d2ec068} as the default key. 
+2023-10-22 22:09:21.5896|65|DEBUG|Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService|Key ring with default key {fa06f452-293b-47bb-911f-d5ac0d2ec068} was loaded during application startup. 
+2023-10-22 22:09:21.6874|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 
+2023-10-22 22:09:21.6874|13|DEBUG|Microsoft.AspNetCore.Hosting.Diagnostics|Loaded hosting startup assembly ScriptShoes.API 
+2023-10-22 22:09:21.6874|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2023-10-22 22:09:21.6874|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2023-10-22 22:09:21.6874|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API 
+2023-10-22 22:09:21.6874|2|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting started 
+2023-10-22 22:09:21.9645|6|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMUJ7B3VGJS0" received FIN. 
+2023-10-22 22:09:21.9645|39|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUJ7B3VGJS0" accepted. 
+2023-10-22 22:09:21.9645|1|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUJ7B3VGJS0" started. 
+2023-10-22 22:09:21.9813|7|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMUJ7B3VGJS0" sending FIN because: "The Socket transport's send loop completed gracefully." 
+2023-10-22 22:09:21.9813|10|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUJ7B3VGJS0" disconnecting. 
+2023-10-22 22:09:21.9813|2|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUJ7B3VGJS0" stopped. 
+2023-10-22 22:09:22.0505|39|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUJ7B3VGJS1" accepted. 
+2023-10-22 22:09:22.0505|1|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUJ7B3VGJS1" started. 
+2023-10-22 22:09:22.0505|39|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUJ7B3VGJS2" accepted. 
+2023-10-22 22:09:22.0505|1|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUJ7B3VGJS2" started. 
+2023-10-22 22:09:22.1049|1|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5013/swagger/index.html - - 
+2023-10-22 22:09:22.1049|0|DEBUG|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|Wildcard detected, all requests with hosts will be allowed. 
+2023-10-22 22:09:22.1049|2|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed. 
+2023-10-22 22:09:22.1325|1000|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|No candidates found for the request path '/swagger/index.html' 
+2023-10-22 22:09:22.1325|2|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request did not match any endpoints 
+2023-10-22 22:09:22.2503|9|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUJ7B3VGJS1" completed keep alive response. 
+2023-10-22 22:09:22.2503|2|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5013/swagger/index.html - - - 200 - text/html;charset=utf-8 149.0570ms 
+2023-10-22 22:09:22.6033|1|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5013/swagger/v1/swagger.json - - 
+2023-10-22 22:09:22.6033|2|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed. 
+2023-10-22 22:09:22.6033|1000|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|No candidates found for the request path '/swagger/v1/swagger.json' 
+2023-10-22 22:09:22.6033|2|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request did not match any endpoints 
+2023-10-22 22:09:22.6981|9|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUJ7B3VGJS1" completed keep alive response. 
+2023-10-22 22:09:22.6983|2|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5013/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 94.9722ms 
+2023-10-22 22:09:46.0096|6|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMUJ7B3VGJS2" received FIN. 
+2023-10-22 22:09:46.0096|7|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMUJ7B3VGJS2" sending FIN because: "The Socket transport's send loop completed gracefully." 
+2023-10-22 22:09:46.0096|10|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUJ7B3VGJS2" disconnecting. 
+2023-10-22 22:09:46.0096|6|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMUJ7B3VGJS1" received FIN. 
+2023-10-22 22:09:46.0096|7|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HMUJ7B3VGJS1" sending FIN because: "The Socket transport's send loop completed gracefully." 
+2023-10-22 22:09:46.0096|10|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUJ7B3VGJS1" disconnecting. 
+2023-10-22 22:09:46.0129|2|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUJ7B3VGJS1" stopped. 
+2023-10-22 22:09:46.0129|2|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HMUJ7B3VGJS2" stopped. 
+2023-10-22 22:25:19.3085|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... 
+2023-10-22 22:25:19.3085|3|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopping 
+2023-10-22 22:25:19.3085|4|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopped 
