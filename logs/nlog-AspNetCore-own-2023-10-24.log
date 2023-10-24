@@ -1,0 +1,7 @@
+2023-10-24 20:42:29.9521|0|DEBUG|Program|init main |url: |action: 
+2023-10-24 20:42:32.3740|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-24 20:42:32.3740|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-24 20:42:32.3740|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-24 20:42:32.3740|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-24 20:42:42.5890|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/shoe/getPagedShoes|action: GetPagedShoes
+2023-10-24 20:43:09.5067|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
