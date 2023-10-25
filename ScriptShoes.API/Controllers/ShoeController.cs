@@ -1,19 +1,23 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using ScriptShoes.Application.Features.Shoe.Commands.CreateShoe;
 using ScriptShoes.Application.Features.Shoe.Commands.DeleteShoe;
 using ScriptShoes.Application.Features.Shoe.Commands.DeleteShoeImages;
 using ScriptShoes.Application.Features.Shoe.Commands.UpdateShoe;
 using ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes;
 using ScriptShoes.Application.Features.Shoe.Queries.GetFilters;
+using ScriptShoes.Application.Features.Shoe.Queries.GetPagedShoes;
 using ScriptShoes.Application.Features.Shoe.Queries.GetShoeById;
+using ScriptShoes.Application.Models;
 using ScriptShoes.Application.Models.Shoe;
 
 namespace ScriptShoes.API.Controllers;
 
 [Route("api/shoe")]
 [ApiController]
+[EnableRateLimiting("defaultLimiter")]
 public class ShoeController : ControllerBase
 {
     private readonly IMediator _mediator;
@@ -85,5 +89,14 @@ public class ShoeController : ControllerBase
     {
         await _mediator.Send(new DeleteShoeImagesCommand(id, imageIndexes));
         return Ok();
+    }
+
+    [HttpGet]
+    [Route("getPagedShoes")]
+    public async Task<ActionResult<PagedResult<GetShoeLimitedInformationDto>>> GetPagedShoes([FromQuery] int pageNumber,
+        [FromQuery] int pageSize)
+    {
+        var pagedResults = await _mediator.Send(new GetPagedShoesQuery(pageNumber, pageSize));
+        return pagedResults;
     }
 }

@@ -18,6 +18,7 @@ public class AppDbContext : DbContext
     public DbSet<Shoe> Shoes { get; set; }
     public DbSet<EmailCode> EmailCodes { get; set; }    
     public DbSet<Review> Reviews { get; set; }
+    public DbSet<ReviewLike> ReviewsLikes { get; set; }
     public DbSet<Cart> Carts { get; set; }
     public DbSet<Favorite> Favorites { get; set; }
     

@@ -41,6 +41,12 @@ public class UserRepository : GenericRepository<User>, IUserRepository
         return isPasswordCorrect ? user : null;
     }
 
+    public string? GetUserNameById(int id)
+    {
+        var username = _context.Users.Where(x => x.Id == id).Select(x => x.Username).FirstOrDefault();
+        return username;
+    }
+
     public ClaimsPrincipal User => _httpContextAccessor.HttpContext?.User;
 
     public int? GetUserId =>

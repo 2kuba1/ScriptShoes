@@ -23,7 +23,8 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IReviewRepository, ReviewRepository>();
         services.AddScoped<IFavoriteRepository, FavoriteRepository>();
-
+        services.AddScoped<IReviewLikeRepository, ReviewLikeRepository>();
+        
         return services;
     }
 }

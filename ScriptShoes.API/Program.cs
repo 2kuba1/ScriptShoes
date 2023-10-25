@@ -1,3 +1,6 @@
+using System.Globalization;
+using System.Threading.RateLimiting;
+using Microsoft.AspNetCore.RateLimiting;
 using NLog;
 using NLog.Web;
 using ScriptShoes.API.Middlewares;
@@ -52,6 +55,8 @@ try
 
     var app = builder.Build();
 
+    app.UseRateLimiter();
+
 // Configure the HTTP request pipeline.
     if (app.Environment.IsDevelopment())
     {
@@ -64,7 +69,7 @@ try
     app.UseAuthentication();
     app.UseAuthorization();
 
-    //app.UseMiddleware<ErrorHandlingMiddleware>();
+    app.UseMiddleware<ErrorHandlingMiddleware>();
     app.UseCors("ui");
 
     app.UseResponseCaching();

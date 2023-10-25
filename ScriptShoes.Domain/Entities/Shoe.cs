@@ -11,6 +11,7 @@ public class Shoe : BaseEntity
     public float CurrentPrice { get; set; }
     public float? PriceBeforeDiscount { get; set; }
     public float? AverageRating { get; set; }
+    public int? NumberOfRatings { get; set; }
     public int? NumberOfReviews { get; set; }
 
     public string? ThumbnailImage { get; set; }
