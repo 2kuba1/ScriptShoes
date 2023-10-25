@@ -6,7 +6,9 @@ using ScriptShoes.Application.Features.Review.Commands.AddReviewLike;
 using ScriptShoes.Application.Features.Review.Commands.DeleteReview;
 using ScriptShoes.Application.Features.Review.Commands.RemoveReviewLike;
 using ScriptShoes.Application.Features.Review.Queries.GetLikedReviews;
+using ScriptShoes.Application.Features.Review.Queries.GetPagedReviews;
 using ScriptShoes.Application.Features.Review.Queries.GetShoeReviews;
+using ScriptShoes.Application.Models;
 using ScriptShoes.Application.Models.Review;
 
 namespace ScriptShoes.API.Controllers;
@@ -72,5 +74,14 @@ public class ReviewController : ControllerBase
     {
         var likedReviews = await _mediator.Send(new GetLikedReviewsQuery(shoeId, userId, localUserId));
         return Ok(likedReviews);
+    }
+
+    [HttpGet]
+    [Route("getPagedReviews")]
+    public async Task<ActionResult<PagedResult<GetPagedReviewsQuery>>> GetPagedReviews([FromQuery] int shoeId,
+        [FromQuery] int pageNumber, [FromQuery] int pageSize)
+    {
+        var pagedReviews = await _mediator.Send(new GetPagedReviewsQuery(shoeId, pageNumber, pageSize));
+        return Ok(pagedReviews);
     }
 }
