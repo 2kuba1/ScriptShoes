@@ -17,7 +17,6 @@ namespace ScriptShoes.API.Controllers;
 
 [Route("api/shoe")]
 [ApiController]
-[EnableRateLimiting("defaultLimiter")]
 public class ShoeController : ControllerBase
 {
     private readonly IMediator _mediator;

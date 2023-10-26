@@ -17,7 +17,7 @@ public class CreateShoeValidator : AbstractValidator<CreateShoeCommand>
             .GreaterThan(0);
 
         RuleFor(x => x.Dto.ThumbnailImage.Length)
-            .LessThan(2);
+            .NotNull();
 
         RuleFor(x => x.Dto.CurrentPrice)
             .GreaterThan(0);
