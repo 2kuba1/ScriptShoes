@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using ScriptShoes.Application.Contracts.Infrastructure;
+using ScriptShoes.Application.Contracts.Infrastructure.Email;
 using ScriptShoes.Infrastructure.AuthenticationTokens;
 
 namespace ScriptShoes.Infrastructure;
@@ -13,6 +14,7 @@ public static class InfrastructureServiceRegistration
     public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddScoped<IAuthenticationTokenMethods, TokenMethods>();
+        services.AddScoped<IEmailSender, EmailSender.EmailSender>();
         
         services.AddAuthentication(options =>
         {

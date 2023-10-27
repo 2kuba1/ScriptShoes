@@ -43,3 +43,8 @@
 2023-10-26 21:30:15.7401|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/create has been invoked |url: http://localhost/api/shoe/create|action: CreateShoe
 2023-10-26 21:30:16.3839|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/create has been invoked |url: http://localhost/api/shoe/create|action: CreateShoe
 2023-10-26 21:30:17.1127|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/create has been invoked |url: http://localhost/api/shoe/create|action: CreateShoe
+2023-10-26 22:08:46.5318|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/login has been invoked |url: http://localhost/api/user/login|action: Login
+2023-10-26 22:09:09.3803|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/create has been invoked |url: http://localhost/api/shoe/create|action: CreateShoe
+2023-10-26 22:09:17.5327|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-26 22:09:29.2951|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getPagedShoes has been invoked |url: http://localhost/api/shoe/getPagedShoes|action: GetPagedShoes
+2023-10-26 22:09:34.9714|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getPagedShoes has been invoked |url: http://localhost/api/shoe/getPagedShoes|action: GetPagedShoes

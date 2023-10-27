@@ -20,8 +20,4 @@
       <ProjectReference Include="..\ScriptShoes.Persistence\ScriptShoes.Persistence.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="EmailSender\" />
-    </ItemGroup>
-
 </Project>

@@ -71,3 +71,15 @@
 2023-10-26 21:30:16.3839|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/create has been invoked |url: http://localhost/api/shoe/create|action: CreateShoe
 2023-10-26 21:30:17.1127|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/create has been invoked |url: http://localhost/api/shoe/create|action: CreateShoe
 2023-10-26 21:30:49.2349|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
+2023-10-26 22:08:15.8306|0|DEBUG|Program|init main |url: |action: 
+2023-10-26 22:08:18.0381|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-26 22:08:18.0381|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-26 22:08:18.0381|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-26 22:08:18.0381|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-26 22:08:46.0838|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/user/login|action: Login
+2023-10-26 22:08:46.5318|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/login has been invoked |url: http://localhost/api/user/login|action: Login
+2023-10-26 22:09:09.3803|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/create has been invoked |url: http://localhost/api/shoe/create|action: CreateShoe
+2023-10-26 22:09:17.5327|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-26 22:09:29.2951|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getPagedShoes has been invoked |url: http://localhost/api/shoe/getPagedShoes|action: GetPagedShoes
+2023-10-26 22:09:34.9714|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getPagedShoes has been invoked |url: http://localhost/api/shoe/getPagedShoes|action: GetPagedShoes
+2023-10-26 22:14:12.1859|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
