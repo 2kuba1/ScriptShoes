@@ -7,5 +7,6 @@ public interface IEmailCodesRepository : IGenericRepository<EmailCode>
     Task<bool> DoesUserHaveACode(int userId);
     Task RemoveRange(IEnumerable<EmailCode> codes);
     IEnumerable<EmailCode> GetExpiredCodes();
-    Task<bool> GetByUserIdAndCode(int userId, string code);
+    Task<bool> CheckIfCodeWithUserIdExist(int userId, string code);
+    Task<EmailCode?> GetCodeByUserId(int userId);
 }

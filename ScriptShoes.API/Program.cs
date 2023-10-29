@@ -1,5 +1,6 @@
 using System.Globalization;
 using System.Threading.RateLimiting;
+using Microsoft.AspNetCore.RateLimiting;
 using NLog;
 using NLog.Web;
 using ScriptShoes.API.BackgroundServices;
@@ -14,7 +15,6 @@ logger.Debug("init main");
 try
 {
     var builder = WebApplication.CreateBuilder(args);
-
 
     builder.Services.AddRateLimiter(_ =>
     {
@@ -31,6 +31,13 @@ try
 
             return new ValueTask();
         };
+
+        _.AddFixedWindowLimiter("resendEmail", options =>
+        {
+            options.PermitLimit = 2;
+            options.Window = TimeSpan.FromSeconds(10 * 60);
+            options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
+        });
 
         _.GlobalLimiter = PartitionedRateLimiter.CreateChained(
             PartitionedRateLimiter.Create<HttpContext, string>(httpContext =>
@@ -99,7 +106,7 @@ try
     });
 
     builder.Services.AddHostedService<RemoveEmailCodesWorker>();
-    
+
     var app = builder.Build();
 
     app.UseRateLimiter();

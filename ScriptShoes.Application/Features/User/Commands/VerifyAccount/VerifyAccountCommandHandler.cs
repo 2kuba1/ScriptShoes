@@ -23,7 +23,7 @@ public class VerifyAccountCommandHandler : IRequestHandler<VerifyAccountCommand,
         if (user.IsVerified)
             throw new BadRequestException("This user is already verified");
 
-        var code = await _emailCodesRepository.GetByUserIdAndCode(user.Id, request.Code);
+        var code = await _emailCodesRepository.CheckIfCodeWithUserIdExist(user.Id, request.Code);
 
         if (!code)
             throw new NotFoundException("Code or user not found");

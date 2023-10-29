@@ -29,9 +29,15 @@ public class EmailCodesRepository : GenericRepository<EmailCode>, IEmailCodesRep
         return expiredCodes;
     }
 
-    public async Task<bool> GetByUserIdAndCode(int userId, string code)
+    public async Task<bool> CheckIfCodeWithUserIdExist(int userId, string code)
     {
         var doesCodeExists = await _context.EmailCodes.AnyAsync(x => x.UserId == userId && x.Code == code);
         return doesCodeExists;
+    }
+
+    public async Task<EmailCode?> GetCodeByUserId(int userId)
+    {
+        var code = await _context.EmailCodes.FirstOrDefaultAsync(x => x.UserId == userId);
+        return code;
     }
 }

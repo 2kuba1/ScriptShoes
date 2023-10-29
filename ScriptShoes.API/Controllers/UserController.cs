@@ -1,7 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using ScriptShoes.Application.Features.User.Commands.Register;
+using ScriptShoes.Application.Features.User.Commands.ResendVerificationEmail;
 using ScriptShoes.Application.Features.User.Commands.SendVerificationEmail;
 using ScriptShoes.Application.Features.User.Commands.UpdateProfilePicture;
 using ScriptShoes.Application.Features.User.Commands.VerifyAccount;
@@ -67,6 +69,16 @@ public class UserController : ControllerBase
     public async Task<ActionResult> SendVerificationEmail()
     {
         await _mediator.Send(new SendVerificationEmailCommand());
+        return NoContent();
+    }
+
+    [HttpPut]
+    [Route("resendVerificationEmail")]
+    [Authorize(Policy = "AuthUser")]
+    [EnableRateLimiting("resendEmail")]
+    public async Task<ActionResult> ResendVerificationEmail()
+    {
+        await _mediator.Send(new ResendVerificationEmailCommand());
         return NoContent();
     }
 
