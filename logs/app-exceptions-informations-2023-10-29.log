@@ -22,3 +22,11 @@
 2023-10-29 14:17:20.0214|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/login has been invoked |url: http://localhost/api/user/login|action: Login
 2023-10-29 14:17:30.4156|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/sendVerificationEmail has been invoked |url: http://localhost/api/user/sendVerificationEmail|action: SendVerificationEmail
 2023-10-29 14:17:30.4156|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|This user already has an active verification code |url: http://localhost/api/user/sendVerificationEmail|action: SendVerificationEmail
+2023-10-29 19:29:03.8423|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/login has been invoked |url: http://localhost/api/user/login|action: Login
+2023-10-29 19:29:17.7303|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/sendVerificationEmail has been invoked |url: http://localhost/api/user/sendVerificationEmail|action: SendVerificationEmail
+2023-10-29 19:29:29.2968|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/login has been invoked |url: http://localhost/api/user/login|action: Login
+2023-10-29 19:29:39.2115|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/sendVerificationEmail has been invoked |url: http://localhost/api/user/sendVerificationEmail|action: SendVerificationEmail
+2023-10-29 19:30:14.2754|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/verifyUser has been invoked |url: http://localhost/api/user/verifyUser|action: 
+2023-10-29 19:30:17.2747|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/verifyUser has been invoked |url: http://localhost/api/user/verifyUser|action: VerifyUser
+2023-10-29 19:30:19.6819|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/verifyUser has been invoked |url: http://localhost/api/user/verifyUser|action: VerifyUser
+2023-10-29 19:30:19.6939|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|This user is already verified |url: http://localhost/api/user/verifyUser|action: VerifyUser

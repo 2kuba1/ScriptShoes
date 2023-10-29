@@ -28,4 +28,10 @@ public class EmailCodesRepository : GenericRepository<EmailCode>, IEmailCodesRep
         var expiredCodes = _context.EmailCodes.Where(x => x.Expires < DateTime.UtcNow).ToList();
         return expiredCodes;
     }
+
+    public async Task<bool> GetByUserIdAndCode(int userId, string code)
+    {
+        var doesCodeExists = await _context.EmailCodes.AnyAsync(x => x.UserId == userId && x.Code == code);
+        return doesCodeExists;
+    }
 }

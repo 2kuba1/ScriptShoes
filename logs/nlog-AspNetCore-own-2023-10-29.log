@@ -150,3 +150,35 @@
 2023-10-29 14:19:08.5169|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
 2023-10-29 14:19:08.5169|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
 2023-10-29 14:19:24.5671|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
+2023-10-29 19:26:47.0940|0|DEBUG|Program|init main |url: |action: 
+2023-10-29 19:26:48.5435|0|ERROR|Program|Stopped program because of exception System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Microsoft.Extensions.Hosting.IHostedService Lifetime: Singleton ImplementationType: ScriptShoes.API.BackgroundServices.RemoveEmailCodesWorker': Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'ScriptShoes.API.BackgroundServices.RemoveEmailCodesWorker'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'ScriptShoes.API.BackgroundServices.RemoveEmailCodesWorker'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)|url: |action: 
+2023-10-29 19:27:34.8235|0|DEBUG|Program|init main |url: |action: 
+2023-10-29 19:27:37.3786|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-29 19:27:37.3822|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-29 19:27:37.3822|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-29 19:27:37.3822|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-29 19:27:53.3914|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 
+2023-10-29 19:27:58.8031|0|DEBUG|Program|init main |url: |action: 
+2023-10-29 19:28:00.1689|14|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5013 |url: |action: 
+2023-10-29 19:28:00.1689|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: 
+2023-10-29 19:28:00.1689|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: 
+2023-10-29 19:28:00.1689|0|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\rider-projects\ScriptShoes\ScriptShoes.API |url: |action: 
+2023-10-29 19:29:03.3650|3|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. |url: http://localhost/api/user/login|action: Login
+2023-10-29 19:29:03.8423|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/login has been invoked |url: http://localhost/api/user/login|action: Login
+2023-10-29 19:29:17.7303|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/sendVerificationEmail has been invoked |url: http://localhost/api/user/sendVerificationEmail|action: SendVerificationEmail
+2023-10-29 19:29:29.2968|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/login has been invoked |url: http://localhost/api/user/login|action: Login
+2023-10-29 19:29:39.2115|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/sendVerificationEmail has been invoked |url: http://localhost/api/user/sendVerificationEmail|action: SendVerificationEmail
+2023-10-29 19:30:14.2754|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/verifyUser has been invoked |url: http://localhost/api/user/verifyUser|action: 
+2023-10-29 19:30:17.2747|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/verifyUser has been invoked |url: http://localhost/api/user/verifyUser|action: VerifyUser
+2023-10-29 19:30:19.6819|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/verifyUser has been invoked |url: http://localhost/api/user/verifyUser|action: VerifyUser
+2023-10-29 19:30:19.6939|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|This user is already verified |url: http://localhost/api/user/verifyUser|action: VerifyUser
+2023-10-29 19:30:27.2051|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: 

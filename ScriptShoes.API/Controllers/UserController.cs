@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using ScriptShoes.Application.Features.User.Commands.Register;
 using ScriptShoes.Application.Features.User.Commands.SendVerificationEmail;
 using ScriptShoes.Application.Features.User.Commands.UpdateProfilePicture;
+using ScriptShoes.Application.Features.User.Commands.VerifyAccount;
 using ScriptShoes.Application.Features.User.Queries.Login;
 using ScriptShoes.Application.Features.User.Queries.RefreshToken;
 using ScriptShoes.Application.Models.Token;
@@ -66,6 +67,15 @@ public class UserController : ControllerBase
     public async Task<ActionResult> SendVerificationEmail()
     {
         await _mediator.Send(new SendVerificationEmailCommand());
+        return NoContent();
+    }
+
+    [HttpPut]
+    [Route("verifyUser")]
+    [Authorize(Policy = "AuthUser")]
+    public async Task<ActionResult> VerifyUser([FromQuery] string code)
+    {
+        await _mediator.Send(new VerifyAccountCommand(code));
         return NoContent();
     }
 }
