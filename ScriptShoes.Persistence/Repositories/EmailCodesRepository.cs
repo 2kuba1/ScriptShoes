@@ -10,10 +10,22 @@ public class EmailCodesRepository : GenericRepository<EmailCode>, IEmailCodesRep
     public EmailCodesRepository(AppDbContext context) : base(context)
     {
     }
-    
+
     public async Task<bool> DoesUserHaveACode(int userId)
     {
         var code = await _context.EmailCodes.AnyAsync(x => x.UserId == userId);
         return code;
+    }
+
+    public async Task RemoveRange(IEnumerable<EmailCode> codes)
+    {
+        _context.EmailCodes.RemoveRange(codes);
+        await _context.SaveChangesAsync();
+    }
+
+    public IEnumerable<EmailCode> GetExpiredCodes()
+    {
+        var expiredCodes = _context.EmailCodes.Where(x => x.Expires < DateTime.UtcNow).ToList();
+        return expiredCodes;
     }
 }

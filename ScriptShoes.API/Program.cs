@@ -1,8 +1,8 @@
 using System.Globalization;
 using System.Threading.RateLimiting;
-using Microsoft.AspNetCore.RateLimiting;
 using NLog;
 using NLog.Web;
+using ScriptShoes.API.BackgroundServices;
 using ScriptShoes.API.Middlewares;
 using ScriptShoes.Application;
 using ScriptShoes.Infrastructure;
@@ -98,6 +98,8 @@ try
         options.AddPolicy("AuthAdmin", b => b.RequireClaim("Role", "Admin"));
     });
 
+    builder.Services.AddHostedService<RemoveEmailCodesWorker>();
+    
     var app = builder.Build();
 
     app.UseRateLimiter();

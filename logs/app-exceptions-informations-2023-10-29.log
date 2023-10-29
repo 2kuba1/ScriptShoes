@@ -1,0 +1,24 @@
+2023-10-29 13:35:59.2566|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-29 13:36:02.3649|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-29 13:36:04.4920|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-29 13:36:05.9310|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-29 13:36:07.1841|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-29 13:36:10.6389|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-29 13:36:12.1432|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-29 13:36:13.4592|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-29 13:36:14.9834|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-29 13:36:16.2469|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-29 13:36:17.1927|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-29 13:36:17.3242|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-29 13:36:17.4699|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-29 13:36:17.6249|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-29 13:36:17.7654|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
+2023-10-29 14:16:24.1372|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/login has been invoked |url: http://localhost/api/user/login|action: Login
+2023-10-29 14:16:24.6802|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|Email or password is incorrect |url: http://localhost/api/user/login|action: Login
+2023-10-29 14:16:28.9521|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/login has been invoked |url: http://localhost/api/user/login|action: Login
+2023-10-29 14:16:44.4119|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/sendVerificationEmail has been invoked |url: http://localhost/api/user/sendVerificationEmail|action: SendVerificationEmail
+2023-10-29 14:16:59.1624|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/login has been invoked |url: http://localhost/api/user/login|action: Login
+2023-10-29 14:17:08.7951|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/sendVerificationEmail has been invoked |url: http://localhost/api/user/sendVerificationEmail|action: SendVerificationEmail
+2023-10-29 14:17:20.0214|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/login has been invoked |url: http://localhost/api/user/login|action: Login
+2023-10-29 14:17:30.4156|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/sendVerificationEmail has been invoked |url: http://localhost/api/user/sendVerificationEmail|action: SendVerificationEmail
+2023-10-29 14:17:30.4156|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|This user already has an active verification code |url: http://localhost/api/user/sendVerificationEmail|action: SendVerificationEmail
