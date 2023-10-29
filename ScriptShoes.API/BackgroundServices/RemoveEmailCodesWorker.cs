@@ -7,9 +7,9 @@ namespace ScriptShoes.API.BackgroundServices;
 public class RemoveEmailCodesWorker : BackgroundService
 {
     private readonly IServiceScopeFactory _serviceScopeFactory;
-    private readonly ILogger _logger;
+    private readonly  ILogger<RemoveEmailCodesWorker> _logger;
 
-    public RemoveEmailCodesWorker(IServiceScopeFactory serviceScopeFactory, ILogger logger)
+    public RemoveEmailCodesWorker(IServiceScopeFactory serviceScopeFactory, ILogger<RemoveEmailCodesWorker> logger)
     {
         _serviceScopeFactory = serviceScopeFactory;
         _logger = logger;
