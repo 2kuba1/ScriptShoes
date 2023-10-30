@@ -1,5 +1,0 @@
-2023-10-08 15:29:42.7568|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/register has been invoked |url: http://localhost/api/user/register|action: Register
-2023-10-08 15:29:42.7940|0|FATAL|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|Unable to resolve service for type 'MediatR.Mediator' while attempting to activate 'ScriptShoes.API.Controllers.UserController'. |url: http://localhost/api/user/register|action: Register
-2023-10-08 15:30:30.3155|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/shoe/getAll has been invoked |url: http://localhost/api/shoe/getAll|action: GetAllShoes
-2023-10-08 15:31:47.3608|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/register has been invoked |url: http://localhost/api/user/register|action: Register
-2023-10-08 15:31:47.3867|0|FATAL|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|Unable to resolve service for type 'MediatR.Mediator' while attempting to activate 'ScriptShoes.API.Controllers.UserController'. |url: http://localhost/api/user/register|action: Register

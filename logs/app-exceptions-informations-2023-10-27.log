@@ -1,9 +1,0 @@
-2023-10-27 15:41:11.6944|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/login has been invoked |url: http://localhost/api/user/login|action: Login
-2023-10-27 15:42:20.6707|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/sendVerificationEmail has been invoked |url: http://localhost/api/user/sendVerificationEmail|action: SendVerificationEmail
-2023-10-27 15:43:54.8762|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/register has been invoked |url: http://localhost/api/user/register|action: Register
-2023-10-27 15:44:14.6387|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/login has been invoked |url: http://localhost/api/user/login|action: Login
-2023-10-27 15:44:29.7003|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/sendVerificationEmail has been invoked |url: http://localhost/api/user/sendVerificationEmail|action: SendVerificationEmail
-2023-10-27 15:47:29.3065|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/sendVerificationEmail has been invoked |url: http://localhost/api/user/sendVerificationEmail|action: SendVerificationEmail
-2023-10-27 15:50:04.9636|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/login has been invoked |url: http://localhost/api/user/login|action: Login
-2023-10-27 15:50:16.3459|0|INFO|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|/api/user/sendVerificationEmail has been invoked |url: http://localhost/api/user/sendVerificationEmail|action: SendVerificationEmail
-2023-10-27 15:50:16.3891|0|FATAL|ScriptShoes.API.Middlewares.ErrorHandlingMiddleware|User is already verified |url: http://localhost/api/user/sendVerificationEmail|action: SendVerificationEmail
