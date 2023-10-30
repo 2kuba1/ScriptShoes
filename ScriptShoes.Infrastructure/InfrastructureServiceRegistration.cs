@@ -5,17 +5,21 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using ScriptShoes.Application.Contracts.Infrastructure;
 using ScriptShoes.Application.Contracts.Infrastructure.Email;
+using ScriptShoes.Application.Contracts.Infrastructure.StripePayments;
 using ScriptShoes.Infrastructure.AuthenticationTokens;
+using Stripe;
 
 namespace ScriptShoes.Infrastructure;
 
 public static class InfrastructureServiceRegistration
 {
-    public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddInfrastructureServices(this IServiceCollection services,
+        IConfiguration configuration)
     {
         services.AddScoped<IAuthenticationTokenMethods, TokenMethods>();
         services.AddScoped<IEmailSender, EmailSender.EmailSender>();
-        
+        services.AddScoped<IStripePayments, StripePayments.StripePayments>();
+
         services.AddAuthentication(options =>
         {
             options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -38,6 +42,8 @@ public static class InfrastructureServiceRegistration
                 ClockSkew = TimeSpan.Zero
             };
         });
+
+        StripeConfiguration.ApiKey = configuration.GetSection("Stripe:SecretKey").Get<string>();
 
         return services;
     }

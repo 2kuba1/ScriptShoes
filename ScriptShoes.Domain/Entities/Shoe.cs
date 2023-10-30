@@ -13,7 +13,7 @@ public class Shoe : BaseEntity
     public float? AverageRating { get; set; }
     public int? NumberOfRatings { get; set; }
     public int? NumberOfReviews { get; set; }
-
+    public int Quantity { get; set; } = 0;
     public string? ThumbnailImage { get; set; }
     public List<string>? Images { get; set; }
 

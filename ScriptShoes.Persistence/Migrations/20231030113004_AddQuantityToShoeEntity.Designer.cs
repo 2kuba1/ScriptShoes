@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ScriptShoes.Persistence.Database;
@@ -12,9 +13,11 @@ using ScriptShoes.Persistence.Database;
 namespace ScriptShoes.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231030113004_AddQuantityToShoeEntity")]
+    partial class AddQuantityToShoeEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -209,15 +212,15 @@ namespace ScriptShoes.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2023, 10, 30, 11, 53, 10, 126, DateTimeKind.Utc).AddTicks(4137),
-                            LastModified = new DateTime(2023, 10, 30, 11, 53, 10, 126, DateTimeKind.Utc).AddTicks(4139),
+                            Created = new DateTime(2023, 10, 30, 11, 30, 4, 804, DateTimeKind.Utc).AddTicks(4678),
+                            LastModified = new DateTime(2023, 10, 30, 11, 30, 4, 804, DateTimeKind.Utc).AddTicks(4680),
                             Name = "User"
                         },
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2023, 10, 30, 11, 53, 10, 126, DateTimeKind.Utc).AddTicks(4141),
-                            LastModified = new DateTime(2023, 10, 30, 11, 53, 10, 126, DateTimeKind.Utc).AddTicks(4141),
+                            Created = new DateTime(2023, 10, 30, 11, 30, 4, 804, DateTimeKind.Utc).AddTicks(4681),
+                            LastModified = new DateTime(2023, 10, 30, 11, 30, 4, 804, DateTimeKind.Utc).AddTicks(4682),
                             Name = "Admin"
                         });
                 });
@@ -258,7 +261,7 @@ namespace ScriptShoes.Persistence.Migrations
                     b.Property<float?>("PriceBeforeDiscount")
                         .HasColumnType("real");
 
-                    b.Property<int>("Quantity")
+                    b.Property<int?>("Quantity")
                         .HasColumnType("integer");
 
                     b.Property<string>("ShoeName")
