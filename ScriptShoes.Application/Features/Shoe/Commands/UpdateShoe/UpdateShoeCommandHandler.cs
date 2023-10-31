@@ -41,6 +41,9 @@ public class UpdateShoeCommandHandler : IRequestHandler<UpdateShoeCommand, Unit>
         if (request.Dto.ThumbnailImage is not null)
             shoe.ThumbnailImage = request.Dto.ThumbnailImage;
 
+        if (request.Dto.Quantity is not null)
+            shoe.Quantity = (int)request.Dto.Quantity;
+
         await _repository.UpdateAsync(shoe);
 
         return Unit.Value;
