@@ -8,6 +8,7 @@ namespace ScriptShoes.Persistence.Database;
 public class AppDbContext : DbContext
 {
     private readonly bool _isInMemory;
+
     public AppDbContext(DbContextOptions<AppDbContext> options, bool isInMemory = false) : base(options)
     {
         _isInMemory = isInMemory;
@@ -16,12 +17,13 @@ public class AppDbContext : DbContext
     public DbSet<User> Users { get; set; }
     public DbSet<Role> Roles { get; set; }
     public DbSet<Shoe> Shoes { get; set; }
-    public DbSet<EmailCode> EmailCodes { get; set; }    
+    public DbSet<EmailCode> EmailCodes { get; set; }
     public DbSet<Review> Reviews { get; set; }
     public DbSet<ReviewLike> ReviewsLikes { get; set; }
     public DbSet<Cart> Carts { get; set; }
     public DbSet<Favorite> Favorites { get; set; }
-    
+    public DbSet<Order> Orders { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         if (_isInMemory)
@@ -31,18 +33,18 @@ public class AppDbContext : DbContext
                 .HasConversion(
                     v => new ArrayWrapper<List<float>>(v),
                     v => v.Values);
-            
+
             modelBuilder
                 .Entity<Shoe>().Property(e => e.Images)
                 .HasConversion(
                     v => new ArrayWrapper<List<string>>(v),
                     v => v.Values);
         }
-        
+
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
         base.OnModelCreating(modelBuilder);
     }
-    
+
     private struct ArrayWrapper<T>
     {
         public ArrayWrapper(T values)
@@ -50,7 +52,7 @@ public class AppDbContext : DbContext
 
         public T Values { get; }
     }
-    
+
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
     {
         foreach (var entry in base.ChangeTracker.Entries<BaseEntity>()

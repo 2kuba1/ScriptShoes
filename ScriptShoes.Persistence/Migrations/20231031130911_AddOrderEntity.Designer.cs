@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ScriptShoes.Persistence.Database;
@@ -12,9 +13,11 @@ using ScriptShoes.Persistence.Database;
 namespace ScriptShoes.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231031130911_AddOrderEntity")]
+    partial class AddOrderEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -113,20 +116,11 @@ namespace ScriptShoes.Persistence.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("timestamp with time zone");
-
                     b.Property<bool>("IsConfirmed")
                         .HasColumnType("boolean");
 
-                    b.Property<DateTime>("LastModified")
-                        .HasColumnType("timestamp with time zone");
-
                     b.Property<int>("Quantity")
                         .HasColumnType("integer");
-
-                    b.Property<DateTime>("SessionExpirationDateTime")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("SessionId")
                         .IsRequired()
@@ -247,15 +241,15 @@ namespace ScriptShoes.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2023, 10, 31, 14, 27, 40, 296, DateTimeKind.Utc).AddTicks(6534),
-                            LastModified = new DateTime(2023, 10, 31, 14, 27, 40, 296, DateTimeKind.Utc).AddTicks(6536),
+                            Created = new DateTime(2023, 10, 31, 13, 9, 11, 828, DateTimeKind.Utc).AddTicks(3764),
+                            LastModified = new DateTime(2023, 10, 31, 13, 9, 11, 828, DateTimeKind.Utc).AddTicks(3767),
                             Name = "User"
                         },
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2023, 10, 31, 14, 27, 40, 296, DateTimeKind.Utc).AddTicks(6561),
-                            LastModified = new DateTime(2023, 10, 31, 14, 27, 40, 296, DateTimeKind.Utc).AddTicks(6561),
+                            Created = new DateTime(2023, 10, 31, 13, 9, 11, 828, DateTimeKind.Utc).AddTicks(3768),
+                            LastModified = new DateTime(2023, 10, 31, 13, 9, 11, 828, DateTimeKind.Utc).AddTicks(3768),
                             Name = "Admin"
                         });
                 });
