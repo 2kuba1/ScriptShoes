@@ -106,6 +106,8 @@ try
     });
 
     builder.Services.AddHostedService<RemoveEmailCodesWorker>();
+    builder.Services.AddHostedService<RemoveExpiredOrdersWorker>();
+
 
     var app = builder.Build();
 

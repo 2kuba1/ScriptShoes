@@ -10,11 +10,14 @@ public class CheckoutPaymentCommandHandler : IRequestHandler<CheckoutPaymentComm
 {
     private readonly IStripePayments _stripePayments;
     private readonly IShoeRepository _shoeRepository;
+    private readonly IUserRepository _userRepository;
 
-    public CheckoutPaymentCommandHandler(IStripePayments stripePayments, IShoeRepository shoeRepository)
+    public CheckoutPaymentCommandHandler(IStripePayments stripePayments, IShoeRepository shoeRepository,
+        IUserRepository userRepository)
     {
         _stripePayments = stripePayments;
         _shoeRepository = shoeRepository;
+        _userRepository = userRepository;
     }
 
     public async Task<string> Handle(CheckoutPaymentCommand request, CancellationToken cancellationToken)
@@ -36,9 +39,27 @@ public class CheckoutPaymentCommandHandler : IRequestHandler<CheckoutPaymentComm
                 Shoe = shoe,
                 Quantity = data.Quantity
             });
+
+            shoe.Quantity -= data.Quantity;
+            await _shoeRepository.UpdateAsync(shoe);
         }
 
-        var response = await _stripePayments.CreateCheckoutSession(createCheckoutData);
+        var response = "";
+
+        try
+        {
+            var user = _userRepository.GetUserId;
+
+            if (user is not null)
+            {
+                response = await _stripePayments.CreateCheckoutSession(createCheckoutData, user.Value);
+            }
+        }
+        catch (NullReferenceException e)
+        {
+            response = await _stripePayments.CreateCheckoutSession(createCheckoutData, null);
+        }
+
         return response;
     }
 }
