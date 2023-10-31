@@ -88,14 +88,14 @@ public class StripePayments : IStripePayments
 
     public async Task ConfirmOrder(string sessionId)
     {
-        var order = await _dbContext.Orders.FirstOrDefaultAsync(x => x.SessionId == sessionId);
+        var order = _dbContext.Orders.Where(x => x.SessionId == sessionId).ToList();
 
         if (order is null)
             throw new NotFoundException("Order not found");
 
-        order.IsConfirmed = true;
+        order.ForEach(x => x.IsConfirmed = true);
 
-        _dbContext.Orders.Update(order);
+        _dbContext.Orders.UpdateRange(order);
         await _dbContext.SaveChangesAsync();
     }
 }

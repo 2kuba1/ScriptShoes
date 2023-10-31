@@ -32,7 +32,7 @@ public class CheckoutPaymentCommandHandler : IRequestHandler<CheckoutPaymentComm
                 throw new NotFoundException($"Shoe with id {data.ShoeId} not found");
 
             if (shoe.Quantity - data.Quantity < 0)
-                throw new BadRequestException("TThere are not enough items in stock");
+                throw new BadRequestException("There are not enough items in stock");
 
             createCheckoutData.Add(new CreateCheckoutDto()
             {
