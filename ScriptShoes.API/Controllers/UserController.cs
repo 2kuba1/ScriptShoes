@@ -54,7 +54,7 @@ public class UserController : ControllerBase
         return Ok(accessToken);
     }
 
-    [HttpPost]
+    [HttpPut]
     [Route("updateProfilePicture")]
     [Authorize(Policy = "AuthUser")]
     public async Task<ActionResult> UpdateProfilePicture([FromBody] string imageUrl)
