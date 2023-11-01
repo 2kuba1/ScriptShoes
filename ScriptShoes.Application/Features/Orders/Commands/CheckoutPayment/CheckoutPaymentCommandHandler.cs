@@ -1,7 +1,9 @@
-﻿using MediatR;
+﻿using Mapster;
+using MediatR;
 using ScriptShoes.Application.Contracts.Infrastructure.StripePayments;
 using ScriptShoes.Application.Contracts.Persistence;
-using ScriptShoes.Application.Models.Payments;
+using ScriptShoes.Application.Models.Order;
+using ScriptShoes.Domain.Entities;
 using ScriptShoes.Domain.Exceptions;
 
 namespace ScriptShoes.Application.Features.Orders.Commands.CheckoutPayment;
@@ -11,20 +13,22 @@ public class CheckoutPaymentCommandHandler : IRequestHandler<CheckoutPaymentComm
     private readonly IStripePayments _stripePayments;
     private readonly IShoeRepository _shoeRepository;
     private readonly IUserRepository _userRepository;
+    private readonly IOrderAddressRepository _orderAddressRepository;
 
     public CheckoutPaymentCommandHandler(IStripePayments stripePayments, IShoeRepository shoeRepository,
-        IUserRepository userRepository)
+        IUserRepository userRepository, IOrderAddressRepository orderAddressRepository)
     {
         _stripePayments = stripePayments;
         _shoeRepository = shoeRepository;
         _userRepository = userRepository;
+        _orderAddressRepository = orderAddressRepository;
     }
 
     public async Task<string> Handle(CheckoutPaymentCommand request, CancellationToken cancellationToken)
     {
         var createCheckoutData = new List<CreateCheckoutDto>();
 
-        foreach (var data in request.Dto)
+        foreach (var data in request.Dto.PaymentRequestDtos)
         {
             var shoe = await _shoeRepository.GetByIdAsync(data.ShoeId);
 
@@ -44,7 +48,7 @@ public class CheckoutPaymentCommandHandler : IRequestHandler<CheckoutPaymentComm
             await _shoeRepository.UpdateAsync(shoe);
         }
 
-        var response = "";
+        var response = new CreateCheckoutSessionResponseDto();
 
         try
         {
@@ -60,6 +64,12 @@ public class CheckoutPaymentCommandHandler : IRequestHandler<CheckoutPaymentComm
             response = await _stripePayments.CreateCheckoutSession(createCheckoutData, null);
         }
 
-        return response;
+        if (string.IsNullOrEmpty(response.Url)) throw new Exception();
+
+        var order = request.Dto.AddressDto.Adapt<OrderAddress>();
+        order.OrderSessionId = response.SessionId;
+        await _orderAddressRepository.CreateAsync(order);
+
+        return response.Url;
     }
 }

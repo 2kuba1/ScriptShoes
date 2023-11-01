@@ -23,6 +23,7 @@ public class AppDbContext : DbContext
     public DbSet<Cart> Carts { get; set; }
     public DbSet<Favorite> Favorites { get; set; }
     public DbSet<Order> Orders { get; set; }
+    public DbSet<OrderAddress> OrdersAddresses { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

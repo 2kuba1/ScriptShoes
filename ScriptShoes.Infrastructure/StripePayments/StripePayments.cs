@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using ScriptShoes.Application.Contracts.Infrastructure.StripePayments;
-using ScriptShoes.Application.Models.Payments;
+using ScriptShoes.Application.Models.Order;
 using ScriptShoes.Domain.Entities;
 using ScriptShoes.Domain.Exceptions;
 using ScriptShoes.Persistence.Database;
@@ -20,7 +20,7 @@ public class StripePayments : IStripePayments
         _dbContext = dbContext;
     }
 
-    public async Task<string> CreateCheckoutSession(List<CreateCheckoutDto> dto, int? userId)
+    public async Task<CreateCheckoutSessionResponseDto> CreateCheckoutSession(List<CreateCheckoutDto> dto, int? userId)
     {
         try
         {
@@ -78,7 +78,12 @@ public class StripePayments : IStripePayments
             await _dbContext.Orders.AddRangeAsync(orders);
             await _dbContext.SaveChangesAsync();
 
-            return session.Url;
+
+            return new CreateCheckoutSessionResponseDto()
+            {
+                SessionId = session.Id,
+                Url = session.Url
+            };
         }
         catch (Exception)
         {

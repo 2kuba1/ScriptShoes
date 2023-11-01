@@ -17,24 +17,17 @@ public class OrderRepository : GenericRepository<Order>, IOrderRepository
         return order;
     }
 
-    public async Task RemoveExpiredOrders()
+    public async Task RemoveExpiredOrders(List<Order> expiredOrders)
     {
-        var expiredOrders = _context.Orders.Where(x => x.SessionExpirationDateTime > DateTime.UtcNow && !x.IsConfirmed)
-            .ToList();
-
-        foreach (var order in expiredOrders)
-        {
-            var shoe = await _context.Shoes.FirstOrDefaultAsync(x => x.Id == order.ShoeId);
-
-            if (shoe is null)
-                continue;
-
-            shoe.Quantity += order.Quantity;
-            _context.Shoes.Update(shoe);
-            await _context.SaveChangesAsync();
-        }
-
         _context.Orders.RemoveRange(expiredOrders);
         await _context.SaveChangesAsync();
+    }
+
+    public List<Order> GetExpiredOrders()
+    {
+        var expiredOrders = _context.Orders
+            .Where(x => x.SessionExpirationDateTime < DateTime.UtcNow && x.IsConfirmed == false)
+            .ToList();
+        return expiredOrders;
     }
 }

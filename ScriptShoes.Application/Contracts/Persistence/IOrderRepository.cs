@@ -5,5 +5,6 @@ namespace ScriptShoes.Application.Contracts.Persistence;
 public interface IOrderRepository : IGenericRepository<Order>
 {
     Task<Order?> GetOrderBySessionId(string sessionId);
-    Task RemoveExpiredOrders();
+    Task RemoveExpiredOrders(List<Order> expiredOrders);
+    List<Order> GetExpiredOrders();
 }

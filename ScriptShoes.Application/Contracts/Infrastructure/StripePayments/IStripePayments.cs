@@ -1,9 +1,9 @@
-﻿using ScriptShoes.Application.Models.Payments;
+﻿using ScriptShoes.Application.Models.Order;
 
 namespace ScriptShoes.Application.Contracts.Infrastructure.StripePayments;
 
 public interface IStripePayments
 {
-    Task<string> CreateCheckoutSession(List<CreateCheckoutDto> dto, int? userId);
+    Task<CreateCheckoutSessionResponseDto> CreateCheckoutSession(List<CreateCheckoutDto> dto, int? userId);
     Task ConfirmOrder(string sessionId);
 }

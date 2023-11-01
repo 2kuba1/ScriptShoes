@@ -14,7 +14,7 @@ public class RemoveExpiredOrdersCommandHandler : IRequestHandler<RemoveExpiredOr
     
     public async Task<Unit> Handle(RemoveExpiredOrdersCommand request, CancellationToken cancellationToken)
     {
-        await _orderRepository.RemoveExpiredOrders();
+        await _orderRepository.RemoveExpiredOrders(request.ExpiredOrders);
         return Unit.Value;
     }
 }

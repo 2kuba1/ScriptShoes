@@ -1,9 +1,8 @@
-﻿using System.Text.Json;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoes.Application.Features.Orders.Commands.CheckoutPayment;
 using ScriptShoes.Application.Features.Orders.Commands.ConfirmOrder;
-using ScriptShoes.Application.Models.Payments;
+using ScriptShoes.Application.Models.Order;
 using ScriptShoes.Domain.Exceptions;
 using Stripe;
 
@@ -23,8 +22,8 @@ public class OrderController : ControllerBase
     }
 
     [HttpPost]
-    [Route("pay")]
-    public async Task<ActionResult<string>> Pay([FromBody] List<PaymentRequestDto> dto)
+    [Route("order")]
+    public async Task<ActionResult<string>> Pay([FromBody] OrderDto dto)
     {
         var url = await _mediator.Send(new CheckoutPaymentCommand(dto));
         Response.Headers.Add("Location", url);

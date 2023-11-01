@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ScriptShoes.Persistence.Database;
@@ -12,9 +13,11 @@ using ScriptShoes.Persistence.Database;
 namespace ScriptShoes.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231101124123_AddOrderAddressEntityToDbContext")]
+    partial class AddOrderAddressEntityToDbContext
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -161,9 +164,8 @@ namespace ScriptShoes.Persistence.Migrations
                     b.Property<DateTime>("LastModified")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("OrderSessionId")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("OrderId")
+                        .HasColumnType("integer");
 
                     b.Property<string>("PostalCode")
                         .IsRequired()
@@ -282,15 +284,15 @@ namespace ScriptShoes.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2023, 11, 1, 13, 7, 56, 457, DateTimeKind.Utc).AddTicks(3125),
-                            LastModified = new DateTime(2023, 11, 1, 13, 7, 56, 457, DateTimeKind.Utc).AddTicks(3128),
+                            Created = new DateTime(2023, 11, 1, 12, 41, 23, 166, DateTimeKind.Utc).AddTicks(7168),
+                            LastModified = new DateTime(2023, 11, 1, 12, 41, 23, 166, DateTimeKind.Utc).AddTicks(7170),
                             Name = "User"
                         },
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2023, 11, 1, 13, 7, 56, 457, DateTimeKind.Utc).AddTicks(3130),
-                            LastModified = new DateTime(2023, 11, 1, 13, 7, 56, 457, DateTimeKind.Utc).AddTicks(3131),
+                            Created = new DateTime(2023, 11, 1, 12, 41, 23, 166, DateTimeKind.Utc).AddTicks(7171),
+                            LastModified = new DateTime(2023, 11, 1, 12, 41, 23, 166, DateTimeKind.Utc).AddTicks(7172),
                             Name = "Admin"
                         });
                 });

@@ -1,4 +1,4 @@
-﻿namespace ScriptShoes.Application.Models.Payments;
+﻿namespace ScriptShoes.Application.Models.Order;
 
 public class CreateCheckoutDto
 {

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ScriptShoes.Persistence.Database;
@@ -12,9 +13,11 @@ using ScriptShoes.Persistence.Database;
 namespace ScriptShoes.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231101123539_AddOrderAddressEntity")]
+    partial class AddOrderAddressEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -143,41 +146,6 @@ namespace ScriptShoes.Persistence.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("ScriptShoes.Domain.Entities.OrderAddress", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<DateTime>("LastModified")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("OrderSessionId")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("PostalCode")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Street")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("OrdersAddresses");
-                });
-
             modelBuilder.Entity("ScriptShoes.Domain.Entities.Review", b =>
                 {
                     b.Property<int>("Id")
@@ -282,15 +250,15 @@ namespace ScriptShoes.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2023, 11, 1, 13, 7, 56, 457, DateTimeKind.Utc).AddTicks(3125),
-                            LastModified = new DateTime(2023, 11, 1, 13, 7, 56, 457, DateTimeKind.Utc).AddTicks(3128),
+                            Created = new DateTime(2023, 11, 1, 12, 35, 39, 479, DateTimeKind.Utc).AddTicks(5046),
+                            LastModified = new DateTime(2023, 11, 1, 12, 35, 39, 479, DateTimeKind.Utc).AddTicks(5049),
                             Name = "User"
                         },
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2023, 11, 1, 13, 7, 56, 457, DateTimeKind.Utc).AddTicks(3130),
-                            LastModified = new DateTime(2023, 11, 1, 13, 7, 56, 457, DateTimeKind.Utc).AddTicks(3131),
+                            Created = new DateTime(2023, 11, 1, 12, 35, 39, 479, DateTimeKind.Utc).AddTicks(5050),
+                            LastModified = new DateTime(2023, 11, 1, 12, 35, 39, 479, DateTimeKind.Utc).AddTicks(5051),
                             Name = "Admin"
                         });
                 });

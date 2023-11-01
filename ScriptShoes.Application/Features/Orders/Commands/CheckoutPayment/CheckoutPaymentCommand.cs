@@ -1,6 +1,6 @@
 ﻿using MediatR;
-using ScriptShoes.Application.Models.Payments;
+using ScriptShoes.Application.Models.Order;
 
 namespace ScriptShoes.Application.Features.Orders.Commands.CheckoutPayment;
 
-public record CheckoutPaymentCommand(List<PaymentRequestDto> Dto) : IRequest<string>;
+public record CheckoutPaymentCommand(OrderDto Dto) : IRequest<string>;
