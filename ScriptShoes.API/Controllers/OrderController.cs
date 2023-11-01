@@ -1,8 +1,8 @@
 ﻿using System.Text.Json;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using ScriptShoes.Application.Features.Payments.Commands.CheckoutPayment;
-using ScriptShoes.Application.Features.Payments.Commands.ConfirmOrder;
+using ScriptShoes.Application.Features.Orders.Commands.CheckoutPayment;
+using ScriptShoes.Application.Features.Orders.Commands.ConfirmOrder;
 using ScriptShoes.Application.Models.Payments;
 using ScriptShoes.Domain.Exceptions;
 using Stripe;
@@ -10,13 +10,13 @@ using Stripe;
 namespace ScriptShoes.API.Controllers;
 
 [ApiController]
-[Route("api/payments")]
-public class PaymentController : ControllerBase
+[Route("api/order")]
+public class OrderController : ControllerBase
 {
     private readonly IMediator _mediator;
     private readonly IConfiguration _configuration;
 
-    public PaymentController(IMediator mediator, IConfiguration configuration)
+    public OrderController(IMediator mediator, IConfiguration configuration)
     {
         _mediator = mediator;
         _configuration = configuration;

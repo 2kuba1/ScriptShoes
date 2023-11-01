@@ -4,7 +4,7 @@ using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Application.Models.Payments;
 using ScriptShoes.Domain.Exceptions;
 
-namespace ScriptShoes.Application.Features.Payments.Commands.CheckoutPayment;
+namespace ScriptShoes.Application.Features.Orders.Commands.CheckoutPayment;
 
 public class CheckoutPaymentCommandHandler : IRequestHandler<CheckoutPaymentCommand, string>
 {

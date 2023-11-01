@@ -3,7 +3,7 @@ using ScriptShoes.Application.Contracts.Infrastructure.StripePayments;
 using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Domain.Exceptions;
 
-namespace ScriptShoes.Application.Features.Payments.Commands.ConfirmOrder;
+namespace ScriptShoes.Application.Features.Orders.Commands.ConfirmOrder;
 
 public class ConfirmOrderCommandHandler : IRequestHandler<ConfirmOrderCommand, Unit>
 {

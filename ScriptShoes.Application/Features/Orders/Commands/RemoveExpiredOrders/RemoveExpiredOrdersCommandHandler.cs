@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using ScriptShoes.Application.Contracts.Persistence;
 
-namespace ScriptShoes.Application.Features.Payments.Commands.RemoveExpiredOrders;
+namespace ScriptShoes.Application.Features.Orders.Commands.RemoveExpiredOrders;
 
 public class RemoveExpiredOrdersCommandHandler : IRequestHandler<RemoveExpiredOrdersCommand, Unit>
 {

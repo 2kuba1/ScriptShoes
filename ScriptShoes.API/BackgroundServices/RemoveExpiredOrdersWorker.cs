@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using ScriptShoes.Application.Features.Payments.Commands.RemoveExpiredOrders;
+using ScriptShoes.Application.Features.Orders.Commands.RemoveExpiredOrders;
 
 namespace ScriptShoes.API.BackgroundServices;
 
