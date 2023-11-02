@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoes.Application.Features.Orders.Commands.CheckoutPayment;
 using ScriptShoes.Application.Features.Orders.Commands.ConfirmOrder;
@@ -66,7 +67,8 @@ public class OrderController : ControllerBase
     }
 
     [HttpDelete]
-    [Route("deleteOrder")]
+    [Authorize(Policy = "AuthAdmin")]
+    [Route("removeOrder")]
     public async Task<ActionResult> RemoveOrder([FromQuery] string sessionId)
     {
         await _mediator.Send(new RemoveOrderCommand(sessionId));
