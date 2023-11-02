@@ -28,7 +28,7 @@ public class CheckoutPaymentCommandHandler : IRequestHandler<CheckoutPaymentComm
     {
         var createCheckoutData = new List<CreateCheckoutDto>();
 
-        foreach (var data in request.Dto.PaymentRequestDtos)
+        foreach (var data in request.Dto.Items)
         {
             var shoe = await _shoeRepository.GetByIdAsync(data.ShoeId);
 
@@ -66,7 +66,7 @@ public class CheckoutPaymentCommandHandler : IRequestHandler<CheckoutPaymentComm
 
         if (string.IsNullOrEmpty(response.Url)) throw new Exception();
 
-        var order = request.Dto.AddressDto.Adapt<OrderAddress>();
+        var order = request.Dto.Address.Adapt<OrderAddress>();
         order.OrderSessionId = response.SessionId;
         await _orderAddressRepository.CreateAsync(order);
 

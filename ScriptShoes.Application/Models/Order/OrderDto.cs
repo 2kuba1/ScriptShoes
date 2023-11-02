@@ -2,6 +2,6 @@
 
 public class OrderDto
 {
-    public List<PaymentRequestDto> PaymentRequestDtos { get; set; }
-    public OrderAddressDto AddressDto { get; set; }
+    public List<PaymentRequestDto> Items { get; set; }
+    public OrderAddressDto Address { get; set; }
 }
