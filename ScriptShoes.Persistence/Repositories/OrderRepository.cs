@@ -30,4 +30,26 @@ public class OrderRepository : GenericRepository<Order>, IOrderRepository
             .ToList();
         return expiredOrders;
     }
+
+    public async Task RemoveOrder(string sessionId)
+    {
+        var orders = _context.Orders.Where(x => x.SessionId == sessionId).ToList();
+        
+        _context.Orders.RemoveRange(orders);
+        await _context.SaveChangesAsync();
+
+        var orderAddress = await _context.OrdersAddresses.FirstOrDefaultAsync(x => x.OrderSessionId == sessionId);
+
+        if (orderAddress is not null)
+        {
+            _context.OrdersAddresses.Remove(orderAddress);
+            await _context.SaveChangesAsync();
+        }
+    }
+
+    public List<Order> GetOrdersBySessionId(string sessionId)
+    {
+        var orders = _context.Orders.Where(x => x.SessionId == sessionId).ToList();
+        return orders;
+    }
 }
