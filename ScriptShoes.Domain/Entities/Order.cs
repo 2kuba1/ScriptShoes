@@ -10,4 +10,5 @@ public class Order : BaseEntity
     public string SessionId { get; set; } = string.Empty;
     public DateTime SessionExpirationDateTime { get; set; }
     public int? UserId { get; set; }
+    public virtual Shoe Shoe { get; set; }
 }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ScriptShoes.Persistence.Database;
@@ -12,9 +13,11 @@ using ScriptShoes.Persistence.Database;
 namespace ScriptShoes.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231103170252_AddVirtualShoeToOrderEntity")]
+    partial class AddVirtualShoeToOrderEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,7 +51,7 @@ namespace ScriptShoes.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Carts", (string)null);
+                    b.ToTable("Carts");
                 });
 
             modelBuilder.Entity("ScriptShoes.Domain.Entities.EmailCode", b =>
@@ -77,7 +80,7 @@ namespace ScriptShoes.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("EmailCodes", (string)null);
+                    b.ToTable("EmailCodes");
                 });
 
             modelBuilder.Entity("ScriptShoes.Domain.Entities.Favorite", b =>
@@ -102,7 +105,7 @@ namespace ScriptShoes.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Favorites", (string)null);
+                    b.ToTable("Favorites");
                 });
 
             modelBuilder.Entity("ScriptShoes.Domain.Entities.Order", b =>
@@ -142,7 +145,7 @@ namespace ScriptShoes.Persistence.Migrations
 
                     b.HasIndex("ShoeId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("ScriptShoes.Domain.Entities.OrderAddress", b =>
@@ -177,7 +180,7 @@ namespace ScriptShoes.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrdersAddresses", (string)null);
+                    b.ToTable("OrdersAddresses");
                 });
 
             modelBuilder.Entity("ScriptShoes.Domain.Entities.Review", b =>
@@ -224,7 +227,7 @@ namespace ScriptShoes.Persistence.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Reviews", (string)null);
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("ScriptShoes.Domain.Entities.ReviewLike", b =>
@@ -255,7 +258,7 @@ namespace ScriptShoes.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ReviewsLikes", (string)null);
+                    b.ToTable("ReviewsLikes");
                 });
 
             modelBuilder.Entity("ScriptShoes.Domain.Entities.Role", b =>
@@ -278,7 +281,7 @@ namespace ScriptShoes.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Roles", (string)null);
+                    b.ToTable("Roles");
 
                     b.HasData(
                         new
@@ -357,7 +360,7 @@ namespace ScriptShoes.Persistence.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Shoes", (string)null);
+                    b.ToTable("Shoes");
                 });
 
             modelBuilder.Entity("ScriptShoes.Domain.Entities.User", b =>
@@ -417,7 +420,7 @@ namespace ScriptShoes.Persistence.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("ScriptShoes.Domain.Entities.Order", b =>

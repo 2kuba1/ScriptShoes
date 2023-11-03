@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using ScriptShoes.Application.Features.Orders.Commands.CheckoutPayment;
 using ScriptShoes.Application.Features.Orders.Commands.ConfirmOrder;
 using ScriptShoes.Application.Features.Orders.Commands.RemoveOrder;
+using ScriptShoes.Application.Features.Orders.Queries.GetUserOrders;
+using ScriptShoes.Application.Models;
 using ScriptShoes.Application.Models.Order;
 using ScriptShoes.Domain.Exceptions;
 using Stripe;
@@ -73,5 +75,14 @@ public class OrderController : ControllerBase
     {
         await _mediator.Send(new RemoveOrderCommand(sessionId));
         return NoContent();
+    }
+
+    [HttpGet]
+    [Authorize(Policy = "AuthUser")]
+    public async Task<ActionResult<PagedResult<UserOrdersDto>>> GetUserOrders([FromQuery] int pageSize,
+        [FromQuery] int pageNumber)
+    {
+        var orders = await _mediator.Send(new GetUserOrdersQuery(pageSize, pageNumber));
+        return orders;
     }
 }
