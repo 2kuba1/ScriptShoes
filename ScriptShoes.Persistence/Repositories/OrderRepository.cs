@@ -26,17 +26,17 @@ public class OrderRepository : GenericRepository<Order>, IOrderRepository
         await _context.SaveChangesAsync();
     }
 
-    public List<Order> GetExpiredOrders()
+    public async Task<List<Order>> GetExpiredOrders()
     {
-        var expiredOrders = _context.Orders
+        var expiredOrders = await _context.Orders
             .Where(x => x.SessionExpirationDateTime < DateTime.UtcNow && x.IsConfirmed == false)
-            .ToList();
+            .ToListAsync();
         return expiredOrders;
     }
 
     public async Task RemoveOrder(string sessionId)
     {
-        var orders = _context.Orders.Where(x => x.SessionId == sessionId).ToList();
+        var orders = await _context.Orders.Where(x => x.SessionId == sessionId).ToListAsync();
 
         _context.Orders.RemoveRange(orders);
         await _context.SaveChangesAsync();
@@ -83,9 +83,9 @@ public class OrderRepository : GenericRepository<Order>, IOrderRepository
         return new PagedResult<UserOrdersDto>(userOrders, totalItemsCount, pageSize, pageNumber);
     }
 
-    public List<Order> GetOrdersBySessionId(string sessionId)
+    public async  Task<List<Order>> GetOrdersBySessionId(string sessionId)
     {
-        var orders = _context.Orders.Where(x => x.SessionId == sessionId).ToList();
+        var orders = await _context.Orders.Where(x => x.SessionId == sessionId).ToListAsync();
         return orders;
     }
 }
