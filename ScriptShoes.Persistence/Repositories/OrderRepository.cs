@@ -73,7 +73,8 @@ public class OrderRepository : GenericRepository<Order>, IOrderRepository
 
             config.NewConfig<Order, UserOrdersDto>()
                 .Map(dest => dest.Brand, src => src.Shoe.Brand)
-                .Map(dest => dest.ShoeName, src => src.Shoe.ShoeName);
+                .Map(dest => dest.ShoeName, src => src.Shoe.ShoeName)
+                .Map(dest => dest.ThumbnailImage, src => src.Shoe.ThumbnailImage);
 
             var newOrder = order.Adapt<UserOrdersDto>(config);
             userOrders.Add(newOrder);
@@ -83,7 +84,35 @@ public class OrderRepository : GenericRepository<Order>, IOrderRepository
         return new PagedResult<UserOrdersDto>(userOrders, totalItemsCount, pageSize, pageNumber);
     }
 
-    public async  Task<List<Order>> GetOrdersBySessionId(string sessionId)
+    public async Task<PagedResult<GetOrdersDto>> GetPagedOrders(int pageSize, int pageNumber)
+    {
+        var baseQuery = _context.Orders
+            .Include(x => x.Shoe)
+            .Include(x => x.OrderAddress)
+            .OrderByDescending(x => x.Id)
+            .Where(x => x.IsConfirmed == true);
+
+        var orders = await baseQuery.Skip(pageSize * (pageNumber - 1)).Take(pageSize).ToListAsync();
+
+        var totalItemsCount = orders.Count;
+
+        TypeAdapterConfig config = new();
+
+        config.NewConfig<Order, GetOrdersDto>()
+            .Map(dest => dest.Brand, src => src.Shoe.Brand)
+            .Map(dest => dest.ShoeName, src => src.Shoe.ShoeName)
+            .Map(dest => dest.CurrentPrice, src => src.Shoe.CurrentPrice)
+            .Map(dest => dest.ThumbnailImage, src => src.Shoe.ThumbnailImage)
+            .Map(dest => dest.City, src => src.OrderAddress.City)
+            .Map(dest => dest.Street, src => src.OrderAddress.Street)
+            .Map(dest => dest.PostalCode, src => src.OrderAddress.PostalCode);
+
+        var mappedValues = orders.Adapt<List<GetOrdersDto>>(config);
+
+        return new PagedResult<GetOrdersDto>(mappedValues, totalItemsCount, pageSize, pageNumber);
+    }
+
+    public async Task<List<Order>> GetOrdersBySessionId(string sessionId)
     {
         var orders = await _context.Orders.Where(x => x.SessionId == sessionId).ToListAsync();
         return orders;

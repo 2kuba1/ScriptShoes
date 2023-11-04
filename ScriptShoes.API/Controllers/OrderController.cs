@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using ScriptShoes.Application.Features.Orders.Commands.CheckoutPayment;
 using ScriptShoes.Application.Features.Orders.Commands.ConfirmOrder;
 using ScriptShoes.Application.Features.Orders.Commands.RemoveOrder;
+using ScriptShoes.Application.Features.Orders.Queries.GetPagedOrders;
 using ScriptShoes.Application.Features.Orders.Queries.GetUserOrders;
 using ScriptShoes.Application.Models;
 using ScriptShoes.Application.Models.Order;
@@ -84,6 +85,16 @@ public class OrderController : ControllerBase
         [FromQuery] int pageNumber)
     {
         var orders = await _mediator.Send(new GetUserOrdersQuery(pageSize, pageNumber));
+        return Ok(orders);
+    }
+
+    [HttpGet]
+    [Authorize(Policy = "AuthAdmin")]
+    [Route("getPagedOrders")]
+    public async Task<ActionResult<PagedResult<GetOrdersDto>>> GetPagedOrders([FromQuery] int pageSize,
+        [FromQuery] int pageNumber)
+    {
+        var orders = await _mediator.Send(new GetPagedOrdersQuery(pageSize, pageNumber));
         return Ok(orders);
     }
 }
