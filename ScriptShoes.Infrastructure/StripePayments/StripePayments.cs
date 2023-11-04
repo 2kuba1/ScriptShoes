@@ -98,7 +98,14 @@ public class StripePayments : IStripePayments
         if (order is null)
             throw new NotFoundException("Order not found");
 
-        order.ForEach(x => x.IsConfirmed = true);
+        var orderAddress =
+            await _dbContext.OrdersAddresses.FirstOrDefaultAsync(x => x.OrderSessionId == order[0].SessionId);
+
+        order.ForEach(x =>
+        {
+            x.IsConfirmed = true;
+            x.OrderAddressId = orderAddress!.Id;
+        });
 
         _dbContext.Orders.UpdateRange(order);
         await _dbContext.SaveChangesAsync();
