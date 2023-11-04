@@ -19,7 +19,7 @@ public class GetItemsFromCartQueryHandler : IRequestHandler<GetItemsFromCartQuer
     public async Task<List<GetCartDto>> Handle(GetItemsFromCartQuery request, CancellationToken cancellationToken)
     {
         var user = await GetUserByHttpContextId.Get(_userRepository);
-        var shoes = _cartRepository.GetShoesFromCart(user.Id);
+        var shoes = await _cartRepository.GetShoesFromCart(user.Id);
         return shoes;
     }
 }

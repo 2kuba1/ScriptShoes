@@ -18,15 +18,15 @@ public class CartRepository : GenericRepository<Cart>, ICartRepository
         return cart;
     }
 
-    public List<GetCartDto> GetShoesFromCart(int userId)
+    public async Task<List<GetCartDto>> GetShoesFromCart(int userId)
     {
-        var itemsFromCart = _context.Carts.Where(x => x.UserId == userId).ToList();
+        var itemsFromCart = await _context.Carts.Where(x => x.UserId == userId).ToListAsync();
 
         var items = new List<GetCartDto>();
 
-        itemsFromCart.ForEach(x =>
+        itemsFromCart.ForEach(async x =>
         {
-            var shoe = _context.Shoes.FirstOrDefault(s => s.Id == x.ShoeId)!;
+            var shoe = await _context.Shoes.FirstOrDefaultAsync(s => s.Id == x.ShoeId)!;
 
             items.Add(new GetCartDto()
             {

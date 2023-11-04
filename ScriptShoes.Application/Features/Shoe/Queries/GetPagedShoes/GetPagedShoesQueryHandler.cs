@@ -16,7 +16,7 @@ public class GetPagedShoesQueryHandler : IRequestHandler<GetPagedShoesQuery, Pag
     
     public async Task<PagedResult<GetShoeLimitedInformationDto>> Handle(GetPagedShoesQuery request, CancellationToken cancellationToken)
     {
-        var pagedResults = _shoeRepository.GetPagedShoes(request.PageNumber, request.PageSize);
+        var pagedResults = await _shoeRepository.GetPagedShoes(request.PageNumber, request.PageSize);
         return pagedResults;
     }
 }

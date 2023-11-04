@@ -15,7 +15,7 @@ public class GetExpiredOrdersQueryHandler : IRequestHandler<GetExpiredOrdersQuer
     
     public async Task<List<Order>> Handle(GetExpiredOrdersQuery request, CancellationToken cancellationToken)
     {
-        var orders = _orderRepository.GetExpiredOrders();
+        var orders = await _orderRepository.GetExpiredOrders();
         return orders;
     }
 }

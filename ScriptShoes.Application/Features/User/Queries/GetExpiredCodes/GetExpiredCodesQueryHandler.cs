@@ -15,7 +15,7 @@ public class GetExpiredCodesQueryHandler : IRequestHandler<GetExpiredCodesQuery,
     
     public async Task<List<EmailCode>> Handle(GetExpiredCodesQuery request, CancellationToken cancellationToken)
     {
-        var expiredCodes = _emailCodesRepository.GetExpiredCodes();
+        var expiredCodes = await _emailCodesRepository.GetExpiredCodes();
         return expiredCodes as List<EmailCode> ?? new List<EmailCode>();
     }
 }

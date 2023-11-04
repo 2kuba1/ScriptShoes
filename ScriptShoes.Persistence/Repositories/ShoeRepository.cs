@@ -21,11 +21,11 @@ public class ShoeRepository : GenericRepository<Shoe>, IShoeRepository
         return shoe;
     }
 
-    public PagedResult<GetShoeLimitedInformationDto> GetPagedShoes(int pageNumber, int pageSize)
+    public async Task<PagedResult<GetShoeLimitedInformationDto>> GetPagedShoes(int pageNumber, int pageSize)
     {
         var baseQuery = _context.Shoes.OrderByDescending(x => x.Id);
 
-        var shoes = baseQuery.Skip(pageSize * (pageNumber - 1)).Take(pageSize).ToList();
+        var shoes = await baseQuery.Skip(pageSize * (pageNumber - 1)).Take(pageSize).ToListAsync();
 
         var totalItemsCount = shoes.Count;
 

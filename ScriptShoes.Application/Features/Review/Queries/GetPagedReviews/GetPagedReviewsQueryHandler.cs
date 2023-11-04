@@ -16,7 +16,7 @@ public class GetPagedReviewsQueryHandler : IRequestHandler<GetPagedReviewsQuery,
     
     public async Task<PagedResult<GetShoeReviewsDto>> Handle(GetPagedReviewsQuery request, CancellationToken cancellationToken)
     {
-        var pagedResults = _reviewRepository.GetPagedShoeReviews(request.ShoeId, request.PageNumber, request.PageSize);
+        var pagedResults = await _reviewRepository.GetPagedShoeReviews(request.ShoeId, request.PageNumber, request.PageSize);
         return pagedResults;
     }
 }

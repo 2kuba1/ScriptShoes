@@ -20,17 +20,17 @@ public class ReviewRepository : GenericRepository<Review>, IReviewRepository
         return review;
     }
 
-    public List<Review> GetShoeReviews(int shoeId)
+    public async Task<List<Review>> GetShoeReviews(int shoeId)
     {
-        var reviews = _context.Reviews.Where(x => x.ShoeId == shoeId).ToList();
+        var reviews = await _context.Reviews.Where(x => x.ShoeId == shoeId).ToListAsync();
         return reviews;
     }
     
-    public PagedResult<GetShoeReviewsDto> GetPagedShoeReviews(int shoeId, int pageNumber, int pageSize)
+    public async Task<PagedResult<GetShoeReviewsDto>> GetPagedShoeReviews(int shoeId, int pageNumber, int pageSize)
     {
         var baseQuery = _context.Reviews.Where(x => x.ShoeId == shoeId).OrderByDescending(x => x.Id);
 
-        var reviews = baseQuery.Skip(pageSize * (pageNumber - 1)).Take(pageSize).ToList();
+        var reviews = await baseQuery.Skip(pageSize * (pageNumber - 1)).Take(pageSize).ToListAsync();
 
         var totalItemsCount = reviews.Count;
 

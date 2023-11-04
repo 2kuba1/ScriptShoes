@@ -29,14 +29,14 @@ public class GetLikedReviewsQueryHandler : IRequestHandler<GetLikedReviewsQuery,
             if (user.Id != request.UserId)
                 throw new NotFoundException("User not found");
             
-            return _reviewLikeRepository.GetLikedReviews(request.ShoeId, (int)request.UserId) as List<int> ??
+            return await _reviewLikeRepository.GetLikedReviews(request.ShoeId, (int)request.UserId) as List<int> ??
                    new List<int>();
         }
 
         if (request.LocalUserId == null || !request.LocalUserId.Contains("Local"))
             throw new BadRequestException("Incorrect UserLocalId");
 
-        return _reviewLikeRepository.GetLikedReviews(request.ShoeId, request.LocalUserId) as List<int> ??
+        return await _reviewLikeRepository.GetLikedReviews(request.ShoeId, request.LocalUserId) as List<int> ??
                new List<int>();
     }
 }

@@ -62,7 +62,7 @@ public class OrderController : ControllerBase
 
             return Ok();
         }
-        catch (StripeException e)
+        catch (StripeException)
         {
             return BadRequest();
         }
@@ -79,10 +79,11 @@ public class OrderController : ControllerBase
 
     [HttpGet]
     [Authorize(Policy = "AuthUser")]
+    [Route("getUserOrders")]
     public async Task<ActionResult<PagedResult<UserOrdersDto>>> GetUserOrders([FromQuery] int pageSize,
         [FromQuery] int pageNumber)
     {
         var orders = await _mediator.Send(new GetUserOrdersQuery(pageSize, pageNumber));
-        return orders;
+        return Ok(orders);
     }
 }

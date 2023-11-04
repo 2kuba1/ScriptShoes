@@ -25,15 +25,15 @@ public class ReviewLikeRepository : GenericRepository<ReviewLike>, IReviewLikeRe
         return reviewLike;
     }
 
-    public IEnumerable<int> GetLikedReviews(int shoeId, int userId)
+    public async Task<IEnumerable<int>> GetLikedReviews(int shoeId, int userId)
     {
-        var likedReviews = _context.ReviewsLikes.Where(x => x.UserId == userId && x.ShoeId == shoeId).Select(x => x.ReviewId).ToList();
+        var likedReviews = await _context.ReviewsLikes.Where(x => x.UserId == userId && x.ShoeId == shoeId).Select(x => x.ReviewId).ToListAsync();
         return likedReviews;
     }
 
-    public IEnumerable<int> GetLikedReviews(int shoeId, string localUserId)
+    public async Task<IEnumerable<int>> GetLikedReviews(int shoeId, string localUserId)
     {
-        var likedReviews = _context.ReviewsLikes.Where(x => x.LocalId == localUserId && x.ShoeId == shoeId).Select(x => x.ReviewId).ToList();
+        var likedReviews = await _context.ReviewsLikes.Where(x => x.LocalId == localUserId && x.ShoeId == shoeId).Select(x => x.ReviewId).ToListAsync();
         return likedReviews;
         
     }

@@ -9,7 +9,7 @@ public interface IOrderRepository : IGenericRepository<Order>
 {
     Task<Order?> GetOrderBySessionId(string sessionId);
     Task RemoveExpiredOrders(List<Order> expiredOrders);
-    List<Order> GetExpiredOrders();
+    Task<List<Order>> GetExpiredOrders();
     Task RemoveOrder(string sessionId);
     Task<PagedResult<UserOrdersDto>> GetUserOrders(int userId, int pageSize, int pageNumber);
 }

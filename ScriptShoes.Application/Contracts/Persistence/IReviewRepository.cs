@@ -8,6 +8,6 @@ namespace ScriptShoes.Application.Contracts.Persistence;
 public interface IReviewRepository : IGenericRepository<Review>
 {
     public Task<bool> DoesUserHaveReviewForShoe(int userId, int shoeId);
-    public List<Review> GetShoeReviews(int shoeId);
-    public PagedResult<GetShoeReviewsDto> GetPagedShoeReviews(int shoeId, int pageNumber, int pageSize);
+    public Task<List<Review>> GetShoeReviews(int shoeId);
+    public Task<PagedResult<GetShoeReviewsDto>> GetPagedShoeReviews(int shoeId, int pageNumber, int pageSize);
 }

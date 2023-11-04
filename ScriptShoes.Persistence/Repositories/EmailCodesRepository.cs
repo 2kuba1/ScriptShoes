@@ -23,9 +23,9 @@ public class EmailCodesRepository : GenericRepository<EmailCode>, IEmailCodesRep
         await _context.SaveChangesAsync();
     }
 
-    public IEnumerable<EmailCode> GetExpiredCodes()
+    public async Task<IEnumerable<EmailCode>> GetExpiredCodes()
     {
-        var expiredCodes = _context.EmailCodes.Where(x => x.Expires < DateTime.UtcNow).ToList();
+        var expiredCodes = await _context.EmailCodes.Where(x => x.Expires < DateTime.UtcNow).ToListAsync();
         return expiredCodes;
     }
 
