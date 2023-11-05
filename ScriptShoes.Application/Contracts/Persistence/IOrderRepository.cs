@@ -12,5 +12,5 @@ public interface IOrderRepository : IGenericRepository<Order>
     Task<List<Order>> GetExpiredOrders();
     Task RemoveOrder(string sessionId);
     Task<PagedResult<UserOrdersDto>> GetUserOrders(int userId, int pageSize, int pageNumber);
-    Task<PagedResult<GetOrdersDto>> GetPagedOrders(int pageSize, int pageNumber);
+    Task<PagedResult<GetOrdersAsAdminDto>> GetPagedOrders(int pageSize, int pageNumber);
 }

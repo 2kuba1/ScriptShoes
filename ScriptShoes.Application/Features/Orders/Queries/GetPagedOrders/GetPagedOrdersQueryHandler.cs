@@ -5,7 +5,7 @@ using ScriptShoes.Application.Models.Order;
 
 namespace ScriptShoes.Application.Features.Orders.Queries.GetPagedOrders;
 
-public class GetPagedOrdersQueryHandler : IRequestHandler<GetPagedOrdersQuery, PagedResult<GetOrdersDto>>
+public class GetPagedOrdersQueryHandler : IRequestHandler<GetPagedOrdersQuery, PagedResult<GetOrdersAsAdminDto>>
 {
     private readonly IOrderRepository _orderRepository;
 
@@ -14,7 +14,7 @@ public class GetPagedOrdersQueryHandler : IRequestHandler<GetPagedOrdersQuery, P
         _orderRepository = orderRepository;
     }
     
-    public async Task<PagedResult<GetOrdersDto>> Handle(GetPagedOrdersQuery request, CancellationToken cancellationToken)
+    public async Task<PagedResult<GetOrdersAsAdminDto>> Handle(GetPagedOrdersQuery request, CancellationToken cancellationToken)
     {
         var orders = await _orderRepository.GetPagedOrders(request.PageSize, request.PageNumber);
         return orders;

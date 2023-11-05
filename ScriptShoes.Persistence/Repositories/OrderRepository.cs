@@ -84,7 +84,7 @@ public class OrderRepository : GenericRepository<Order>, IOrderRepository
         return new PagedResult<UserOrdersDto>(userOrders, totalItemsCount, pageSize, pageNumber);
     }
 
-    public async Task<PagedResult<GetOrdersDto>> GetPagedOrders(int pageSize, int pageNumber)
+    public async Task<PagedResult<GetOrdersAsAdminDto>> GetPagedOrders(int pageSize, int pageNumber)
     {
         var baseQuery = _context.Orders
             .Include(x => x.Shoe)
@@ -98,18 +98,22 @@ public class OrderRepository : GenericRepository<Order>, IOrderRepository
 
         TypeAdapterConfig config = new();
 
-        config.NewConfig<Order, GetOrdersDto>()
-            .Map(dest => dest.Brand, src => src.Shoe.Brand)
-            .Map(dest => dest.ShoeName, src => src.Shoe.ShoeName)
-            .Map(dest => dest.CurrentPrice, src => src.Shoe.CurrentPrice)
-            .Map(dest => dest.ThumbnailImage, src => src.Shoe.ThumbnailImage)
+        config.NewConfig<Order, GetOrdersAsAdminDto>()
+            .Map(dest => dest.GetOrdersDto.Brand, src => src.Shoe.Brand)
+            .Map(dest => dest.GetOrdersDto.ShoeName, src => src.Shoe.ShoeName)
+            .Map(dest => dest.GetOrdersDto.CurrentPrice, src => src.Shoe.CurrentPrice)
+            .Map(dest => dest.GetOrdersDto.ThumbnailImage, src => src.Shoe.ThumbnailImage)
+            .Map(dest => dest.GetOrdersDto.Id, src => src.Id)
+            .Map(dest => dest.GetOrdersDto.Quantity, src => src.Quantity)
+            .Map(dest => dest.GetOrdersDto.ShoeId, src => src.ShoeId)
             .Map(dest => dest.City, src => src.OrderAddress.City)
+            .Map(dest => dest.GetOrdersDto.OrderAddressId, src => src.OrderAddress.Id)
             .Map(dest => dest.Street, src => src.OrderAddress.Street)
             .Map(dest => dest.PostalCode, src => src.OrderAddress.PostalCode);
 
-        var mappedValues = orders.Adapt<List<GetOrdersDto>>(config);
+        var mappedValues = orders.Adapt<List<GetOrdersAsAdminDto>>(config);
 
-        return new PagedResult<GetOrdersDto>(mappedValues, totalItemsCount, pageSize, pageNumber);
+        return new PagedResult<GetOrdersAsAdminDto>(mappedValues, totalItemsCount, pageSize, pageNumber);
     }
 
     public async Task<List<Order>> GetOrdersBySessionId(string sessionId)
