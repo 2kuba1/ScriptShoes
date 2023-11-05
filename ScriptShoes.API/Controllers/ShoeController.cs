@@ -10,6 +10,7 @@ using ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes;
 using ScriptShoes.Application.Features.Shoe.Queries.GetFilters;
 using ScriptShoes.Application.Features.Shoe.Queries.GetPagedShoes;
 using ScriptShoes.Application.Features.Shoe.Queries.GetShoeById;
+using ScriptShoes.Application.Features.Shoe.Queries.SearchForShoes;
 using ScriptShoes.Application.Models;
 using ScriptShoes.Application.Models.Shoe;
 
@@ -40,7 +41,6 @@ public class ShoeController : ControllerBase
     public async Task<ActionResult<List<GetShoeDto>>> GetAllShoes()
     {
         var shoes = await _mediator.Send(new GetAllShoesQuery());
-
         return Ok(shoes);
     }
 
@@ -49,7 +49,6 @@ public class ShoeController : ControllerBase
     public async Task<ActionResult<GetShoeDto>> GetById([FromRoute] int id)
     {
         var shoe = await _mediator.Send(new GetShoeByIdQuery(id));
-
         return Ok(shoe);
     }
 
@@ -59,7 +58,6 @@ public class ShoeController : ControllerBase
     public async Task<ActionResult<GetFiltersDto>> GetFilters()
     {
         var filter = await _mediator.Send(new GetFiltersQuery());
-
         return Ok(filter);
     }
 
@@ -78,7 +76,7 @@ public class ShoeController : ControllerBase
     public async Task<ActionResult> DeleteShoe([FromQuery] int id)
     {
         await _mediator.Send(new DeleteShoeCommand(id));
-        return Ok();
+        return NoContent();
     }
 
     [HttpDelete]
@@ -87,7 +85,7 @@ public class ShoeController : ControllerBase
     public async Task<ActionResult> DeleteShoeImages([FromQuery] int id, [FromBody] List<int> imageIndexes)
     {
         await _mediator.Send(new DeleteShoeImagesCommand(id, imageIndexes));
-        return Ok();
+        return NoContent();
     }
 
     [HttpGet]
@@ -96,6 +94,15 @@ public class ShoeController : ControllerBase
         [FromQuery] int pageSize)
     {
         var pagedResults = await _mediator.Send(new GetPagedShoesQuery(pageNumber, pageSize));
-        return pagedResults;
+        return Ok(pagedResults);
+    }
+
+    [HttpGet]
+    [Route("getShoes/{searchPhrase}")]
+    public async Task<ActionResult<PagedResult<SearchForShoesDto>>> GetShoes([FromQuery] int pageNumber,
+        [FromQuery] int pageSize, [FromRoute] string searchPhrase)
+    {
+        var shoes = await _mediator.Send(new SearchForShoesQuery(pageSize, pageNumber, searchPhrase));
+        return Ok(shoes);
     }
 }

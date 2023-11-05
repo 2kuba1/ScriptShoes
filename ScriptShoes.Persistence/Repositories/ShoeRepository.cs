@@ -35,4 +35,21 @@ public class ShoeRepository : GenericRepository<Shoe>, IShoeRepository
             new PagedResult<GetShoeLimitedInformationDto>(mappedValues, totalItemsCount, pageSize, pageNumber);
         return pagedShoes;
     }
+
+    public async Task<PagedResult<SearchForShoesDto>> GetShoesBySearchPhrase(int pageSize, int pageNumber,
+        string? searchPhrase)
+    {
+        var baseQuery = _context.Shoes.Where(r =>
+            searchPhrase == null || (r.ShoeName.ToLower().Contains(searchPhrase.ToLower())));
+
+        var shoes = await baseQuery
+            .Skip(pageSize * pageNumber - 1)
+            .Take(pageSize).ToListAsync();
+
+        var totalItemsCount = baseQuery.Count();
+
+        var mappedValues = shoes.Adapt<List<SearchForShoesDto>>();
+
+        return new PagedResult<SearchForShoesDto>(mappedValues, totalItemsCount, pageSize, pageNumber);
+    }
 }
