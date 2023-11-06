@@ -1,5 +1,6 @@
 'use client';
 
+import Navbar from '@/components/navbar';
 import useThemeStore from '@/stores/themeStore';
 
 interface Props {
@@ -12,7 +13,10 @@ export default function Providers({ children, font }: Props) {
 
   return (
     <html lang='en' className={theme}>
-      <body className={font}>{children}</body>
+      <body className={font}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
