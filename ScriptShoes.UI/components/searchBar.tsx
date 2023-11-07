@@ -2,12 +2,23 @@
 
 import useNavbarStore from '@/stores/navbarStore';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const SearchBar = () => {
   const { isOpened, setIsOpened } = useNavbarStore();
 
+  const closeSearchBar = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.keyCode === 27) setIsOpened(!isOpened);
+  };
+
   return (
-    <div className='h-12 w-full flex items-center justify-center bg-orange px-4 rounded-md'>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 1 }}
+      onKeyUp={e => closeSearchBar(e)}
+      className='h-12 w-full flex items-center justify-center bg-orange px-4 rounded-md'
+    >
       <input
         type='text'
         placeholder='Search'
@@ -21,7 +32,7 @@ const SearchBar = () => {
         height={24}
         onClick={() => setIsOpened(!isOpened)}
       />
-    </div>
+    </motion.div>
   );
 };
 
