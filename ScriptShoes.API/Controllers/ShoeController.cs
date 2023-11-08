@@ -99,6 +99,7 @@ public class ShoeController : ControllerBase
 
     [HttpGet]
     [Route("getShoes/{searchPhrase}")]
+    [DisableRateLimiting]
     public async Task<ActionResult<PagedResult<SearchForShoesDto>>> GetShoes([FromQuery] int pageNumber,
         [FromQuery] int pageSize, [FromRoute] string searchPhrase)
     {

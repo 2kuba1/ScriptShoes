@@ -4,9 +4,13 @@ import Image from 'next/image';
 import SearchBar from './searchBar';
 import useNavbarStore from '@/stores/navbarStore';
 import { AnimatePresence, motion } from 'framer-motion';
+import SearchForShoes from '../searchForShoes';
+import { useDebounce } from 'use-debounce';
 
 const Navbar = () => {
-  const { isOpened, setIsOpened } = useNavbarStore();
+  const { isOpened, setIsOpened, searchPhrase } = useNavbarStore();
+
+  const [value] = useDebounce(searchPhrase, 500);
 
   return (
     <AnimatePresence>
@@ -47,6 +51,14 @@ const Navbar = () => {
           </motion.div>
         )}
       </nav>
+      {value !== '' && value && searchPhrase && isOpened && (
+        <SearchForShoes
+          pageNumber={1}
+          pageSize={3}
+          searchPhrase={value}
+          key={searchPhrase}
+        />
+      )}
     </AnimatePresence>
   );
 };
