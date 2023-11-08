@@ -43,8 +43,9 @@ public class ShoeRepository : GenericRepository<Shoe>, IShoeRepository
             searchPhrase == null || (r.ShoeName.ToLower().Contains(searchPhrase.ToLower())));
 
         var shoes = await baseQuery
-            .Skip(pageSize * pageNumber - 1)
-            .Take(pageSize).ToListAsync();
+            .Skip(pageSize * (pageNumber - 1))
+            .Take(pageSize)
+            .ToListAsync();
 
         var totalItemsCount = baseQuery.Count();
 
