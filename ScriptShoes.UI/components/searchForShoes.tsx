@@ -29,7 +29,7 @@ interface SearchResult {
 }
 
 const SearchForShoes = ({ searchPhrase, pageNumber, pageSize }: Props) => {
-  const [data, setData] = useState<SearchResult>();
+  const [data, setData] = useState<SearchResult | null>();
   const { setIsOpened } = useNavbarStore();
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const SearchForShoes = ({ searchPhrase, pageNumber, pageSize }: Props) => {
           headers: {
             'Content-Type': 'application/json',
           },
-          cache: 'force-cache',
+          cache: 'no-cache',
         }
       );
 
@@ -50,8 +50,6 @@ const SearchForShoes = ({ searchPhrase, pageNumber, pageSize }: Props) => {
     getShoes();
   }, [pageNumber, pageSize, searchPhrase]);
 
-  console.log(data);
-
   return (
     <>
       {data &&
@@ -59,8 +57,10 @@ const SearchForShoes = ({ searchPhrase, pageNumber, pageSize }: Props) => {
           <Link
             href={`/shoe/${shoe.id}`}
             key={shoe.id}
-            onClick={() => setIsOpened(false)}
-            className='flex items-center justify-between border-b-2 border-b-gray bg-white w-full h-12 max-w-full p-12 hover:scale-110 cursor-pointer duration-200 dark:bg-gray dark:text-white'
+            onClick={() => {
+              setIsOpened(false);
+            }}
+            className='flex items-center justify-between border-b-2 border-b-gray bg-white w-screen h-12 max-w-full p-12 hover:scale-110 cursor-pointer duration-200 dark:bg-gray dark:text-white z-50'
           >
             <h1 className='font-bold text-xl'>{shoe.shoeName}</h1>
             <Image
