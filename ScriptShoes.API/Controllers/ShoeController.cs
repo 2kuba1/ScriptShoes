@@ -10,6 +10,7 @@ using ScriptShoes.Application.Features.Shoe.Queries.GetAllShoes;
 using ScriptShoes.Application.Features.Shoe.Queries.GetFilters;
 using ScriptShoes.Application.Features.Shoe.Queries.GetPagedShoes;
 using ScriptShoes.Application.Features.Shoe.Queries.GetShoeById;
+using ScriptShoes.Application.Features.Shoe.Queries.GetShoeContent;
 using ScriptShoes.Application.Features.Shoe.Queries.SearchForShoes;
 using ScriptShoes.Application.Models;
 using ScriptShoes.Application.Models.Shoe;
@@ -105,5 +106,13 @@ public class ShoeController : ControllerBase
     {
         var shoes = await _mediator.Send(new SearchForShoesQuery(pageSize, pageNumber, searchPhrase));
         return Ok(shoes);
+    }
+
+    [HttpGet]
+    [Route("getShoeContent/{shoeId:int}")]
+    public async Task<ActionResult<GetShoeContentDto>> GetShoeContent([FromRoute] int shoeId)
+    {
+        var shoe = await _mediator.Send(new GetShoeContentQuery(shoeId));
+        return Ok(shoe);
     }
 }

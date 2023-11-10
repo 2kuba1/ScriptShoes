@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Application.Models;
+using ScriptShoes.Application.Models.Review;
 using ScriptShoes.Application.Models.Shoe;
 using ScriptShoes.Domain.Entities;
 using ScriptShoes.Persistence.Database;
@@ -52,5 +53,17 @@ public class ShoeRepository : GenericRepository<Shoe>, IShoeRepository
         var mappedValues = shoes.Adapt<List<SearchForShoesDto>>();
 
         return new PagedResult<SearchForShoesDto>(mappedValues, totalItemsCount, pageSize, pageNumber);
+    }
+
+    public async Task<GetShoeContentDto?> GetShoeContent(int shoeId)
+    {
+        var shoe = await _context.Shoes.FirstOrDefaultAsync(x => x.Id == shoeId);
+
+        TypeAdapterConfig config = new();
+
+        config.NewConfig<Shoe, GetShoeContentDto>();
+
+        var dto = shoe.Adapt<GetShoeContentDto>(config);
+        return dto;
     }
 }
