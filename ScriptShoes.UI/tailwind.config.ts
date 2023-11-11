@@ -14,6 +14,10 @@ const config: Config = {
         white: '#DFDFDF',
         yellow: '#FCBF49',
         orange: '#F77F00',
+        'dark-blue': '#003049',
+      },
+      minHeight: {
+        'without-nav': 'calc(100vh - 4rem)',
       },
     },
   },

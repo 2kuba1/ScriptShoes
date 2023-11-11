@@ -35,13 +35,13 @@ const SearchForShoes = ({ searchPhrase, pageNumber, pageSize }: Props) => {
   useEffect(() => {
     const getShoes = async () => {
       const response = await fetch(
-        `http://localhost:5013/api/shoe/getShoes/${searchPhrase}?pageNumber=${pageNumber}&pageSize=${pageSize}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/shoe/getShoes/${searchPhrase}?pageNumber=${pageNumber}&pageSize=${pageSize}`,
         {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
           },
-          cache: 'no-cache',
         }
       );
 
