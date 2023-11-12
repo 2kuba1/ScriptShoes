@@ -27,15 +27,26 @@ public class CreateReviewCommandHandler : IRequestHandler<CreateReviewCommand, U
             throw new NotFoundException("Shoe not found");
 
         var user = await GetUserByHttpContextId.Get(_userRepository);
-        
+
         var doesUserHaveReviewForShoe = await _reviewRepository.DoesUserHaveReviewForShoe(user.Id, request.Dto.ShoeId);
 
         if (doesUserHaveReviewForShoe)
             throw new BadRequestException("This user already has review for this shoe");
 
-        var numberOfRatings = shoe.NumberOfRatings++;
+        var numberOfReviews = ++shoe.NumberOfReviews;
 
-        shoe.AverageRating = (shoe.AverageRating + request.Dto.ShoeRate) / numberOfRatings;
+        Console.WriteLine(shoe.AverageRating);
+        
+        if (shoe.AverageRating == 0)
+        {
+            Console.WriteLine("XD");
+            shoe.AverageRating = request.Dto.ShoeRate;
+        }
+        else
+        {
+            var avgRating = (shoe.AverageRating + request.Dto.ShoeRate) / numberOfReviews;
+            shoe.AverageRating = avgRating;
+        }
 
         await _shoeRepository.UpdateAsync(shoe);
 

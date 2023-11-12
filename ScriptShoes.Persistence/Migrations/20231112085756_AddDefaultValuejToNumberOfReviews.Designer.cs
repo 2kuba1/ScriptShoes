@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ScriptShoes.Persistence.Database;
@@ -12,9 +13,11 @@ using ScriptShoes.Persistence.Database;
 namespace ScriptShoes.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231112085756_AddDefaultValuejToNumberOfReviews")]
+    partial class AddDefaultValuejToNumberOfReviews
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -289,15 +292,15 @@ namespace ScriptShoes.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2023, 11, 12, 10, 13, 17, 562, DateTimeKind.Utc).AddTicks(5459),
-                            LastModified = new DateTime(2023, 11, 12, 10, 13, 17, 562, DateTimeKind.Utc).AddTicks(5461),
+                            Created = new DateTime(2023, 11, 12, 8, 57, 56, 780, DateTimeKind.Utc).AddTicks(6800),
+                            LastModified = new DateTime(2023, 11, 12, 8, 57, 56, 780, DateTimeKind.Utc).AddTicks(6801),
                             Name = "User"
                         },
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2023, 11, 12, 10, 13, 17, 562, DateTimeKind.Utc).AddTicks(5462),
-                            LastModified = new DateTime(2023, 11, 12, 10, 13, 17, 562, DateTimeKind.Utc).AddTicks(5463),
+                            Created = new DateTime(2023, 11, 12, 8, 57, 56, 780, DateTimeKind.Utc).AddTicks(6803),
+                            LastModified = new DateTime(2023, 11, 12, 8, 57, 56, 780, DateTimeKind.Utc).AddTicks(6803),
                             Name = "Admin"
                         });
                 });
@@ -310,7 +313,7 @@ namespace ScriptShoes.Persistence.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<float>("AverageRating")
+                    b.Property<float?>("AverageRating")
                         .HasColumnType("real");
 
                     b.Property<string>("Brand")
@@ -328,6 +331,9 @@ namespace ScriptShoes.Persistence.Migrations
 
                     b.Property<DateTime>("LastModified")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<int?>("NumberOfRatings")
+                        .HasColumnType("integer");
 
                     b.Property<int>("NumberOfReviews")
                         .HasColumnType("integer");

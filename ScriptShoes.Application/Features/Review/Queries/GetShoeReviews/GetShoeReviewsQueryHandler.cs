@@ -24,7 +24,7 @@ public class GetShoeReviewsQueryHandler : IRequestHandler<GetShoeReviewsQuery, L
         if (shoe is null)
             throw new NotFoundException("Shoe not found");
 
-        var reviews = _reviewRepository.GetShoeReviews(request.ShoeId);
+        var reviews = await _reviewRepository.GetShoeReviews(request.ShoeId);
 
         var config = new TypeAdapterConfig();
 
