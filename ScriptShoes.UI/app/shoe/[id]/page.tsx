@@ -39,7 +39,7 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
     <div className='py-5 px-5 w-screen h-without-navbar min-h-without-nav flex flex-col gap-3'>
       <Images images={images} />
       <div className='relative left-3'>
-        <div className='flex flex-col gap-1 ju'>
+        <div className='flex flex-col gap-1'>
           <div className='text-2xl'>{data.brand}</div>
           <div className='text-4xl font-bold'>{data.shoeName}</div>
           <Stars
