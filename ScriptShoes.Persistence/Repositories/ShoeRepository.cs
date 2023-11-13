@@ -41,7 +41,10 @@ public class ShoeRepository : GenericRepository<Shoe>, IShoeRepository
         string? searchPhrase)
     {
         var baseQuery = _context.Shoes.Where(r =>
-            searchPhrase == null || (r.ShoeName.ToLower().Contains(searchPhrase.ToLower())));
+            searchPhrase == null || (r.Brand.ToLower() + " " + r.ShoeName.ToLower()).Contains(searchPhrase.ToLower()) ||
+            (r.ShoeName.ToLower() + " " + r.Brand.ToLower()).Contains(searchPhrase.ToLower()) ||
+            r.Brand.ToLower().Contains(searchPhrase.ToLower()) ||
+            r.ShoeName.ToLower().Contains(searchPhrase.ToLower()));
 
         var shoes = await baseQuery
             .Skip(pageSize * (pageNumber - 1))
