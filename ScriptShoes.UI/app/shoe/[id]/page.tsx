@@ -1,6 +1,6 @@
 import Images from '@/components/shoe/imageSlider';
+import Price from '@/components/shoe/price';
 import Stars from '@/components/shoe/stars';
-import { cwd } from 'process';
 
 interface Shoe {
   id: number;
@@ -8,7 +8,7 @@ interface Shoe {
   brand: string;
   shoeSizes: number[];
   currentPrice: number;
-  priceBeforeDiscount: number;
+  priceBeforeDiscount: number | null;
   averageRating: number;
   numberOfReviews: number;
   quantity: number;
@@ -38,7 +38,7 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
   return (
     <div className='py-5 px-5 w-screen h-without-navbar min-h-without-nav flex flex-col gap-3'>
       <Images images={images} />
-      <div className='relative left-3'>
+      <div className='relative left-3 flex items-center justify-between right-3'>
         <div className='flex flex-col gap-1'>
           <div className='text-2xl'>{data.brand}</div>
           <div className='text-4xl font-bold'>{data.shoeName}</div>
@@ -47,6 +47,10 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
             numberOfReviews={data.numberOfReviews}
           />
         </div>
+        <Price
+          currentPrice={data.currentPrice}
+          priceBeforeDiscount={data.priceBeforeDiscount}
+        />
       </div>
     </div>
   );
