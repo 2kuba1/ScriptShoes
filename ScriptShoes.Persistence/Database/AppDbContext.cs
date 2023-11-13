@@ -24,6 +24,7 @@ public class AppDbContext : DbContext
     public DbSet<Favorite> Favorites { get; set; }
     public DbSet<Order> Orders { get; set; }
     public DbSet<OrderAddress> OrdersAddresses { get; set; }
+    public DbSet<Discount> Discounts { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
