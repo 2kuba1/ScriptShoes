@@ -4,8 +4,9 @@ namespace ScriptShoes.Domain.Entities;
 
 public class Discount : BaseEntity
 {
-    public int ShoeId { get; set; }
-    public float PriceBeforeDiscount { get; set; }
-    public float CurrentPrice { get; set; }
+    public int? DiscountPercentage { get; set; }
+    public float? MoneyDiscount { get; set; }
+    public List<int> ShoesIds { get; set; }
+    public DateTime DiscountStartTime { get; set; }
     public DateTime DiscountEndDateTime { get; set; }
 }
