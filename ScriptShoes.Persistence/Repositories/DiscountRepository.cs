@@ -19,29 +19,27 @@ public class DiscountRepository : GenericRepository<Discount>, IDiscountReposito
         await _context.Discounts.AddAsync(discount);
         await _context.SaveChangesAsync();
 
-        dto.ShoesIds.ForEach(id =>
+        foreach (var shoe in discount.ShoesIds.Select(shoesIds => _context.Shoes.FirstOrDefault(x => x.Id == shoesIds)))
         {
-            Console.WriteLine(id);
-            var shoe = _context.Shoes.FirstOrDefault(x => x.Id == id);
-            if (shoe is null) return;
+            if (shoe is null) continue;
             var price = shoe.CurrentPrice;
             shoe.PriceBeforeDiscount = price;
             if (dto.DiscountPercentage is not null)
             {
                 shoe.CurrentPrice = (float)(price - (price * dto.DiscountPercentage / 100f))!;
                 _context.Shoes.Update(shoe);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
 
-            if (dto.MoneyDiscount is null) return;
+            if (dto.MoneyDiscount is null) continue;
             var newPrice = price - dto.MoneyDiscount;
             if (newPrice <= 0)
-                return;
+                continue;
 
             shoe.CurrentPrice = (float)newPrice!;
             _context.Shoes.Update(shoe);
-            _context.SaveChanges();
-        });
+            await _context.SaveChangesAsync();
+        }
     }
 
     public async Task DeleteDiscount(Discount discount)
@@ -63,5 +61,8 @@ public class DiscountRepository : GenericRepository<Discount>, IDiscountReposito
             _context.Shoes.Update(shoe);
             await _context.SaveChangesAsync();
         }
+
+        _context.Discounts.Remove(discount);
+        await _context.SaveChangesAsync();
     }
 }
