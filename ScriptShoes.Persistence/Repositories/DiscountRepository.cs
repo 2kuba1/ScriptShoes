@@ -43,4 +43,25 @@ public class DiscountRepository : GenericRepository<Discount>, IDiscountReposito
             _context.SaveChanges();
         });
     }
+
+    public async Task DeleteDiscount(Discount discount)
+    {
+        var shoes = new List<Shoe>();
+
+        foreach (var shoeId in discount.ShoesIds)
+        {
+            var shoe = await _context.Shoes.FirstOrDefaultAsync(x => x.Id == shoeId);
+            if (shoe is null)
+                continue;
+            shoes.Add(shoe);
+        }
+
+        foreach (var shoe in shoes)
+        {
+            shoe.CurrentPrice = (float)shoe.PriceBeforeDiscount!;
+            shoe.PriceBeforeDiscount = null;
+            _context.Shoes.Update(shoe);
+            await _context.SaveChangesAsync();
+        }
+    }
 }
