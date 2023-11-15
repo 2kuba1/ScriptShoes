@@ -27,6 +27,7 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IEmailCodesRepository, EmailCodesRepository>();
         services.AddScoped<IOrderRepository, OrderRepository>();
         services.AddScoped<IOrderAddressRepository, OrderAddressRepository>();
+        services.AddScoped<IDiscountRepository, DiscountRepository>();
         
         return services;
     }

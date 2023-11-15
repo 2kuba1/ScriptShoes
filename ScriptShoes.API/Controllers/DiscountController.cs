@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoes.Application.Features.Discount.Commands;
 using ScriptShoes.Application.Models.Discount;
@@ -8,7 +7,7 @@ namespace ScriptShoes.API.Controllers;
 
 [Route("api/discount")]
 [ApiController]
-[Authorize(Policy = "AuthAdmin")]
+//[Authorize(Policy = "AuthAdmin")]
 public class DiscountController : ControllerBase
 {
     private readonly IMediator _mediator;
@@ -19,6 +18,7 @@ public class DiscountController : ControllerBase
     }
 
     [Route("create")]
+    [HttpPost]
     public async Task<ActionResult> CreateDiscount([FromBody] CreateDiscountDto dto)
     {
         await _mediator.Send(new CreateDiscountCommand(dto));
