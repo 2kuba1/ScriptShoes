@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoes.Application.Features.Discount.Commands;
+using ScriptShoes.Application.Features.Discount.Commands.CreateDiscount;
 using ScriptShoes.Application.Models.Discount;
 
 namespace ScriptShoes.API.Controllers;

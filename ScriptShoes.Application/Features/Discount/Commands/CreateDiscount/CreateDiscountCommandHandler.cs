@@ -1,8 +1,7 @@
 ﻿using MediatR;
 using ScriptShoes.Application.Contracts.Persistence;
-using ScriptShoes.Domain.Exceptions;
 
-namespace ScriptShoes.Application.Features.Discount.Commands;
+namespace ScriptShoes.Application.Features.Discount.Commands.CreateDiscount;
 
 public class CreateDiscountCommandHandler : IRequestHandler<CreateDiscountCommand, Unit>
 {
