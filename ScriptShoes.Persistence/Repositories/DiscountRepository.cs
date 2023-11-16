@@ -65,4 +65,29 @@ public class DiscountRepository : GenericRepository<Discount>, IDiscountReposito
         _context.Discounts.Remove(discount);
         await _context.SaveChangesAsync();
     }
+
+    public async Task<Discount?> GetDiscountByShoeId(int shoeId)
+    {
+        var discount = await _context.Discounts.FirstOrDefaultAsync(x => x.ShoesIds.Contains(shoeId));
+        return discount;
+    }
+
+    public async Task RemoveShoeFromDiscount(Discount discount, Shoe shoe)
+    {
+        shoe.CurrentPrice = (float)shoe.PriceBeforeDiscount!;
+        shoe.PriceBeforeDiscount = null;
+
+        _context.Shoes.Update(shoe);
+
+        if (discount.ShoesIds.Count > 1)
+        {
+            discount.ShoesIds.Remove(shoe.Id);
+            _context.Discounts.Update(discount);
+            await _context.SaveChangesAsync();
+            return;
+        }
+
+        _context.Discounts.Remove(discount);
+        await _context.SaveChangesAsync();
+    }
 }

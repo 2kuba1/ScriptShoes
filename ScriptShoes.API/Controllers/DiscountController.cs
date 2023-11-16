@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using ScriptShoes.Application.Features.Discount.Commands;
 using ScriptShoes.Application.Features.Discount.Commands.CreateDiscount;
 using ScriptShoes.Application.Features.Discount.Commands.RemoveDiscount;
+using ScriptShoes.Application.Features.Discount.Commands.RemoveShoeFromDiscount;
 using ScriptShoes.Application.Models.Discount;
 
 namespace ScriptShoes.API.Controllers;
@@ -34,5 +35,13 @@ public class DiscountController : ControllerBase
     {
         await _mediator.Send(new RemoveDiscountCommand(discountId));
         return NoContent();
+    }
+
+    [Route("removeShoeFromDiscount/{shoeId:int}")]
+    [HttpDelete]
+    public async Task<ActionResult> RemoveFromDiscount([FromRoute] int shoeId)
+    {
+        await _mediator.Send(new RemoveShoeFromDiscountCommand(shoeId));
+        return new NoContentResult();
     }
 }
