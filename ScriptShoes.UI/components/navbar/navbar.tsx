@@ -4,7 +4,7 @@ import Image from 'next/image';
 import SearchBar from './searchBar';
 import useNavbarStore from '@/stores/navbarStore';
 import { AnimatePresence, motion } from 'framer-motion';
-import SearchForShoes from '../shoe/searchForShoes';
+import SearchForShoes from './searchForShoes';
 import { useDebounce } from 'use-debounce';
 import Link from 'next/link';
 
@@ -112,7 +112,7 @@ const Navbar = () => {
           )}
         </nav>
         {value !== '' && value && searchPhrase && isOpened && (
-          <div className='absolute'>
+          <div className='absolute z-50'>
             <SearchForShoes
               pageNumber={1}
               pageSize={3}

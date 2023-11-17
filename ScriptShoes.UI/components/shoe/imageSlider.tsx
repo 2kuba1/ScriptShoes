@@ -7,7 +7,7 @@ interface Props {
   images: string[];
 }
 
-const Images = ({ images }: Props) => {
+const ImageSlider = ({ images }: Props) => {
   const [currentImage, setCurrentImage] = useState(0);
 
   return (
@@ -53,4 +53,4 @@ const Images = ({ images }: Props) => {
   );
 };
 
-export default Images;
+export default ImageSlider;
