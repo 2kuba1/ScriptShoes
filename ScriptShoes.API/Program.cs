@@ -107,6 +107,7 @@ try
 
     builder.Services.AddHostedService<RemoveEmailCodesWorker>();
     builder.Services.AddHostedService<RemoveExpiredOrdersWorker>();
+    builder.Services.AddHostedService<RemoveExpiredDiscountsWorker>();
 
 
     var app = builder.Build();

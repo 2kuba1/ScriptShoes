@@ -9,4 +9,6 @@ public interface IDiscountRepository : IGenericRepository<Discount>
     Task DeleteDiscount(Discount discount);
     Task<Discount?> GetDiscountByShoeId(int shoeId);
     Task RemoveShoeFromDiscount(Discount discount, Shoe shoe);
+    Task RemoveExpiredDiscounts(IEnumerable<Discount> discounts);
+    Task<List<Discount>> GetExpiredDiscounts();
 }

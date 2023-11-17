@@ -90,4 +90,33 @@ public class DiscountRepository : GenericRepository<Discount>, IDiscountReposito
         _context.Discounts.Remove(discount);
         await _context.SaveChangesAsync();
     }
+
+    public async Task RemoveExpiredDiscounts(IEnumerable<Discount> discounts)
+    {
+        foreach (var discount in discounts)
+        {
+            foreach (var shoeId in discount.ShoesIds)
+            {
+                var shoe = await _context.Shoes.FirstOrDefaultAsync(x => x.Id == shoeId);
+                if (shoe is null)
+                    continue;
+
+                shoe.CurrentPrice = (float)shoe.PriceBeforeDiscount!;
+                shoe.PriceBeforeDiscount = null;
+
+                _context.Shoes.Update(shoe);
+                await _context.SaveChangesAsync();
+            }
+
+            _context.Discounts.Remove(discount);
+            await _context.SaveChangesAsync();
+        }
+    }
+
+    public async Task<List<Discount>> GetExpiredDiscounts()
+    {
+        var expiredDiscounts =
+            await _context.Discounts.Where(x => x.DiscountEndDateTime < DateTime.UtcNow).ToListAsync();
+        return expiredDiscounts;
+    }
 }
