@@ -1,3 +1,4 @@
+import Button from '@/components/button';
 import Images from '@/components/shoe/imageSlider';
 import Price from '@/components/shoe/price';
 import Stars from '@/components/shoe/stars';
@@ -38,7 +39,7 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
   return (
     <div className='py-5 px-5 w-screen h-without-navbar min-h-without-nav flex flex-col gap-3'>
       <Images images={images} />
-      <div className='relative left-3 flex items-center justify-between right-3'>
+      <div className=' flex items-center justify-between px-3'>
         <div className='flex flex-col gap-1'>
           <div className='text-2xl'>{data.brand}</div>
           <div className='text-4xl font-bold'>{data.shoeName}</div>
@@ -51,6 +52,17 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
           currentPrice={data.currentPrice}
           priceBeforeDiscount={data.priceBeforeDiscount}
         />
+      </div>
+      <div className='flex flex-col'>
+        <p className='relative left-3'>Available: {data.quantity}</p>
+        <div className='flex h-12 w-full justify-between gap-3 font-semibold'>
+          <Button className={'rounded-xl bg-orange text-xl w-1/2'}>
+            Add to cart
+          </Button>
+          <Button className={'rounded-xl bg-orange text-xl w-1/2'}>
+            Buy now
+          </Button>
+        </div>
       </div>
     </div>
   );

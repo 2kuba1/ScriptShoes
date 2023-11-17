@@ -4,7 +4,7 @@ import Image from 'next/image';
 import SearchBar from './searchBar';
 import useNavbarStore from '@/stores/navbarStore';
 import { AnimatePresence, motion } from 'framer-motion';
-import SearchForShoes from '../searchForShoes';
+import SearchForShoes from '../shoe/searchForShoes';
 import { useDebounce } from 'use-debounce';
 import Link from 'next/link';
 
