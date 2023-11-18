@@ -9,5 +9,6 @@ public class CreateShoeDto
     public List<float>? ShoeSizes { get; set; }
     public float CurrentPrice { get; set; }
     public string? ThumbnailImage { get; set; }
+    public int Quantity { get; set; }
     public List<string>? Images { get; set; }
 }
