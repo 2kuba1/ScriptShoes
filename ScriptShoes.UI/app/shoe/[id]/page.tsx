@@ -1,6 +1,7 @@
 import Button from '@/components/button';
 import ImageSlider from '@/components/shoe/imageSlider';
 import Price from '@/components/shoe/price';
+import SizeSelector from '@/components/shoe/sizeSelector';
 import Stars from '@/components/shoe/stars';
 
 interface Shoe {
@@ -53,6 +54,7 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
           priceBeforeDiscount={data.priceBeforeDiscount}
         />
       </div>
+      <SizeSelector shoeSizes={data.shoeSizes} />
       <div className='flex flex-col'>
         <p className='relative left-3'>Available: {data.quantity}</p>
         <div className='flex h-12 w-full justify-between gap-3 font-semibold'>
