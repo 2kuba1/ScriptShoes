@@ -1,9 +1,8 @@
 interface Props {
   averageRating: number;
-  numberOfReviews: number;
 }
 
-const Stars = ({ averageRating, numberOfReviews }: Props) => {
+const Stars = ({ averageRating }: Props) => {
   const drawStarts = () => {
     const stars = [];
 
@@ -46,9 +45,6 @@ const Stars = ({ averageRating, numberOfReviews }: Props) => {
           </div>
         ))}
       </div>
-      <p className='font-bold text-center text-xs text-dark-blue'>
-        {numberOfReviews}
-      </p>
     </div>
   );
 };

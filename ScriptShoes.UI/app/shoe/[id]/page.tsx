@@ -1,6 +1,7 @@
 import Button from '@/components/button';
 import ImageSlider from '@/components/shoe/imageSlider';
 import Price from '@/components/shoe/price';
+import Reviews from '@/components/shoe/reviews';
 import SizeSelector from '@/components/shoe/sizeSelector';
 import Stars from '@/components/shoe/stars';
 
@@ -38,16 +39,18 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
   ];
 
   return (
-    <div className='py-5 px-5 w-screen h-without-navbar min-h-without-nav flex flex-col gap-3 z-10'>
+    <div className='py-5 px-5 max-w-screen h-without-navbar min-h-without-nav flex flex-col gap-3 z-10'>
       <ImageSlider images={images} />
       <div className=' flex items-center justify-between px-3'>
         <div className='flex flex-col gap-1'>
           <div className='text-2xl'>{data.brand}</div>
           <div className='text-4xl font-bold'>{data.shoeName}</div>
-          <Stars
-            averageRating={data.averageRating}
-            numberOfReviews={data.numberOfReviews}
-          />
+          <div className='flex gap-1 items-center'>
+            <Stars averageRating={data.averageRating} />
+            <p className='text-sm relative top-1px text-dark-blue font-semibold'>
+              {data.numberOfReviews}
+            </p>
+          </div>
         </div>
         <Price
           currentPrice={data.currentPrice}
@@ -66,6 +69,10 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
           </Button>
         </div>
       </div>
+      <Reviews
+        averageRating={data.averageRating}
+        numberOfReviews={data.numberOfReviews}
+      />
     </div>
   );
 }

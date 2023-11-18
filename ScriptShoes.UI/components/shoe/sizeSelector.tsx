@@ -5,7 +5,6 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from '../ui/select';
@@ -22,7 +21,6 @@ const SizeSelector = ({ shoeSizes }: Props) => {
       </SelectTrigger>
       <SelectContent className='dark:bg-gray dark:text-white'>
         <SelectGroup>
-          <SelectLabel>Sizes</SelectLabel>
           {shoeSizes.map(size => (
             <SelectItem key={size} value={size.toString()}>
               {size}
