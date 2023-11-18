@@ -7,6 +7,7 @@ using ScriptShoes.Application.Features.Review.Commands.DeleteReview;
 using ScriptShoes.Application.Features.Review.Commands.RemoveReviewLike;
 using ScriptShoes.Application.Features.Review.Queries.GetLikedReviews;
 using ScriptShoes.Application.Features.Review.Queries.GetPagedReviews;
+using ScriptShoes.Application.Features.Review.Queries.GetShoeRates;
 using ScriptShoes.Application.Features.Review.Queries.GetShoeReviews;
 using ScriptShoes.Application.Models;
 using ScriptShoes.Application.Models.Review;
@@ -83,5 +84,13 @@ public class ReviewController : ControllerBase
     {
         var pagedReviews = await _mediator.Send(new GetPagedReviewsQuery(shoeId, pageNumber, pageSize));
         return Ok(pagedReviews);
+    }
+
+    [HttpGet]
+    [Route("getShoeRates/{shoeId:int}")]
+    public async Task<ActionResult<GetShoeRatesDto>> GetShoeRates([FromRoute] int shoeId)
+    {
+        var shoeRates = await _mediator.Send(new GetShoeRatesQuery(shoeId));
+        return shoeRates;
     }
 }

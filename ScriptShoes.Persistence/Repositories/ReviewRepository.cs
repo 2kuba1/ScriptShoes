@@ -25,7 +25,7 @@ public class ReviewRepository : GenericRepository<Review>, IReviewRepository
         var reviews = await _context.Reviews.Where(x => x.ShoeId == shoeId).ToListAsync();
         return reviews;
     }
-    
+
     public async Task<PagedResult<GetShoeReviewsDto>> GetPagedShoeReviews(int shoeId, int pageNumber, int pageSize)
     {
         var baseQuery = _context.Reviews.Where(x => x.ShoeId == shoeId).OrderByDescending(x => x.Id);
@@ -39,5 +39,38 @@ public class ReviewRepository : GenericRepository<Review>, IReviewRepository
         var pagedReviews =
             new PagedResult<GetShoeReviewsDto>(mappedValues, totalItemsCount, pageSize, pageNumber);
         return pagedReviews;
+    }
+
+    public async Task<GetShoeRatesDto> GetShoRates(int shoeId)
+    {
+        var shoeRates = await _context.Reviews.Where(x => x.ShoeId == shoeId).Select(x => x.ShoeRate).ToListAsync();
+
+        var rates = new GetShoeRatesDto();
+
+        foreach (var rate in shoeRates)
+        {
+            switch (rate)
+            {
+                case 1:
+                    rates.OneStarsCount++;
+                    break;
+                case 2:
+                    rates.TwoStarsCount++;
+                    break;
+                case 3:
+                    rates.ThreeStarsCount++;
+                    break;
+                case 4:
+                    rates.FourStarsCount++;
+                    break;
+                case 5:
+                    rates.FiveStarsCount++;
+                    break;
+            }
+        }
+
+        rates.ShoeId = shoeId;
+
+        return rates;
     }
 }
