@@ -6,5 +6,5 @@ namespace ScriptShoes.Application.Contracts.Persistence;
 public interface ICartRepository : IGenericRepository<Cart>
 {
     public Task<Cart?> GetByUserIdAndItemId(int userId, int shoeId);
-    public Task<List<GetCartDto>> GetShoesFromCart(int userId);
+    public Task<List<Cart>> GetCartByUserId(int userId);
 }
