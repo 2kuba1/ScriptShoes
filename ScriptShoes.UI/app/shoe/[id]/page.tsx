@@ -1,4 +1,4 @@
-import Button from '@/components/button';
+import Button from '@/components/ui/button';
 import ImageSlider from '@/components/shoe/imageSlider';
 import Price from '@/components/shoe/price';
 import Reviews from '@/components/shoe/reviews';
@@ -74,6 +74,9 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
         numberOfReviews={data.numberOfReviews}
         shoeId={data.id}
       />
+      <Button className='bg-orange w-full h-12 rounded-xl font-semibold text-2xl'>
+        Add review
+      </Button>
     </div>
   );
 }
