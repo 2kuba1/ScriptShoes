@@ -4,6 +4,7 @@ import Price from '@/components/shoe/price';
 import Reviews from '@/components/shoe/reviews/reviews';
 import SizeSelector from '@/components/shoe/sizeSelector';
 import Stars from '@/components/shoe/stars';
+import AddReviewCard from '@/components/shoe/reviews/addReviewCard';
 
 interface Shoe {
   id: number;
@@ -77,6 +78,7 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
       <Button className='bg-orange w-full h-12 rounded-xl font-semibold text-2xl'>
         Add review
       </Button>
+      <AddReviewCard />
     </div>
   );
 }
