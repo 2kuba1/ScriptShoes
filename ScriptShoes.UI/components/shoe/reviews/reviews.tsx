@@ -1,6 +1,6 @@
-import Button from '../ui/button';
+import Button from '../../ui/button';
 import ReviewsStats from './reviewsStats';
-import Stars from './stars';
+import Stars from '../stars';
 
 interface Props {
   shoeId: number;

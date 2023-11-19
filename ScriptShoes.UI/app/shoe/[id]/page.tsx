@@ -1,7 +1,7 @@
 import Button from '@/components/ui/button';
 import ImageSlider from '@/components/shoe/imageSlider';
 import Price from '@/components/shoe/price';
-import Reviews from '@/components/shoe/reviews';
+import Reviews from '@/components/shoe/reviews/reviews';
 import SizeSelector from '@/components/shoe/sizeSelector';
 import Stars from '@/components/shoe/stars';
 
