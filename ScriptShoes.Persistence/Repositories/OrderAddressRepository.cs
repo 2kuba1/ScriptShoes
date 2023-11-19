@@ -20,4 +20,10 @@ public class OrderAddressRepository : GenericRepository<OrderAddress>, IOrderAdd
             if (expireOrderAddresses != null) _context.OrdersAddresses.Remove(expireOrderAddresses);
         }
     }
+
+    public async Task<OrderAddress?> GetOrderAddressBySessionId(string sessionId)
+    {
+        var address = await _context.OrdersAddresses.FirstOrDefaultAsync(x => x.OrderSessionId == sessionId);
+        return address;
+    }
 }

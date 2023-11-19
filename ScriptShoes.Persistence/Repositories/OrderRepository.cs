@@ -20,7 +20,7 @@ public class OrderRepository : GenericRepository<Order>, IOrderRepository
         return order;
     }
 
-    public async Task RemoveExpiredOrders(List<Order> expiredOrders)
+    public async Task RemoveExpiredOrders(IEnumerable<Order> expiredOrders)
     {
         _context.Orders.RemoveRange(expiredOrders);
         await _context.SaveChangesAsync();
@@ -50,38 +50,14 @@ public class OrderRepository : GenericRepository<Order>, IOrderRepository
         }
     }
 
-    public async Task<PagedResult<UserOrdersDto>> GetUserOrders(int userId, int pageSize, int pageNumber)
+    public async Task<List<Order>> GetUserOrders(int userId, int pageSize, int pageNumber)
     {
         var baseQuery = _context.Orders.Include(x => x.Shoe).Where(x => x.UserId == userId)
             .OrderByDescending(x => x.Id);
 
         var orders = await baseQuery.Skip(pageSize * (pageNumber - 1)).Take(pageSize).ToListAsync();
-
-        var totalItemsCount = orders.Count;
-
-        var userOrders = new List<UserOrdersDto>();
-
-        foreach (var order in orders)
-        {
-            var address = await _context.OrdersAddresses.FirstOrDefaultAsync(x => x.OrderSessionId == order.SessionId);
-
-            if (address is null)
-                continue;
-
-
-            TypeAdapterConfig config = new();
-
-            config.NewConfig<Order, UserOrdersDto>()
-                .Map(dest => dest.Brand, src => src.Shoe.Brand)
-                .Map(dest => dest.ShoeName, src => src.Shoe.ShoeName)
-                .Map(dest => dest.ThumbnailImage, src => src.Shoe.ThumbnailImage);
-
-            var newOrder = order.Adapt<UserOrdersDto>(config);
-            userOrders.Add(newOrder);
-        }
-
-
-        return new PagedResult<UserOrdersDto>(userOrders, totalItemsCount, pageSize, pageNumber);
+        
+        return orders;
     }
 
     public async Task<PagedResult<GetOrdersAsAdminDto>> GetPagedOrders(int pageSize, int pageNumber)
