@@ -72,6 +72,7 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
       <Reviews
         averageRating={data.averageRating}
         numberOfReviews={data.numberOfReviews}
+        shoeId={data.id}
       />
     </div>
   );
