@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Mapster;
+using MediatR;
 using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Application.Models.Shoe;
 using ScriptShoes.Domain.Exceptions;
@@ -21,6 +22,12 @@ public class GetShoeContentQueryHandler : IRequestHandler<GetShoeContentQuery, G
         if (shoe is null)
             throw new NotFoundException("Shoe not found");
 
-        return shoe;
+        TypeAdapterConfig config = new();
+
+        config.NewConfig<Domain.Entities.Shoe, GetShoeContentDto>();
+
+        var dto = shoe.Adapt<GetShoeContentDto>(config);
+
+        return dto;
     }
 }

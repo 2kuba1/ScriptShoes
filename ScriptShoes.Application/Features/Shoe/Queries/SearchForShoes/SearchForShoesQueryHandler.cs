@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Mapster;
+using MediatR;
 using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Application.Models;
 using ScriptShoes.Application.Models.Shoe;
@@ -18,6 +19,10 @@ public class SearchForShoesQueryHandler : IRequestHandler<SearchForShoesQuery, P
         CancellationToken cancellationToken)
     {
         var shoes = await _shoeRepository.GetShoesBySearchPhrase(request.PageSize, request.PageNumber, request.SearchPhrase);
-        return shoes;
+        var totalItemsCount = shoes.Count;
+
+        var mappedValues = shoes.Adapt<List<SearchForShoesDto>>();
+
+        return new PagedResult<SearchForShoesDto>(mappedValues, totalItemsCount, request.PageSize, request.PageNumber);
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ScriptShoes.Application.Contracts.Persistence;
-using ScriptShoes.Application.Models.Review;
 using ScriptShoes.Domain.Entities;
 using ScriptShoes.Persistence.Database;
 

@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Mapster;
+using MediatR;
 using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Application.Models;
 using ScriptShoes.Application.Models.Shoe;
@@ -16,7 +17,14 @@ public class GetPagedShoesQueryHandler : IRequestHandler<GetPagedShoesQuery, Pag
     
     public async Task<PagedResult<GetShoeLimitedInformationDto>> Handle(GetPagedShoesQuery request, CancellationToken cancellationToken)
     {
-        var pagedResults = await _shoeRepository.GetPagedShoes(request.PageNumber, request.PageSize);
-        return pagedResults;
+        var shoes = await _shoeRepository.GetPagedShoes(request.PageNumber, request.PageSize);
+        
+        var totalItemsCount = shoes.Count;
+
+        var mappedValues = shoes.Adapt<List<GetShoeLimitedInformationDto>>();
+
+        var pagedShoes =
+            new PagedResult<GetShoeLimitedInformationDto>(mappedValues, totalItemsCount, request.PageSize, request.PageNumber);
+        return pagedShoes;
     }
 }

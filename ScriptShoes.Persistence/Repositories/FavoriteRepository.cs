@@ -1,10 +1,8 @@
 ﻿using ScriptShoes.Application.Contracts.Persistence;
-using ScriptShoes.Domain;
 using ScriptShoes.Domain.Entities;
 using ScriptShoes.Persistence.Database;
-using ScriptShoes.Persistence.Repositories;
 
-namespace ScriptShoes.Persistence;
+namespace ScriptShoes.Persistence.Repositories;
 
 public class FavoriteRepository : GenericRepository<Favorite>, IFavoriteRepository
 {

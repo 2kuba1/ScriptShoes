@@ -1,9 +1,5 @@
-﻿using Mapster;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using ScriptShoes.Application.Contracts.Persistence;
-using ScriptShoes.Application.Models;
-using ScriptShoes.Application.Models.Review;
-using ScriptShoes.Application.Models.Shoe;
 using ScriptShoes.Domain.Entities;
 using ScriptShoes.Persistence.Database;
 
@@ -22,22 +18,16 @@ public class ShoeRepository : GenericRepository<Shoe>, IShoeRepository
         return shoe;
     }
 
-    public async Task<PagedResult<GetShoeLimitedInformationDto>> GetPagedShoes(int pageNumber, int pageSize)
+    public async Task<List<Shoe>> GetPagedShoes(int pageNumber, int pageSize)
     {
         var baseQuery = _context.Shoes.OrderByDescending(x => x.Id);
 
         var shoes = await baseQuery.Skip(pageSize * (pageNumber - 1)).Take(pageSize).ToListAsync();
 
-        var totalItemsCount = shoes.Count;
-
-        var mappedValues = shoes.Adapt<List<GetShoeLimitedInformationDto>>();
-
-        var pagedShoes =
-            new PagedResult<GetShoeLimitedInformationDto>(mappedValues, totalItemsCount, pageSize, pageNumber);
-        return pagedShoes;
+        return shoes;
     }
 
-    public async Task<PagedResult<SearchForShoesDto>> GetShoesBySearchPhrase(int pageSize, int pageNumber,
+    public async Task<List<Shoe>> GetShoesBySearchPhrase(int pageSize, int pageNumber,
         string? searchPhrase)
     {
         var baseQuery = _context.Shoes.Where(r =>
@@ -51,22 +41,12 @@ public class ShoeRepository : GenericRepository<Shoe>, IShoeRepository
             .Take(pageSize)
             .ToListAsync();
 
-        var totalItemsCount = baseQuery.Count();
-
-        var mappedValues = shoes.Adapt<List<SearchForShoesDto>>();
-
-        return new PagedResult<SearchForShoesDto>(mappedValues, totalItemsCount, pageSize, pageNumber);
+        return shoes;
     }
 
-    public async Task<GetShoeContentDto?> GetShoeContent(int shoeId)
+    public async Task<Shoe?> GetShoeContent(int shoeId)
     {
         var shoe = await _context.Shoes.FirstOrDefaultAsync(x => x.Id == shoeId);
-
-        TypeAdapterConfig config = new();
-
-        config.NewConfig<Shoe, GetShoeContentDto>();
-
-        var dto = shoe.Adapt<GetShoeContentDto>(config);
-        return dto;
+        return shoe;
     }
 }
