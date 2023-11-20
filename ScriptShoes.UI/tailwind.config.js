@@ -21,6 +21,7 @@ module.exports = {
       },
       spacing: {
         '1px': '1px',
+        '3px': '3px',
       },
       colors: {
         gray: '#222',

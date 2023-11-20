@@ -6,7 +6,7 @@ const NewReviewStars = () => {
 
   return (
     <div className='flex items-center justify-between px-6'>
-      <p className='text-white text-2xl relative top-1px'>Rating</p>
+      <p className='text-white text-2xl relative top-3px'>Rating</p>
       <div className='flex'>
         <div
           onMouseEnter={() => rating === 0 && setStarsHovered(1)}
