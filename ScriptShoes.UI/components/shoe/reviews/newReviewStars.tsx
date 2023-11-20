@@ -13,7 +13,7 @@ const NewReviewStars = () => {
           onMouseLeave={() => rating === 0 && setStarsHovered(0)}
           onClick={() => {
             rating === 1 ? setRating(0) : setRating(1);
-            setStarsHovered(1);
+            rating === 1 ? setStarsHovered(0) : setStarsHovered(1);
           }}
         >
           {starsHovered >= 1 ? (
@@ -49,7 +49,7 @@ const NewReviewStars = () => {
           onMouseLeave={() => rating === 0 && setStarsHovered(0)}
           onClick={() => {
             rating === 2 ? setRating(0) : setRating(2);
-            setStarsHovered(2);
+            rating === 2 ? setStarsHovered(0) : setStarsHovered(2);
           }}
         >
           {starsHovered >= 2 ? (
@@ -85,7 +85,7 @@ const NewReviewStars = () => {
           onMouseLeave={() => rating === 0 && setStarsHovered(0)}
           onClick={() => {
             rating === 3 ? setRating(0) : setRating(3);
-            setStarsHovered(3);
+            rating === 3 ? setStarsHovered(0) : setStarsHovered(3);
           }}
         >
           {starsHovered >= 3 ? (
@@ -121,7 +121,7 @@ const NewReviewStars = () => {
           onMouseLeave={() => rating === 0 && setStarsHovered(0)}
           onClick={() => {
             rating === 4 ? setRating(0) : setRating(4);
-            setStarsHovered(4);
+            rating === 4 ? setStarsHovered(0) : setStarsHovered(4);
           }}
         >
           {starsHovered >= 4 ? (
@@ -157,7 +157,7 @@ const NewReviewStars = () => {
           onMouseLeave={() => rating === 0 && setStarsHovered(0)}
           onClick={() => {
             rating === 5 ? setRating(0) : setRating(5);
-            setStarsHovered(5);
+            rating === 5 ? setStarsHovered(0) : setStarsHovered(5);
           }}
         >
           {starsHovered >= 5 ? (
