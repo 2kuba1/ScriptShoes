@@ -91,7 +91,7 @@ public class OrderController : ControllerBase
     [HttpGet]
     [Authorize(Policy = "AuthAdmin")]
     [Route("getPagedOrders")]
-    public async Task<ActionResult<PagedResult<GetOrdersAsAdminDto>>> GetPagedOrders([FromQuery] int pageSize,
+    public async Task<ActionResult<PagedResult<PagedOrdersDto>>> GetPagedOrders([FromQuery] int pageSize,
         [FromQuery] int pageNumber)
     {
         var orders = await _mediator.Send(new GetPagedOrdersQuery(pageSize, pageNumber));

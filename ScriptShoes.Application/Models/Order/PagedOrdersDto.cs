@@ -1,6 +1,6 @@
 ﻿namespace ScriptShoes.Application.Models.Order;
 
-public class GetOrdersAsAdminDto
+public class PagedOrdersDto
 {
     public GetOrdersDto GetOrdersDto { get; set; }
     public string City { get; set; } = string.Empty;
