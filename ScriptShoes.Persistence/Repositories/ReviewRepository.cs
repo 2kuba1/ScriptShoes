@@ -33,36 +33,9 @@ public class ReviewRepository : GenericRepository<Review>, IReviewRepository
         return reviews;
     }
 
-    public async Task<GetShoeRatesDto> GetShoRates(int shoeId)
+    public async Task<List<float>> GetShoRates(int shoeId)
     {
         var shoeRates = await _context.Reviews.Where(x => x.ShoeId == shoeId).Select(x => x.ShoeRate).ToListAsync();
-
-        var rates = new GetShoeRatesDto();
-
-        foreach (var rate in shoeRates)
-        {
-            switch (rate)
-            {
-                case 1:
-                    rates.OneStarsCount++;
-                    break;
-                case 2:
-                    rates.TwoStarsCount++;
-                    break;
-                case 3:
-                    rates.ThreeStarsCount++;
-                    break;
-                case 4:
-                    rates.FourStarsCount++;
-                    break;
-                case 5:
-                    rates.FiveStarsCount++;
-                    break;
-            }
-        }
-
-        rates.ShoeId = shoeId;
-
-        return rates;
+        return shoeRates;
     }
 }
