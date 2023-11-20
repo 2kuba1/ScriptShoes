@@ -1,8 +1,5 @@
-﻿using Mapster;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using ScriptShoes.Application.Contracts.Persistence;
-using ScriptShoes.Application.Models;
-using ScriptShoes.Application.Models.Order;
 using ScriptShoes.Domain.Entities;
 using ScriptShoes.Persistence.Database;
 
@@ -60,7 +57,7 @@ public class OrderRepository : GenericRepository<Order>, IOrderRepository
         return orders;
     }
 
-    public async Task<PagedResult<GetOrdersAsAdminDto>> GetPagedOrders(int pageSize, int pageNumber)
+    public async Task<List<Order>> GetPagedOrders(int pageSize, int pageNumber)
     {
         var baseQuery = _context.Orders
             .Include(x => x.Shoe)
@@ -70,26 +67,27 @@ public class OrderRepository : GenericRepository<Order>, IOrderRepository
 
         var orders = await baseQuery.Skip(pageSize * (pageNumber - 1)).Take(pageSize).ToListAsync();
 
-        var totalItemsCount = orders.Count;
-
-        TypeAdapterConfig config = new();
-
-        config.NewConfig<Order, GetOrdersAsAdminDto>()
-            .Map(dest => dest.GetOrdersDto.Brand, src => src.Shoe.Brand)
-            .Map(dest => dest.GetOrdersDto.ShoeName, src => src.Shoe.ShoeName)
-            .Map(dest => dest.GetOrdersDto.CurrentPrice, src => src.Shoe.CurrentPrice)
-            .Map(dest => dest.GetOrdersDto.ThumbnailImage, src => src.Shoe.ThumbnailImage)
-            .Map(dest => dest.GetOrdersDto.Id, src => src.Id)
-            .Map(dest => dest.GetOrdersDto.Quantity, src => src.Quantity)
-            .Map(dest => dest.GetOrdersDto.ShoeId, src => src.ShoeId)
-            .Map(dest => dest.City, src => src.OrderAddress.City)
-            .Map(dest => dest.GetOrdersDto.OrderAddressId, src => src.OrderAddress.Id)
-            .Map(dest => dest.Street, src => src.OrderAddress.Street)
-            .Map(dest => dest.PostalCode, src => src.OrderAddress.PostalCode);
-
-        var mappedValues = orders.Adapt<List<GetOrdersAsAdminDto>>(config);
-
-        return new PagedResult<GetOrdersAsAdminDto>(mappedValues, totalItemsCount, pageSize, pageNumber);
+        // var totalItemsCount = orders.Count;
+        //
+        // TypeAdapterConfig config = new();
+        //
+        // config.NewConfig<Order, GetOrdersAsAdminDto>()
+        //     .Map(dest => dest.GetOrdersDto.Brand, src => src.Shoe.Brand)
+        //     .Map(dest => dest.GetOrdersDto.ShoeName, src => src.Shoe.ShoeName)
+        //     .Map(dest => dest.GetOrdersDto.CurrentPrice, src => src.Shoe.CurrentPrice)
+        //     .Map(dest => dest.GetOrdersDto.ThumbnailImage, src => src.Shoe.ThumbnailImage)
+        //     .Map(dest => dest.GetOrdersDto.Id, src => src.Id)
+        //     .Map(dest => dest.GetOrdersDto.Quantity, src => src.Quantity)
+        //     .Map(dest => dest.GetOrdersDto.ShoeId, src => src.ShoeId)
+        //     .Map(dest => dest.City, src => src.OrderAddress.City)
+        //     .Map(dest => dest.GetOrdersDto.OrderAddressId, src => src.OrderAddress.Id)
+        //     .Map(dest => dest.Street, src => src.OrderAddress.Street)
+        //     .Map(dest => dest.PostalCode, src => src.OrderAddress.PostalCode);
+        //
+        // var mappedValues = orders.Adapt<List<GetOrdersAsAdminDto>>(config);
+        //
+        // return new PagedResult<GetOrdersAsAdminDto>(mappedValues, totalItemsCount, pageSize, pageNumber);
+        return orders;
     }
 
     public async Task<List<Order>> GetOrdersBySessionId(string sessionId)
