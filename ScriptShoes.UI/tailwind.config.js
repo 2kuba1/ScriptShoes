@@ -23,6 +23,10 @@ module.exports = {
         '1px': '1px',
         '3px': '3px',
       },
+      fontSize: {
+        '2xs': '0.625rem',
+        '3xs': '0.5rem',
+      },
       colors: {
         gray: '#222',
         white: '#DFDFDF',

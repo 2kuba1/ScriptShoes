@@ -1,5 +1,6 @@
 'use client';
 
+import Footer from '@/components/footer';
 import Navbar from '@/components/navbar/navbar';
 import useThemeStore from '@/stores/themeStore';
 
@@ -16,6 +17,7 @@ export default function Providers({ children, font }: Props) {
       <body className={font}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
