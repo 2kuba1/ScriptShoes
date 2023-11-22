@@ -5,7 +5,7 @@ const NewReviewStars = () => {
   const [rating, setRating] = useState(0);
 
   return (
-    <div className='flex items-center justify-between px-6'>
+    <div className='flex items-center justify-between'>
       <p className='text-white text-2xl relative top-3px'>Rating</p>
       <div className='flex'>
         <div
