@@ -5,6 +5,7 @@ import Reviews from '@/components/shoe/reviews/reviews';
 import SizeSelector from '@/components/shoe/sizeSelector';
 import Stars from '@/components/shoe/stars';
 import AddReviewCard from '@/components/shoe/reviews/addReviewCard';
+import AddReviewsButton from '@/components/shoe/reviews/addReviewButton';
 
 interface Shoe {
   id: number;
@@ -75,9 +76,7 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
         numberOfReviews={data.numberOfReviews}
         shoeId={data.id}
       />
-      <Button className='bg-orange w-full h-12 rounded-xl font-semibold text-2xl'>
-        Add review
-      </Button>
+      <AddReviewsButton />
       <AddReviewCard />
     </div>
   );

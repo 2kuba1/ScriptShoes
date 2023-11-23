@@ -6,7 +6,7 @@ interface AddReviewCardStore {
 }
 
 const useAddReviewCardStore = create<AddReviewCardStore>(set => ({
-  isOpened: true,
+  isOpened: false,
   setIsOpened: isOpened => set(() => ({ isOpened: isOpened })),
 }));
 
