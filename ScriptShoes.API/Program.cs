@@ -50,7 +50,7 @@ try
                     {
                         AutoReplenishment = true,
                         PermitLimit = 4,
-                        Window = TimeSpan.FromSeconds(2)
+                        Window = TimeSpan.FromSeconds(1)
                     });
             }),
             PartitionedRateLimiter.Create<HttpContext, string>(httpContext =>
@@ -62,7 +62,7 @@ try
                     new FixedWindowRateLimiterOptions
                     {
                         AutoReplenishment = true,
-                        PermitLimit = 20,
+                        PermitLimit = 40,
                         Window = TimeSpan.FromSeconds(30)
                     });
             }));
