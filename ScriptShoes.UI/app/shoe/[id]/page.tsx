@@ -6,6 +6,7 @@ import SizeSelector from '@/components/shoe/sizeSelector';
 import Stars from '@/components/shoe/stars';
 import AddReviewCard from '@/components/shoe/reviews/addReviewCard';
 import AddReviewsButton from '@/components/shoe/reviews/addReviewButton';
+import ShowReviews from '@/components/shoe/reviews/showReviews';
 
 interface Shoe {
   id: number;
@@ -78,6 +79,7 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
       />
       <AddReviewsButton />
       <AddReviewCard />
+      <ShowReviews shoeId={data.id} />
     </div>
   );
 }
