@@ -1,6 +1,6 @@
-import Button from '../../ui/button';
 import ReviewsStats from './reviewsStats';
 import Stars from '../stars';
+import ShowReviewsButton from './showReviewsButton';
 
 interface Props {
   shoeId: number;
@@ -26,9 +26,7 @@ const Reviews = ({ averageRating, numberOfReviews, shoeId }: Props) => {
         </p>
       </div>
       <ReviewsStats shoeId={shoeId} numberOfReviews={numberOfReviews} />
-      <Button className='bg-orange w-full h-12 rounded-xl font-semibold text-2xl'>
-        Show reviews
-      </Button>
+      <ShowReviewsButton />
     </div>
   );
 };
