@@ -33,15 +33,14 @@ public class CreateReviewCommandHandler : IRequestHandler<CreateReviewCommand, U
         if (doesUserHaveReviewForShoe)
             throw new BadRequestException("This user already has review for this shoe");
 
-        var numberOfReviews = ++shoe.NumberOfReviews;
-
         if (shoe.AverageRating == 0)
         {
             shoe.AverageRating = request.Dto.ShoeRate;
         }
         else
         {
-            var avgRating = (shoe.AverageRating + request.Dto.ShoeRate) / numberOfReviews;
+            var avgRating = (shoe.AverageRating + request.Dto.ShoeRate) / 2;
+            shoe.NumberOfReviews++;
             shoe.AverageRating = avgRating;
         }
 
