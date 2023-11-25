@@ -4,6 +4,8 @@ import useNavbarStore from '@/stores/navbarStore';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 
 interface Props {
   searchPhrase: string;
@@ -29,26 +31,18 @@ interface SearchResult {
 }
 
 const SearchForShoes = ({ searchPhrase, pageNumber, pageSize }: Props) => {
-  const [data, setData] = useState<SearchResult | null>();
   const { setIsOpened } = useNavbarStore();
 
-  useEffect(() => {
-    const getShoes = async () => {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/shoe/getShoes/${searchPhrase}?pageNumber=${pageNumber}&pageSize=${pageSize}`,
-        {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-          },
-        }
+  const { data } = useQuery({
+    queryKey: ['searchForShoes', searchPhrase, pageNumber, pageSize],
+    queryFn: async () => {
+      const { data } = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/shoe/getShoes/${searchPhrase}?pageNumber=${pageNumber}&pageSize=${pageSize}`
       );
 
-      setData(await response.json());
-    };
-    getShoes();
-  }, [pageNumber, pageSize, searchPhrase]);
+      return data as SearchResult;
+    },
+  });
 
   return (
     <>
