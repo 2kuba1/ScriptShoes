@@ -21,9 +21,7 @@ const Reviews = ({ averageRating, numberOfReviews, shoeId }: Props) => {
             <Stars averageRating={averageRating} />
           </div>
         </div>
-        <p className='font-bold text-3xl'>
-          {Math.round((averageRating * 10) / 10).toFixed(1)}/5
-        </p>
+        <p className='font-bold text-3xl'>{Math.round(averageRating)}/5</p>
       </div>
       <ReviewsStats shoeId={shoeId} numberOfReviews={numberOfReviews} />
       <ShowReviewsButton />

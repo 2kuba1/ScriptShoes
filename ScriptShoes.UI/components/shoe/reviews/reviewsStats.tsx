@@ -1,3 +1,5 @@
+import axios, { AxiosError } from 'axios';
+
 interface Props {
   shoeId: number;
   numberOfReviews: number;
@@ -36,16 +38,27 @@ const ReviewsStats = async ({ shoeId, numberOfReviews }: Props) => {
     return stars;
   };
 
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/review/getShoeRates/${shoeId}`
-  );
-  const data = (await response.json()) as ReviewStats;
+  let fetchData = {} as ReviewStats | AxiosError;
 
-  const fiveStarsPercentage = (data.fiveStarsCount * 100) / numberOfReviews;
-  const fourStarsPercentage = (data.fourStarsCount * 100) / numberOfReviews;
-  const threeStarsPercentage = (data.threeStarsCount * 100) / numberOfReviews;
-  const twoStarsPercentage = (data.twoStarsCount * 100) / numberOfReviews;
-  const oneStarsPercentage = (data.oneStarsCount * 100) / numberOfReviews;
+  try {
+    const { data }: { data: ReviewStats } = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/review/getShoeRates/${shoeId}`
+    );
+    fetchData = data;
+  } catch (err) {
+    if (err instanceof AxiosError) fetchData = err;
+  }
+
+  if (fetchData instanceof AxiosError) return <div>404</div>;
+
+  const fiveStarsPercentage =
+    (fetchData.fiveStarsCount * 100) / numberOfReviews;
+  const fourStarsPercentage =
+    (fetchData.fourStarsCount * 100) / numberOfReviews;
+  const threeStarsPercentage =
+    (fetchData.threeStarsCount * 100) / numberOfReviews;
+  const twoStarsPercentage = (fetchData.twoStarsCount * 100) / numberOfReviews;
+  const oneStarsPercentage = (fetchData.oneStarsCount * 100) / numberOfReviews;
 
   return (
     <div className='flex flex-col w-full'>
