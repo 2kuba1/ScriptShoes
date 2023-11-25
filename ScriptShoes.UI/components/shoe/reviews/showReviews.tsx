@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from 'react';
 import useShoewReviewsStore from '@/stores/showReviewsStore';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 
 interface Props {
   shoeId: number;
@@ -33,6 +35,17 @@ const ShowReviews = ({ shoeId }: Props) => {
 
   const pageSzie = 1;
 
+  const { data } = useQuery({
+    queryKey: ['getReviews', shoeId, pageNumber, pageSzie],
+    queryFn: async () => {
+      const { data } = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/review/getPagedReviews?shoeId=${shoeId}&pageNumber=${pageNumber}&pageSize=${pageSzie}`
+      );
+
+      return data as Reviews;
+    },
+  });
+
   const onIntersection = (entries: IntersectionObserverEntry[]) => {
     if (entries[0].isIntersecting && hasMore) {
       getReviews();
@@ -40,18 +53,7 @@ const ShowReviews = ({ shoeId }: Props) => {
   };
 
   const getReviews = async () => {
-    const response = await fetch(
-      `http://localhost:5013/api/review/getPagedReviews?shoeId=${shoeId}&pageNumber=${pageNumber}&pageSize=${pageSzie}`,
-      {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-        },
-      }
-    );
-
-    const data = (await response.json()) as Reviews;
+    if (!data) return;
 
     if (data.item.length === 0) {
       setHasMore(false);
