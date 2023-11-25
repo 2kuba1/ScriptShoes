@@ -42,8 +42,6 @@ const ShowReviews = ({ shoeId }: Props) => {
         `${process.env.NEXT_PUBLIC_API_URL}/api/review/getPagedReviews?shoeId=${shoeId}&pageNumber=${pageNumber}&pageSize=${pageSzie}`
       );
 
-      console.log('fetching');
-
       return data as Reviews;
     },
     retry: true,
