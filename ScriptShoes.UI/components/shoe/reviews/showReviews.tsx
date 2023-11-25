@@ -33,7 +33,7 @@ const ShowReviews = ({ shoeId }: Props) => {
   const [hasMore, setHasMore] = useState(true);
   const [pageNumber, setPageNumber] = useState(1);
 
-  const pageSzie = 1;
+  const pageSzie = 5;
 
   const { data } = useQuery({
     queryKey: ['getReviews', shoeId, pageNumber, pageSzie],
@@ -42,8 +42,12 @@ const ShowReviews = ({ shoeId }: Props) => {
         `${process.env.NEXT_PUBLIC_API_URL}/api/review/getPagedReviews?shoeId=${shoeId}&pageNumber=${pageNumber}&pageSize=${pageSzie}`
       );
 
+      console.log('fetching');
+
       return data as Reviews;
     },
+    retry: true,
+    retryDelay: 2000,
   });
 
   const onIntersection = (entries: IntersectionObserverEntry[]) => {
@@ -192,7 +196,9 @@ const ShowReviews = ({ shoeId }: Props) => {
           ))}
           {hasMore && (
             <div ref={elementRef}>
-              <p>Load More Items ... </p>
+              <p className='text-center text-white font-semibold text-xl'>
+                Loading ...{' '}
+              </p>
             </div>
           )}
         </motion.div>
