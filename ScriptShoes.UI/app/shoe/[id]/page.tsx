@@ -7,6 +7,7 @@ import Stars from '@/components/shoe/stars';
 import AddReviewCard from '@/components/shoe/reviews/addReviewCard';
 import AddReviewsButton from '@/components/shoe/reviews/addReviewButton';
 import ShowReviews from '@/components/shoe/reviews/showReviews';
+import axios, { AxiosError } from 'axios';
 
 interface Shoe {
   id: number;
@@ -23,22 +24,22 @@ interface Shoe {
 }
 
 export default async function ShoePage({ params }: { params: { id: number } }) {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/shoe/getShoeContent/${params.id}`,
-    {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'GET',
-      cache: 'no-cache',
-    }
-  );
+  let fetchData = {} as Shoe | AxiosError;
 
-  const data = (await response.json()) as Shoe;
+  try {
+    const { data }: { data: Shoe } = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/shoe/getShoeContent/${params.id}`
+    );
+    fetchData = data;
+  } catch (err) {
+    if (err instanceof AxiosError) fetchData = err;
+  }
+
+  if (fetchData instanceof AxiosError) return <div>404</div>;
 
   const images = [
-    data.thumbnailImage,
-    ...data.images.filter(image => image !== data.thumbnailImage),
+    fetchData.thumbnailImage,
+    typeof fetchData.images === 'string' ? fetchData.images : '',
   ];
 
   return (
@@ -46,23 +47,23 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
       <ImageSlider images={images} />
       <div className=' flex items-center justify-between px-3'>
         <div className='flex flex-col gap-1'>
-          <div className='text-2xl'>{data.brand}</div>
-          <div className='text-4xl font-bold'>{data.shoeName}</div>
+          <div className='text-2xl'>{fetchData.brand}</div>
+          <div className='text-4xl font-bold'>{fetchData.shoeName}</div>
           <div className='flex gap-1 items-center'>
-            <Stars averageRating={data.averageRating} />
+            <Stars averageRating={fetchData.averageRating} />
             <p className='text-sm relative top-1px text-dark-blue font-semibold'>
-              {data.numberOfReviews}
+              {fetchData.numberOfReviews}
             </p>
           </div>
         </div>
         <Price
-          currentPrice={data.currentPrice}
-          priceBeforeDiscount={data.priceBeforeDiscount}
+          currentPrice={fetchData.currentPrice}
+          priceBeforeDiscount={fetchData.priceBeforeDiscount}
         />
       </div>
-      <SizeSelector shoeSizes={data.shoeSizes} />
+      <SizeSelector shoeSizes={fetchData.shoeSizes} />
       <div className='flex flex-col'>
-        <p className='relative left-3'>Available: {data.quantity}</p>
+        <p className='relative left-3'>Available: {fetchData.quantity}</p>
         <div className='flex h-12 w-full justify-between gap-3 font-semibold'>
           <Button className={'rounded-xl bg-orange text-xl w-1/2'}>
             Add to cart
@@ -73,13 +74,13 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
         </div>
       </div>
       <Reviews
-        averageRating={data.averageRating}
-        numberOfReviews={data.numberOfReviews}
-        shoeId={data.id}
+        averageRating={fetchData.averageRating}
+        numberOfReviews={fetchData.numberOfReviews}
+        shoeId={fetchData.id}
       />
       <AddReviewsButton />
       <AddReviewCard />
-      <ShowReviews shoeId={data.id} />
+      <ShowReviews shoeId={fetchData.id} />
     </div>
   );
 }
