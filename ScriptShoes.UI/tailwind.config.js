@@ -19,6 +19,9 @@ module.exports = {
       minHeight: {
         'without-nav': 'calc(100vh - 4rem)',
       },
+      height: {
+        'without-nav-and-footer': 'calc(100vh - 8rem)',
+      },
       spacing: {
         '1px': '1px',
         '3px': '3px',
