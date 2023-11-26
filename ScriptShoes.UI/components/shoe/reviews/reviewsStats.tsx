@@ -1,3 +1,4 @@
+import { getFullStars } from '@/utils/stars';
 import axios, { AxiosError } from 'axios';
 
 interface Props {
@@ -15,29 +16,6 @@ interface ReviewStats {
 }
 
 const ReviewsStats = async ({ shoeId, numberOfReviews }: Props) => {
-  const drawStarts = (numberOfStars: number) => {
-    const stars = [];
-
-    for (let i = 0; i < numberOfStars; i++) {
-      stars.push(
-        <svg
-          width='16'
-          height='16'
-          viewBox='0 0 40 39'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            d='M7.65 38.6257L10.9 24.5757L0 15.1257L14.4 13.8757L20 0.625732L25.6 13.8757L40 15.1257L29.1 24.5757L32.35 38.6257L20 31.1757L7.65 38.6257Z'
-            fill='#003049'
-          />
-        </svg>
-      );
-    }
-
-    return stars;
-  };
-
   let fetchData = {} as ReviewStats | AxiosError;
 
   try {
@@ -64,7 +42,7 @@ const ReviewsStats = async ({ shoeId, numberOfReviews }: Props) => {
     <div className='flex flex-col w-full'>
       <div className='flex items-center justify-between'>
         <div className='flex gap-1'>
-          {drawStarts(5).map((star, index) => (
+          {getFullStars(5, '#003049', '16', '16').map((star, index) => (
             <div key={index}>{star}</div>
           ))}
         </div>
@@ -85,7 +63,7 @@ const ReviewsStats = async ({ shoeId, numberOfReviews }: Props) => {
       </div>
       <div className='flex items-center justify-between'>
         <div className='flex gap-1'>
-          {drawStarts(4).map((star, index) => (
+          {getFullStars(4, '#003049', '16', '16').map((star, index) => (
             <div key={index}>{star}</div>
           ))}
         </div>
@@ -106,7 +84,7 @@ const ReviewsStats = async ({ shoeId, numberOfReviews }: Props) => {
       </div>
       <div className='flex items-center justify-between'>
         <div className='flex gap-1'>
-          {drawStarts(3).map((star, index) => (
+          {getFullStars(3, '#003049', '16', '16').map((star, index) => (
             <div key={index}>{star}</div>
           ))}
         </div>
@@ -127,7 +105,7 @@ const ReviewsStats = async ({ shoeId, numberOfReviews }: Props) => {
       </div>
       <div className='flex items-center justify-between'>
         <div className='flex gap-1'>
-          {drawStarts(2).map((star, index) => (
+          {getFullStars(2, '#003049', '16', '16').map((star, index) => (
             <div key={index}>{star}</div>
           ))}
         </div>
@@ -148,7 +126,7 @@ const ReviewsStats = async ({ shoeId, numberOfReviews }: Props) => {
       </div>
       <div className='flex items-center justify-between'>
         <div className='flex gap-1'>
-          {drawStarts(1).map((star, index) => (
+          {getFullStars(1, '#003049', '16', '16').map((star, index) => (
             <div key={index}>{star}</div>
           ))}
         </div>
