@@ -27,7 +27,18 @@ const ReviewsStats = async ({ shoeId, numberOfReviews }: Props) => {
     if (err instanceof AxiosError) fetchData = err;
   }
 
-  if (fetchData instanceof AxiosError) return <div>404</div>;
+  if (fetchData instanceof AxiosError)
+    return (
+      <div className='flex w-full h-12 items-center justify-center'>
+        <p className='font-bold text-xl text-black text-center'>
+          {fetchData.response?.status === 429
+            ? 'Too many requests, try again later'
+            : fetchData.response?.status === 404
+            ? 'Not found'
+            : 'Something went wrong'}
+        </p>
+      </div>
+    );
 
   const fiveStarsPercentage =
     (fetchData.fiveStarsCount * 100) / numberOfReviews;

@@ -3,7 +3,6 @@
 import useNavbarStore from '@/stores/navbarStore';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
@@ -13,7 +12,7 @@ interface Props {
   pageNumber: number;
 }
 
-interface Shoe {
+interface SearchShoe {
   id: number;
   shoeName: string;
   currentPrice: number;
@@ -23,7 +22,7 @@ interface Shoe {
 }
 
 interface SearchResult {
-  item: Shoe[];
+  item: SearchShoe[];
   totalPages: number;
   itemsFrom: number;
   itemsTo: number;

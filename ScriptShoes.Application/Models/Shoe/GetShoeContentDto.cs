@@ -6,6 +6,7 @@ public class GetShoeContentDto
 {
     public int Id { get; set; }
     public string ShoeName { get; set; } = string.Empty;
+    public string ShoeType { get; set; } = string.Empty;
     public string Brand { get; set; } = string.Empty;
     public List<float>? ShoeSizes { get; set; }
     public float CurrentPrice { get; set; }

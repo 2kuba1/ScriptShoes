@@ -8,10 +8,12 @@ import AddReviewCard from '@/components/shoe/reviews/addReviewCard';
 import AddReviewsButton from '@/components/shoe/reviews/addReviewButton';
 import ShowReviews from '@/components/shoe/reviews/showReviews';
 import axios, { AxiosError } from 'axios';
+import YouMayAlsoLike from '@/components/shoe/youMayAlsoLike';
 
-interface Shoe {
+export interface Shoe {
   id: number;
   shoeName: string;
+  shoeType: string;
   brand: string;
   shoeSizes: number[];
   currentPrice: number;
@@ -35,7 +37,18 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
     if (err instanceof AxiosError) fetchData = err;
   }
 
-  if (fetchData instanceof AxiosError) return <div>404</div>;
+  if (fetchData instanceof AxiosError)
+    return (
+      <div className='flex w-full h-12 items-center justify-center'>
+        <p className='font-bold text-xl text-black text-center'>
+          {fetchData.response?.status === 429
+            ? 'Too many requests, try again later'
+            : fetchData.response?.status === 404
+            ? 'Not found'
+            : 'Something went wrong'}
+        </p>
+      </div>
+    );
 
   const images = [
     fetchData.thumbnailImage,
@@ -79,6 +92,7 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
         shoeId={fetchData.id}
       />
       <AddReviewsButton />
+      <YouMayAlsoLike {...fetchData} />
       <AddReviewCard />
       <ShowReviews shoeId={fetchData.id} />
     </div>
