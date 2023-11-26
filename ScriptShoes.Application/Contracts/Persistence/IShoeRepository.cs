@@ -9,4 +9,5 @@ public interface IShoeRepository : IGenericRepository<Shoe>
 
     public Task<List<Shoe>> GetShoesBySearchPhrase(int pageSize, int pageNumber, string? searchPhrase);
     public Task<Shoe?> GetShoeContent(int shoeId);
+    public Task<List<Shoe>> GetShoeByType(string shoeType, int count);
 }

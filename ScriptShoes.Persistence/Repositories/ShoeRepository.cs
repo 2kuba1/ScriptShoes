@@ -49,4 +49,12 @@ public class ShoeRepository : GenericRepository<Shoe>, IShoeRepository
         var shoe = await _context.Shoes.FirstOrDefaultAsync(x => x.Id == shoeId);
         return shoe;
     }
+
+    public async Task<List<Shoe>> GetShoeByType(string shoeType, int count)
+    {
+        var shoes = await _context.Shoes
+            .Where(x => x.ShoeType.ToLower() == shoeType.ToLower()).Take(count)
+            .ToListAsync();
+        return shoes;
+    }
 }

@@ -126,7 +126,7 @@ try
     app.UseAuthentication();
     app.UseAuthorization();
 
-    app.UseMiddleware<ErrorHandlingMiddleware>();
+    //app.UseMiddleware<ErrorHandlingMiddleware>();
     app.UseCors("ui");
 
     app.UseResponseCaching();
