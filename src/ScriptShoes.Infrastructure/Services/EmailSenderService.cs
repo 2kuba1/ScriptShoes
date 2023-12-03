@@ -3,15 +3,15 @@ using MailKit.Security;
 using Microsoft.Extensions.Configuration;
 using MimeKit;
 using MimeKit.Text;
-using ScriptShoes.Application.Contracts.Infrastructure.Email;
+using ScriptShoes.Application.Contracts.Services;
 
-namespace ScriptShoes.Infrastructure.EmailSender;
+namespace ScriptShoes.Infrastructure.Services;
 
-public class EmailSender : IEmailSender
+public class EmailSenderService : IEmailSenderService
 {
     private readonly IConfiguration _configuration;
 
-    public EmailSender(IConfiguration configuration)
+    public EmailSenderService(IConfiguration configuration)
     {
         _configuration = configuration;
     }

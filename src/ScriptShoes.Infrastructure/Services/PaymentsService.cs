@@ -1,20 +1,20 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using ScriptShoes.Application.Contracts.Infrastructure.StripePayments;
+using ScriptShoes.Application.Contracts.Services;
 using ScriptShoes.Application.Exceptions;
 using ScriptShoes.Application.Models.Order;
 using ScriptShoes.Domain.Entities;
 using ScriptShoes.Infrastructure.Database;
 using Stripe.Checkout;
 
-namespace ScriptShoes.Infrastructure.StripePayments;
+namespace ScriptShoes.Infrastructure.Services;
 
-public class StripePayments : IStripePayments
+public class PaymentsService : IPaymentsService
 {
     private readonly IConfiguration _configuration;
     private readonly AppDbContext _dbContext;
 
-    public StripePayments(IConfiguration configuration, AppDbContext dbContext)
+    public PaymentsService(IConfiguration configuration, AppDbContext dbContext)
     {
         _configuration = configuration;
         _dbContext = dbContext;

@@ -1,7 +1,7 @@
 ﻿using Mapster;
 using MediatR;
-using ScriptShoes.Application.Contracts.Infrastructure.StripePayments;
 using ScriptShoes.Application.Contracts.Persistence;
+using ScriptShoes.Application.Contracts.Services;
 using ScriptShoes.Application.Exceptions;
 using ScriptShoes.Application.Models.Order;
 using ScriptShoes.Domain.Entities;
@@ -10,15 +10,15 @@ namespace ScriptShoes.Application.Features.Orders.Commands.CheckoutPayment;
 
 public class CheckoutPaymentCommandHandler : IRequestHandler<CheckoutPaymentCommand, string>
 {
-    private readonly IStripePayments _stripePayments;
+    private readonly IPaymentsService _paymentsService;
     private readonly IShoeRepository _shoeRepository;
     private readonly IUserRepository _userRepository;
     private readonly IOrderAddressRepository _orderAddressRepository;
 
-    public CheckoutPaymentCommandHandler(IStripePayments stripePayments, IShoeRepository shoeRepository,
+    public CheckoutPaymentCommandHandler(IPaymentsService paymentsService, IShoeRepository shoeRepository,
         IUserRepository userRepository, IOrderAddressRepository orderAddressRepository)
     {
-        _stripePayments = stripePayments;
+        _paymentsService = paymentsService;
         _shoeRepository = shoeRepository;
         _userRepository = userRepository;
         _orderAddressRepository = orderAddressRepository;
@@ -56,12 +56,12 @@ public class CheckoutPaymentCommandHandler : IRequestHandler<CheckoutPaymentComm
 
             if (user is not null)
             {
-                response = await _stripePayments.CreateCheckoutSession(createCheckoutData, user.Value);
+                response = await _paymentsService.CreateCheckoutSession(createCheckoutData, user.Value);
             }
         }
         catch (NullReferenceException e)
         {
-            response = await _stripePayments.CreateCheckoutSession(createCheckoutData, null);
+            response = await _paymentsService.CreateCheckoutSession(createCheckoutData, null);
         }
 
         if (string.IsNullOrEmpty(response.Url)) throw new Exception();

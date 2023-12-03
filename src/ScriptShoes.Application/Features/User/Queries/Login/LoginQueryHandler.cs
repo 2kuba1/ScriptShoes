@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using ScriptShoes.Application.Contracts.Infrastructure;
 using ScriptShoes.Application.Contracts.Persistence;
+using ScriptShoes.Application.Contracts.Services;
 using ScriptShoes.Application.Exceptions;
 using ScriptShoes.Application.Models.User;
 
@@ -9,12 +10,12 @@ namespace ScriptShoes.Application.Features.User.Queries.Login;
 public class LoginQueryHandler : IRequestHandler<LoginQuery, LoginResponseDto>
 {
     private readonly IUserRepository _repository;
-    private readonly IAuthenticationTokenMethods _tokenMethods;
+    private readonly IAuthenticationService _service;
 
-    public LoginQueryHandler(IUserRepository repository, IAuthenticationTokenMethods tokenMethods)
+    public LoginQueryHandler(IUserRepository repository, IAuthenticationService service)
     {
         _repository = repository;
-        _tokenMethods = tokenMethods;
+        _service = service;
     }
 
     public async Task<LoginResponseDto> Handle(LoginQuery request, CancellationToken cancellationToken)
@@ -24,8 +25,8 @@ public class LoginQueryHandler : IRequestHandler<LoginQuery, LoginResponseDto>
         if (user is null)
             throw new BadRequestException("Email or password is incorrect");
 
-        var accessToken = _tokenMethods.CreateAccessToken(user);
-        var refreshToken = await _tokenMethods.CreateRefreshToken(user);
+        var accessToken = _service.CreateAccessToken(user);
+        var refreshToken = await _service.CreateRefreshToken(user);
 
         return new LoginResponseDto()
         {

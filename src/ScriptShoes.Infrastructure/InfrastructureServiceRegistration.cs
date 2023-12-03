@@ -4,13 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using ScriptShoes.Application.Contracts.Infrastructure;
-using ScriptShoes.Application.Contracts.Infrastructure.Email;
-using ScriptShoes.Application.Contracts.Infrastructure.StripePayments;
 using ScriptShoes.Application.Contracts.Persistence;
-using ScriptShoes.Infrastructure.AuthenticationTokens;
+using ScriptShoes.Application.Contracts.Services;
 using ScriptShoes.Infrastructure.Database;
 using ScriptShoes.Infrastructure.Repositories;
+using ScriptShoes.Infrastructure.Services;
 using Stripe;
 
 namespace ScriptShoes.Infrastructure;
@@ -20,9 +18,9 @@ public static class InfrastructureServiceRegistration
     public static IServiceCollection AddInfrastructureServices(this IServiceCollection services,
         IConfiguration configuration)
     {
-        services.AddScoped<IAuthenticationTokenMethods, TokenMethods>();
-        services.AddScoped<IEmailSender, EmailSender.EmailSender>();
-        services.AddScoped<IStripePayments, StripePayments.StripePayments>();
+        services.AddScoped<IAuthenticationService, AuthenticationService>();
+        services.AddScoped<IEmailSenderService, EmailSenderService>();
+        services.AddScoped<IPaymentsService, PaymentsService>();
 
         services.AddDbContext<AppDbContext>(options =>
         {

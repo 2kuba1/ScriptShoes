@@ -1,8 +1,8 @@
 ﻿using System.Security.Cryptography;
 using MediatR;
 using ScriptShoes.Application.Common;
-using ScriptShoes.Application.Contracts.Infrastructure.Email;
 using ScriptShoes.Application.Contracts.Persistence;
+using ScriptShoes.Application.Contracts.Services;
 using ScriptShoes.Application.Exceptions;
 using ScriptShoes.Domain.Entities;
 
@@ -12,14 +12,14 @@ public class ResendVerificationEmailCommandHandler : IRequestHandler<ResendVerif
 {
     private readonly IEmailCodesRepository _emailCodesRepository;
     private readonly IUserRepository _userRepository;
-    private readonly IEmailSender _emailSender;
+    private readonly IEmailSenderService _emailSenderService;
 
     public ResendVerificationEmailCommandHandler(IEmailCodesRepository emailCodesRepository,
-        IUserRepository userRepository, IEmailSender emailSender)
+        IUserRepository userRepository, IEmailSenderService emailSenderService)
     {
         _emailCodesRepository = emailCodesRepository;
         _userRepository = userRepository;
-        _emailSender = emailSender;
+        _emailSenderService = emailSenderService;
     }
 
     public async Task<Unit> Handle(ResendVerificationEmailCommand request, CancellationToken cancellationToken)
@@ -31,7 +31,7 @@ public class ResendVerificationEmailCommandHandler : IRequestHandler<ResendVerif
 
         var code = Convert.ToBase64String(RandomNumberGenerator.GetBytes(6));
 
-        await _emailSender.SendEmail(user.Email,
+        await _emailSenderService.SendEmail(user.Email,
             "ScriptShoes Verification",
             $"Verification code: {code}");
 

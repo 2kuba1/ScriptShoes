@@ -1,9 +1,9 @@
 ﻿using ScriptShoes.Application.Models.Token;
 using ScriptShoes.Domain.Entities;
 
-namespace ScriptShoes.Application.Contracts.Infrastructure;
+namespace ScriptShoes.Application.Contracts.Services;
 
-public interface IAuthenticationTokenMethods
+public interface IAuthenticationService
 {
     public AccessToken CreateAccessToken(User user);
     public Task<RefreshToken> CreateRefreshToken(User user);

@@ -5,20 +5,20 @@ using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using ScriptShoes.Application.Contracts.Infrastructure;
+using ScriptShoes.Application.Contracts.Services;
 using ScriptShoes.Application.Exceptions;
 using ScriptShoes.Application.Models.Token;
 using ScriptShoes.Domain.Entities;
 using ScriptShoes.Infrastructure.Database;
 
-namespace ScriptShoes.Infrastructure.AuthenticationTokens;
+namespace ScriptShoes.Infrastructure.Services;
 
-public class TokenMethods : IAuthenticationTokenMethods
+public class AuthenticationService : IAuthenticationService
 {
     private readonly AppDbContext _dbContext;
     private readonly IConfiguration _configuration;
 
-    public TokenMethods(AppDbContext dbContext, IConfiguration configuration)
+    public AuthenticationService(AppDbContext dbContext, IConfiguration configuration)
     {
         _dbContext = dbContext;
         _configuration = configuration;
