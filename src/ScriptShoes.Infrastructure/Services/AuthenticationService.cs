@@ -2,6 +2,7 @@
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -10,6 +11,7 @@ using ScriptShoes.Application.Exceptions;
 using ScriptShoes.Application.Models.Token;
 using ScriptShoes.Domain.Entities;
 using ScriptShoes.Infrastructure.Database;
+using IAuthenticationService = ScriptShoes.Application.Contracts.Services.IAuthenticationService;
 
 namespace ScriptShoes.Infrastructure.Services;
 

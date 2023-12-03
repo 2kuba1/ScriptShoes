@@ -10,7 +10,6 @@ using ScriptShoes.Infrastructure.Database;
 using ScriptShoes.Infrastructure.Repositories;
 using ScriptShoes.Infrastructure.Services;
 using Stripe;
-
 namespace ScriptShoes.Infrastructure;
 
 public static class InfrastructureServiceRegistration
