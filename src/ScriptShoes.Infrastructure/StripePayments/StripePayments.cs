@@ -4,7 +4,7 @@ using ScriptShoes.Application.Contracts.Infrastructure.StripePayments;
 using ScriptShoes.Application.Exceptions;
 using ScriptShoes.Application.Models.Order;
 using ScriptShoes.Domain.Entities;
-using ScriptShoes.Persistence.Database;
+using ScriptShoes.Infrastructure.Database;
 using Stripe.Checkout;
 
 namespace ScriptShoes.Infrastructure.StripePayments;

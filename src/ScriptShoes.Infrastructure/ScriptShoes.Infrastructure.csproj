@@ -18,7 +18,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\ScriptShoes.Domain\ScriptShoes.Domain.csproj" />
-      <ProjectReference Include="..\ScriptShoes.Persistence\ScriptShoes.Persistence.csproj" />
     </ItemGroup>
 
 </Project>

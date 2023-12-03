@@ -70,7 +70,6 @@ try
 // Add services to the container.
 
     builder.Services.AddApplicationServices();
-    builder.Services.AddPersistenceServices(builder.Configuration);
     builder.Services.AddInfrastructureServices(builder.Configuration);
 
     builder.Services.AddScoped<ErrorHandlingMiddleware>();

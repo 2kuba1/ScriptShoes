@@ -9,7 +9,7 @@ using ScriptShoes.Application.Contracts.Infrastructure;
 using ScriptShoes.Application.Exceptions;
 using ScriptShoes.Application.Models.Token;
 using ScriptShoes.Domain.Entities;
-using ScriptShoes.Persistence.Database;
+using ScriptShoes.Infrastructure.Database;
 
 namespace ScriptShoes.Infrastructure.AuthenticationTokens;
 
