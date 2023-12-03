@@ -10,19 +10,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{8B2DF9B7-D5B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{4DC55EC8-49B9-4328-AC27-2CD31BE8AE4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoes.API", "ScriptShoes.API\ScriptShoes.API.csproj", "{7512D016-C1EA-4288-8C8F-55D2ECFBC144}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoes.API", "src\ScriptShoes.API\ScriptShoes.API.csproj", "{7512D016-C1EA-4288-8C8F-55D2ECFBC144}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoes.Domain", "ScriptShoes.Domain\ScriptShoes.Domain.csproj", "{7E54B619-8B95-4CC4-9053-B37DEEC40B22}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoes.Domain", "src\ScriptShoes.Domain\ScriptShoes.Domain.csproj", "{7E54B619-8B95-4CC4-9053-B37DEEC40B22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoes.Application", "ScriptShoes.Application\ScriptShoes.Application.csproj", "{F53BD7A5-29CD-488B-A7FD-47BDA253B7A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoes.Application", "src\ScriptShoes.Application\ScriptShoes.Application.csproj", "{F53BD7A5-29CD-488B-A7FD-47BDA253B7A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoes.Persistence", "ScriptShoes.Persistence\ScriptShoes.Persistence.csproj", "{194869B0-A9FD-44A7-BEEC-2B93A7D78AC2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoes.Persistence", "src\ScriptShoes.Persistence\ScriptShoes.Persistence.csproj", "{194869B0-A9FD-44A7-BEEC-2B93A7D78AC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoes.Infrastructure", "ScriptShoes.Infrastructure\ScriptShoes.Infrastructure.csproj", "{B7FFEEA5-D0AB-49D5-891A-36E81B44D10A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoes.Infrastructure", "src\ScriptShoes.Infrastructure\ScriptShoes.Infrastructure.csproj", "{B7FFEEA5-D0AB-49D5-891A-36E81B44D10A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoes.ApplicationTests", "ScriptShoes.ApplicationTests\ScriptShoes.ApplicationTests.csproj", "{49955064-C45B-466A-BBE2-EC59EB5EDE09}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoes.ApplicationTests", "tests\ScriptShoes.ApplicationTests\ScriptShoes.ApplicationTests.csproj", "{49955064-C45B-466A-BBE2-EC59EB5EDE09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoes.PersistenceTests", "ScriptShoes.PersistenceTests\ScriptShoes.PersistenceTests.csproj", "{AD07F93E-036E-4360-BD89-C207A414C974}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoes.PersistenceTests", "tests\ScriptShoes.PersistenceTests\ScriptShoes.PersistenceTests.csproj", "{AD07F93E-036E-4360-BD89-C207A414C974}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

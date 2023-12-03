@@ -29,6 +29,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\src\ScriptShoes.Application\ScriptShoes.Application.csproj" />
+      <ProjectReference Include="..\..\src\ScriptShoes.Domain\ScriptShoes.Domain.csproj" />
       <ProjectReference Include="..\ScriptShoes.Application\ScriptShoes.Application.csproj" />
     </ItemGroup>
 
