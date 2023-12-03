@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using ScriptShoes.Application.Contracts.Infrastructure;
 using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Application.Contracts.Services;
 using ScriptShoes.Application.Models.Token;
