@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using ScriptShoes.Application.Contracts.Infrastructure.StripePayments;
+using ScriptShoes.Application.Exceptions;
 using ScriptShoes.Application.Models.Order;
 using ScriptShoes.Domain.Entities;
-using ScriptShoes.Domain.Exceptions;
 using ScriptShoes.Persistence.Database;
 using Stripe.Checkout;
 

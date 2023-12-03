@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using ScriptShoes.Application.Common;
 using ScriptShoes.Application.Contracts.Persistence;
-using ScriptShoes.Domain.Exceptions;
+using ScriptShoes.Application.Exceptions;
 
 namespace ScriptShoes.Application.Features.Cart.Commands.AddToCart;
 

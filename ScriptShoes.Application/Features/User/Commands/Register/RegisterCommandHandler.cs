@@ -1,7 +1,7 @@
 ﻿using Mapster;
 using MediatR;
 using ScriptShoes.Application.Contracts.Persistence;
-using ScriptShoes.Domain.Exceptions;
+using ScriptShoes.Application.Exceptions;
 using BC = BCrypt.Net.BCrypt;
 
 namespace ScriptShoes.Application.Features.User.Commands.Register;

@@ -2,7 +2,6 @@
 using ScriptShoes.Application.Contracts.Infrastructure;
 using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Application.Models.Token;
-using ScriptShoes.Domain.Exceptions;
 
 namespace ScriptShoes.Application.Features.User.Queries.RefreshToken;
 

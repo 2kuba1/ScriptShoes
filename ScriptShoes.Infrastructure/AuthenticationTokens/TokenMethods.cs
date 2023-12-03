@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using ScriptShoes.Application.Contracts.Infrastructure;
+using ScriptShoes.Application.Exceptions;
 using ScriptShoes.Application.Models.Token;
 using ScriptShoes.Domain.Entities;
-using ScriptShoes.Domain.Exceptions;
 using ScriptShoes.Persistence.Database;
 
 namespace ScriptShoes.Infrastructure.AuthenticationTokens;

@@ -1,8 +1,8 @@
 ﻿using MediatR;
 using ScriptShoes.Application.Contracts.Infrastructure;
 using ScriptShoes.Application.Contracts.Persistence;
+using ScriptShoes.Application.Exceptions;
 using ScriptShoes.Application.Models.User;
-using ScriptShoes.Domain.Exceptions;
 
 namespace ScriptShoes.Application.Features.User.Queries.Login;
 

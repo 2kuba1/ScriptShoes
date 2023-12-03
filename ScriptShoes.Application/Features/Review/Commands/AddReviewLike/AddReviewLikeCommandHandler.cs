@@ -1,8 +1,8 @@
 ﻿using MediatR;
 using ScriptShoes.Application.Common;
 using ScriptShoes.Application.Contracts.Persistence;
+using ScriptShoes.Application.Exceptions;
 using ScriptShoes.Domain.Entities;
-using ScriptShoes.Domain.Exceptions;
 
 namespace ScriptShoes.Application.Features.Review.Commands.AddReviewLike;
 

@@ -1,4 +1,4 @@
-﻿namespace ScriptShoes.Domain.Exceptions;
+﻿namespace ScriptShoes.Application.Exceptions;
 
 public class BadRequestException : Exception
 {

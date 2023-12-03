@@ -2,9 +2,9 @@
 using MediatR;
 using ScriptShoes.Application.Contracts.Infrastructure.StripePayments;
 using ScriptShoes.Application.Contracts.Persistence;
+using ScriptShoes.Application.Exceptions;
 using ScriptShoes.Application.Models.Order;
 using ScriptShoes.Domain.Entities;
-using ScriptShoes.Domain.Exceptions;
 
 namespace ScriptShoes.Application.Features.Orders.Commands.CheckoutPayment;
 

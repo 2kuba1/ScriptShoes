@@ -1,8 +1,8 @@
 ﻿using Mapster;
 using MediatR;
 using ScriptShoes.Application.Contracts.Persistence;
+using ScriptShoes.Application.Exceptions;
 using ScriptShoes.Application.Models.Review;
-using ScriptShoes.Domain.Exceptions;
 
 namespace ScriptShoes.Application.Features.Review.Queries.GetShoeReviews;
 

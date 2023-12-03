@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using ScriptShoes.Domain.Exceptions;
+using ScriptShoes.Application.Exceptions;
 
 namespace ScriptShoes.API.Middlewares;
 

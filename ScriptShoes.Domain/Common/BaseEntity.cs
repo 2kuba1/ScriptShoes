@@ -1,4 +1,4 @@
-﻿namespace ScriptShoes.Domain.Entities.Common;
+﻿namespace ScriptShoes.Domain.Common;
 
 public abstract class BaseEntity
 {

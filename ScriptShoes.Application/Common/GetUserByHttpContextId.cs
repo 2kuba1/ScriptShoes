@@ -1,6 +1,6 @@
 ﻿using ScriptShoes.Application.Contracts.Persistence;
+using ScriptShoes.Application.Exceptions;
 using ScriptShoes.Domain.Entities;
-using ScriptShoes.Domain.Exceptions;
 
 namespace ScriptShoes.Application.Common;
 

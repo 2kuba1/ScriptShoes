@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ScriptShoes.Domain;
+using ScriptShoes.Domain.Common;
 using ScriptShoes.Domain.Entities;
-using ScriptShoes.Domain.Entities.Common;
 
 namespace ScriptShoes.Persistence.Database;
 
