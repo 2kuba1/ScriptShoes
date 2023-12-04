@@ -7,8 +7,8 @@ import Stars from '@/components/shoe/stars';
 import AddReviewCard from '@/components/shoe/reviews/addReviewCard';
 import AddReviewsButton from '@/components/shoe/reviews/addReviewButton';
 import ShowReviews from '@/components/shoe/reviews/showReviews';
-import axios, { AxiosError } from 'axios';
 import YouMayAlsoLike from '@/components/shoe/youMayAlsoLike';
+import fetchAsync, { Method } from '@/utils/fetchAsync';
 
 export interface Shoe {
   id: number;
@@ -26,24 +26,18 @@ export interface Shoe {
 }
 
 export default async function ShoePage({ params }: { params: { id: number } }) {
-  let fetchData = {} as Shoe | AxiosError;
+  const { data, error } = await fetchAsync<Shoe>(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/shoe/getShoeContent/${params.id}`,
+    Method.GET
+  );
 
-  try {
-    const { data }: { data: Shoe } = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/shoe/getShoeContent/${params.id}`
-    );
-    fetchData = data;
-  } catch (err) {
-    if (err instanceof AxiosError) fetchData = err;
-  }
-
-  if (fetchData instanceof AxiosError)
+  if (error)
     return (
-      <div className='flex w-full h-12 items-center justify-center'>
-        <p className='font-bold text-xl text-black text-center'>
-          {fetchData.response?.status === 429
+      <div className='flex w-full h-without-nav-and-footer items-center justify-center'>
+        <p className='font-bold text-xl text-red-600 text-center'>
+          {error.response?.status === 429
             ? 'Too many requests, try again later'
-            : fetchData.response?.status === 404
+            : error.response?.status === 404
             ? 'Not found'
             : 'Something went wrong'}
         </p>
@@ -51,8 +45,8 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
     );
 
   const images = [
-    fetchData.thumbnailImage,
-    typeof fetchData.images === 'string' ? fetchData.images : '',
+    data.thumbnailImage,
+    typeof data.images === 'string' ? data.images : '',
   ];
 
   return (
@@ -60,23 +54,23 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
       <ImageSlider images={images} />
       <div className=' flex items-center justify-between px-3'>
         <div className='flex flex-col gap-1'>
-          <div className='text-2xl'>{fetchData.brand}</div>
-          <div className='text-4xl font-bold'>{fetchData.shoeName}</div>
+          <div className='text-2xl'>{data.brand}</div>
+          <div className='text-4xl font-bold'>{data.shoeName}</div>
           <div className='flex gap-1 items-center'>
-            <Stars averageRating={fetchData.averageRating} />
+            <Stars averageRating={data.averageRating} />
             <p className='text-sm relative top-1px text-dark-blue font-semibold'>
-              {fetchData.numberOfReviews}
+              {data.numberOfReviews}
             </p>
           </div>
         </div>
         <Price
-          currentPrice={fetchData.currentPrice}
-          priceBeforeDiscount={fetchData.priceBeforeDiscount}
+          currentPrice={data.currentPrice}
+          priceBeforeDiscount={data.priceBeforeDiscount}
         />
       </div>
-      <SizeSelector shoeSizes={fetchData.shoeSizes} />
+      <SizeSelector shoeSizes={data.shoeSizes} />
       <div className='flex flex-col'>
-        <p className='relative left-3'>Available: {fetchData.quantity}</p>
+        <p className='relative left-3'>Available: {data.quantity}</p>
         <div className='flex h-12 w-full justify-between gap-3 font-semibold'>
           <Button className={'rounded-xl bg-orange text-xl w-1/2'}>
             Add to cart
@@ -87,14 +81,14 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
         </div>
       </div>
       <Reviews
-        averageRating={fetchData.averageRating}
-        numberOfReviews={fetchData.numberOfReviews}
-        shoeId={fetchData.id}
+        averageRating={data.averageRating}
+        numberOfReviews={data.numberOfReviews}
+        shoeId={data.id}
       />
       <AddReviewsButton />
-      <YouMayAlsoLike {...fetchData} />
       <AddReviewCard />
-      <ShowReviews shoeId={fetchData.id} />
+      <ShowReviews shoeId={data.id} />
+      <YouMayAlsoLike {...data} />
     </div>
   );
 }

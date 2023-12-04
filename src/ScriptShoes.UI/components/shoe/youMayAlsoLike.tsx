@@ -2,6 +2,7 @@ import axios, { AxiosError } from 'axios';
 import Link from 'next/link';
 import { type Shoe } from '@/app/shoe/[id]/page';
 import ShoeCard from './shoeCard';
+import fetchAsync, { Method } from '@/utils/fetchAsync';
 
 interface Props {
   shoeType: string;
@@ -22,6 +23,11 @@ const YouMayAlsoLike = async ({ shoeType, numberOfReviews }: Props) => {
   } catch (err) {
     if (err instanceof AxiosError) fetchData = err;
   }
+
+  const {} = await fetchAsync<Shoe[]>(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/shoe/getShoesByType?shoeType=${shoeType}&count=${count}`,
+    Method.GET
+  );
 
   if (fetchData instanceof AxiosError)
     return (

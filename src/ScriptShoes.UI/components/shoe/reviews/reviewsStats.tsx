@@ -1,3 +1,4 @@
+import fetchAsync, { Method } from '@/utils/fetchAsync';
 import { getFullStars } from '@/utils/stars';
 import axios, { AxiosError } from 'axios';
 
@@ -16,38 +17,29 @@ interface ReviewStats {
 }
 
 const ReviewsStats = async ({ shoeId, numberOfReviews }: Props) => {
-  let fetchData = {} as ReviewStats | AxiosError;
+  const { data, error } = await fetchAsync<ReviewStats>(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/review/getShoeRates/${shoeId}`,
+    Method.GET
+  );
 
-  try {
-    const { data }: { data: ReviewStats } = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/review/getShoeRates/${shoeId}`
-    );
-    fetchData = data;
-  } catch (err) {
-    if (err instanceof AxiosError) fetchData = err;
-  }
-
-  if (fetchData instanceof AxiosError)
+  if (error)
     return (
       <div className='flex w-full h-12 items-center justify-center'>
         <p className='font-bold text-xl text-black text-center'>
-          {fetchData.response?.status === 429
+          {error.response?.status === 429
             ? 'Too many requests, try again later'
-            : fetchData.response?.status === 404
+            : error.response?.status === 404
             ? 'Not found'
             : 'Something went wrong'}
         </p>
       </div>
     );
 
-  const fiveStarsPercentage =
-    (fetchData.fiveStarsCount * 100) / numberOfReviews;
-  const fourStarsPercentage =
-    (fetchData.fourStarsCount * 100) / numberOfReviews;
-  const threeStarsPercentage =
-    (fetchData.threeStarsCount * 100) / numberOfReviews;
-  const twoStarsPercentage = (fetchData.twoStarsCount * 100) / numberOfReviews;
-  const oneStarsPercentage = (fetchData.oneStarsCount * 100) / numberOfReviews;
+  const fiveStarsPercentage = (data.fiveStarsCount * 100) / numberOfReviews;
+  const fourStarsPercentage = (data.fourStarsCount * 100) / numberOfReviews;
+  const threeStarsPercentage = (data.threeStarsCount * 100) / numberOfReviews;
+  const twoStarsPercentage = (data.twoStarsCount * 100) / numberOfReviews;
+  const oneStarsPercentage = (data.oneStarsCount * 100) / numberOfReviews;
 
   return (
     <div className='flex flex-col w-full'>
