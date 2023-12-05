@@ -1,14 +1,23 @@
 import Button from '@/components/ui/button';
-import ImageSlider from '@/components/shoe/imageSlider';
+const ImageSlider = dynamic(() => import('@/components/shoe/imageSlider'));
 import Price from '@/components/shoe/price';
-import Reviews from '@/components/shoe/reviews/reviews';
-import SizeSelector from '@/components/shoe/sizeSelector';
-import Stars from '@/components/shoe/stars';
-import AddReviewCard from '@/components/shoe/reviews/addReviewCard';
-import AddReviewsButton from '@/components/shoe/reviews/addReviewButton';
-import ShowReviews from '@/components/shoe/reviews/showReviews';
-import YouMayAlsoLike from '@/components/shoe/youMayAlsoLike';
+const Reviews = dynamic(() => import('@/components/shoe/reviews/reviews'));
+const SizeSelector = dynamic(() => import('@/components/shoe/sizeSelector'));
+const Stars = dynamic(() => import('@/components/shoe/stars'));
+const AddReviewCard = dynamic(
+  () => import('@/components/shoe/reviews/addReviewCard')
+);
+const AddReviewsButton = dynamic(
+  () => import('@/components/shoe/reviews/addReviewButton')
+);
+const ShowReviews = dynamic(
+  () => import('@/components/shoe/reviews/showReviews')
+);
+const YouMayAlsoLike = dynamic(
+  () => import('@/components/shoe/youMayAlsoLike')
+);
 import fetchAsync, { Method } from '@/utils/fetchAsync';
+import dynamic from 'next/dynamic';
 
 export interface Shoe {
   id: number;
@@ -72,10 +81,16 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
       <div className='flex flex-col'>
         <p className='relative left-3'>Available: {data.quantity}</p>
         <div className='flex h-12 w-full justify-between gap-3 font-semibold'>
-          <Button className={'rounded-xl bg-orange text-xl w-1/2'}>
+          <Button
+            className={'rounded-xl bg-orange text-xl w-1/2'}
+            name='add to cart'
+          >
             Add to cart
           </Button>
-          <Button className={'rounded-xl bg-orange text-xl w-1/2'}>
+          <Button
+            className={'rounded-xl bg-orange text-xl w-1/2'}
+            name='buy now'
+          >
             Buy now
           </Button>
         </div>
