@@ -16,7 +16,8 @@ export enum Method {
 const fetchAsync = async <T>(
   url: string,
   method: Method,
-  body?: any
+  body?: any,
+  headers?: any
 ): Promise<FetchAsync<T>> => {
   let fetchData = {} as FetchAsync<T>;
 
@@ -24,6 +25,7 @@ const fetchAsync = async <T>(
     const { data }: { data: T } = await axios(url, {
       method: method,
       params: body ? body : null,
+      headers: headers ? headers : null,
     });
     fetchData.data = data;
   } catch (err) {
