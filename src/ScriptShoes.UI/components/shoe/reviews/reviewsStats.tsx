@@ -35,11 +35,25 @@ const ReviewsStats = async ({ shoeId, numberOfReviews }: Props) => {
       </div>
     );
 
-  const fiveStarsPercentage = (data.fiveStarsCount * 100) / numberOfReviews;
-  const fourStarsPercentage = (data.fourStarsCount * 100) / numberOfReviews;
-  const threeStarsPercentage = (data.threeStarsCount * 100) / numberOfReviews;
-  const twoStarsPercentage = (data.twoStarsCount * 100) / numberOfReviews;
-  const oneStarsPercentage = (data.oneStarsCount * 100) / numberOfReviews;
+  let fiveStarsPercentage;
+  let fourStarsPercentage;
+  let threeStarsPercentage;
+  let twoStarsPercentage;
+  let oneStarsPercentage;
+
+  if (numberOfReviews === 0) {
+    fiveStarsPercentage = (data.fiveStarsCount * 100) / 1;
+    fourStarsPercentage = (data.fourStarsCount * 100) / 1;
+    threeStarsPercentage = (data.threeStarsCount * 100) / 1;
+    twoStarsPercentage = (data.twoStarsCount * 100) / 1;
+    oneStarsPercentage = (data.oneStarsCount * 100) / 1;
+  } else {
+    fiveStarsPercentage = (data.fiveStarsCount * 100) / numberOfReviews;
+    fourStarsPercentage = (data.fourStarsCount * 100) / numberOfReviews;
+    threeStarsPercentage = (data.threeStarsCount * 100) / numberOfReviews;
+    twoStarsPercentage = (data.twoStarsCount * 100) / numberOfReviews;
+    oneStarsPercentage = (data.oneStarsCount * 100) / numberOfReviews;
+  }
 
   return (
     <div className='flex flex-col w-full'>

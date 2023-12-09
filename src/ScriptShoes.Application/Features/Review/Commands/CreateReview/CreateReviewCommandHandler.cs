@@ -35,6 +35,7 @@ public class CreateReviewCommandHandler : IRequestHandler<CreateReviewCommand, U
 
         if (shoe.AverageRating == 0)
         {
+            shoe.NumberOfReviews++;
             shoe.AverageRating = request.Dto.ShoeRate;
         }
         else
