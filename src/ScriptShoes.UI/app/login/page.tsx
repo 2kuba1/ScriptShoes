@@ -11,7 +11,7 @@ export default function LoginPage() {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
-  const [cookies, setCookies] = useCookies(['accessToken', 'refreshToken']);
+  const [cookies, setCookies] = useCookies(['access_token', 'refresh_token']);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -39,14 +39,14 @@ export default function LoginPage() {
       return;
     }
 
-    setCookies('accessToken', token.accessToken, {
+    setCookies('access_token', token.accessToken, {
       path: '/',
       maxAge:
         (new Date(token.accessTokenExpirationTime).getTime() - Date.now()) /
         1000,
     });
 
-    setCookies('refreshToken', encodeURIComponent(token.refreshToken), {
+    setCookies('refresh_token', encodeURIComponent(token.refreshToken), {
       path: '/',
       maxAge:
         (new Date(token.refreshTokenExpirationTime).getTime() - Date.now()) /
