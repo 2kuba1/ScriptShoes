@@ -7,7 +7,6 @@
 
         <IsPackable>false</IsPackable>
         <IsTestProject>true</IsTestProject>
-        <RootNamespace>ScriptShoes.PersistenceTests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -30,7 +29,6 @@
       <ProjectReference Include="..\..\src\ScriptShoes.Application\ScriptShoes.Application.csproj" />
       <ProjectReference Include="..\..\src\ScriptShoes.Domain\ScriptShoes.Domain.csproj" />
       <ProjectReference Include="..\..\src\ScriptShoes.Infrastructure\ScriptShoes.Infrastructure.csproj" />
-      <ProjectReference Include="..\ScriptShoes.Persistence\ScriptShoes.Persistence.csproj" />
     </ItemGroup>
 
 </Project>
