@@ -32,8 +32,6 @@ export default function LoginPage() {
 
     const token = await Login(email, password);
 
-    console.log(token);
-
     if (token === null) {
       setError('Invalid email or password');
       return;
