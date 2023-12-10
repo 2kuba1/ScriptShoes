@@ -7,6 +7,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { ReactQueryStreamedHydration } from '@tanstack/react-query-next-experimental';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useState } from 'react';
+import { CookiesProvider } from 'react-cookie';
 
 interface Props {
   children: React.ReactNode;
@@ -19,14 +20,18 @@ export default function Providers({ children, font }: Props) {
 
   return (
     <QueryClientProvider client={client}>
-      <html lang='en' className={theme}>
-        <body className={font}>
-          <Navbar />
-          <ReactQueryStreamedHydration>{children}</ReactQueryStreamedHydration>
-          <ReactQueryDevtools initialIsOpen={false} />
-          <Footer />
-        </body>
-      </html>
+      <CookiesProvider defaultSetOptions={{ path: '/' }}>
+        <html lang='en' className={theme}>
+          <body className={font}>
+            <Navbar />
+            <ReactQueryStreamedHydration>
+              {children}
+            </ReactQueryStreamedHydration>
+            <ReactQueryDevtools initialIsOpen={false} />
+            <Footer />
+          </body>
+        </html>
+      </CookiesProvider>
     </QueryClientProvider>
   );
 }

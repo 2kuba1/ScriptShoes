@@ -101,7 +101,7 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
         shoeId={data.id}
       />
       <AddReviewsButton />
-      <AddReviewCard />
+      <AddReviewCard shoeId={data.id} />
       <ShowReviews shoeId={data.id} />
       <YouMayAlsoLike {...data} />
     </div>
