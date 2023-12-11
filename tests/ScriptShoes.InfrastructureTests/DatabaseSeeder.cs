@@ -49,7 +49,7 @@ public static class DatabaseSeeder
                 {
                     Email = "kuba@gmail.com",
                     RoleId = 1,
-                    FirsName = "Jakub",
+                    FirstName = "Jakub",
                     LastName = "Wojtyna",
                     Username = "2kuba1",
                     ProfilePictureUrl = "#"
@@ -58,7 +58,7 @@ public static class DatabaseSeeder
                 {
                     Email = "kub2a@gmail.com",
                     RoleId = 2,
-                    FirsName = "Kuba",
+                    FirstName = "Kuba",
                     LastName = "Fojtyna",
                     Username = "3kuba4",
                     ProfilePictureUrl = "##"

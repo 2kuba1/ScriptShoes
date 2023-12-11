@@ -32,14 +32,13 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, Unit>
 
         var config = new TypeAdapterConfig();
 
-        request.Dto.Username = "e";
-
         config.NewConfig<RegisterDto, Domain.Entities.User>()
             .Map(dest => dest.Username.Value, src => src.Username);
 
         var user = request.Dto.Adapt<Domain.Entities.User>();
 
-        user.HashedPassword = hashedPassword;
+        user.SetHashedPassword(hashedPassword);
+
         user.RoleId = 1;
 
         await _repository.CreateAsync(user);
