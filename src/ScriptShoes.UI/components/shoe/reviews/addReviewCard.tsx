@@ -17,7 +17,6 @@ const AddReviewCard = ({ shoeId }: Props) => {
 
   const [title, setTitle] = useState<string | null>(null);
   const [description, setDescirption] = useState<string | null>(null);
-  const [refetched, setRefetched] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const [cookies, setCookies, removeCookie] = useCookies([
@@ -46,9 +45,7 @@ const AddReviewCard = ({ shoeId }: Props) => {
       }
     );
 
-    if (error && !refetched) {
-      setRefetched(true);
-
+    if (error) {
       const newToken = await refreshAccess(401, cookies.refresh_token);
 
       removeCookie('access_token', { path: '/' });
@@ -81,8 +78,6 @@ const AddReviewCard = ({ shoeId }: Props) => {
             break;
         }
       }
-
-      return;
     }
   };
 
