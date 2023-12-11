@@ -18,6 +18,7 @@ const YouMayAlsoLike = dynamic(
 );
 import fetchAsync, { Method } from '@/utils/fetchAsync';
 import dynamic from 'next/dynamic';
+import AddToCart from '@/components/shoe/addToCart';
 
 export interface Shoe {
   id: number;
@@ -81,12 +82,7 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
       <div className='flex flex-col'>
         <p className='relative left-3'>Available: {data.quantity}</p>
         <div className='flex h-12 w-full justify-between gap-3 font-semibold'>
-          <Button
-            className={'rounded-xl bg-orange text-xl w-1/2'}
-            name='add to cart'
-          >
-            Add to cart
-          </Button>
+          <AddToCart shoeId={data.id} itemsCount={1} />
           <Button
             className={'rounded-xl bg-orange text-xl w-1/2'}
             name='buy now'
