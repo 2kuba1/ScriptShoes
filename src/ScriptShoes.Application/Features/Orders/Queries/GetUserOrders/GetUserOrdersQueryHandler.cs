@@ -13,13 +13,15 @@ public class GetUserOrdersQueryHandler : IRequestHandler<GetUserOrdersQuery, Pag
     private readonly IUserRepository _userRepository;
     private readonly IOrderRepository _orderRepository;
     private readonly IOrderAddressRepository _orderAddressRepository;
+    private readonly TypeAdapterConfig _typeAdapterConfig;
 
     public GetUserOrdersQueryHandler(IUserRepository userRepository, IOrderRepository orderRepository,
-        IOrderAddressRepository orderAddressRepository)
+        IOrderAddressRepository orderAddressRepository, TypeAdapterConfig typeAdapterConfig)
     {
         _userRepository = userRepository;
         _orderRepository = orderRepository;
         _orderAddressRepository = orderAddressRepository;
+        _typeAdapterConfig = GetTypeAdapterConfig();
     }
 
     public async Task<PagedResult<UserOrdersDto>> Handle(GetUserOrdersQuery request,
@@ -38,18 +40,23 @@ public class GetUserOrdersQueryHandler : IRequestHandler<GetUserOrdersQuery, Pag
             if (address is null)
                 continue;
 
-            TypeAdapterConfig config = new();
-
-            config.NewConfig<Order, UserOrdersDto>()
-                .Map(dest => dest.Brand, src => src.Shoe.Brand)
-                .Map(dest => dest.ShoeName, src => src.Shoe.ShoeName)
-                .Map(dest => dest.ThumbnailImage, src => src.Shoe.ThumbnailImage);
-
-            var newOrder = order.Adapt<UserOrdersDto>(config);
+            var newOrder = order.Adapt<UserOrdersDto>(_typeAdapterConfig);
             userOrders.Add(newOrder);
         }
 
 
         return new PagedResult<UserOrdersDto>(userOrders, orders.Count, request.PageSize, request.PageNumber);
+    }
+
+    private static TypeAdapterConfig GetTypeAdapterConfig()
+    {
+        var config = new TypeAdapterConfig();
+
+        config.NewConfig<Order, UserOrdersDto>()
+            .Map(dest => dest.Brand, src => src.Shoe.Brand)
+            .Map(dest => dest.ShoeName, src => src.Shoe.ShoeName)
+            .Map(dest => dest.ThumbnailImage, src => src.Shoe.ThumbnailImage);
+
+        return config;
     }
 }

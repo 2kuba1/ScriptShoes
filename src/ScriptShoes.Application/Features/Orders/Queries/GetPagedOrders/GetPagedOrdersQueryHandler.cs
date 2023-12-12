@@ -10,10 +10,12 @@ namespace ScriptShoes.Application.Features.Orders.Queries.GetPagedOrders;
 public class GetPagedOrdersQueryHandler : IRequestHandler<GetPagedOrdersQuery, PagedResult<PagedOrdersDto>>
 {
     private readonly IOrderRepository _orderRepository;
+    private readonly TypeAdapterConfig _typeAdapterConfig;
 
-    public GetPagedOrdersQueryHandler(IOrderRepository orderRepository)
+    public GetPagedOrdersQueryHandler(IOrderRepository orderRepository, TypeAdapterConfig typeAdapterConfig)
     {
         _orderRepository = orderRepository;
+        _typeAdapterConfig = GetTypeAdapterConfig();
     }
     
     public async Task<PagedResult<PagedOrdersDto>> Handle(GetPagedOrdersQuery request, CancellationToken cancellationToken)
@@ -22,7 +24,15 @@ public class GetPagedOrdersQueryHandler : IRequestHandler<GetPagedOrdersQuery, P
         
         var totalItemsCount = orders.Count;
         
-        TypeAdapterConfig config = new();
+        var mappedValues = orders.Adapt<List<PagedOrdersDto>>(_typeAdapterConfig);
+        
+        return new PagedResult<PagedOrdersDto>(mappedValues, totalItemsCount, request.PageSize, request.PageNumber);
+        
+    }
+
+    private static TypeAdapterConfig GetTypeAdapterConfig()
+    {
+        var config = new TypeAdapterConfig();
         
         config.NewConfig<Order, PagedOrdersDto>()
             .Map(dest => dest.GetOrdersDto.Brand, src => src.Shoe.Brand)
@@ -36,10 +46,7 @@ public class GetPagedOrdersQueryHandler : IRequestHandler<GetPagedOrdersQuery, P
             .Map(dest => dest.GetOrdersDto.OrderAddressId, src => src.OrderAddress.Id)
             .Map(dest => dest.Street, src => src.OrderAddress.Street)
             .Map(dest => dest.PostalCode, src => src.OrderAddress.PostalCode);
-        
-        var mappedValues = orders.Adapt<List<PagedOrdersDto>>(config);
-        
-        return new PagedResult<PagedOrdersDto>(mappedValues, totalItemsCount, request.PageSize, request.PageNumber);
-        
+
+        return config;
     }
 }
