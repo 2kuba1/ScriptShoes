@@ -7,7 +7,7 @@ public sealed class User : BaseEntity
 {
     public Username Username { get; init; }
     public HashedPassword HashedPassword { get; private set; }
-    public string Email { get; set; }
+    public Email Email { get; init; }
     public float AvailableFounds { get; set; } = 0;
     public string FirstName { get; set; }
     public string LastName { get; set; }

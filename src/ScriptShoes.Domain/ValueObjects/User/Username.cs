@@ -4,7 +4,7 @@ namespace ScriptShoes.Domain.ValueObjects.User;
 
 public record Username
 {
-    public string Value { get; private set; }
+    public string Value { get; }
 
     //constraints
 

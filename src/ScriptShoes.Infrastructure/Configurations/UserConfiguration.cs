@@ -14,5 +14,8 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 
         builder.Property(x => x.HashedPassword)
             .HasConversion(x => x.Value, x => new HashedPassword(x));
+
+        builder.Property(x => x.Email)
+            .HasConversion(x => x.Value, x => new Email(x));
     }
 }
