@@ -9,10 +9,12 @@ namespace ScriptShoes.Application.Features.Shoe.Queries.GetShoeContent;
 public class GetShoeContentQueryHandler : IRequestHandler<GetShoeContentQuery, GetShoeContentDto>
 {
     private readonly IShoeRepository _shoeRepository;
+    private readonly TypeAdapterConfig _typeAdapterConfig;
 
-    public GetShoeContentQueryHandler(IShoeRepository shoeRepository)
+    public GetShoeContentQueryHandler(IShoeRepository shoeRepository, TypeAdapterConfig typeAdapterConfig)
     {
         _shoeRepository = shoeRepository;
+        _typeAdapterConfig = GetTypeAdapterConfig();
     }
 
     public async Task<GetShoeContentDto> Handle(GetShoeContentQuery request, CancellationToken cancellationToken)
@@ -21,13 +23,16 @@ public class GetShoeContentQueryHandler : IRequestHandler<GetShoeContentQuery, G
 
         if (shoe is null)
             throw new NotFoundException("Shoe not found");
-
-        TypeAdapterConfig config = new();
-
-        config.NewConfig<Domain.Entities.Shoe, GetShoeContentDto>();
-
-        var dto = shoe.Adapt<GetShoeContentDto>(config);
+        
+        var dto = shoe.Adapt<GetShoeContentDto>(_typeAdapterConfig);
 
         return dto;
+    }
+
+    private static TypeAdapterConfig GetTypeAdapterConfig()
+    {
+        TypeAdapterConfig config = new();
+        config.NewConfig<Domain.Entities.Shoe, GetShoeContentDto>();
+        return config;
     }
 }

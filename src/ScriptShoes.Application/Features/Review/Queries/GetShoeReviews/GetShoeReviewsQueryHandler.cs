@@ -10,11 +10,13 @@ public class GetShoeReviewsQueryHandler : IRequestHandler<GetShoeReviewsQuery, L
 {
     private readonly IReviewRepository _reviewRepository;
     private readonly IShoeRepository _shoeRepository;
+    private readonly TypeAdapterConfig _typeAdapterConfig;
 
-    public GetShoeReviewsQueryHandler(IReviewRepository reviewRepository, IShoeRepository shoeRepository)
+    public GetShoeReviewsQueryHandler(IReviewRepository reviewRepository, IShoeRepository shoeRepository, TypeAdapterConfig typeAdapterConfig)
     {
         _reviewRepository = reviewRepository;
         _shoeRepository = shoeRepository;
+        _typeAdapterConfig = GetTypeAdapterConfig();
     }
 
     public async Task<List<GetShoeReviewsDto>> Handle(GetShoeReviewsQuery request, CancellationToken cancellationToken)
@@ -26,14 +28,19 @@ public class GetShoeReviewsQueryHandler : IRequestHandler<GetShoeReviewsQuery, L
 
         var reviews = await _reviewRepository.GetShoeReviews(request.ShoeId);
 
+        var dto = reviews.Adapt<List<GetShoeReviewsDto>>(_typeAdapterConfig);
+
+        return dto;
+    }
+
+    private static TypeAdapterConfig GetTypeAdapterConfig()
+    {
         var config = new TypeAdapterConfig();
 
         config.NewConfig<Domain.Entities.Review, GetShoeReviewsDto>()
             .Map(dest => dest.Username, src => src.Username)
             .Map(dest => dest.Created, src => src.Created);
 
-        var dto = reviews.Adapt<List<GetShoeReviewsDto>>(config);
-
-        return dto;
+        return config;
     }
 }
