@@ -32,7 +32,7 @@ public class AuthenticationService : IAuthenticationService
         {
             new Claim("Id", user.Id.ToString()),
             new Claim("Username", user.Username),
-            new Claim("FirstName", $"{user.FirsName}"),
+            new Claim("FirstName", $"{user.FirstName}"),
             new Claim("LastName", $"{user.LastName}"),
             new Claim("Email", $"{user.Email}"),
             new Claim("ProfilePicture", user.ProfilePictureUrl),

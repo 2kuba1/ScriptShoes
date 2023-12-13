@@ -7,9 +7,8 @@ using ScriptShoes.API.BackgroundServices;
 using ScriptShoes.API.Middlewares;
 using ScriptShoes.Application;
 using ScriptShoes.Infrastructure;
-using ScriptShoes.Persistence;
 
-var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
+var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 logger.Debug("init main");
 
 try

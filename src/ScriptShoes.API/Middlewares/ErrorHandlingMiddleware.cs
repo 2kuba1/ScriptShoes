@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using ScriptShoes.Application.Exceptions;
+using ScriptShoes.Domain.Common;
 
 namespace ScriptShoes.API.Middlewares;
 
@@ -18,6 +19,12 @@ public class ErrorHandlingMiddleware : IMiddleware
         {
             _logger.LogInformation($"{context.Request.Path} has been invoked");
             await next(context);
+        }
+        catch (BaseException e)
+        {
+            context.Response.StatusCode = (int)e.StatusCode;
+            _logger.LogInformation(e.Message);
+            await context.Response.WriteAsJsonAsync(e.Message);
         }
         catch (ValidationException e)
         {

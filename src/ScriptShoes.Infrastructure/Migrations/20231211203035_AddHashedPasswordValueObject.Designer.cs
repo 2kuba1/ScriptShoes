@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ScriptShoes.Infrastructure.Database;
@@ -12,9 +13,11 @@ using ScriptShoes.Infrastructure.Database;
 namespace ScriptShoes.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231211203035_AddHashedPasswordValueObject")]
+    partial class AddHashedPasswordValueObject
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -313,15 +316,15 @@ namespace ScriptShoes.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2023, 12, 13, 15, 4, 24, 953, DateTimeKind.Utc).AddTicks(7538),
-                            LastModified = new DateTime(2023, 12, 13, 15, 4, 24, 953, DateTimeKind.Utc).AddTicks(7540),
+                            Created = new DateTime(2023, 12, 11, 20, 30, 35, 297, DateTimeKind.Utc).AddTicks(4754),
+                            LastModified = new DateTime(2023, 12, 11, 20, 30, 35, 297, DateTimeKind.Utc).AddTicks(4756),
                             Name = "User"
                         },
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2023, 12, 13, 15, 4, 24, 953, DateTimeKind.Utc).AddTicks(7541),
-                            LastModified = new DateTime(2023, 12, 13, 15, 4, 24, 953, DateTimeKind.Utc).AddTicks(7541),
+                            Created = new DateTime(2023, 12, 11, 20, 30, 35, 297, DateTimeKind.Utc).AddTicks(4758),
+                            LastModified = new DateTime(2023, 12, 11, 20, 30, 35, 297, DateTimeKind.Utc).AddTicks(4758),
                             Name = "Admin"
                         });
                 });
@@ -391,7 +394,7 @@ namespace ScriptShoes.Persistence.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<float?>("AvailableFounds")
+                    b.Property<float>("AvailableFounds")
                         .HasColumnType("real");
 
                     b.Property<DateTime>("Created")
@@ -400,7 +403,7 @@ namespace ScriptShoes.Persistence.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("text");
 
-                    b.Property<string>("FirstName")
+                    b.Property<string>("FirsName")
                         .HasColumnType("text");
 
                     b.Property<string>("HashedPassword")

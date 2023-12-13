@@ -16,7 +16,7 @@ public class GetUserOrdersQueryHandler : IRequestHandler<GetUserOrdersQuery, Pag
     private readonly TypeAdapterConfig _typeAdapterConfig;
 
     public GetUserOrdersQueryHandler(IUserRepository userRepository, IOrderRepository orderRepository,
-        IOrderAddressRepository orderAddressRepository, TypeAdapterConfig typeAdapterConfig)
+        IOrderAddressRepository orderAddressRepository)
     {
         _userRepository = userRepository;
         _orderRepository = orderRepository;

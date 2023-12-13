@@ -12,7 +12,7 @@ public class GetPagedOrdersQueryHandler : IRequestHandler<GetPagedOrdersQuery, P
     private readonly IOrderRepository _orderRepository;
     private readonly TypeAdapterConfig _typeAdapterConfig;
 
-    public GetPagedOrdersQueryHandler(IOrderRepository orderRepository, TypeAdapterConfig typeAdapterConfig)
+    public GetPagedOrdersQueryHandler(IOrderRepository orderRepository)
     {
         _orderRepository = orderRepository;
         _typeAdapterConfig = GetTypeAdapterConfig();

@@ -11,7 +11,7 @@ public class GetShoeContentQueryHandler : IRequestHandler<GetShoeContentQuery, G
     private readonly IShoeRepository _shoeRepository;
     private readonly TypeAdapterConfig _typeAdapterConfig;
 
-    public GetShoeContentQueryHandler(IShoeRepository shoeRepository, TypeAdapterConfig typeAdapterConfig)
+    public GetShoeContentQueryHandler(IShoeRepository shoeRepository)
     {
         _shoeRepository = shoeRepository;
         _typeAdapterConfig = GetTypeAdapterConfig();

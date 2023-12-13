@@ -2,6 +2,7 @@
 using MediatR;
 using ScriptShoes.Application.Contracts.Persistence;
 using ScriptShoes.Application.Exceptions;
+using ScriptShoes.Application.Models.User;
 using BC = BCrypt.Net.BCrypt;
 
 namespace ScriptShoes.Application.Features.User.Commands.Register;
@@ -29,13 +30,19 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, Unit>
 
         var hashedPassword = BC.HashPassword(request.Dto.Password);
 
+        var config = new TypeAdapterConfig();
+
+        config.NewConfig<RegisterDto, Domain.Entities.User>()
+            .Map(dest => dest.Username.Value, src => src.Username);
+
         var user = request.Dto.Adapt<Domain.Entities.User>();
 
-        user.HashedPassword = hashedPassword;
+        user.SetHashedPassword(hashedPassword);
+
         user.RoleId = 1;
 
         await _repository.CreateAsync(user);
-        
+
         return Unit.Value;
     }
 }

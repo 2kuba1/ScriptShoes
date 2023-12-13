@@ -1,20 +1,31 @@
 ﻿using ScriptShoes.Domain.Common;
+using ScriptShoes.Domain.ValueObjects.User;
 
 namespace ScriptShoes.Domain.Entities;
 
-public class User : BaseEntity
+public sealed class User : BaseEntity
 {
-    public string Username { get; set; } = string.Empty;
-    public string HashedPassword { get; set; } = string.Empty;
-    public string Email { get; set; } = string.Empty;
-    public float AvailableFounds { get; set; }
-    public string FirsName { get; set; } = string.Empty;
-    public string LastName { get; set; } = string.Empty;
+    public Username Username { get; init; }
+    public HashedPassword HashedPassword { get; private set; }
+    public Email Email { get; init; }
+    public AvailableFounds AvailableFounds { get; private set; } = 0;
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
     public string ProfilePictureUrl { get; set; } = string.Empty;
     public bool IsVerified { get; set; }
 
     public string? RefreshToken { get; set; }
     public DateTime RefreshTokenExpirationTime { get; set; }
     public int RoleId { get; set; }
-    public virtual Role Role { get; set; }
+    public Role Role { get; set; }
+
+    public void SetHashedPassword(HashedPassword hashedPassword)
+    {
+        HashedPassword = hashedPassword;
+    }
+
+    public void SetAvailableFounds(AvailableFounds availableFounds)
+    {
+        AvailableFounds = availableFounds;
+    }
 }
