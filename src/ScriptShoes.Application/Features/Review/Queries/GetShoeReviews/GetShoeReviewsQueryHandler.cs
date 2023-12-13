@@ -12,7 +12,7 @@ public class GetShoeReviewsQueryHandler : IRequestHandler<GetShoeReviewsQuery, L
     private readonly IShoeRepository _shoeRepository;
     private readonly TypeAdapterConfig _typeAdapterConfig;
 
-    public GetShoeReviewsQueryHandler(IReviewRepository reviewRepository, IShoeRepository shoeRepository, TypeAdapterConfig typeAdapterConfig)
+    public GetShoeReviewsQueryHandler(IReviewRepository reviewRepository, IShoeRepository shoeRepository)
     {
         _reviewRepository = reviewRepository;
         _shoeRepository = shoeRepository;

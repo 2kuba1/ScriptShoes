@@ -8,7 +8,7 @@ public sealed class User : BaseEntity
     public Username Username { get; init; }
     public HashedPassword HashedPassword { get; private set; }
     public Email Email { get; init; }
-    public float AvailableFounds { get; set; } = 0;
+    public AvailableFounds AvailableFounds { get; private set; } = 0;
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string ProfilePictureUrl { get; set; } = string.Empty;
@@ -22,5 +22,10 @@ public sealed class User : BaseEntity
     public void SetHashedPassword(HashedPassword hashedPassword)
     {
         HashedPassword = hashedPassword;
+    }
+
+    public void SetAvailableFounds(AvailableFounds availableFounds)
+    {
+        AvailableFounds = availableFounds;
     }
 }

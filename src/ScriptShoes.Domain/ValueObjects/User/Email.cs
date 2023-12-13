@@ -3,7 +3,7 @@ using ScriptShoes.Domain.Exceptions;
 
 namespace ScriptShoes.Domain.ValueObjects.User;
 
-public sealed class Email
+public sealed record Email
 {
     public string Value { get; }
 
