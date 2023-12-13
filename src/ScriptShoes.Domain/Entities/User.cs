@@ -10,7 +10,7 @@ public sealed class User : BaseEntity
     public Email Email { get; init; }
     public AvailableFounds AvailableFounds { get; private set; } = 0;
     public FirstName FirstName { get; init; }
-    public string LastName { get; set; }
+    public LastName LastName { get; init; }
     public string ProfilePictureUrl { get; set; } = string.Empty;
     public bool IsVerified { get; set; }
 

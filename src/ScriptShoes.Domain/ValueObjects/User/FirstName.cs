@@ -2,7 +2,7 @@
 
 namespace ScriptShoes.Domain.ValueObjects.User;
 
-public record FirstName
+public sealed record FirstName
 {
     public string Value { get; }
 
