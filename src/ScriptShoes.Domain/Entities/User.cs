@@ -14,10 +14,10 @@ public sealed class User : BaseEntity
     public string ProfilePictureUrl { get; set; } = string.Empty;
     public bool IsVerified { get; set; }
 
-    public string? RefreshToken { get; set; }
+    public string RefreshToken { get; set; }
     public DateTime RefreshTokenExpirationTime { get; set; }
     public int RoleId { get; set; }
-    public Role Role { get; set; }
+    public Role Role { get; init; }
 
     public void SetHashedPassword(HashedPassword hashedPassword)
     {
