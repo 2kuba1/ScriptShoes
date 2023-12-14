@@ -3,14 +3,12 @@
 import { useState } from 'react';
 
 export default function RegisterPage() {
-  const [email, setEmail] = useState<string | null>(null);
-  const [password, setPassword] = useState<string | null>(null);
-  const [username, setUsername] = useState<string | null>(null);
-  const [firstName, setFirstName] = useState<string | null>(null);
-  const [lastName, setLastName] = useState<string | null>(null);
-  const [confirmedPassword, setConfirmedPassword] = useState<string | null>(
-    null
-  );
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [confirmedPassword, setConfirmedPassword] = useState('');
 
   return (
     <main className='flex justify-center items-center h-without-nav-and-footer gap-2 flex-col'>

@@ -5,25 +5,25 @@ import { FormEvent, useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 
 export default function LoginPage() {
-  const [email, setEmail] = useState<string | null>(null);
-  const [password, setPassword] = useState<string | null>(null);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const [error, setError] = useState<string | null>(null);
-  const [success, setSuccess] = useState<string | null>(null);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
   const [cookies, setCookies] = useCookies(['access_token', 'refresh_token']);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    setError(null);
-    setSuccess(null);
+    setError('');
+    setSuccess('');
 
-    if (email === null || password === null) {
+    if (!email || !password) {
       setError(
-        email === null && password === null
+        !email && !password
           ? 'Email and password are required'
-          : email === null
+          : !email
           ? 'Email is required'
           : 'Password is required'
       );
