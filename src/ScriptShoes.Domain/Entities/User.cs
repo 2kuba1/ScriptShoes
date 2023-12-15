@@ -9,15 +9,15 @@ public sealed class User : BaseEntity
     public HashedPassword HashedPassword { get; private set; }
     public Email Email { get; init; }
     public AvailableFounds AvailableFounds { get; private set; } = 0;
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
+    public FirstName FirstName { get; init; }
+    public LastName LastName { get; init; }
     public string ProfilePictureUrl { get; set; } = string.Empty;
     public bool IsVerified { get; set; }
 
-    public string? RefreshToken { get; set; }
+    public string RefreshToken { get; set; }
     public DateTime RefreshTokenExpirationTime { get; set; }
     public int RoleId { get; set; }
-    public Role Role { get; set; }
+    public Role Role { get; init; }
 
     public void SetHashedPassword(HashedPassword hashedPassword)
     {

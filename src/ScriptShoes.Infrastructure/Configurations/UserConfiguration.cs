@@ -20,5 +20,11 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 
         builder.Property(x => x.AvailableFounds)
             .HasConversion(x => x.Value, x => new AvailableFounds(x));
+
+        builder.Property(x => x.FirstName)
+            .HasConversion(x => x.Value, x => new FirstName(x));
+
+        builder.Property(x => x.LastName)
+            .HasConversion(x => x.Value, x => new LastName(x));
     }
 }

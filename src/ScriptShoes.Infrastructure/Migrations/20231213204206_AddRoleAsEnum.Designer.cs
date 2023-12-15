@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ScriptShoes.Infrastructure.Database;
@@ -12,9 +13,11 @@ using ScriptShoes.Infrastructure.Database;
 namespace ScriptShoes.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231213204206_AddRoleAsEnum")]
+    partial class AddRoleAsEnum
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -313,15 +316,15 @@ namespace ScriptShoes.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2023, 12, 13, 20, 52, 22, 41, DateTimeKind.Utc).AddTicks(3734),
-                            LastModified = new DateTime(2023, 12, 13, 20, 52, 22, 41, DateTimeKind.Utc).AddTicks(3735),
+                            Created = new DateTime(2023, 12, 13, 20, 42, 6, 61, DateTimeKind.Utc).AddTicks(1300),
+                            LastModified = new DateTime(2023, 12, 13, 20, 42, 6, 61, DateTimeKind.Utc).AddTicks(1302),
                             Name = "User"
                         },
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2023, 12, 13, 20, 52, 22, 41, DateTimeKind.Utc).AddTicks(3736),
-                            LastModified = new DateTime(2023, 12, 13, 20, 52, 22, 41, DateTimeKind.Utc).AddTicks(3737),
+                            Created = new DateTime(2023, 12, 13, 20, 42, 6, 61, DateTimeKind.Utc).AddTicks(1303),
+                            LastModified = new DateTime(2023, 12, 13, 20, 42, 6, 61, DateTimeKind.Utc).AddTicks(1304),
                             Name = "Admin"
                         });
                 });
@@ -427,12 +430,15 @@ namespace ScriptShoes.Persistence.Migrations
                     b.Property<int>("RoleId")
                         .HasColumnType("integer");
 
+                    b.Property<int?>("RoleId1")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Username")
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RoleId");
+                    b.HasIndex("RoleId1");
 
                     b.ToTable("Users");
                 });
@@ -488,9 +494,7 @@ namespace ScriptShoes.Persistence.Migrations
                 {
                     b.HasOne("ScriptShoes.Domain.Entities.Role", "Role")
                         .WithMany()
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("RoleId1");
 
                     b.Navigation("Role");
                 });
