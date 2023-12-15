@@ -15,9 +15,9 @@ interface Props {
 const AddReviewCard = ({ shoeId }: Props) => {
   const { isOpened } = useAddReviewCardStore();
 
-  const [title, setTitle] = useState<string | null>(null);
-  const [description, setDescirption] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [title, setTitle] = useState('');
+  const [description, setDescirption] = useState('');
+  const [error, setError] = useState('');
 
   const [cookies, setCookies, removeCookie] = useCookies([
     'access_token',
@@ -27,7 +27,7 @@ const AddReviewCard = ({ shoeId }: Props) => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    if (title === null || description === null) {
+    if (!title || !description) {
       return;
     }
 
