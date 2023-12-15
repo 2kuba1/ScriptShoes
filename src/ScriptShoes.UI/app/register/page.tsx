@@ -9,11 +9,45 @@ export default function RegisterPage() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [confirmedPassword, setConfirmedPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (password !== confirmedPassword) {
+      setError('Passwords do not match');
+      return;
+    }
+
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/user/register`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: username,
+          email: email,
+          password: password,
+          confirmedPassword: confirmedPassword,
+          firstName: firstName,
+          lastName: lastName,
+        }),
+      }
+    );
+
+    if (res.status === 204) {
+      window.location.href = '/login?registered=true';
+    } else {
+      setError('Invalid credentials');
+    }
+  };
 
   return (
     <main className='flex justify-center items-center h-without-nav-and-footer gap-2 flex-col'>
       <h1 className='text-2xl font-semibold'>Register</h1>
-      <form className='flex flex-col gap-2 w-2/3'>
+      <form className='flex flex-col gap-2 w-2/3' onSubmit={handleSubmit}>
         <label className='text-xl' htmlFor='email'>
           Email
         </label>
@@ -75,6 +109,7 @@ export default function RegisterPage() {
           <p className='text-black text-2xl'>Login</p>
         </button>
       </form>
+      {error && <p className='text-red-600 font-bold text-center'>{error}</p>}
     </main>
   );
 }

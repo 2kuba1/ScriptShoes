@@ -13,6 +13,14 @@ export default function LoginPage() {
 
   const [cookies, setCookies] = useCookies(['access_token', 'refresh_token']);
 
+  const [registerSuccess, setRegisterSuccess] = useState(false);
+
+  useEffect(() => {
+    if (window.location.href.includes('registered=true')) {
+      setRegisterSuccess(true);
+    }
+  }, []);
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
@@ -98,6 +106,11 @@ export default function LoginPage() {
           </p>
         )}
       </form>
+      {registerSuccess && (
+        <p className='text-green-600 font-bold  text-center'>
+          Registration successful
+        </p>
+      )}
     </main>
   );
 }
