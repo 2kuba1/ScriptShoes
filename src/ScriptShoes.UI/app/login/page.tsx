@@ -3,22 +3,8 @@
 import { Login } from '@/utils/tokens';
 import { FormEvent, useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
-import z from 'zod';
 
 export default function LoginPage() {
-  const schema = z
-    .object({
-      firstName: z.string().min(2).max(50),
-      lastName: z.string().min(2).max(50),
-      email: z.string().email(),
-      password: z.string().min(8).max(25),
-      confirmPassword: z.string().min(8).max(25),
-    })
-    .refine(data => data.password === data.confirmPassword, {
-      message: 'Passwords do not match',
-      path: ['confirmPassword'],
-    });
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
