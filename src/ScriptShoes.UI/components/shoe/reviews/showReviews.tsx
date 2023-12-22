@@ -93,7 +93,7 @@ const ShowReviews = ({ shoeId }: Props) => {
     <AnimatePresence>
       {isOpened && (
         <motion.div
-          className='bg-dark-blue h-96 w-full rounded-xl flex flex-col overflow-y-scroll py-3 px-6 gap-3'
+          className='bg-dark-blue max-h-96 w-full rounded-xl flex flex-col overflow-y-scroll py-3 px-6 gap-3'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

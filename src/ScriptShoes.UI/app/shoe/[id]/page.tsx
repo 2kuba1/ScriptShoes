@@ -19,6 +19,7 @@ const YouMayAlsoLike = dynamic(
 import fetchAsync, { Method } from '@/utils/fetchAsync';
 import dynamic from 'next/dynamic';
 import AddToCart from '@/components/shoe/addToCart';
+import { redirect } from 'next/navigation';
 
 export interface Shoe {
   id: number;
@@ -41,18 +42,21 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
     Method.GET
   );
 
-  if (error)
+  console.log(error?.response?.status);
+
+  if (error) {
+    if (error.response?.status === 404) redirect('/not-found');
+
     return (
       <div className='flex w-full h-without-nav-and-footer items-center justify-center'>
         <p className='font-bold text-xl text-red-600 text-center'>
           {error.response?.status === 429
             ? 'Too many requests, try again later'
-            : error.response?.status === 404
-            ? 'Not found'
             : 'Something went wrong'}
         </p>
       </div>
     );
+  }
 
   const images = [
     data.thumbnailImage,
