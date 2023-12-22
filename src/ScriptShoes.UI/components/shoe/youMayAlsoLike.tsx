@@ -45,7 +45,7 @@ const YouMayAlsoLike = async ({ shoeType, numberOfReviews }: Props) => {
   return (
     <div className='flex flex-col w-full items-center'>
       <p className='font-bold text-3xl text-center mb-3'>You may also like:</p>
-      <div className='flex gap-3'>
+      <div className='flex gap-3 flex-col'>
         {fetchData.map(shoe => (
           <Link href={`/shoe/${shoe.id}`} key={shoe.id}>
             <ShoeCard {...shoe} numberOfReviews={numberOfReviews} />
