@@ -20,6 +20,7 @@ import fetchAsync, { Method } from '@/utils/fetchAsync';
 import dynamic from 'next/dynamic';
 import AddToCart from '@/components/shoe/addToCart';
 import { redirect } from 'next/navigation';
+import ErrorCard from '@/components/errorCard';
 
 export interface Shoe {
   id: number;
@@ -42,18 +43,16 @@ export default async function ShoePage({ params }: { params: { id: number } }) {
     Method.GET
   );
 
-  console.log(error?.response?.status);
-
   if (error) {
     if (error.response?.status === 404) redirect('/not-found');
 
     return (
       <div className='flex w-full h-without-nav-and-footer items-center justify-center'>
-        <p className='font-bold text-xl text-red-600 text-center'>
-          {error.response?.status === 429
-            ? 'Too many requests, try again later'
-            : 'Something went wrong'}
-        </p>
+        {error.response?.status === 429 ? (
+          <ErrorCard error='Too many requests' />
+        ) : (
+          <ErrorCard error='Something went wrong' />
+        )}
       </div>
     );
   }
