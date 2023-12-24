@@ -23,7 +23,7 @@ public class DatabaseSeeder
                 Brand = "Nike",
                 ShoeName = "Chron",
                 ThumbnailImage =
-                    "https://cdn.discordapp.com/attachments/1022135580399783959/1173205642517946489/image_6.png?ex=659a7ae6&is=658805e6&hm=ae500e12ecb8da49dc39ebd7e5d47cf01843c1bef1b7deb6693d9c8d4d79815f&",
+                    "https://cdn.discordapp.com/attachments/1022135580399783959/1188472685605433384/pexels-ray-piedra-1456737.jpg?ex=659aa671&is=65883171&hm=8af97ed984d22e34f32ada706fe9ee30818b1b298b528df4ee3a6649956465fe&",
                 CurrentPrice = 99.99f,
                 UserId = 1,
                 ShoeType = "Sport"
@@ -33,7 +33,7 @@ public class DatabaseSeeder
                 Brand = "Adidas",
                 ShoeName = "Forum Low",
                 ThumbnailImage =
-                    "https://cdn.discordapp.com/attachments/1022135580399783959/1188449224682115113/pol_pl_Buty-Adidas-FORUM-LOW-FY7757-Cloud-White-Cloud-White-Core-Black-9450_1.jpg?ex=659a9097&is=65881b97&hm=153f845b4baca871752d8d1713647cf5c5d385e8855fd3c0593bfb1ed4d096b4&",
+                    "https://cdn.discordapp.com/attachments/1022135580399783959/1188472686201016411/pexels-ray-piedra-1464625.jpg?ex=659aa671&is=65883171&hm=46e5ec82cf21db8e054aaf7d84514625ceb150c9b22a8dad2e9209319f4a5851&",
                 CurrentPrice = 199.99f,
                 UserId = 1,
                 ShoeType = "Sport"
