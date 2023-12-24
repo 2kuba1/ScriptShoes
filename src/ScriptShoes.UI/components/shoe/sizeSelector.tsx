@@ -21,11 +21,12 @@ const SizeSelector = ({ shoeSizes }: Props) => {
       </SelectTrigger>
       <SelectContent className='dark:bg-gray dark:text-white'>
         <SelectGroup>
-          {shoeSizes.map(size => (
-            <SelectItem key={size} value={size.toString()}>
-              {size}
-            </SelectItem>
-          ))}
+          {shoeSizes &&
+            shoeSizes.map(size => (
+              <SelectItem key={size} value={size.toString()}>
+                {size}
+              </SelectItem>
+            ))}
         </SelectGroup>
       </SelectContent>
     </Select>

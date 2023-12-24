@@ -7,6 +7,7 @@ using ScriptShoes.API.BackgroundServices;
 using ScriptShoes.API.Middlewares;
 using ScriptShoes.Application;
 using ScriptShoes.Infrastructure;
+using ScriptShoes.Infrastructure.Database;
 
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 logger.Debug("init main");
@@ -66,7 +67,8 @@ try
                     });
             }));
     });
-// Add services to the container.
+
+    // Add services to the container.
 
     builder.Services.AddApplicationServices();
     builder.Services.AddInfrastructureServices(builder.Configuration);
@@ -78,7 +80,8 @@ try
     builder.Logging.ClearProviders();
     builder.Host.UseNLog();
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+    // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
 
@@ -110,9 +113,16 @@ try
 
     var app = builder.Build();
 
+    var scope = app.Services.CreateScope();
+
+    var seeder = scope.ServiceProvider.GetService<DatabaseSeeder>();
+
+    await seeder.SeedData();
+
     app.UseRateLimiter();
 
-// Configure the HTTP request pipeline.
+    // Configure the HTTP request pipeline.
+
     if (app.Environment.IsDevelopment())
     {
         app.UseSwagger();
@@ -124,7 +134,7 @@ try
     app.UseAuthentication();
     app.UseAuthorization();
 
-    //app.UseMiddleware<ErrorHandlingMiddleware>();
+    app.UseMiddleware<ErrorHandlingMiddleware>();
     app.UseCors("ui");
 
     app.UseResponseCaching();

@@ -10,11 +10,12 @@ using ScriptShoes.Infrastructure.Database;
 using ScriptShoes.Infrastructure.Repositories;
 using ScriptShoes.Infrastructure.Services;
 using Stripe;
+
 namespace ScriptShoes.Infrastructure;
 
 public static class InfrastructureServiceRegistration
 {
-    public static IServiceCollection AddInfrastructureServices(this IServiceCollection services,
+    public static void AddInfrastructureServices(this IServiceCollection services,
         IConfiguration configuration)
     {
         services.AddScoped<IAuthenticationService, AuthenticationService>();
@@ -25,6 +26,8 @@ public static class InfrastructureServiceRegistration
         {
             options.UseNpgsql(configuration.GetConnectionString("DatabaseConnectionString"));
         });
+
+        services.AddScoped<DatabaseSeeder>();
 
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         services.AddScoped<IShoeRepository, ShoeRepository>();
@@ -37,7 +40,7 @@ public static class InfrastructureServiceRegistration
         services.AddScoped<IOrderRepository, OrderRepository>();
         services.AddScoped<IOrderAddressRepository, OrderAddressRepository>();
         services.AddScoped<IDiscountRepository, DiscountRepository>();
-        
+
         services.AddAuthentication(options =>
         {
             options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -62,7 +65,5 @@ public static class InfrastructureServiceRegistration
         });
 
         StripeConfiguration.ApiKey = configuration.GetSection("Stripe:SecretKey").Get<string>();
-
-        return services;
     }
 }
