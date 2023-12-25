@@ -18,7 +18,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoes.Application", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoes.Infrastructure", "src\ScriptShoes.Infrastructure\ScriptShoes.Infrastructure.csproj", "{B7FFEEA5-D0AB-49D5-891A-36E81B44D10A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoes.ApplicationTests", "tests\ScriptShoes.ApplicationTests\ScriptShoes.ApplicationTests.csproj", "{49955064-C45B-466A-BBE2-EC59EB5EDE09}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoes.Application.Tests", "tests\ScriptShoes.Application.Tests\ScriptShoes.Application.Tests.csproj", "{49955064-C45B-466A-BBE2-EC59EB5EDE09}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoes.InfrastructureTests", "tests\ScriptShoes.InfrastructureTests\ScriptShoes.InfrastructureTests.csproj", "{AD07F93E-036E-4360-BD89-C207A414C974}"
 EndProject
