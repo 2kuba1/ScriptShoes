@@ -2,5 +2,8 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a8d7dfc8_002Da964_002D4615_002Da8cd_002Dcc29252dfbfa/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CreateShoeCommandHandlerTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::49955064-C45B-466A-BBE2-EC59EB5EDE09::net7.0::ScriptShoes.Application.Tests.Shoe.Commands.CreateShoeCommandHandlerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::49955064-C45B-466A-BBE2-EC59EB5EDE09::net7.0::ScriptShoes.Application.Tests.Shoe.Commands.DeleteShoeCommandHandlerTests.Handler_DeletesShoe_ForGivenShoeId&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::49955064-C45B-466A-BBE2-EC59EB5EDE09::net7.0::ScriptShoes.Application.Tests.Shoe.Commands.DeleteShoeCommandHandlerTests.Handler_ThrowNotFoundException_ForNullShoeObject&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::49955064-C45B-466A-BBE2-EC59EB5EDE09::net7.0::ScriptShoes.Application.Tests.Shoe.Commands.DeleteShoeCommandHandlerTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
