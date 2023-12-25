@@ -60,11 +60,11 @@ public class CreateShoeCommandHandlerTests
 
         var handler = new CreateShoeCommandHandler(shoeRepositoryMock.Object, userRepositoryMock.Object);
 
-        //assert
+        //act
 
         Func<Task> action = async () => await handler.Handle(command, CancellationToken.None);
 
-        //act
+        //assert
 
         await Assert.ThrowsAsync<NotFoundException>(action);
     }
