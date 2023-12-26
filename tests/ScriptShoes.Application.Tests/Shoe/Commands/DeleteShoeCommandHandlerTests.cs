@@ -10,7 +10,7 @@ namespace ScriptShoes.Application.Tests.Shoe.Commands;
 public class DeleteShoeCommandHandlerTests
 {
     [Fact]
-    public async Task Handler_DeletesShoe_ForGivenShoeId()
+    public async Task Handler_ForGivenShoeId_DeletesShoe()
     {
         //arrange
 
@@ -38,7 +38,7 @@ public class DeleteShoeCommandHandlerTests
     }
 
     [Fact]
-    public async Task Handler_ThrowsNotFoundException_ForNullShoeObject()
+    public async Task Handler_ForNullShoeObject_ThrowsNotFoundException()
     {
         //arrange
 

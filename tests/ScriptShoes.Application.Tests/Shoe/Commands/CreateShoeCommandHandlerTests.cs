@@ -12,7 +12,7 @@ public class CreateShoeCommandHandlerTests
     [Theory]
     [InlineData(1)]
     [InlineData(2)]
-    public async Task Handle_CreatesShoe_ForGivenUserId(int userId)
+    public async Task Handle_ForGivenUserId_CreatesShoe(int userId)
     {
         //arrange 
 
@@ -41,7 +41,7 @@ public class CreateShoeCommandHandlerTests
     }
 
     [Fact]
-    public async Task Handle_ThrowsNotFoundException_ForNullUserId()
+    public async Task Handle_ForNullUserId_ThrowsNotFoundException()
     {
         //arrange 
 
