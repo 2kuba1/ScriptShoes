@@ -9,7 +9,7 @@ namespace ScriptShoes.Application.Tests.Shoe.Queries;
 public class GetAllQueryHandlerTests
 {
     [Fact]
-    public async Task Handler_ReturnsAllShoes()
+    public async Task Handler_ForValidData_ReturnsMappedValues()
     {
         //arrange
 
