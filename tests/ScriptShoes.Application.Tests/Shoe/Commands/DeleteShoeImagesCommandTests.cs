@@ -9,25 +9,53 @@ namespace ScriptShoes.Application.Tests.Shoe.Commands;
 
 public class DeleteShoeImagesCommandTests
 {
-    [Fact]
-    public async Task Handle_ForValidData_DeletesShoeImage()
+    public static IEnumerable<object[]> GetSampleData()
+    {
+        yield return new object[]
+        {
+            new List<string>() { "#", "###", "##", "####" },
+            new DeleteShoeImagesCommand(1, new List<int>()
+            {
+                0, 2
+            })
+        };
+        yield return new object[]
+        {
+            new List<string>() { "#", "####" },
+            new DeleteShoeImagesCommand(2, new List<int>()
+            {
+                0, 1
+            }),
+        };
+        yield return new object[]
+        {
+            new List<string>() { "#", "###", "##", "####", "#####" },
+            new DeleteShoeImagesCommand(3, new List<int>()
+            {
+                2, 1
+            }),
+        };
+        yield return new object[]
+        {
+            new List<string>() { "#", "###", "##", "####" },
+            new DeleteShoeImagesCommand(4, new List<int>()
+            {
+                0, 3
+            })
+        };
+    }
+
+    [Theory]
+    [MemberData(nameof(GetSampleData))]
+    public async Task Handle_ForValidData_DeletesShoeImage(List<string> images,
+        DeleteShoeImagesCommand command)
     {
         //arrange
 
-        var command = new DeleteShoeImagesCommand(1, new List<int>()
-        {
-            0, 2
-        });
-
         var shoe = new Domain.Entities.Shoe()
         {
-            Id = 1,
-            Images = new List<string>()
-            {
-                "#",
-                "##",
-                "###"
-            }
+            Id = command.Id,
+            Images = images
         };
 
         var shoeRepository = new Mock<IShoeRepository>();
@@ -46,17 +74,11 @@ public class DeleteShoeImagesCommandTests
         result.Should().Be(Unit.Value);
     }
 
-    [Fact]
-    public async Task Handler_ForNullShoeObject_ThrowsNotFoundException()
+    [Theory]
+    [MemberData(nameof(GetSampleData))]
+    public async Task Handler_ForNullShoeObject_ThrowsNotFoundException(List<string> images,
+        DeleteShoeImagesCommand command)
     {
-        //arrange
-
-        var command = new DeleteShoeImagesCommand(1, new List<int>()
-        {
-            0, 2
-        });
-
-
         var shoeRepository = new Mock<IShoeRepository>();
 
         shoeRepository.Setup(s => s.GetByIdAsync(command.Id)).ReturnsAsync((Domain.Entities.Shoe?)null);
