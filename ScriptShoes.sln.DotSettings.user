@@ -1,9 +1,30 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a8d7dfc8_002Da964_002D4615_002Da8cd_002Dcc29252dfbfa/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CreateShoeCommandHandlerTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=714eda00_002Dd094_002D4d65_002D994d_002Dbf3796aafd00/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CreateShoeCommandHandlerTests #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::49955064-C45B-466A-BBE2-EC59EB5EDE09::net7.0::ScriptShoes.Application.Tests.Shoe.Commands.CreateShoeCommandHandlerTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::49955064-C45B-466A-BBE2-EC59EB5EDE09::net7.0::ScriptShoes.Application.Tests.Shoe.Commands.DeleteShoeCommandHandlerTests.Handler_DeletesShoe_ForGivenShoeId&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::49955064-C45B-466A-BBE2-EC59EB5EDE09::net7.0::ScriptShoes.Application.Tests.Shoe.Commands.DeleteShoeCommandHandlerTests.Handler_ThrowNotFoundException_ForNullShoeObject&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::49955064-C45B-466A-BBE2-EC59EB5EDE09::net7.0::ScriptShoes.Application.Tests.Shoe.Commands.DeleteShoeCommandHandlerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::49955064-C45B-466A-BBE2-EC59EB5EDE09::net7.0::ScriptShoes.Application.Tests.Shoe.Commands.DeleteShoeImagesCommandTests.Handle_ForValidData_DeletesShoeImage&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a8d7dfc8_002Da964_002D4615_002Da8cd_002Dcc29252dfbfa/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CreateShoeCommandHandlerTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::49955064-C45B-466A-BBE2-EC59EB5EDE09::net7.0::ScriptShoes.Application.Tests.Shoe.Commands.CreateShoeCommandHandlerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::49955064-C45B-466A-BBE2-EC59EB5EDE09::net7.0::ScriptShoes.Application.Tests.Shoe.Commands.DeleteShoeCommandHandlerTests.Handler_DeletesShoe_ForGivenShoeId&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::49955064-C45B-466A-BBE2-EC59EB5EDE09::net7.0::ScriptShoes.Application.Tests.Shoe.Commands.DeleteShoeCommandHandlerTests.Handler_ThrowNotFoundException_ForNullShoeObject&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::49955064-C45B-466A-BBE2-EC59EB5EDE09::net7.0::ScriptShoes.Application.Tests.Shoe.Commands.DeleteShoeCommandHandlerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::49955064-C45B-466A-BBE2-EC59EB5EDE09::net7.0::ScriptShoes.Application.Tests.Shoe.Commands.DeleteShoeImagesCommandTests.Handle_ForValidData_DeletesShoeImage&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f3b3c9d0_002Dea0b_002D44ef_002D9040_002D7c70c923141d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CreateShoeCommandHandlerTests #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::49955064-C45B-466A-BBE2-EC59EB5EDE09::net7.0::ScriptShoes.Application.Tests.Shoe.Commands.CreateShoeCommandHandlerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::49955064-C45B-466A-BBE2-EC59EB5EDE09::net7.0::ScriptShoes.Application.Tests.Shoe.Commands.DeleteShoeCommandHandlerTests.Handler_DeletesShoe_ForGivenShoeId&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::49955064-C45B-466A-BBE2-EC59EB5EDE09::net7.0::ScriptShoes.Application.Tests.Shoe.Commands.DeleteShoeCommandHandlerTests.Handler_ThrowNotFoundException_ForNullShoeObject&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::49955064-C45B-466A-BBE2-EC59EB5EDE09::net7.0::ScriptShoes.Application.Tests.Shoe.Commands.DeleteShoeCommandHandlerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::49955064-C45B-466A-BBE2-EC59EB5EDE09::net7.0::ScriptShoes.Application.Tests.Shoe.Commands.DeleteShoeImagesCommandTests.Handle_ForValidData_DeletesShoeImage&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::49955064-C45B-466A-BBE2-EC59EB5EDE09::net7.0::ScriptShoes.Application.Tests.Shoe.Commands.DeleteShoeImagesCommandTests.Handler_ForNullShoeObject_ThrowsNotFoundException&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::49955064-C45B-466A-BBE2-EC59EB5EDE09::net7.0::ScriptShoes.Application.Tests.Shoe.Commands.DeleteShoeImagesCommandTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

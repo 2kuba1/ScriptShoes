@@ -20,10 +20,24 @@ public class DeleteShoeImagesCommandHandler : IRequestHandler<DeleteShoeImagesCo
         if (shoe is null)
             throw new NotFoundException("Shoe not found");
 
-        foreach (var imageIndex in request.ImageIndexes)
+        var images = shoe.Images;
+
+        foreach (var imageIndex in request.ImageIndexes.Where(_ => shoe.Images is not null))
         {
-            shoe.Images?.Remove(shoe.Images[imageIndex]);
+            if (shoe.Images != null) shoe.Images[imageIndex] = "";
         }
+
+        if (images is null)
+            return Unit.Value;
+
+
+        foreach (var image in images.ToList())
+        {
+            if (image == "")
+                images.Remove(image);
+        }
+
+        shoe.Images = images;
 
         await _repository.UpdateAsync(shoe);
 
