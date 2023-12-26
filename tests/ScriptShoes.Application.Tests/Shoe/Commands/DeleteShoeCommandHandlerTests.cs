@@ -56,6 +56,6 @@ public class DeleteShoeCommandHandlerTests
 
         //assert
 
-        await Assert.ThrowsAsync<NotFoundException>(action);
+        await action.Should().ThrowAsync<NotFoundException>();
     }
 }

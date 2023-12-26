@@ -66,6 +66,6 @@ public class CreateShoeCommandHandlerTests
 
         //assert
 
-        await Assert.ThrowsAsync<NotFoundException>(action);
+        await action.Should().ThrowAsync<NotFoundException>();
     }
 }
