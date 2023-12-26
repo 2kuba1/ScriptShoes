@@ -16,7 +16,7 @@ public class UpdateShoeValidator : AbstractValidator<UpdateShoeCommand>
                     return;
 
                 var shoe = await repository.GetByNameAsync(value);
-                if (shoe.ShoeName == value)
+                if (shoe != null && shoe.ShoeName == value)
                     context.AddFailure("This shoe already exist");
             });
 
