@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using ScriptShoes.Application.Contracts.Persistence;
+using ScriptShoes.Application.Exceptions;
 using ScriptShoes.Application.Models.Shoe;
 
 namespace ScriptShoes.Application.Features.Shoe.Queries.GetFilters;
@@ -15,9 +16,12 @@ public class GetFiltersQueryHandler : IRequestHandler<GetFilters.GetFiltersQuery
     
     public async Task<GetFiltersDto> Handle(GetFilters.GetFiltersQuery request, CancellationToken cancellationToken)
     {
-        var filters = await _shoeRepository.GetAsync();
+        var shoes = await _shoeRepository.GetAsync() as List<Domain.Entities.Shoe>;
+
+        if (shoes is null)
+            throw new NotFoundException("Shoes not found");
         
-        var sizesList = filters.SelectMany(x => x.ShoeSizes!).ToList();
+        var sizesList = shoes.SelectMany(x => x.ShoeSizes!).ToList();
         
         var brands = new List<string>();
         var types = new List<string>();
@@ -28,7 +32,7 @@ public class GetFiltersQueryHandler : IRequestHandler<GetFilters.GetFiltersQuery
             sizes.Add(size);
         }
         
-        foreach (var t in filters)
+        foreach (var t in shoes)
         {
             if (!brands.Contains(t.Brand))
             {
