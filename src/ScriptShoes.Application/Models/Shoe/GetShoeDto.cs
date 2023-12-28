@@ -10,7 +10,7 @@ public class GetShoeDto
     public float CurrentPrice { get; set; }
     public float? PriceBeforeDiscount { get; set; }
     public float? AverageRating { get; set; }
-    public int? NumberOfReviews { get; set; }
+    public int NumberOfReviews { get; set; }
 
     public string? ThumbnailImage { get; set; }
     public List<string>? Images { get; set; }
