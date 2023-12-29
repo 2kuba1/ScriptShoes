@@ -8,6 +8,6 @@ public class GetShoeLimitedInformationDto
     public string ShoeType { get; set; } = string.Empty;
     public float CurrentPrice { get; set; }
     public float? PriceBeforeDiscount { get; set; }
-    public float? AverageRating { get; set; }
+    public float AverageRating { get; set; }
     public string? ThumbnailImage { get; set; }
 }
