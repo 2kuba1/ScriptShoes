@@ -1,64 +1,62 @@
 ﻿using FluentAssertions;
 using Moq;
 using ScriptShoes.Application.Contracts.Persistence;
-using ScriptShoes.Application.Features.Shoe.Queries.GetPagedShoes;
+using ScriptShoes.Application.Features.Shoe.Queries.SearchForShoes;
 using ScriptShoes.Application.Models;
 using ScriptShoes.Application.Models.Shoe;
 
 namespace ScriptShoes.Application.Tests.Shoe.Queries;
 
-public class GetPagedShoesQueryHandlerTests
+public class SearchForShoesQueryHandlerTests
 {
-    [Fact]
-    public async Task Handle_ForValidData_ReturnsPagedShoes()
+    [Theory]
+    [InlineData("Brand")]
+    [InlineData("Test")]
+    public async Task Handle_ForGivenSearchPhrase_ReturnsPagedSearchForShoesDto(string searchPhrase)
     {
         //arrange
-        
-        var getShoeLimitedInformationDtos = new List<GetShoeLimitedInformationDto>()
+
+        var query = new SearchForShoesQuery(3, 1, searchPhrase);
+
+        var searchForShoesDtos = new List<SearchForShoesDto>()
         {
-            new GetShoeLimitedInformationDto()
+            new SearchForShoesDto()
             {
                 Id = 1,
-                ShoeName = "Test1",
-                Brand = "Test",
+                ShoeName = "Test",
+                Brand = "Brand",
                 ShoeType = "Test",
                 CurrentPrice = 50,
                 ThumbnailImage = "#",
-                AverageRating = 33,
             },
-            new GetShoeLimitedInformationDto()
+            new SearchForShoesDto()
             {
                 Id = 2,
-                ShoeName = "Test2",
-                Brand = "Test2",
+                ShoeName = "Test",
+                Brand = "Brand",
                 ShoeType = "Test2",
                 CurrentPrice = 50,
                 ThumbnailImage = "##",
-                AverageRating = 1,
                 PriceBeforeDiscount = 10
             },
-            new GetShoeLimitedInformationDto()
+            new SearchForShoesDto()
             {
                 Id = 3,
-                ShoeName = "Test3",
-                Brand = "Test3",
+                ShoeName = "Test",
+                Brand = "Brand",
                 ShoeType = "Test3",
                 CurrentPrice = 20,
                 ThumbnailImage = "##",
-                AverageRating = 3,
             }
         };
-
-
-        var query = new GetPagedShoesQuery(1, 2);
 
         var shoes = new List<Domain.Entities.Shoe>()
         {
             new Domain.Entities.Shoe()
             {
                 Id = 1,
-                ShoeName = "Test1",
-                Brand = "Test",
+                ShoeName = "Test",
+                Brand = "Brand",
                 ShoeType = "Test",
                 CurrentPrice = 50,
                 ThumbnailImage = "#",
@@ -67,8 +65,8 @@ public class GetPagedShoesQueryHandlerTests
             new Domain.Entities.Shoe()
             {
                 Id = 2,
-                ShoeName = "Test2",
-                Brand = "Test2",
+                ShoeName = "Test",
+                Brand = "Brand",
                 ShoeType = "Test2",
                 CurrentPrice = 50,
                 ThumbnailImage = "##",
@@ -78,8 +76,8 @@ public class GetPagedShoesQueryHandlerTests
             new Domain.Entities.Shoe()
             {
                 Id = 3,
-                ShoeName = "Test3",
-                Brand = "Test3",
+                ShoeName = "Test",
+                Brand = "Brand",
                 ShoeType = "Test3",
                 CurrentPrice = 20,
                 ThumbnailImage = "##",
@@ -87,21 +85,20 @@ public class GetPagedShoesQueryHandlerTests
             }
         };
 
-
-        var dto = new PagedResult<GetShoeLimitedInformationDto>(getShoeLimitedInformationDtos, 3, 2, 1);
+        var pagedResult = new PagedResult<SearchForShoesDto>(searchForShoesDtos, 3, 3, 1);
 
         var shoeRepository = new Mock<IShoeRepository>();
 
-        shoeRepository.Setup(s => s.GetPagedShoes(1, 2)).ReturnsAsync(shoes);
+        shoeRepository.Setup(s => s.GetShoesBySearchPhrase(3, 1, searchPhrase)).ReturnsAsync(shoes);
 
-        var handler = new GetPagedShoesQueryHandler(shoeRepository.Object);
+        var handler = new SearchForShoesQueryHandler(shoeRepository.Object);
 
-        //act 
+        //act
 
         var result = await handler.Handle(query, CancellationToken.None);
 
         //assert
 
-        result.Should().BeEquivalentTo(dto);
+        result.Should().BeEquivalentTo(pagedResult);
     }
 }
