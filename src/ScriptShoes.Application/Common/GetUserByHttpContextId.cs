@@ -6,7 +6,7 @@ namespace ScriptShoes.Application.Common;
 
 public static class GetUserByHttpContextId
 {
-    public static async Task<User> Get(IUserRepository userRepository)
+    internal static async Task<User> Get(IUserRepository userRepository)
     {
         if (userRepository.GetUserId is null)
             throw new NotFoundException("User not found");

@@ -22,15 +22,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\ScriptShoes.Domain\ScriptShoes.Domain.csproj" />
-
-
-
-
-
-
+        <InternalsVisibleTo Include="ScriptShoes.Application.Tests"/>
     </ItemGroup>
-
-
-
-
 </Project>
