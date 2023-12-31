@@ -33,4 +33,8 @@
       <ProjectReference Include="..\..\src\ScriptShoes.Domain\ScriptShoes.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Discount\Queries\" />
+    </ItemGroup>
+
 </Project>
