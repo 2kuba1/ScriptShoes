@@ -21,7 +21,6 @@ public class ConfirmOrderCommandHandler : IRequestHandler<ConfirmOrderCommand, U
 
     public async Task<Unit> Handle(ConfirmOrderCommand request, CancellationToken cancellationToken)
     {
-        await _paymentsService.ConfirmOrder(request.SessionId);
         var order = await _orderRepository.GetOrderBySessionId(request.SessionId);
 
         if (order is null)
@@ -32,8 +31,8 @@ public class ConfirmOrderCommandHandler : IRequestHandler<ConfirmOrderCommand, U
         if (shoe is null)
             throw new NotFoundException("Shoe not found");
 
-        await _shoeRepository.UpdateAsync(shoe);
-
+        await _paymentsService.ConfirmOrder(request.SessionId);
+        
         return Unit.Value;
     }
 }
