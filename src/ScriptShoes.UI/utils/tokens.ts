@@ -12,6 +12,26 @@ export interface Token {
   expires: string;
 }
 
+export interface DecodedToken {
+  Id: string;
+  username: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  profilePicture: string;
+  isVerified: boolean;
+  role: string;
+  nbf: number;
+  exp: number;
+  iss: string;
+  aud: string;
+}
+
+export interface DecodedRefreshToken {
+  token: string;
+  expires: string;
+}
+
 export const Login = async (email: string, password: string) => {
   const { data, error } = await fetchAsync<LoginResponse>(
     `${process.env.NEXT_PUBLIC_API_URL}/api/user/login?email=${email}&password=${password}`,
@@ -24,15 +44,14 @@ export const Login = async (email: string, password: string) => {
 };
 
 export const refreshAccessToken = async (refreshToken: string) => {
+  const decodedRefreshToken = encodeURIComponent(refreshToken);
+
   const { data, error } = await fetchAsync<Token>(
-    `${
-      process.env.NEXT_PUBLIC_API_URL
-    }/api/user/refreshToken?refreshToken=${encodeURIComponent(refreshToken)}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/api/user/refreshToken?refreshToken=${decodedRefreshToken}`,
     Method.GET
   );
 
   if (error) return null;
-
   return data;
 };
 
