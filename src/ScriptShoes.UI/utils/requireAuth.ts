@@ -23,6 +23,12 @@ const RequireAuth = async (userId: string) => {
       redirect('/login');
     }
 
+    const decodedToken = jwtDecode(accessToken.token) as any;
+
+    if (decodedToken.Id !== userId) {
+      redirect('/login');
+    }
+
     return;
   }
 
@@ -34,6 +40,8 @@ const RequireAuth = async (userId: string) => {
       redirect('/login');
     }
   }
+
+  console.log(decodedToken.Id, userId);
 
   if (decodedToken.Id !== userId) {
     redirect('/login');
