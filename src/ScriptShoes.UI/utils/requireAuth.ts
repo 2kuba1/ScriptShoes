@@ -1,7 +1,7 @@
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { jwtDecode } from 'jwt-decode';
-import { refreshAccess, refreshAccessToken } from './tokens';
+import { type DecodedToken, refreshAccess, refreshAccessToken } from './tokens';
 
 const RequireAuth = async (userId: string) => {
   const cookieStore = cookies();
@@ -23,16 +23,16 @@ const RequireAuth = async (userId: string) => {
       redirect('/login');
     }
 
-    const decodedToken = jwtDecode(accessToken.token) as any;
+    const decodedToken = jwtDecode(accessToken.token) as DecodedToken;
 
     if (decodedToken.Id !== userId) {
       redirect('/login');
     }
 
-    return;
+    return decodedToken;
   }
 
-  const decodedToken = jwtDecode(token.value) as any;
+  const decodedToken = jwtDecode(token.value) as DecodedToken;
 
   if (!decodedToken || decodedToken.exp < Date.now() / 1000) {
     const accessToken = await refreshAccess(401, refreshToken.value);
@@ -41,11 +41,11 @@ const RequireAuth = async (userId: string) => {
     }
   }
 
-  console.log(decodedToken.Id, userId);
-
   if (decodedToken.Id !== userId) {
     redirect('/login');
   }
+
+  return decodedToken;
 };
 
 export default RequireAuth;

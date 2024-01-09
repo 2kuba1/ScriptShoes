@@ -14,13 +14,13 @@ export interface Token {
 
 export interface DecodedToken {
   Id: string;
-  username: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  profilePicture: string;
-  isVerified: boolean;
-  role: string;
+  Username: string;
+  FirstName: string;
+  LastName: string;
+  Email: string;
+  ProfilePicture: string;
+  IsVerified: boolean;
+  Role: string;
   nbf: number;
   exp: number;
   iss: string;
