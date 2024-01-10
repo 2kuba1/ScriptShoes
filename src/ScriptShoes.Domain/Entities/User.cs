@@ -5,7 +5,7 @@ namespace ScriptShoes.Domain.Entities;
 
 public sealed class User : BaseEntity
 {
-    public Username Username { get; init; }
+    public string Username { get; set; }
     public HashedPassword HashedPassword { get; private set; }
     public Email Email { get; init; }
     public AvailableFounds AvailableFounds { get; private set; } = 0;

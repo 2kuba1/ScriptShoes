@@ -33,7 +33,7 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, Unit>
         var config = new TypeAdapterConfig();
 
         config.NewConfig<RegisterDto, Domain.Entities.User>()
-            .Map(dest => dest.Username.Value, src => src.Username);
+            .Map(dest => dest.Username, src => src.Username);
 
         var user = request.Dto.Adapt<Domain.Entities.User>();
 
